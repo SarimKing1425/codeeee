@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { getVapi } from "@/lib/vapi";
+import { VAPI_ASSISTANT_ID } from "@/lib/config";
 
 export type KioskState = "idle" | "connecting" | "active" | "ended";
 export type TranscriptEntry = { role: "user" | "assistant"; text: string };
@@ -62,10 +63,8 @@ export function useVapi() {
     setErrorMessage(null);
     setState("connecting");
     try {
-      const id = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID;
-      if (!id) throw new Error("Missing NEXT_PUBLIC_VAPI_ASSISTANT_ID");
       const v = vapiRef.current ?? getVapi();
-      await v.start(id);
+      await v.start(VAPI_ASSISTANT_ID);
     } catch (err) {
       console.error("Failed to start call:", err);
       const msg = err instanceof Error ? err.message : "Failed to start";

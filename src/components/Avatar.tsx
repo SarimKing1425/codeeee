@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import type { KioskState } from "@/hooks/useVapi";
 
@@ -51,13 +50,11 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
         }}
       >
         {hasImage ? (
-          <Image
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
             src="/avatar.png"
             alt="Kyrie"
-            fill
-            priority
-            sizes="(max-width: 768px) 80vw, 42vh"
-            className="object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             onError={() => setHasImage(false)}
           />
         ) : (
