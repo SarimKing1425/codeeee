@@ -25,14 +25,14 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
   const lift = state === "active" && talking ? intensity * 4 : 0;
 
   return (
-    <div className="relative flex items-center justify-center">
+    <div className="relative h-full w-full flex items-center justify-center">
       {/* Soft blue depth glow behind the figure */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse 58% 60% at 50% 42%, rgba(214,234,248,0.65) 0%, rgba(214,234,248,0.25) 45%, rgba(255,255,255,0) 72%)",
+            "radial-gradient(ellipse 50% 55% at 50% 42%, rgba(214,234,248,0.65) 0%, rgba(214,234,248,0.25) 45%, rgba(255,255,255,0) 72%)",
           filter: "blur(8px)",
           opacity: state === "active" ? 0.9 + intensity * 0.3 : 0.85,
           transition: "opacity 160ms ease-out",
@@ -41,8 +41,7 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
 
       <div
         className={[
-          "relative h-[66vh] min-h-[360px] max-h-[760px] aspect-[3/4]",
-          "flex items-end justify-center",
+          "relative h-full aspect-[3/4] max-w-full max-h-[760px]",
           state === "idle" ? "animate-breathe" : "",
           state === "active" ? "animate-float" : "",
           state === "connecting" ? "opacity-90 animate-glow-pulse" : "",

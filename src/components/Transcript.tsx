@@ -22,7 +22,7 @@ export default function Transcript({ entries }: Props) {
   return (
     <div
       ref={scrollRef}
-      className="w-full max-w-3xl mx-auto h-[28vh] overflow-y-auto px-4 pb-2 space-y-3 scroll-smooth"
+      className="w-full max-w-3xl mx-auto h-[22vh] sm:h-[26vh] overflow-y-auto px-4 pb-2 space-y-2 sm:space-y-3 scroll-smooth"
       style={{
         maskImage: "linear-gradient(to bottom, transparent 0%, black 12%, black 100%)",
         WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 12%, black 100%)",

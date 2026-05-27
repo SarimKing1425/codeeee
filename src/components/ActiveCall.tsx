@@ -23,9 +23,9 @@ export default function ActiveCall({
   const connecting = state === "connecting";
 
   return (
-    <div className="flex flex-col items-center justify-between w-full h-full py-6 animate-fade-in">
-      <div className="text-center">
-        <p className="uppercase tracking-[0.4em] text-kyrie-blue/70 text-xs">
+    <div className="flex flex-col items-center justify-between w-full h-full py-[2vh] gap-2 animate-fade-in">
+      <div className="text-center shrink-0">
+        <p className="uppercase tracking-[0.3em] sm:tracking-[0.4em] text-kyrie-blue/70 text-xs">
           {connecting ? "Connecting..." : isSpeaking ? "Kyrie is speaking" : "Listening"}
         </p>
         <div className="mt-2 flex items-center justify-center gap-2">
@@ -40,20 +40,20 @@ export default function ActiveCall({
         </div>
       </div>
 
-      <div className="relative flex items-center justify-center my-4">
+      <div className="relative flex-1 min-h-0 w-full flex items-center justify-center">
         <Waveform volumeLevel={volumeLevel} active={state === "active"} />
         <Avatar state={state} isSpeaking={isSpeaking} volumeLevel={volumeLevel} />
       </div>
 
-      <div className="w-full">
+      <div className="w-full shrink-0">
         <Transcript entries={transcript} />
       </div>
 
       <button
         onClick={onEnd}
         className={[
-          "mt-4 inline-flex items-center justify-center gap-2",
-          "min-h-[56px] min-w-[220px] px-8 py-4 rounded-full",
+          "shrink-0 inline-flex items-center justify-center gap-2",
+          "min-h-[52px] sm:min-h-[56px] min-w-[200px] sm:min-w-[220px] px-7 sm:px-8 py-3 sm:py-4 rounded-full",
           "text-base font-semibold tracking-wide",
           "bg-rose-600 text-white border border-rose-600",
           "hover:bg-rose-700 active:scale-[0.98] transition",
