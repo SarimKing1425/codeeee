@@ -26,6 +26,19 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
 
   return (
     <div className="relative flex items-center justify-center">
+      {/* Soft blue depth glow behind the figure */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(ellipse 58% 60% at 50% 42%, rgba(214,234,248,0.65) 0%, rgba(214,234,248,0.25) 45%, rgba(255,255,255,0) 72%)",
+          filter: "blur(8px)",
+          opacity: state === "active" ? 0.9 + intensity * 0.3 : 0.85,
+          transition: "opacity 160ms ease-out",
+        }}
+      />
+
       <div
         className={[
           "relative h-[54vh] min-h-[300px] max-h-[620px] aspect-[3/4]",
@@ -46,6 +59,12 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
             src={sources[srcIndex]}
             alt="Kyrie"
             className="h-full w-full object-contain"
+            style={{
+              maskImage:
+                "linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%)",
+            }}
             onError={() => setSrcIndex((i) => i + 1)}
           />
         ) : (
