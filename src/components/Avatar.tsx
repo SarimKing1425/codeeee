@@ -41,7 +41,7 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
 
       <div
         className={[
-          "relative h-[54vh] min-h-[300px] max-h-[620px] aspect-[3/4]",
+          "relative h-[66vh] min-h-[360px] max-h-[760px] aspect-[3/4]",
           "flex items-end justify-center",
           state === "idle" ? "animate-breathe" : "",
           state === "active" ? "animate-float" : "",
@@ -58,12 +58,12 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
           <img
             src={sources[srcIndex]}
             alt="Kyrie"
-            className="h-full w-full object-contain"
+            className="h-full w-full object-cover object-top"
             style={{
               maskImage:
-                "linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%)",
+                "radial-gradient(ellipse 72% 86% at 50% 40%, #000 48%, rgba(0,0,0,0) 84%)",
               WebkitMaskImage:
-                "linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%)",
+                "radial-gradient(ellipse 72% 86% at 50% 40%, #000 48%, rgba(0,0,0,0) 84%)",
             }}
             onError={() => setSrcIndex((i) => i + 1)}
           />
