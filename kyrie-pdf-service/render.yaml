@@ -1,0 +1,25 @@
+# Render Blueprint for kyrie-pdf-service.
+# Use this when the service lives at the repo root (after you split it into its
+# own repo). If deploying from a subfolder of another repo, set the service's
+# "Root Directory" to kyrie-pdf-service in the dashboard instead.
+#
+# Secrets are intentionally NOT in this file. Set them in the Render dashboard
+# (Environment tab) or when prompted on Blueprint creation:
+#   SERVICE_API_KEY  - the X-Api-Key clients must send
+#   CLOUDINARY_URL   - cloudinary://KEY:SECRET@dcg024uw0  (omit to return base64 only)
+services:
+  - type: web
+    name: kyrie-pdf-service
+    runtime: node
+    plan: free
+    region: oregon          # change to the region nearest you (frankfurt, singapore, ohio, virginia)
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: SERVICE_API_KEY
+        sync: false
+      - key: CLOUDINARY_URL
+        sync: false
