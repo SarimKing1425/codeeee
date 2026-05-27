@@ -25,16 +25,16 @@ export default function ActiveCall({
   return (
     <div className="flex flex-col items-center justify-between w-full h-full py-6 animate-fade-in">
       <div className="text-center">
-        <p className="uppercase tracking-[0.4em] text-kyrie-blueLight/70 text-xs">
+        <p className="uppercase tracking-[0.4em] text-kyrie-blue/70 text-xs">
           {connecting ? "Connecting..." : isSpeaking ? "Kyrie is speaking" : "Listening"}
         </p>
         <div className="mt-2 flex items-center justify-center gap-2">
           <span
             className={`inline-block w-2 h-2 rounded-full ${
-              connecting ? "bg-amber-300 animate-pulse" : "bg-emerald-400 animate-pulse"
+              connecting ? "bg-amber-500 animate-pulse" : "bg-emerald-500 animate-pulse"
             }`}
           />
-          <span className="text-kyrie-blueLight/80 text-sm">
+          <span className="text-kyrie-gray text-sm">
             {connecting ? "Securing line" : "Live"}
           </span>
         </div>
@@ -55,8 +55,8 @@ export default function ActiveCall({
           "mt-4 inline-flex items-center justify-center gap-2",
           "min-h-[56px] min-w-[220px] px-8 py-4 rounded-full",
           "text-base font-semibold tracking-wide",
-          "bg-rose-500/20 text-rose-100 border border-rose-300/30",
-          "hover:bg-rose-500/30 active:scale-[0.98] transition",
+          "bg-rose-600 text-white border border-rose-600",
+          "hover:bg-rose-700 active:scale-[0.98] transition",
         ].join(" ")}
       >
         <EndIcon />

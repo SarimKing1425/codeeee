@@ -82,10 +82,10 @@ export default function Waveform({
               ref={(el) => {
                 barRefs.current[i] = el;
               }}
-              className="block w-[3px] rounded-full bg-gradient-to-t from-kyrie-blueLight/60 via-kyrie-blueLight to-white"
+              className="block w-[3px] rounded-full bg-gradient-to-t from-kyrie-blue/40 via-kyrie-blue to-kyrie-blue"
               style={{
                 height: "4px",
-                boxShadow: "0 0 8px rgba(214,234,248,0.55)",
+                boxShadow: "0 0 6px rgba(27,79,114,0.35)",
                 transformOrigin: "top center",
                 transition: "height 90ms ease-out, opacity 120ms ease-out",
               }}

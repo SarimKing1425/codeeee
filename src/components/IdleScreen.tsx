@@ -11,10 +11,10 @@ export default function IdleScreen({ onStart, errorMessage }: Props) {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full animate-fade-in">
       <div className="text-center mb-6">
-        <p className="uppercase tracking-[0.4em] text-kyrie-blueLight/70 text-sm">
+        <p className="uppercase tracking-[0.4em] text-kyrie-blue/70 text-sm">
           Kyrie &mdash; AI Intake Specialist
         </p>
-        <h1 className="mt-3 text-5xl md:text-6xl font-semibold text-white">
+        <h1 className="mt-3 text-5xl md:text-6xl font-semibold text-kyrie-ink">
           How can I help you today?
         </h1>
       </div>
@@ -29,12 +29,12 @@ export default function IdleScreen({ onStart, errorMessage }: Props) {
           "mt-8 group relative inline-flex items-center justify-center",
           "min-h-[64px] min-w-[260px] px-10 py-5 rounded-full",
           "text-xl font-semibold tracking-wide",
-          "bg-gradient-to-r from-kyrie-blueLight to-white text-kyrie-ink",
-          "shadow-2xl shadow-kyrie-blueLight/30",
+          "bg-kyrie-blue text-white",
+          "shadow-xl shadow-kyrie-blue/25",
           "hover:scale-[1.03] active:scale-[0.98] transition-transform duration-200",
         ].join(" ")}
       >
-        <span className="absolute inset-0 rounded-full ring-4 ring-kyrie-blueLight/30 group-hover:ring-kyrie-blueLight/60 transition" />
+        <span className="absolute inset-0 rounded-full ring-4 ring-kyrie-blue/15 group-hover:ring-kyrie-blue/30 transition" />
         <span className="relative flex items-center gap-3">
           <MicIcon />
           Tap to Begin
@@ -42,12 +42,12 @@ export default function IdleScreen({ onStart, errorMessage }: Props) {
       </button>
 
       {errorMessage && (
-        <p className="mt-6 text-rose-200/80 text-sm max-w-md text-center">
+        <p className="mt-6 text-rose-600 text-sm max-w-md text-center">
           {errorMessage}
         </p>
       )}
 
-      <p className="mt-10 text-kyrie-blueLight/50 text-sm">
+      <p className="mt-10 text-kyrie-gray text-sm">
         Your conversation is private and secure.
       </p>
     </div>

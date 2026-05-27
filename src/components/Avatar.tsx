@@ -13,40 +13,29 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
   const [hasImage, setHasImage] = useState(true);
 
   const intensity = Math.min(1, volumeLevel * 1.6);
-  const glowOpacity = state === "active" ? 0.45 + intensity * 0.5 : state === "connecting" ? 0.5 : 0.25;
-  const glowScale = state === "active" ? 1 + intensity * 0.06 : 1;
+  const talking = isSpeaking && state === "active";
+
+  // Subtle "alive while talking" motion. Not real lip sync — a static photo
+  // can't move its mouth — but a gentle volume-reactive scale + lean reads as
+  // life without distorting the image.
+  const scale =
+    state === "active" ? 1 + (talking ? intensity * 0.02 : 0) : 1;
+  const lift = state === "active" && talking ? intensity * 4 : 0;
 
   return (
     <div className="relative flex items-center justify-center">
       <div
-        aria-hidden
-        className="absolute inset-0 -z-10 rounded-full blur-3xl transition-all duration-200"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(214,234,248,0.55) 0%, rgba(27,79,114,0.35) 45%, rgba(0,0,0,0) 75%)",
-          opacity: glowOpacity,
-          transform: `scale(${glowScale})`,
-        }}
-      />
-
-      {state === "connecting" && (
-        <>
-          <span className="absolute inset-0 -z-10 rounded-full border-2 border-kyrie-blueLight/60 animate-ring-pulse" />
-          <span className="absolute inset-0 -z-10 rounded-full border-2 border-kyrie-blueLight/40 animate-ring-pulse [animation-delay:0.6s]" />
-        </>
-      )}
-
-      <div
         className={[
-          "relative w-[42vh] h-[42vh] min-w-[280px] min-h-[280px] max-w-[520px] max-h-[520px]",
-          "rounded-full overflow-hidden",
-          "ring-2 ring-kyrie-blueLight/30 shadow-2xl shadow-kyrie-blue/40",
+          "relative h-[54vh] min-h-[300px] max-h-[620px] aspect-[3/4]",
+          "flex items-end justify-center",
           state === "idle" ? "animate-breathe" : "",
           state === "active" ? "animate-float" : "",
+          state === "connecting" ? "opacity-90 animate-glow-pulse" : "",
         ].join(" ")}
         style={{
-          transform: state === "active" ? `scale(${1 + intensity * 0.03})` : undefined,
-          transition: "transform 120ms ease-out",
+          transform: `scale(${scale}) translateY(-${lift}px)`,
+          transformOrigin: "bottom center",
+          transition: "transform 110ms ease-out",
         }}
       >
         {hasImage ? (
@@ -54,24 +43,11 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
           <img
             src="/avatar.png"
             alt="Kyrie"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="h-full w-full object-contain"
             onError={() => setHasImage(false)}
           />
         ) : (
-          <PlaceholderAvatar speaking={isSpeaking && state === "active"} />
-        )}
-
-        {state === "active" && (
-          <div
-            aria-hidden
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(circle at 50% 40%, rgba(214,234,248,0.18) 0%, rgba(0,0,0,0) 60%)",
-              opacity: 0.4 + intensity * 0.6,
-              transition: "opacity 120ms ease-out",
-            }}
-          />
+          <PlaceholderAvatar speaking={talking} />
         )}
       </div>
     </div>
@@ -81,62 +57,55 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
 function PlaceholderAvatar({ speaking }: { speaking: boolean }) {
   return (
     <svg
-      viewBox="0 0 400 400"
-      className="absolute inset-0 w-full h-full"
+      viewBox="0 0 400 520"
+      className="h-full w-full"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Kyrie placeholder avatar"
     >
       <defs>
-        <radialGradient id="bg" cx="50%" cy="40%" r="70%">
-          <stop offset="0%" stopColor="#1B4F72" />
-          <stop offset="100%" stopColor="#0A1A2A" />
-        </radialGradient>
         <linearGradient id="suit" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#1F2A44" />
-          <stop offset="100%" stopColor="#0E1626" />
+          <stop offset="0%" stopColor="#22365C" />
+          <stop offset="100%" stopColor="#162542" />
         </linearGradient>
         <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#E8C9A8" />
-          <stop offset="100%" stopColor="#C9A07C" />
+          <stop offset="0%" stopColor="#8A5A3B" />
+          <stop offset="100%" stopColor="#6E4329" />
         </linearGradient>
       </defs>
 
-      <rect width="400" height="400" fill="url(#bg)" />
-
-      {/* Shoulders / suit */}
-      <path d="M40 400 C 80 300, 140 270, 200 270 C 260 270, 320 300, 360 400 Z" fill="url(#suit)" />
+      {/* Shoulders / navy suit */}
+      <path d="M40 520 C 70 410, 140 380, 200 380 C 260 380, 330 410, 360 520 Z" fill="url(#suit)" />
       {/* Lapels */}
-      <path d="M170 285 L200 320 L180 400 L155 400 Z" fill="#0A1220" opacity="0.85" />
-      <path d="M230 285 L200 320 L220 400 L245 400 Z" fill="#0A1220" opacity="0.85" />
-      {/* Shirt */}
-      <path d="M188 290 L200 330 L212 290 Z" fill="#F5F8FA" />
-      {/* Tie */}
-      <path d="M195 300 L205 300 L210 400 L190 400 Z" fill="#1B4F72" />
+      <path d="M168 392 L200 430 L182 520 L150 520 Z" fill="#101B30" />
+      <path d="M232 392 L200 430 L218 520 L250 520 Z" fill="#101B30" />
+      {/* Light blue shirt */}
+      <path d="M186 396 L200 440 L214 396 Z" fill="#D6EAF8" />
+      {/* Maroon tie */}
+      <path d="M194 405 L206 405 L212 520 L188 520 Z" fill="#7B2D3A" />
+      {/* Pocket square */}
+      <path d="M300 470 l18 -6 l-2 16 Z" fill="#F5F8FA" />
 
       {/* Neck */}
-      <rect x="180" y="240" width="40" height="50" fill="url(#skin)" />
+      <rect x="180" y="318" width="40" height="70" fill="url(#skin)" />
 
-      {/* Head */}
-      <ellipse cx="200" cy="180" rx="78" ry="92" fill="url(#skin)" />
+      {/* Bald head */}
+      <ellipse cx="200" cy="220" rx="86" ry="104" fill="url(#skin)" />
+      <ellipse cx="172" cy="150" rx="40" ry="26" fill="#ffffff" opacity="0.06" />
 
-      {/* Hair */}
-      <path
-        d="M122 170 C 125 110, 175 80, 200 80 C 235 80, 280 110, 278 170 C 268 145, 240 130, 200 132 C 160 130, 132 145, 122 170 Z"
-        fill="#1A1A24"
-      />
-
-      {/* Eyes */}
-      <ellipse cx="172" cy="180" rx="6" ry="8" fill="#0A1220" />
-      <ellipse cx="228" cy="180" rx="6" ry="8" fill="#0A1220" />
       {/* Brows */}
-      <rect x="160" y="160" width="26" height="3" rx="1.5" fill="#1A1A24" />
-      <rect x="214" y="160" width="26" height="3" rx="1.5" fill="#1A1A24" />
+      <rect x="156" y="196" width="30" height="4" rx="2" fill="#2A1A12" />
+      <rect x="214" y="196" width="30" height="4" rx="2" fill="#2A1A12" />
+      {/* Eyes */}
+      <ellipse cx="171" cy="214" rx="7" ry="9" fill="#1A100B" />
+      <ellipse cx="229" cy="214" rx="7" ry="9" fill="#1A100B" />
+      {/* Goatee hint */}
+      <path d="M178 286 Q200 300 222 286 Q210 312 200 314 Q190 312 178 286 Z" fill="#2A1A12" opacity="0.55" />
 
-      {/* Mouth — toggles between closed line and open ellipse for "speaking" */}
+      {/* Mouth — smile vs. open while speaking */}
       {speaking ? (
-        <ellipse cx="200" cy="225" rx="14" ry="9" fill="#3A1F1F" />
+        <ellipse cx="200" cy="276" rx="16" ry="10" fill="#3A1F1F" />
       ) : (
-        <path d="M184 225 Q 200 232 216 225" stroke="#3A1F1F" strokeWidth="3" strokeLinecap="round" fill="none" />
+        <path d="M178 272 Q200 292 222 272" stroke="#3A1F1F" strokeWidth="4" strokeLinecap="round" fill="none" />
       )}
     </svg>
   );

@@ -29,7 +29,7 @@ export default function Transcript({ entries }: Props) {
       }}
     >
       {visible.length === 0 && (
-        <p className="text-center text-kyrie-blueLight/60 text-lg pt-8 animate-fade-in">
+        <p className="text-center text-kyrie-gray text-lg pt-8 animate-fade-in">
           Listening...
         </p>
       )}
@@ -42,11 +42,10 @@ export default function Transcript({ entries }: Props) {
           >
             <div
               className={[
-                "max-w-[80%] px-5 py-3 rounded-2xl text-lg leading-snug",
-                "shadow-lg backdrop-blur-sm",
+                "max-w-[80%] px-5 py-3 rounded-2xl text-lg leading-snug shadow-sm",
                 isUser
-                  ? "bg-kyrie-blue/80 text-white rounded-br-md"
-                  : "bg-white/10 text-kyrie-blueLight rounded-bl-md border border-white/10",
+                  ? "bg-kyrie-blue text-white rounded-br-md"
+                  : "bg-kyrie-blueLight text-kyrie-ink rounded-bl-md border border-kyrie-blue/10",
               ].join(" ")}
             >
               {e.text}
