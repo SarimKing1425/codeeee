@@ -10,7 +10,9 @@ type Props = {
 };
 
 export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
-  const [hasImage, setHasImage] = useState(true);
+  const sources = ["/avatar.png", "/avatar.jpg", "/avatar.webp"];
+  const [srcIndex, setSrcIndex] = useState(0);
+  const hasImage = srcIndex < sources.length;
 
   const intensity = Math.min(1, volumeLevel * 1.6);
   const talking = isSpeaking && state === "active";
@@ -41,10 +43,10 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
         {hasImage ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src="/avatar.png"
+            src={sources[srcIndex]}
             alt="Kyrie"
             className="h-full w-full object-contain"
-            onError={() => setHasImage(false)}
+            onError={() => setSrcIndex((i) => i + 1)}
           />
         ) : (
           <PlaceholderAvatar speaking={talking} />
