@@ -1,44 +1,63 @@
 {
-  "name": "Scenario 1 - New Lead Trigger (Step 1 VAPI Call)",
+  "name": "BMC - Scenario 1 - New Lead Trigger (Step 1 Call)",
   "flow": [
     {
       "id": 1,
       "module": "google-sheets:searchRows",
       "version": 4,
-      "parameters": {
-        "__IMTCONN__": null
-      },
+      "parameters": { "__IMTCONN__": null },
       "mapper": {
         "mode": "select",
-        "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
-        "sheetId": "Leads",
+        "spreadsheetId": "1dl-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+        "sheetId": "Lead Master",
         "includesHeaders": true,
+        "from": "A3",
         "filter": [
-          [
-            {
-              "a": "Status",
-              "o": "text:equal",
-              "b": "New"
-            }
-          ]
+          [ { "a": "G", "o": "text:equal", "b": "New" } ]
         ],
         "valueRenderOption": "FORMATTED_VALUE",
         "dateTimeRenderOption": "FORMATTED_STRING"
       },
-      "metadata": {
-        "designer": { "x": 0, "y": 0 },
-        "restore": {},
-        "expect": []
-      }
+      "metadata": { "designer": { "x": 0, "y": 0 } }
     },
     {
       "id": 2,
+      "module": "builtin:BasicFilter",
+      "version": 1,
+      "filter": {
+        "name": "Within UAE calling window (Tue-Fri, 10:30-12:30 or 15:00-17:30)",
+        "conditions": [
+          [
+            { "a": "{{formatDate(now; \"d\"; \"Asia/Dubai\")}}", "o": "text:equal", "b": "2", "or": true },
+            { "a": "{{formatDate(now; \"d\"; \"Asia/Dubai\")}}", "o": "text:equal", "b": "3", "or": true },
+            { "a": "{{formatDate(now; \"d\"; \"Asia/Dubai\")}}", "o": "text:equal", "b": "4", "or": true },
+            { "a": "{{formatDate(now; \"d\"; \"Asia/Dubai\")}}", "o": "text:equal", "b": "5", "or": true }
+          ],
+          [
+            { "a": "{{formatDate(now; \"HH:mm\"; \"Asia/Dubai\")}}", "o": "text:greaterorequal", "b": "10:30" },
+            { "a": "{{formatDate(now; \"HH:mm\"; \"Asia/Dubai\")}}", "o": "text:lessorequal", "b": "12:30" }
+          ]
+        ],
+        "alternativeConditions": [
+          [
+            { "a": "{{formatDate(now; \"d\"; \"Asia/Dubai\")}}", "o": "text:equal", "b": "2", "or": true },
+            { "a": "{{formatDate(now; \"d\"; \"Asia/Dubai\")}}", "o": "text:equal", "b": "3", "or": true },
+            { "a": "{{formatDate(now; \"d\"; \"Asia/Dubai\")}}", "o": "text:equal", "b": "4", "or": true },
+            { "a": "{{formatDate(now; \"d\"; \"Asia/Dubai\")}}", "o": "text:equal", "b": "5", "or": true }
+          ],
+          [
+            { "a": "{{formatDate(now; \"HH:mm\"; \"Asia/Dubai\")}}", "o": "text:greaterorequal", "b": "15:00" },
+            { "a": "{{formatDate(now; \"HH:mm\"; \"Asia/Dubai\")}}", "o": "text:lessorequal", "b": "17:30" }
+          ]
+        ]
+      },
+      "metadata": { "designer": { "x": 300, "y": 0 } }
+    },
+    {
+      "id": 3,
       "module": "http:ActionSendData",
       "version": 3,
-      "parameters": {
-        "handleErrors": true,
-        "useNewZLibDeCompress": true
-      },
+      "parameters": { "handleErrors": true },
       "mapper": {
         "url": "https://api.vapi.ai/call",
         "method": "POST",
@@ -46,56 +65,39 @@
           { "name": "Authorization", "value": "Bearer REPLACE_WITH_VAPI_API_KEY" },
           { "name": "Content-Type", "value": "application/json" }
         ],
-        "qs": [],
         "bodyType": "raw",
         "contentType": "application/json",
         "parseResponse": true,
-        "authUser": "",
-        "authPass": "",
-        "timeout": "",
-        "shareCookies": false,
-        "ca": "",
-        "rejectUnauthorized": true,
-        "followRedirect": true,
-        "useQuerystring": false,
-        "gzip": true,
-        "useMtls": false,
-        "followAllRedirects": false,
-        "data": "{\n  \"assistantId\": \"REPLACE_WITH_VAPI_STEP1_ASSISTANT_ID\",\n  \"phoneNumberId\": \"REPLACE_WITH_VAPI_PHONE_NUMBER_ID\",\n  \"customer\": {\n    \"number\": \"{{1.`Phone`}}\",\n    \"name\": \"{{1.`Name`}}\"\n  },\n  \"metadata\": {\n    \"sheetRowNumber\": \"{{1.__ROW_NUMBER__}}\",\n    \"leadEmail\": \"{{1.`Email`}}\",\n    \"step\": \"1\"\n  }\n}"
+        "data": "{\n  \"assistantId\": \"5950913e-bc1b-4d6a-a51c-5988fd899a9b\",\n  \"phoneNumberId\": \"REPLACE_WITH_VAPI_PHONE_NUMBER_ID\",\n  \"customer\": {\n    \"number\": \"+{{replace(1.`C`; \"+\"; \"\")}}\",\n    \"name\": \"{{1.`B`}}\"\n  },\n  \"assistantOverrides\": {\n    \"variableValues\": {\n      \"name\": \"{{1.`B`}}\",\n      \"company\": \"{{1.`D`}}\",\n      \"partner_name\": \"{{1.`E`}}\"\n    }\n  },\n  \"metadata\": {\n    \"sheetRowNumber\": \"{{1.__ROW_NUMBER__}}\",\n    \"leadEmail\": \"{{1.`F`}}\",\n    \"step\": \"1\"\n  }\n}"
       },
-      "metadata": {
-        "designer": { "x": 300, "y": 0 },
-        "restore": {},
-        "expect": []
-      }
+      "metadata": { "designer": { "x": 600, "y": 0 } }
     },
     {
-      "id": 3,
+      "id": 4,
       "module": "google-sheets:updateRow",
       "version": 4,
-      "parameters": {
-        "__IMTCONN__": null
-      },
+      "parameters": { "__IMTCONN__": null },
       "mapper": {
         "mode": "select",
-        "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
-        "sheetId": "Leads",
+        "spreadsheetId": "1dl-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+        "sheetId": "Lead Master",
         "includesHeaders": true,
         "rowNumber": "{{1.__ROW_NUMBER__}}",
         "values": {
-          "Status": "Attempting",
-          "Attempt Count": "1",
-          "Last Attempt": "{{formatDate(now; \"YYYY-MM-DDTHH:mm:ssZ\")}}",
-          "VAPI Call ID": "{{2.data.id}}"
+          "0": "",
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "6": "Attempting",
+          "7": "1",
+          "8": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"Asia/Dubai\")}}",
+          "9": "{{if(parseNumber(formatDate(now; \"HH\"; \"Asia/Dubai\")) < 13; \"Morning\"; \"Afternoon\")}}"
         },
-        "valueInputOption": "USER_ENTERED",
-        "insertDataOption": "INSERT_ROWS"
+        "valueInputOption": "USER_ENTERED"
       },
-      "metadata": {
-        "designer": { "x": 600, "y": 0 },
-        "restore": {},
-        "expect": []
-      }
+      "metadata": { "designer": { "x": 900, "y": 0 } }
     }
   ],
   "metadata": {
@@ -116,8 +118,5 @@
     "zone": "eu1.make.com",
     "notes": []
   },
-  "schedule": {
-    "type": "interval",
-    "interval": 15
-  }
+  "schedule": { "type": "interval", "interval": 15 }
 }
