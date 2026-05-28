@@ -1,0 +1,272 @@
+{
+  "name": "Scenario 2 - Step 1 Call Outcome Processor",
+  "flow": [
+    {
+      "id": 1,
+      "module": "gateway:CustomWebHook",
+      "version": 1,
+      "parameters": {
+        "hook": null,
+        "maxResults": 1
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": { "x": 0, "y": 0 },
+        "restore": {
+          "parameters": {
+            "hook": { "label": "VAPI Step 1 Webhook" }
+          }
+        },
+        "expect": [
+          {
+            "name": "hook",
+            "type": "hook:gateway-webhook",
+            "label": "Webhook",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "module": "json:ParseJSON",
+      "version": 1,
+      "parameters": { "type": "" },
+      "mapper": {
+        "json": "{{1.message.analysis.structuredData}}"
+      },
+      "metadata": {
+        "designer": { "x": 300, "y": 0 }
+      }
+    },
+    {
+      "id": 3,
+      "module": "google-sheets:searchRows",
+      "version": 4,
+      "parameters": { "__IMTCONN__": null },
+      "mapper": {
+        "mode": "select",
+        "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+        "sheetId": "Leads",
+        "includesHeaders": true,
+        "filter": [
+          [
+            { "a": "VAPI Call ID", "o": "text:equal", "b": "{{1.message.call.id}}" }
+          ]
+        ],
+        "valueRenderOption": "FORMATTED_VALUE",
+        "dateTimeRenderOption": "FORMATTED_STRING"
+      },
+      "metadata": { "designer": { "x": 600, "y": 0 } }
+    },
+    {
+      "id": 4,
+      "module": "builtin:BasicRouter",
+      "version": 1,
+      "mapper": null,
+      "metadata": { "designer": { "x": 900, "y": 0 } },
+      "routes": [
+        {
+          "flow": [
+            {
+              "id": 5,
+              "module": "google-sheets:updateRow",
+              "version": 4,
+              "parameters": { "__IMTCONN__": null },
+              "filter": {
+                "name": "Not Interested",
+                "conditions": [
+                  [
+                    { "a": "{{2.outcome}}", "o": "text:equal", "b": "Not Interested" }
+                  ]
+                ]
+              },
+              "mapper": {
+                "mode": "select",
+                "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+                "sheetId": "Leads",
+                "includesHeaders": true,
+                "rowNumber": "{{3.__ROW_NUMBER__}}",
+                "values": {
+                  "Status": "Dead",
+                  "Disposition": "Not Interested",
+                  "Last Attempt": "{{formatDate(now; \"YYYY-MM-DDTHH:mm:ssZ\")}}"
+                },
+                "valueInputOption": "USER_ENTERED"
+              },
+              "metadata": { "designer": { "x": 1200, "y": -300 } }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 6,
+              "module": "google-sheets:updateRow",
+              "version": 4,
+              "parameters": { "__IMTCONN__": null },
+              "filter": {
+                "name": "Scheduled",
+                "conditions": [
+                  [
+                    { "a": "{{2.outcome}}", "o": "text:equal", "b": "Scheduled" }
+                  ]
+                ]
+              },
+              "mapper": {
+                "mode": "select",
+                "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+                "sheetId": "Leads",
+                "includesHeaders": true,
+                "rowNumber": "{{3.__ROW_NUMBER__}}",
+                "values": {
+                  "Status": "Scheduled",
+                  "Preferred Call Time": "{{2.preferredCallTime}}",
+                  "Preferred DateTime ISO": "{{2.preferredDateTimeISO}}",
+                  "Last Attempt": "{{formatDate(now; \"YYYY-MM-DDTHH:mm:ssZ\")}}"
+                },
+                "valueInputOption": "USER_ENTERED"
+              },
+              "metadata": { "designer": { "x": 1200, "y": -100 } }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 7,
+              "module": "google-sheets:updateRow",
+              "version": 4,
+              "parameters": { "__IMTCONN__": null },
+              "filter": {
+                "name": "No Answer / Busy - Retry",
+                "conditions": [
+                  [
+                    { "a": "{{2.outcome}}", "o": "text:equal", "b": "No Answer", "or": true },
+                    { "a": "{{2.outcome}}", "o": "text:equal", "b": "Busy", "or": true }
+                  ],
+                  [
+                    { "a": "{{parseNumber(3.`Attempt Count`)}}", "o": "number:less", "b": "3" }
+                  ]
+                ]
+              },
+              "mapper": {
+                "mode": "select",
+                "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+                "sheetId": "Leads",
+                "includesHeaders": true,
+                "rowNumber": "{{3.__ROW_NUMBER__}}",
+                "values": {
+                  "Attempt Count": "{{parseNumber(3.`Attempt Count`) + 1}}",
+                  "Status": "Attempting",
+                  "Last Attempt": "{{formatDate(now; \"YYYY-MM-DDTHH:mm:ssZ\")}}"
+                },
+                "valueInputOption": "USER_ENTERED"
+              },
+              "metadata": { "designer": { "x": 1200, "y": 100 } }
+            },
+            {
+              "id": 8,
+              "module": "util:Sleep",
+              "version": 1,
+              "parameters": {},
+              "mapper": { "duration": "3600" },
+              "metadata": { "designer": { "x": 1500, "y": 100 } }
+            },
+            {
+              "id": 9,
+              "module": "http:ActionSendData",
+              "version": 3,
+              "parameters": { "handleErrors": true },
+              "mapper": {
+                "url": "https://api.vapi.ai/call",
+                "method": "POST",
+                "headers": [
+                  { "name": "Authorization", "value": "Bearer REPLACE_WITH_VAPI_API_KEY" },
+                  { "name": "Content-Type", "value": "application/json" }
+                ],
+                "bodyType": "raw",
+                "contentType": "application/json",
+                "parseResponse": true,
+                "data": "{\n  \"assistantId\": \"REPLACE_WITH_VAPI_STEP1_ASSISTANT_ID\",\n  \"phoneNumberId\": \"REPLACE_WITH_VAPI_PHONE_NUMBER_ID\",\n  \"customer\": {\n    \"number\": \"{{3.`Phone`}}\",\n    \"name\": \"{{3.`Name`}}\"\n  },\n  \"metadata\": {\n    \"sheetRowNumber\": \"{{3.__ROW_NUMBER__}}\",\n    \"step\": \"1-retry\"\n  }\n}"
+              },
+              "metadata": { "designer": { "x": 1800, "y": 100 } }
+            },
+            {
+              "id": 10,
+              "module": "google-sheets:updateRow",
+              "version": 4,
+              "parameters": { "__IMTCONN__": null },
+              "mapper": {
+                "mode": "select",
+                "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+                "sheetId": "Leads",
+                "includesHeaders": true,
+                "rowNumber": "{{3.__ROW_NUMBER__}}",
+                "values": {
+                  "VAPI Call ID": "{{9.data.id}}"
+                },
+                "valueInputOption": "USER_ENTERED"
+              },
+              "metadata": { "designer": { "x": 2100, "y": 100 } }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 11,
+              "module": "google-sheets:updateRow",
+              "version": 4,
+              "parameters": { "__IMTCONN__": null },
+              "filter": {
+                "name": "No Answer / Busy - Final (Dead)",
+                "conditions": [
+                  [
+                    { "a": "{{2.outcome}}", "o": "text:equal", "b": "No Answer", "or": true },
+                    { "a": "{{2.outcome}}", "o": "text:equal", "b": "Busy", "or": true }
+                  ],
+                  [
+                    { "a": "{{parseNumber(3.`Attempt Count`)}}", "o": "number:greaterorequal", "b": "3" }
+                  ]
+                ]
+              },
+              "mapper": {
+                "mode": "select",
+                "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+                "sheetId": "Leads",
+                "includesHeaders": true,
+                "rowNumber": "{{3.__ROW_NUMBER__}}",
+                "values": {
+                  "Status": "Dead",
+                  "Disposition": "Unreachable after 3 attempts",
+                  "Last Attempt": "{{formatDate(now; \"YYYY-MM-DDTHH:mm:ssZ\")}}"
+                },
+                "valueInputOption": "USER_ENTERED"
+              },
+              "metadata": { "designer": { "x": 1200, "y": 300 } }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "instant": true,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false,
+      "freshVariables": false
+    },
+    "designer": { "orphans": [] },
+    "zone": "eu1.make.com",
+    "notes": []
+  }
+}

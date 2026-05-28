@@ -1,0 +1,109 @@
+{
+  "name": "Scenario 3 - Step 2 Scheduler & Booking",
+  "flow": [
+    {
+      "id": 1,
+      "module": "google-sheets:searchRows",
+      "version": 4,
+      "parameters": { "__IMTCONN__": null },
+      "mapper": {
+        "mode": "select",
+        "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+        "sheetId": "Leads",
+        "includesHeaders": true,
+        "filter": [
+          [
+            { "a": "Status", "o": "text:equal", "b": "Scheduled" }
+          ]
+        ],
+        "valueRenderOption": "FORMATTED_VALUE",
+        "dateTimeRenderOption": "FORMATTED_STRING"
+      },
+      "metadata": { "designer": { "x": 0, "y": 0 } }
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicFilter",
+      "version": 1,
+      "filter": {
+        "name": "Due within next 20 minutes",
+        "conditions": [
+          [
+            {
+              "a": "{{parseDate(1.`Preferred DateTime ISO`; \"YYYY-MM-DDTHH:mm:ssZ\")}}",
+              "o": "date:lessorequal",
+              "b": "{{addMinutes(now; 20)}}"
+            },
+            {
+              "a": "{{parseDate(1.`Preferred DateTime ISO`; \"YYYY-MM-DDTHH:mm:ssZ\")}}",
+              "o": "date:greaterorequal",
+              "b": "{{now}}"
+            }
+          ]
+        ]
+      },
+      "metadata": { "designer": { "x": 300, "y": 0 } }
+    },
+    {
+      "id": 3,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": { "handleErrors": true },
+      "mapper": {
+        "url": "https://api.vapi.ai/call",
+        "method": "POST",
+        "headers": [
+          { "name": "Authorization", "value": "Bearer REPLACE_WITH_VAPI_API_KEY" },
+          { "name": "Content-Type", "value": "application/json" }
+        ],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "parseResponse": true,
+        "data": "{\n  \"assistantId\": \"REPLACE_WITH_VAPI_STEP2_ASSISTANT_ID\",\n  \"phoneNumberId\": \"REPLACE_WITH_VAPI_PHONE_NUMBER_ID\",\n  \"customer\": {\n    \"number\": \"{{1.`Phone`}}\",\n    \"name\": \"{{1.`Name`}}\"\n  },\n  \"metadata\": {\n    \"sheetRowNumber\": \"{{1.__ROW_NUMBER__}}\",\n    \"leadEmail\": \"{{1.`Email`}}\",\n    \"step\": \"2\"\n  }\n}"
+      },
+      "metadata": { "designer": { "x": 600, "y": 0 } }
+    },
+    {
+      "id": 4,
+      "module": "google-sheets:updateRow",
+      "version": 4,
+      "parameters": { "__IMTCONN__": null },
+      "mapper": {
+        "mode": "select",
+        "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+        "sheetId": "Leads",
+        "includesHeaders": true,
+        "rowNumber": "{{1.__ROW_NUMBER__}}",
+        "values": {
+          "Status": "Step2 Attempting",
+          "VAPI Call ID": "{{3.data.id}}",
+          "Last Attempt": "{{formatDate(now; \"YYYY-MM-DDTHH:mm:ssZ\")}}"
+        },
+        "valueInputOption": "USER_ENTERED"
+      },
+      "metadata": { "designer": { "x": 900, "y": 0 } }
+    }
+  ],
+  "metadata": {
+    "instant": false,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false,
+      "freshVariables": false
+    },
+    "designer": { "orphans": [] },
+    "zone": "eu1.make.com",
+    "notes": []
+  },
+  "schedule": {
+    "type": "interval",
+    "interval": 15
+  }
+}

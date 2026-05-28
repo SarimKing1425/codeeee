@@ -1,0 +1,205 @@
+{
+  "name": "Scenario 3b - Step 2 Webhook (Booking / Busy / Not Interested)",
+  "flow": [
+    {
+      "id": 1,
+      "module": "gateway:CustomWebHook",
+      "version": 1,
+      "parameters": { "hook": null, "maxResults": 1 },
+      "mapper": {},
+      "metadata": {
+        "designer": { "x": 0, "y": 0 },
+        "restore": { "parameters": { "hook": { "label": "VAPI Step 2 Webhook" } } },
+        "expect": [
+          { "name": "hook", "type": "hook:gateway-webhook", "label": "Webhook", "required": true }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "module": "json:ParseJSON",
+      "version": 1,
+      "parameters": { "type": "" },
+      "mapper": { "json": "{{1.message.analysis.structuredData}}" },
+      "metadata": { "designer": { "x": 300, "y": 0 } }
+    },
+    {
+      "id": 3,
+      "module": "google-sheets:searchRows",
+      "version": 4,
+      "parameters": { "__IMTCONN__": null },
+      "mapper": {
+        "mode": "select",
+        "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+        "sheetId": "Leads",
+        "includesHeaders": true,
+        "filter": [
+          [ { "a": "VAPI Call ID", "o": "text:equal", "b": "{{1.message.call.id}}" } ]
+        ],
+        "valueRenderOption": "FORMATTED_VALUE",
+        "dateTimeRenderOption": "FORMATTED_STRING"
+      },
+      "metadata": { "designer": { "x": 600, "y": 0 } }
+    },
+    {
+      "id": 4,
+      "module": "builtin:BasicRouter",
+      "version": 1,
+      "mapper": null,
+      "metadata": { "designer": { "x": 900, "y": 0 } },
+      "routes": [
+        {
+          "flow": [
+            {
+              "id": 5,
+              "module": "google-calendar:createAnEvent",
+              "version": 5,
+              "parameters": { "__IMTCONN__": null },
+              "filter": {
+                "name": "Booked",
+                "conditions": [
+                  [ { "a": "{{2.outcome}}", "o": "text:equal", "b": "Booked" } ]
+                ]
+              },
+              "mapper": {
+                "select": "detail",
+                "duration": false,
+                "calendar": "primary",
+                "summary": "Discovery Call - {{3.`Name`}}",
+                "description": "Lead: {{3.`Name`}}\nEmail: {{3.`Email`}}\nPhone: {{3.`Phone`}}\nPain Points: {{2.painPoints}}\nLead Score: {{2.leadScore}}",
+                "start": "{{2.meetingDateTime}}",
+                "end": "{{addMinutes(parseDate(2.meetingDateTime; \"YYYY-MM-DDTHH:mm:ssZ\"); 30)}}",
+                "allDay": false,
+                "attendees": [ { "email": "{{3.`Email`}}" } ],
+                "sendUpdates": "all",
+                "guestPermissions": { "guestsCanModify": false, "guestsCanInviteOthers": true, "guestsCanSeeOtherGuests": true },
+                "visibility": "default",
+                "transparency": "opaque",
+                "conferenceDate": true
+              },
+              "metadata": { "designer": { "x": 1200, "y": -300 } }
+            },
+            {
+              "id": 6,
+              "module": "google-email:ActionSendEmail",
+              "version": 2,
+              "parameters": { "__IMTCONN__": null },
+              "mapper": {
+                "to": [ "{{3.`Email`}}" ],
+                "subject": "Your meeting is confirmed - {{formatDate(parseDate(2.meetingDateTime; \"YYYY-MM-DDTHH:mm:ssZ\"); \"dddd, MMM D [at] h:mm A\")}}",
+                "contentType": "html",
+                "content": "<p>Hi {{3.`Name`}},</p><p>Your discovery call is confirmed for <strong>{{formatDate(parseDate(2.meetingDateTime; \"YYYY-MM-DDTHH:mm:ssZ\"); \"dddd, MMMM D, YYYY [at] h:mm A z\")}}</strong>.</p><p>A calendar invite has been sent to this email address.</p><p>Talk soon.</p>",
+                "attachments": [],
+                "cc": [],
+                "bcc": [],
+                "replyTo": ""
+              },
+              "metadata": { "designer": { "x": 1500, "y": -300 } }
+            },
+            {
+              "id": 7,
+              "module": "google-sheets:updateRow",
+              "version": 4,
+              "parameters": { "__IMTCONN__": null },
+              "mapper": {
+                "mode": "select",
+                "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+                "sheetId": "Leads",
+                "includesHeaders": true,
+                "rowNumber": "{{3.__ROW_NUMBER__}}",
+                "values": {
+                  "Status": "Booked",
+                  "Pain Points": "{{2.painPoints}}",
+                  "Lead Score": "{{2.leadScore}}",
+                  "Meeting DateTime": "{{2.meetingDateTime}}",
+                  "Calendar Event ID": "{{5.id}}",
+                  "Email Sent": "Yes"
+                },
+                "valueInputOption": "USER_ENTERED"
+              },
+              "metadata": { "designer": { "x": 1800, "y": -300 } }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 8,
+              "module": "google-sheets:updateRow",
+              "version": 4,
+              "parameters": { "__IMTCONN__": null },
+              "filter": {
+                "name": "Busy - Human Review",
+                "conditions": [
+                  [ { "a": "{{2.outcome}}", "o": "text:equal", "b": "Busy" } ]
+                ]
+              },
+              "mapper": {
+                "mode": "select",
+                "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+                "sheetId": "Leads",
+                "includesHeaders": true,
+                "rowNumber": "{{3.__ROW_NUMBER__}}",
+                "values": {
+                  "Status": "Needs Human Review",
+                  "Disposition": "Busy on Step 2 - flag for human",
+                  "Last Attempt": "{{formatDate(now; \"YYYY-MM-DDTHH:mm:ssZ\")}}"
+                },
+                "valueInputOption": "USER_ENTERED"
+              },
+              "metadata": { "designer": { "x": 1200, "y": 0 } }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 9,
+              "module": "google-sheets:updateRow",
+              "version": 4,
+              "parameters": { "__IMTCONN__": null },
+              "filter": {
+                "name": "Not Interested",
+                "conditions": [
+                  [ { "a": "{{2.outcome}}", "o": "text:equal", "b": "Not Interested" } ]
+                ]
+              },
+              "mapper": {
+                "mode": "select",
+                "spreadsheetId": "REPLACE_WITH_SPREADSHEET_ID",
+                "sheetId": "Leads",
+                "includesHeaders": true,
+                "rowNumber": "{{3.__ROW_NUMBER__}}",
+                "values": {
+                  "Status": "Dead",
+                  "Disposition": "Not Interested on Step 2",
+                  "Last Attempt": "{{formatDate(now; \"YYYY-MM-DDTHH:mm:ssZ\")}}"
+                },
+                "valueInputOption": "USER_ENTERED"
+              },
+              "metadata": { "designer": { "x": 1200, "y": 300 } }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "instant": true,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false,
+      "freshVariables": false
+    },
+    "designer": { "orphans": [] },
+    "zone": "eu1.make.com",
+    "notes": []
+  }
+}
