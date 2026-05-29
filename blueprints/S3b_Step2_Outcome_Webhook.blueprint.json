@@ -1,0 +1,394 @@
+{
+    "name": "BMC — S3b Step 2 Outcome (Booking / Busy / Not Interested)",
+    "flow": [
+        {
+            "id": 1,
+            "module": "gateway:CustomWebHook",
+            "version": 1,
+            "parameters": {
+                "hook": 0,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "label": "VAPI Step 2 Webhook"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hook",
+                        "type": "hook:gateway-webhook",
+                        "label": "Webhook",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of results"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                }
+            },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 3,
+                            "module": "google-calendar:createAnEvent",
+                            "version": 5,
+                            "parameters": {
+                                "__IMTCONN__": 7795130
+                            },
+                            "filter": {
+                                "name": "Booked",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.message.type}}",
+                                            "b": "end-of-call-report",
+                                            "o": "text:equal"
+                                        },
+                                        {
+                                            "a": "{{1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.outcome}}",
+                                            "b": "Booked",
+                                            "o": "text:equal"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "select": "detail",
+                                "calendar": "primary",
+                                "summary": "BMC Discovery Call — {{1.message.call.customer.name}}",
+                                "description": "Lead: {{1.message.call.customer.name}}\nPhone: {{1.message.call.customer.number}}\nEmail: {{1.message.call.metadata.leadEmail}}\n\nPain Point 1: {{1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.pain_point_1}}\nPain Point 2: {{1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.pain_point_2}}\nLead Score: {{1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.lead_score}}\n\nBooked automatically by Sapna (BMC Step 2 agent).",
+                                "start": "{{1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.meeting_datetime}}",
+                                "end": "{{formatDate(addMinutes(parseDate(1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.meeting_datetime; \"YYYY-MM-DDTHH:mm:ss\"); 30); \"YYYY-MM-DDTHH:mm:ss\")}}",
+                                "allDayEvent": false,
+                                "conferenceDate": true,
+                                "attendees": [
+                                    {
+                                        "email": "{{1.message.call.metadata.leadEmail}}"
+                                    }
+                                ],
+                                "sendUpdates": "all",
+                                "visibility": "default",
+                                "transparency": "opaque"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": -400
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "select": {
+                                            "label": "In Detail"
+                                        },
+                                        "calendar": {
+                                            "label": "Primary calendar"
+                                        }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "google"
+                                            },
+                                            "label": "My Google connection (tayyeb@nexus54.com)"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "module": "google-sheets:updateRow",
+                            "version": 2,
+                            "parameters": {
+                                "__IMTCONN__": 7795130
+                            },
+                            "mapper": {
+                                "from": "drive",
+                                "mode": "select",
+                                "values": {
+                                    "6": "Booked",
+                                    "8": "{{formatDate(now; \"YYYY-MM-DD HH:mm\")}}",
+                                    "13": "{{1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.pain_point_1}} {{1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.pain_point_2}}",
+                                    "14": "{{1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.lead_score}}",
+                                    "15": "{{1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.meeting_datetime}}",
+                                    "16": "{{3.id}}"
+                                },
+                                "sheetId": "Lead Master",
+                                "rowNumber": "{{1.message.call.metadata.sheetRowNumber}}",
+                                "spreadsheetId": "/1dl-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                                "includesHeaders": true,
+                                "useColumnHeaders": false,
+                                "valueInputOption": "USER_ENTERED"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 900,
+                                    "y": -400
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "from": {
+                                            "label": "My Drive"
+                                        },
+                                        "mode": {
+                                            "label": "Search by path"
+                                        },
+                                        "sheetId": {
+                                            "label": "Lead Master"
+                                        },
+                                        "spreadsheetId": {
+                                            "path": [
+                                                "BMC_Lead_Maste -  260530"
+                                            ]
+                                        },
+                                        "includesHeaders": {
+                                            "label": "Yes"
+                                        },
+                                        "useColumnHeaders": {
+                                            "label": "No"
+                                        },
+                                        "valueInputOption": {
+                                            "mode": "chose",
+                                            "label": "User entered"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "module": "google-email:sendAnEmail",
+                            "version": 4,
+                            "parameters": {
+                                "__IMTCONN__": 7795130
+                            },
+                            "filter": {
+                                "name": "Only if lead email is present",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.message.call.metadata.leadEmail}}",
+                                            "o": "text:notempty"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "to": [
+                                    "{{1.message.call.metadata.leadEmail}}"
+                                ],
+                                "subject": "Your BMC discovery call is confirmed — {{formatDate(parseDate(1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.meeting_datetime; \"YYYY-MM-DDTHH:mm:ss\"); \"dddd, MMM D [at] h:mm A\")}}",
+                                "contentType": "html",
+                                "content": "<p>Hi {{1.message.call.customer.name}},</p><p>Your discovery call with Rafique Hakim is confirmed for <strong>{{formatDate(parseDate(1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.meeting_datetime; \"YYYY-MM-DDTHH:mm:ss\"); \"dddd, MMMM D, YYYY [at] h:mm A\")}} (UAE time)</strong>.</p><p>A calendar invitation with the Google Meet link has been sent to this email address.</p><p>Looking forward to speaking with you.</p><p>BMC Team</p>",
+                                "attachments": [],
+                                "cc": [],
+                                "bcc": [],
+                                "replyTo": ""
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1200,
+                                    "y": -400
+                                },
+                                "restore": {
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "google"
+                                            },
+                                            "label": "My Google connection (tayyeb@nexus54.com)"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "module": "google-sheets:updateRow",
+                            "version": 2,
+                            "parameters": {
+                                "__IMTCONN__": 7795130
+                            },
+                            "filter": {
+                                "name": "Only mark Yes if email actually sent",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.message.call.metadata.leadEmail}}",
+                                            "o": "text:notempty"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "from": "drive",
+                                "mode": "select",
+                                "values": {
+                                    "17": "Yes"
+                                },
+                                "sheetId": "Lead Master",
+                                "rowNumber": "{{1.message.call.metadata.sheetRowNumber}}",
+                                "spreadsheetId": "/1dl-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                                "includesHeaders": true,
+                                "useColumnHeaders": false,
+                                "valueInputOption": "USER_ENTERED"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1500,
+                                    "y": -400
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 7,
+                            "module": "google-sheets:updateRow",
+                            "version": 2,
+                            "parameters": {
+                                "__IMTCONN__": 7795130
+                            },
+                            "filter": {
+                                "name": "Busy — flag for human review",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.message.type}}",
+                                            "b": "end-of-call-report",
+                                            "o": "text:equal"
+                                        },
+                                        {
+                                            "a": "{{1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.outcome}}",
+                                            "b": "Busy",
+                                            "o": "text:equal"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "from": "drive",
+                                "mode": "select",
+                                "values": {
+                                    "6": "Scheduled",
+                                    "8": "{{formatDate(now; \"YYYY-MM-DD HH:mm\")}}",
+                                    "18": "Step 2 — Busy. Flagged for human follow up."
+                                },
+                                "sheetId": "Lead Master",
+                                "rowNumber": "{{1.message.call.metadata.sheetRowNumber}}",
+                                "spreadsheetId": "/1dl-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                                "includesHeaders": true,
+                                "useColumnHeaders": false,
+                                "valueInputOption": "USER_ENTERED"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 8,
+                            "module": "google-sheets:updateRow",
+                            "version": 2,
+                            "parameters": {
+                                "__IMTCONN__": 7795130
+                            },
+                            "filter": {
+                                "name": "Not Interested",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.message.type}}",
+                                            "b": "end-of-call-report",
+                                            "o": "text:equal"
+                                        },
+                                        {
+                                            "a": "{{1.message.artifact.structuredOutputs.`REPLACE_WITH_STEP2_UUID`.result.outcome}}",
+                                            "b": "Not Interested",
+                                            "o": "text:equal"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "from": "drive",
+                                "mode": "select",
+                                "values": {
+                                    "6": "Dead",
+                                    "8": "{{formatDate(now; \"YYYY-MM-DD HH:mm\")}}",
+                                    "18": "Step 2 — Not Interested."
+                                },
+                                "sheetId": "Lead Master",
+                                "rowNumber": "{{1.message.call.metadata.sheetRowNumber}}",
+                                "spreadsheetId": "/1dl-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                                "includesHeaders": true,
+                                "useColumnHeaders": false,
+                                "valueInputOption": "USER_ENTERED"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 400
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu1.make.com",
+        "notes": []
+    }
+}
