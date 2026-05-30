@@ -1,4 +1,5 @@
 {
+    "_comment": "Step 2 structured output UUID = 96bbb70a-3026-41ca-be70-b5369897e45e (attached to BMC - 2nd Call Discovery). Row correlation still uses call.metadata.sheetRowNumber, which S3a injects on every Step 2 call — works in production. For manual-test safety, swap to phone correlation like S2.",
     "name": "BMC — S3b Step 2 Outcome (Booking / Busy / Not Interested)",
     "flow": [
         {
@@ -43,7 +44,7 @@
                                 "conditions": [
                                     [
                                         { "a": "{{1.message.type}}", "b": "end-of-call-report", "o": "text:equal" },
-                                        { "a": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.outcome}}", "b": "Booked", "o": "text:equal" }
+                                        { "a": "{{1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.outcome}}", "b": "Booked", "o": "text:equal" }
                                     ]
                                 ]
                             },
@@ -51,9 +52,9 @@
                                 "select": "detail",
                                 "calendar": "primary",
                                 "summary": "BMC Discovery Call — {{1.message.call.customer.name}}",
-                                "description": "Lead: {{1.message.call.customer.name}}\nPhone: {{1.message.call.customer.number}}\nEmail: {{1.message.call.metadata.leadEmail}}\n\nPain Point 1: {{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.pain_point_1}}\nPain Point 2: {{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.pain_point_2}}\nLead Score: {{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.lead_score}}\n\nBooked automatically by Sapna (BMC Step 2 agent).",
-                                "start": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.meeting_datetime}}",
-                                "end": "{{formatDate(addMinutes(parseDate(1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.meeting_datetime; \"YYYY-MM-DDTHH:mm:ss\"); 30); \"YYYY-MM-DDTHH:mm:ss\")}}",
+                                "description": "Lead: {{1.message.call.customer.name}}\nPhone: {{1.message.call.customer.number}}\nEmail: {{1.message.call.metadata.leadEmail}}\n\nPain Point 1: {{1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.pain_point_1}}\nPain Point 2: {{1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.pain_point_2}}\nLead Score: {{1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.lead_score}}\n\nBooked automatically by Sapna (BMC Step 2 agent).",
+                                "start": "{{1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.meeting_datetime}}",
+                                "end": "{{formatDate(addMinutes(parseDate(1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.meeting_datetime; \"YYYY-MM-DDTHH:mm:ss\"); 30); \"YYYY-MM-DDTHH:mm:ss\")}}",
                                 "allDayEvent": false,
                                 "conferenceDate": true,
                                 "attendees": [
@@ -96,9 +97,9 @@
                                 "values": {
                                     "6": "Booked",
                                     "8": "{{formatDate(now; \"YYYY-MM-DD HH:mm\")}}",
-                                    "13": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.pain_point_1}} {{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.pain_point_2}}",
-                                    "14": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.lead_score}}",
-                                    "15": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.meeting_datetime}}",
+                                    "13": "{{1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.pain_point_1}} {{1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.pain_point_2}}",
+                                    "14": "{{1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.lead_score}}",
+                                    "15": "{{1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.meeting_datetime}}",
                                     "16": "{{3.id}}"
                                 }
                             },
@@ -139,9 +140,9 @@
                                 "to": ["{{1.message.call.metadata.leadEmail}}"],
                                 "cc": [],
                                 "bcc": [],
-                                "subject": "Your BMC discovery call is confirmed — {{formatDate(parseDate(1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.meeting_datetime; \"YYYY-MM-DDTHH:mm:ss\"); \"dddd, MMM D [at] h:mm A\")}}",
+                                "subject": "Your BMC discovery call is confirmed — {{formatDate(parseDate(1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.meeting_datetime; \"YYYY-MM-DDTHH:mm:ss\"); \"dddd, MMM D [at] h:mm A\")}}",
                                 "contentType": "html",
-                                "content": "<p>Hi {{1.message.call.customer.name}},</p><p>Your discovery call with Rafique Hakim is confirmed for <strong>{{formatDate(parseDate(1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.meeting_datetime; \"YYYY-MM-DDTHH:mm:ss\"); \"dddd, MMMM D, YYYY [at] h:mm A\")}} (UAE time)</strong>.</p><p>A calendar invitation with the Google Meet link has been sent to this email address.</p><p>Looking forward to speaking with you.</p><p>BMC Team</p>",
+                                "content": "<p>Hi {{1.message.call.customer.name}},</p><p>Your discovery call with Rafique Hakim is confirmed for <strong>{{formatDate(parseDate(1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.meeting_datetime; \"YYYY-MM-DDTHH:mm:ss\"); \"dddd, MMMM D, YYYY [at] h:mm A\")}} (UAE time)</strong>.</p><p>A calendar invitation with the Google Meet link has been sent to this email address.</p><p>Looking forward to speaking with you.</p><p>BMC Team</p>",
                                 "attachments": [],
                                 "replyTo": ""
                             },
@@ -214,7 +215,7 @@
                                 "conditions": [
                                     [
                                         { "a": "{{1.message.type}}", "b": "end-of-call-report", "o": "text:equal" },
-                                        { "a": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.outcome}}", "b": "Busy", "o": "text:equal" }
+                                        { "a": "{{1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.outcome}}", "b": "Busy", "o": "text:equal" }
                                     ]
                                 ]
                             },
@@ -268,7 +269,7 @@
                                 "conditions": [
                                     [
                                         { "a": "{{1.message.type}}", "b": "end-of-call-report", "o": "text:equal" },
-                                        { "a": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.outcome}}", "b": "Not Interested", "o": "text:equal" }
+                                        { "a": "{{1.message.artifact.structuredOutputs.`96bbb70a-3026-41ca-be70-b5369897e45e`.result.outcome}}", "b": "Not Interested", "o": "text:equal" }
                                     ]
                                 ]
                             },

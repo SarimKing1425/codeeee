@@ -1,0 +1,491 @@
+{
+    "name": "BMC — S2 Step 1 Outcome (phone correlation)",
+    "flow": [
+        {
+            "id": 1,
+            "module": "gateway:CustomWebHook",
+            "version": 1,
+            "parameters": {
+                "hook": 3129280,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": { "x": 0, "y": 0 },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "label": "VAPI Step 1 Webhook",
+                            "data": { "editable": "true" }
+                        }
+                    }
+                },
+                "parameters": [
+                    { "name": "hook", "type": "hook:gateway-webhook", "label": "Webhook", "required": true },
+                    { "name": "maxResults", "type": "number", "label": "Maximum number of results" }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "google-sheets:filterRows",
+            "version": 2,
+            "parameters": {
+                "__IMTCONN__": 7795130
+            },
+            "mapper": {
+                "from": "drive",
+                "limit": "1",
+                "filter": [
+                    [
+                        {
+                            "a": "C",
+                            "b": "{{replace(1.message.call.customer.number; \"+\"; \"\")}}",
+                            "o": "text:equal"
+                        }
+                    ]
+                ],
+                "sheetId": "Lead Master",
+                "sortOrder": "asc",
+                "spreadsheetId": "1dI-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                "tableFirstRow": "A1:CZ1",
+                "includesHeaders": true,
+                "valueRenderOption": "FORMATTED_VALUE",
+                "dateTimeRenderOption": "FORMATTED_STRING"
+            },
+            "metadata": {
+                "designer": { "x": 300, "y": 0 },
+                "restore": {
+                    "expect": {
+                        "from": { "label": "Select from My Drive" },
+                        "sheetId": { "mode": "chose", "label": "Lead Master" },
+                        "sortOrder": { "mode": "chose", "label": "Ascending" },
+                        "spreadsheetId": { "mode": "chose", "label": "BMC_Lead_Maste -  260530" },
+                        "tableFirstRow": { "label": "A-CZ" },
+                        "includesHeaders": { "mode": "chose", "label": "Yes" },
+                        "valueRenderOption": { "mode": "chose", "label": "Formatted value" },
+                        "dateTimeRenderOption": { "mode": "chose", "label": "Formatted string" }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": { "scoped": "true", "connection": "google" },
+                            "label": "My Google connection (tayyeb@nexus54.com)"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 3,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "mapper": null,
+            "metadata": { "designer": { "x": 600, "y": 0 } },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 10,
+                            "module": "google-sheets:updateRow",
+                            "version": 2,
+                            "parameters": { "__IMTCONN__": 7795130 },
+                            "filter": {
+                                "name": "Route A — Not Interested → Dead",
+                                "conditions": [
+                                    [
+                                        { "a": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.outcome}}", "o": "text:equal", "b": "Not Interested" }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "from": "drive",
+                                "mode": "select",
+                                "values": {
+                                    "6": "Dead",
+                                    "8": "{{formatDate(now; \"YYYY-MM-DD HH:mm\")}}"
+                                },
+                                "sheetId": "Lead Master",
+                                "rowNumber": "{{2.__ROW_NUMBER__}}",
+                                "spreadsheetId": "/1dI-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                                "includesHeaders": true,
+                                "useColumnHeaders": false,
+                                "valueInputOption": "USER_ENTERED"
+                            },
+                            "metadata": {
+                                "designer": { "x": 900, "y": -600 },
+                                "restore": {
+                                    "expect": {
+                                        "from": { "label": "My Drive" },
+                                        "mode": { "label": "Search by path" },
+                                        "sheetId": { "label": "Lead Master" },
+                                        "spreadsheetId": { "path": ["BMC_Lead_Maste -  260530"] },
+                                        "includesHeaders": { "label": "Yes" },
+                                        "useColumnHeaders": { "label": "No" },
+                                        "valueInputOption": { "mode": "chose", "label": "User entered" }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": { "scoped": "true", "connection": "google" },
+                                            "label": "My Google connection (tayyeb@nexus54.com)"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 20,
+                            "module": "google-sheets:updateRow",
+                            "version": 2,
+                            "parameters": { "__IMTCONN__": 7795130 },
+                            "filter": {
+                                "name": "Route B — Speak Now (immediate Step 2)",
+                                "conditions": [
+                                    [
+                                        { "a": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.speak_now}}", "o": "text:equal", "b": "true" }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "from": "drive",
+                                "mode": "select",
+                                "values": {
+                                    "6": "Speak Now",
+                                    "8": "{{formatDate(now; \"YYYY-MM-DD HH:mm\")}}",
+                                    "12": "Yes"
+                                },
+                                "sheetId": "Lead Master",
+                                "rowNumber": "{{2.__ROW_NUMBER__}}",
+                                "spreadsheetId": "/1dI-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                                "includesHeaders": true,
+                                "useColumnHeaders": false,
+                                "valueInputOption": "USER_ENTERED"
+                            },
+                            "metadata": {
+                                "designer": { "x": 900, "y": -300 },
+                                "restore": {
+                                    "expect": {
+                                        "from": { "label": "My Drive" },
+                                        "mode": { "label": "Search by path" },
+                                        "sheetId": { "label": "Lead Master" },
+                                        "spreadsheetId": { "path": ["BMC_Lead_Maste -  260530"] },
+                                        "includesHeaders": { "label": "Yes" },
+                                        "useColumnHeaders": { "label": "No" },
+                                        "valueInputOption": { "mode": "chose", "label": "User entered" }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": { "scoped": "true", "connection": "google" },
+                                            "label": "My Google connection (tayyeb@nexus54.com)"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": 21,
+                            "module": "http:ActionSendDataBasicAuth",
+                            "version": 3,
+                            "parameters": {
+                                "key": 172894,
+                                "handleErrors": false,
+                                "useNewZLibDeCompress": true
+                            },
+                            "mapper": {
+                                "ca": "",
+                                "qs": [],
+                                "url": "https://api.vapi.ai/call",
+                                "data": "{\r\n  \"assistantId\": \"af6ed5d3-741d-4b2d-b036-6868922df56e\",\r\n  \"phoneNumberId\": \"7e7afc50-0288-4e97-aef2-f781b72b452c\",\r\n  \"customer\": {\r\n    \"number\": \"+{{2.Mobile}}\",\r\n    \"name\": \"{{2.`Full Name`}}\"\r\n  },\r\n  \"assistantOverrides\": {\r\n    \"variableValues\": {\r\n      \"name\": \"{{2.`Full Name`}}\",\r\n      \"company\": \"{{2.Company}}\",\r\n      \"partner_name\": \"{{2.`Source Partner`}}\"\r\n    }\r\n  },\r\n  \"metadata\": {\r\n    \"sheetRowNumber\": \"{{2.__ROW_NUMBER__}}\",\r\n    \"leadEmail\": \"{{2.`Lead Email`}}\",\r\n    \"step\": \"2\"\r\n  }\r\n}",
+                                "gzip": true,
+                                "method": "post",
+                                "headers": [
+                                    { "name": "Authorization", "value": "Bearer 9fcc882e-d1c6-448b-b7ad-9fdf662bdeb4" },
+                                    { "name": "Content-Type", "value": "application/json" }
+                                ],
+                                "timeout": "",
+                                "useMtls": false,
+                                "bodyType": "raw",
+                                "contentType": "application/json",
+                                "serializeUrl": false,
+                                "shareCookies": false,
+                                "parseResponse": false,
+                                "followRedirect": true,
+                                "useQuerystring": false,
+                                "followAllRedirects": false,
+                                "rejectUnauthorized": true
+                            },
+                            "metadata": {
+                                "designer": { "x": 1200, "y": -300 },
+                                "restore": {
+                                    "expect": {
+                                        "qs": { "mode": "chose" },
+                                        "method": { "mode": "chose", "label": "POST" },
+                                        "headers": { "mode": "chose", "items": [null, null] },
+                                        "bodyType": { "label": "Raw" },
+                                        "contentType": { "label": "JSON (application/json)" }
+                                    },
+                                    "parameters": {
+                                        "key": { "label": "My HTTP Basic Auth key" }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 30,
+                            "module": "google-sheets:updateRow",
+                            "version": 2,
+                            "parameters": { "__IMTCONN__": 7795130 },
+                            "filter": {
+                                "name": "Route C — Scheduled",
+                                "conditions": [
+                                    [
+                                        { "a": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.outcome}}", "o": "text:equal", "b": "Scheduled" }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "from": "drive",
+                                "mode": "select",
+                                "values": {
+                                    "6": "Scheduled",
+                                    "8": "{{formatDate(now; \"YYYY-MM-DD HH:mm\")}}",
+                                    "10": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.preferred_time}}",
+                                    "11": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.preferred_datetime_iso}}"
+                                },
+                                "sheetId": "Lead Master",
+                                "rowNumber": "{{2.__ROW_NUMBER__}}",
+                                "spreadsheetId": "/1dI-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                                "includesHeaders": true,
+                                "useColumnHeaders": false,
+                                "valueInputOption": "USER_ENTERED"
+                            },
+                            "metadata": {
+                                "designer": { "x": 900, "y": 0 },
+                                "restore": {
+                                    "expect": {
+                                        "from": { "label": "My Drive" },
+                                        "mode": { "label": "Search by path" },
+                                        "sheetId": { "label": "Lead Master" },
+                                        "spreadsheetId": { "path": ["BMC_Lead_Maste -  260530"] },
+                                        "includesHeaders": { "label": "Yes" },
+                                        "useColumnHeaders": { "label": "No" },
+                                        "valueInputOption": { "mode": "chose", "label": "User entered" }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": { "scoped": "true", "connection": "google" },
+                                            "label": "My Google connection (tayyeb@nexus54.com)"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 40,
+                            "module": "google-sheets:updateRow",
+                            "version": 2,
+                            "parameters": { "__IMTCONN__": 7795130 },
+                            "filter": {
+                                "name": "Route D-retry — No Answer/Busy AND count < 3",
+                                "conditions": [
+                                    [
+                                        { "a": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.outcome}}", "o": "text:equal", "b": "No Answer" },
+                                        { "a": "{{parseNumber(2.`Attempt Count`)}}", "o": "number:less", "b": "3" }
+                                    ],
+                                    [
+                                        { "a": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.outcome}}", "o": "text:equal", "b": "Busy" },
+                                        { "a": "{{parseNumber(2.`Attempt Count`)}}", "o": "number:less", "b": "3" }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "from": "drive",
+                                "mode": "select",
+                                "values": {
+                                    "6": "Attempting",
+                                    "7": "{{parseNumber(2.`Attempt Count`) + 1}}",
+                                    "8": "{{formatDate(now; \"YYYY-MM-DD HH:mm\")}}"
+                                },
+                                "sheetId": "Lead Master",
+                                "rowNumber": "{{2.__ROW_NUMBER__}}",
+                                "spreadsheetId": "/1dI-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                                "includesHeaders": true,
+                                "useColumnHeaders": false,
+                                "valueInputOption": "USER_ENTERED"
+                            },
+                            "metadata": {
+                                "designer": { "x": 900, "y": 300 },
+                                "restore": {
+                                    "expect": {
+                                        "from": { "label": "My Drive" },
+                                        "mode": { "label": "Search by path" },
+                                        "sheetId": { "label": "Lead Master" },
+                                        "spreadsheetId": { "path": ["BMC_Lead_Maste -  260530"] },
+                                        "includesHeaders": { "label": "Yes" },
+                                        "useColumnHeaders": { "label": "No" },
+                                        "valueInputOption": { "mode": "chose", "label": "User entered" }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": { "scoped": "true", "connection": "google" },
+                                            "label": "My Google connection (tayyeb@nexus54.com)"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": 41,
+                            "module": "util:FunctionSleep",
+                            "version": 1,
+                            "parameters": {},
+                            "mapper": { "duration": "120" },
+                            "metadata": {
+                                "designer": { "x": 1200, "y": 300 },
+                                "restore": {},
+                                "expect": [
+                                    { "name": "duration", "type": "uinteger", "label": "Delay", "validate": { "min": 1, "max": 300 }, "required": true }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 42,
+                            "module": "http:ActionSendDataBasicAuth",
+                            "version": 3,
+                            "parameters": {
+                                "key": 172894,
+                                "handleErrors": false,
+                                "useNewZLibDeCompress": true
+                            },
+                            "mapper": {
+                                "ca": "",
+                                "qs": [],
+                                "url": "https://api.vapi.ai/call",
+                                "data": "{\r\n  \"assistantId\": \"5950913e-bc1b-4d6a-a51c-5988fd899a9b\",\r\n  \"phoneNumberId\": \"7e7afc50-0288-4e97-aef2-f781b72b452c\",\r\n  \"customer\": {\r\n    \"number\": \"+{{2.Mobile}}\",\r\n    \"name\": \"{{2.`Full Name`}}\"\r\n  },\r\n  \"assistantOverrides\": {\r\n    \"variableValues\": {\r\n      \"name\": \"{{2.`Full Name`}}\",\r\n      \"company\": \"{{2.Company}}\",\r\n      \"partner_name\": \"{{2.`Source Partner`}}\"\r\n    }\r\n  },\r\n  \"metadata\": {\r\n    \"sheetRowNumber\": \"{{2.__ROW_NUMBER__}}\",\r\n    \"leadEmail\": \"{{2.`Lead Email`}}\",\r\n    \"step\": \"1-retry\"\r\n  }\r\n}",
+                                "gzip": true,
+                                "method": "post",
+                                "headers": [
+                                    { "name": "Authorization", "value": "Bearer 9fcc882e-d1c6-448b-b7ad-9fdf662bdeb4" },
+                                    { "name": "Content-Type", "value": "application/json" }
+                                ],
+                                "timeout": "",
+                                "useMtls": false,
+                                "bodyType": "raw",
+                                "contentType": "application/json",
+                                "serializeUrl": false,
+                                "shareCookies": false,
+                                "parseResponse": false,
+                                "followRedirect": true,
+                                "useQuerystring": false,
+                                "followAllRedirects": false,
+                                "rejectUnauthorized": true
+                            },
+                            "metadata": {
+                                "designer": { "x": 1500, "y": 300 },
+                                "restore": {
+                                    "expect": {
+                                        "qs": { "mode": "chose" },
+                                        "method": { "mode": "chose", "label": "POST" },
+                                        "headers": { "mode": "chose", "items": [null, null] },
+                                        "bodyType": { "label": "Raw" },
+                                        "contentType": { "label": "JSON (application/json)" }
+                                    },
+                                    "parameters": {
+                                        "key": { "label": "My HTTP Basic Auth key" }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 50,
+                            "module": "google-sheets:updateRow",
+                            "version": 2,
+                            "parameters": { "__IMTCONN__": 7795130 },
+                            "filter": {
+                                "name": "Route D-dead — No Answer/Busy AND count >= 3",
+                                "conditions": [
+                                    [
+                                        { "a": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.outcome}}", "o": "text:equal", "b": "No Answer" },
+                                        { "a": "{{parseNumber(2.`Attempt Count`)}}", "o": "number:greaterorequal", "b": "3" }
+                                    ],
+                                    [
+                                        { "a": "{{1.message.artifact.structuredOutputs.`f764cf11-c0e8-4d1b-8517-de27ad3ef3da`.result.outcome}}", "o": "text:equal", "b": "Busy" },
+                                        { "a": "{{parseNumber(2.`Attempt Count`)}}", "o": "number:greaterorequal", "b": "3" }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "from": "drive",
+                                "mode": "select",
+                                "values": {
+                                    "6": "Dead",
+                                    "8": "{{formatDate(now; \"YYYY-MM-DD HH:mm\")}}"
+                                },
+                                "sheetId": "Lead Master",
+                                "rowNumber": "{{2.__ROW_NUMBER__}}",
+                                "spreadsheetId": "/1dI-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                                "includesHeaders": true,
+                                "useColumnHeaders": false,
+                                "valueInputOption": "USER_ENTERED"
+                            },
+                            "metadata": {
+                                "designer": { "x": 900, "y": 600 },
+                                "restore": {
+                                    "expect": {
+                                        "from": { "label": "My Drive" },
+                                        "mode": { "label": "Search by path" },
+                                        "sheetId": { "label": "Lead Master" },
+                                        "spreadsheetId": { "path": ["BMC_Lead_Maste -  260530"] },
+                                        "includesHeaders": { "label": "Yes" },
+                                        "useColumnHeaders": { "label": "No" },
+                                        "valueInputOption": { "mode": "chose", "label": "User entered" }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": { "scoped": "true", "connection": "google" },
+                                            "label": "My Google connection (tayyeb@nexus54.com)"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": { "orphans": [] },
+        "zone": "eu1.make.com",
+        "notes": []
+    }
+}
