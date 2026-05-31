@@ -1,0 +1,220 @@
+{
+    "name": "BMC — S4 Orphan Cleanup",
+    "flow": [
+        {
+            "id": 1,
+            "module": "google-sheets:filterRows",
+            "version": 2,
+            "parameters": {
+                "__IMTCONN__": 7795130
+            },
+            "mapper": {
+                "from": "drive",
+                "limit": "50",
+                "filter": [
+                    [
+                        {
+                            "a": "G",
+                            "b": "Attempting",
+                            "o": "text:equal"
+                        }
+                    ],
+                    [
+                        {
+                            "a": "G",
+                            "b": "Step2 Attempting",
+                            "o": "text:equal"
+                        }
+                    ]
+                ],
+                "sheetId": "Lead Master",
+                "sortOrder": "asc",
+                "spreadsheetId": "1dI-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                "tableFirstRow": "A1:CZ1",
+                "includesHeaders": true,
+                "valueRenderOption": "FORMATTED_VALUE",
+                "dateTimeRenderOption": "FORMATTED_STRING"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "restore": {
+                    "expect": {
+                        "from": {
+                            "label": "Select from My Drive"
+                        },
+                        "sheetId": {
+                            "mode": "chose",
+                            "label": "Lead Master"
+                        },
+                        "sortOrder": {
+                            "mode": "chose",
+                            "label": "Ascending"
+                        },
+                        "spreadsheetId": {
+                            "mode": "chose",
+                            "label": "BMC_Lead_Maste -  260530"
+                        },
+                        "tableFirstRow": {
+                            "label": "A-CZ"
+                        },
+                        "includesHeaders": {
+                            "mode": "chose",
+                            "label": "Yes"
+                        },
+                        "valueRenderOption": {
+                            "mode": "chose",
+                            "label": "Formatted value"
+                        },
+                        "dateTimeRenderOption": {
+                            "mode": "chose",
+                            "label": "Formatted string"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "google"
+                            },
+                            "label": "My Google connection (tayyeb@nexus54.com)"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 2,
+            "module": "google-sheets:updateRow",
+            "version": 2,
+            "parameters": {
+                "__IMTCONN__": 7795130
+            },
+            "filter": {
+                "name": "Stuck > 2 hours",
+                "conditions": [
+                    [
+                        {
+                            "a": "{{1.`8`}}",
+                            "o": "text:exist"
+                        },
+                        {
+                            "a": "{{parseDate(1.`8`; \"YYYY-MM-DD HH:mm\")}}",
+                            "b": "{{addHours(now; -2)}}",
+                            "o": "date:less"
+                        }
+                    ]
+                ]
+            },
+            "mapper": {
+                "from": "drive",
+                "mode": "select",
+                "values": {
+                    "6": "Needs Human Review",
+                    "8": "{{formatDate(now; \"YYYY-MM-DD HH:mm\")}}",
+                    "18": "Stuck > 2h auto-flagged by S4 at {{formatDate(now; \"YYYY-MM-DD HH:mm\")}}"
+                },
+                "sheetId": "Lead Master",
+                "rowNumber": "{{1.__ROW_NUMBER__}}",
+                "spreadsheetId": "/1dI-TPKYxwdgSVsvfYQ8skBEslk4cVjR9x7RfqDJsuiU",
+                "includesHeaders": true,
+                "useColumnHeaders": false,
+                "valueInputOption": "USER_ENTERED"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 400,
+                    "y": 0
+                },
+                "restore": {
+                    "expect": {
+                        "from": {
+                            "label": "My Drive"
+                        },
+                        "mode": {
+                            "label": "Search by path"
+                        },
+                        "sheetId": {
+                            "label": "Lead Master"
+                        },
+                        "spreadsheetId": {
+                            "path": [
+                                "BMC_Lead_Maste -  260530"
+                            ]
+                        },
+                        "includesHeaders": {
+                            "label": "Yes"
+                        },
+                        "useColumnHeaders": {
+                            "label": "No",
+                            "nested": [
+                                {
+                                    "name": "values",
+                                    "spec": [
+                                        { "name": "0", "type": "text", "label": "Lead ID (A)" },
+                                        { "name": "1", "type": "text", "label": "Full Name (B)" },
+                                        { "name": "2", "type": "text", "label": "Mobile (C)" },
+                                        { "name": "3", "type": "text", "label": "Company (D)" },
+                                        { "name": "4", "type": "text", "label": "Source Partner (E)" },
+                                        { "name": "5", "type": "text", "label": "Lead Email (F)" },
+                                        { "name": "6", "type": "text", "label": "Lead Status (G)" },
+                                        { "name": "7", "type": "text", "label": "Attempt Count (H)" },
+                                        { "name": "8", "type": "text", "label": "Last Attempt (I)" },
+                                        { "name": "9", "type": "text", "label": "Call Window Used (J)" },
+                                        { "name": "10", "type": "text", "label": "Preferred Call Time (K)" },
+                                        { "name": "11", "type": "text", "label": "Preferred Call DateTime (L)" },
+                                        { "name": "12", "type": "text", "label": "Speak Now (M)" },
+                                        { "name": "13", "type": "text", "label": "Pain Point Summary (N)" },
+                                        { "name": "14", "type": "text", "label": "Lead Score (O)" },
+                                        { "name": "15", "type": "text", "label": "Meeting DateTime (P)" },
+                                        { "name": "16", "type": "text", "label": "Calendar Event ID (Q)" },
+                                        { "name": "17", "type": "text", "label": "Email Sent (R)" },
+                                        { "name": "18", "type": "text", "label": "Notes (S)" }
+                                    ],
+                                    "type": "collection",
+                                    "label": "Values in columns"
+                                }
+                            ]
+                        },
+                        "valueInputOption": {
+                            "mode": "chose",
+                            "label": "User entered"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "google"
+                            },
+                            "label": "My Google connection (tayyeb@nexus54.com)"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu1.make.com",
+        "notes": []
+    }
+}
