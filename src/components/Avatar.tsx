@@ -41,7 +41,7 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
 
       <div
         className={[
-          "relative h-full aspect-[3/4] max-w-full max-h-[640px]",
+          "relative h-full aspect-[3/4] max-w-full max-h-[520px]",
           state === "idle" ? "animate-breathe" : "",
           state === "active" ? "animate-float" : "",
           state === "connecting" ? "opacity-90 animate-glow-pulse" : "",
@@ -60,9 +60,9 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
             className="h-full w-full object-cover object-top"
             style={{
               maskImage:
-                "radial-gradient(ellipse 72% 86% at 50% 40%, #000 48%, rgba(0,0,0,0) 84%)",
+                "radial-gradient(ellipse 70% 82% at 50% 54%, #000 42%, rgba(0,0,0,0) 82%)",
               WebkitMaskImage:
-                "radial-gradient(ellipse 72% 86% at 50% 40%, #000 48%, rgba(0,0,0,0) 84%)",
+                "radial-gradient(ellipse 70% 82% at 50% 54%, #000 42%, rgba(0,0,0,0) 82%)",
             }}
             onError={() => setSrcIndex((i) => i + 1)}
           />
