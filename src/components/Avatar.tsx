@@ -41,7 +41,7 @@ export default function Avatar({ state, isSpeaking, volumeLevel }: Props) {
 
       <div
         className={[
-          "relative h-full aspect-[3/4] max-w-full max-h-[760px]",
+          "relative h-full aspect-[3/4] max-w-full max-h-[640px]",
           state === "idle" ? "animate-breathe" : "",
           state === "active" ? "animate-float" : "",
           state === "connecting" ? "opacity-90 animate-glow-pulse" : "",
