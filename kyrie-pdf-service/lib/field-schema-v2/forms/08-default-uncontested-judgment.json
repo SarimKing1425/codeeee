@@ -1,0 +1,192 @@
+{
+  "slug": "default-uncontested-divorce-judgment",
+  "title": "Default / Uncontested Divorce Judgment",
+  "pdf": "default-uncontested-divorce-judgment.pdf",
+  "form_number": 8,
+  "estimated_call_minutes": { "intelligent": 16, "literal": 36 },
+  "sections": [
+    {
+      "id": "header",
+      "title": "Header",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true }
+      ]
+    },
+    {
+      "id": "case_court_info",
+      "title": "Case & Court Information",
+      "fields": [
+        { "key": "court_county", "label": "Court / County", "type": "text" },
+        { "key": "case_number", "label": "Case Number", "type": "text" },
+        { "key": "department", "label": "Department", "type": "text", "optional": true },
+        { "key": "case_type", "label": "Type of Case", "type": "radio_group", "options": ["dissolution", "legal_separation", "nullity"] },
+        { "key": "petition_filed_date", "label": "Date Petition Filed (FL-100)", "type": "date" },
+        { "key": "summons_served_date", "label": "Date Summons Served", "type": "date" },
+        { "key": "service_method", "label": "Method of Service", "type": "radio_group", "options": ["personal_fl115", "by_mail_fl335", "other"] },
+        { "key": "service_method_other", "label": "Service Method (Other)", "type": "text", "show_if": "service_method == other" },
+        { "key": "response_fl120_filed", "label": "Response (FL-120) filed?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "response_fl120_filed_date", "label": "Response Filed Date", "type": "date", "show_if": "response_fl120_filed == yes" }
+      ]
+    },
+    {
+      "id": "petitioner",
+      "title": "Petitioner",
+      "fields": [
+        { "key": "petitioner_full_legal_name", "label": "Petitioner Full Legal Name", "type": "text" },
+        { "key": "petitioner_dob", "label": "Petitioner DOB", "type": "date" },
+        { "key": "petitioner_street", "label": "Petitioner Street", "type": "text" },
+        { "key": "petitioner_city", "label": "Petitioner City", "type": "text" },
+        { "key": "petitioner_state", "label": "Petitioner State", "type": "text" },
+        { "key": "petitioner_zip", "label": "Petitioner Zip", "type": "text" },
+        { "key": "petitioner_phone", "label": "Petitioner Phone", "type": "phone" },
+        { "key": "petitioner_email", "label": "Petitioner Email", "type": "email" }
+      ]
+    },
+    {
+      "id": "respondent",
+      "title": "Respondent",
+      "fields": [
+        { "key": "respondent_full_legal_name", "label": "Respondent Full Legal Name", "type": "text" },
+        { "key": "respondent_dob", "label": "Respondent DOB", "type": "date" },
+        { "key": "respondent_street", "label": "Respondent Street", "type": "text" },
+        { "key": "respondent_city", "label": "Respondent City", "type": "text" },
+        { "key": "respondent_state", "label": "Respondent State", "type": "text" },
+        { "key": "respondent_zip", "label": "Respondent Zip", "type": "text" },
+        { "key": "respondent_phone", "label": "Respondent Phone", "type": "phone" },
+        { "key": "respondent_email", "label": "Respondent Email", "type": "email" },
+        { "key": "existing_family_law_orders", "label": "Existing Family Law Orders or prior cases?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "existing_orders_description", "label": "Existing Orders Description", "type": "textarea", "show_if": "existing_family_law_orders == yes" }
+      ]
+    },
+    {
+      "id": "marriage_info",
+      "title": "Marriage Information",
+      "fields": [
+        { "key": "marriage_date", "label": "Date of Marriage", "type": "date" },
+        { "key": "separation_date", "label": "Date of Separation", "type": "date" },
+        { "key": "total_years_married", "label": "Total Years Married", "type": "number", "derived": true },
+        { "key": "has_children_of_marriage", "label": "Children of this marriage?", "type": "radio_group", "options": ["yes", "no"] },
+        {
+          "key": "children",
+          "label": "Children",
+          "type": "table",
+          "row_keys": ["full_name", "dob", "age", "lives_with"],
+          "max_rows": 6,
+          "row_field_types": { "dob": "date", "age": "number" },
+          "show_if": "has_children_of_marriage == yes"
+        }
+      ]
+    },
+    {
+      "id": "disclosures",
+      "title": "Preliminary & Final Disclosures",
+      "fields": [
+        { "key": "petitioner_completed_fl140_fl142", "label": "Petitioner completed FL-140 & FL-142?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "fl140_fl142_served_date", "label": "FL-140/142 Served Date", "type": "date", "show_if": "petitioner_completed_fl140_fl142 == yes" },
+        { "key": "fl140_fl142_served_method", "label": "FL-140/142 Service Method", "type": "radio_group", "options": ["mail", "personal"], "show_if": "petitioner_completed_fl140_fl142 == yes" },
+        { "key": "respondent_completed_preliminary_disclosure", "label": "Respondent Preliminary Disclosure?", "type": "radio_group", "options": ["yes", "no", "waived"] },
+        { "key": "fl150_completed", "label": "FL-150 completed?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "property_debts",
+      "title": "Property & Debt Information (FL-160)",
+      "fields": [
+        {
+          "key": "community_property",
+          "label": "Community Property",
+          "type": "table",
+          "row_keys": ["description", "estimated_value", "debt", "who_keeps_it"],
+          "max_rows": 10,
+          "row_field_types": { "estimated_value": "currency", "debt": "currency", "who_keeps_it": "radio_group:petitioner|respondent" }
+        },
+        {
+          "key": "community_debts",
+          "label": "Community Debts",
+          "type": "table",
+          "row_keys": ["creditor", "debt_type", "balance", "responsible_party"],
+          "max_rows": 10,
+          "row_field_types": { "balance": "currency", "responsible_party": "radio_group:petitioner|respondent" }
+        },
+        {
+          "key": "separate_property",
+          "label": "Separate Property",
+          "type": "table",
+          "row_keys": ["description", "value", "owner"],
+          "max_rows": 10,
+          "row_field_types": { "value": "currency", "owner": "radio_group:petitioner|respondent" }
+        }
+      ]
+    },
+    {
+      "id": "custody_support",
+      "title": "Custody & Support",
+      "fields": [
+        { "key": "legal_custody", "label": "Legal Custody", "type": "radio_group", "options": ["joint", "sole_petitioner", "sole_respondent"] },
+        { "key": "physical_custody", "label": "Physical Custody", "type": "radio_group", "options": ["joint", "sole_petitioner", "sole_respondent"] },
+        { "key": "parenting_weekdays", "label": "Parenting Weekdays", "type": "text" },
+        { "key": "parenting_weekends", "label": "Parenting Weekends", "type": "text" },
+        { "key": "parenting_holidays", "label": "Parenting Holidays / Vacations", "type": "text" },
+        { "key": "exchange_location", "label": "Exchange Location", "type": "text" },
+        { "key": "child_support_method", "label": "Child Support Method", "type": "radio_group", "options": ["guideline", "agreement", "none"] },
+        { "key": "child_support_amount", "label": "Child Support Amount (monthly)", "type": "currency" },
+        { "key": "health_insurance_provider", "label": "Health Insurance Provider", "type": "radio_group", "options": ["petitioner", "respondent", "both"] },
+        { "key": "spousal_support_requested", "label": "Spousal Support?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "spousal_support_amount", "label": "Spousal Support Amount (monthly)", "type": "currency", "show_if": "spousal_support_requested == yes" },
+        { "key": "spousal_support_duration", "label": "Spousal Support Duration", "type": "text", "show_if": "spousal_support_requested == yes" }
+      ]
+    },
+    {
+      "id": "judgment_info",
+      "title": "Judgment Information",
+      "fields": [
+        { "key": "judgment_type", "label": "Judgment Type", "type": "radio_group", "options": ["default_no_response", "default_with_agreement", "uncontested_agreement_signed"] },
+        { "key": "marital_settlement_attached", "label": "Marital Settlement Agreement Attached?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "msa_signed_date", "label": "MSA Signed Date", "type": "date", "show_if": "marital_settlement_attached == yes" },
+        { "key": "restoration_of_former_name", "label": "Restoration of Former Name?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "former_name_to_restore", "label": "Former Name to Restore", "type": "text", "show_if": "restoration_of_former_name == yes" }
+      ]
+    },
+    {
+      "id": "required_forms",
+      "title": "Required Filed Forms & Documents",
+      "fields": [
+        { "key": "doc_fl100", "label": "FL-100 Petition", "type": "checkbox" },
+        { "key": "doc_fl115", "label": "FL-115 Proof of Service", "type": "checkbox" },
+        { "key": "doc_fl120", "label": "FL-120 Response", "type": "checkbox" },
+        { "key": "doc_fl335_or_fl330", "label": "FL-335 or FL-330", "type": "checkbox" },
+        { "key": "doc_current_family_law_orders", "label": "Current Family Law Orders", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "additional_info",
+      "title": "Additional Information",
+      "fields": [
+        { "key": "restraining_orders_in_place", "label": "Restraining or protective orders in place?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "restraining_orders_explanation", "label": "Restraining Orders Explanation", "type": "textarea", "show_if": "restraining_orders_in_place == yes" }
+      ]
+    },
+    {
+      "id": "consultant_notes",
+      "title": "Consultant Notes",
+      "fields": [
+        { "key": "consultant_notes", "label": "Consultant Notes", "type": "textarea" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" },
+    { "key": "total_years_married", "from": ["marriage_date", "separation_date"], "rule": "years_between(marriage_date, separation_date)" },
+    { "key": "children.*.age", "from": ["children.*.dob"], "rule": "years_since(children[i].dob)" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's the petitioner's full mailing address?",
+      "fills": ["petitioner_street", "petitioner_city", "petitioner_state", "petitioner_zip"]
+    },
+    {
+      "ask": "What's the respondent's full mailing address?",
+      "fills": ["respondent_street", "respondent_city", "respondent_state", "respondent_zip"]
+    }
+  ]
+}

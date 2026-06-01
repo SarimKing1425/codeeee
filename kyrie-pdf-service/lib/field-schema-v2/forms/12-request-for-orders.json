@@ -1,0 +1,168 @@
+{
+  "slug": "request-for-orders",
+  "title": "Request for Order",
+  "pdf": "request-for-orders.pdf",
+  "form_number": 12,
+  "estimated_call_minutes": { "intelligent": 14, "literal": 30 },
+  "sections": [
+    {
+      "id": "header",
+      "title": "Header",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true }
+      ]
+    },
+    {
+      "id": "case_court_info",
+      "title": "Case & Court Information",
+      "fields": [
+        { "key": "court_county", "label": "Court / County", "type": "text" },
+        { "key": "case_number", "label": "Case Number", "type": "text" },
+        { "key": "department", "label": "Department", "type": "text", "optional": true },
+        { "key": "next_court_date", "label": "Next Court Date", "type": "date", "optional": true },
+        { "key": "existing_orders", "label": "Existing Orders?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "existing_orders_description", "label": "Existing Orders Description / Date", "type": "textarea", "show_if": "existing_orders == yes" }
+      ]
+    },
+    {
+      "id": "petitioner",
+      "title": "Petitioner (Your Information)",
+      "fields": [
+        { "key": "petitioner_full_legal_name", "label": "Petitioner Full Legal Name", "type": "text" },
+        { "key": "petitioner_street", "label": "Petitioner Street", "type": "text" },
+        { "key": "petitioner_city", "label": "Petitioner City", "type": "text" },
+        { "key": "petitioner_state", "label": "Petitioner State", "type": "text" },
+        { "key": "petitioner_zip", "label": "Petitioner Zip", "type": "text" },
+        { "key": "petitioner_phone", "label": "Petitioner Phone", "type": "phone" },
+        { "key": "petitioner_email", "label": "Petitioner Email", "type": "email" },
+        { "key": "petitioner_emergency_contact_name", "label": "Emergency Contact Name", "type": "text" },
+        { "key": "petitioner_emergency_contact_phone", "label": "Emergency Contact Phone", "type": "phone" }
+      ]
+    },
+    {
+      "id": "respondent",
+      "title": "Respondent (Other Party)",
+      "fields": [
+        { "key": "respondent_full_legal_name", "label": "Respondent Full Legal Name", "type": "text" },
+        { "key": "respondent_street", "label": "Respondent Street", "type": "text" },
+        { "key": "respondent_city", "label": "Respondent City", "type": "text" },
+        { "key": "respondent_state", "label": "Respondent State", "type": "text" },
+        { "key": "respondent_zip", "label": "Respondent Zip", "type": "text" },
+        { "key": "respondent_phone", "label": "Respondent Phone", "type": "phone" },
+        { "key": "respondent_email", "label": "Respondent Email", "type": "email" }
+      ]
+    },
+    {
+      "id": "children",
+      "title": "Minor Children",
+      "fields": [
+        {
+          "key": "children",
+          "label": "Children",
+          "type": "table",
+          "row_keys": ["full_name", "dob", "birthplace", "age"],
+          "max_rows": 6,
+          "row_field_types": { "dob": "date", "age": "number" }
+        },
+        {
+          "key": "children_current_living",
+          "label": "Children Current Living Situation",
+          "type": "table",
+          "row_keys": ["child_name", "lives_with", "address", "percent_time"],
+          "max_rows": 6
+        },
+        {
+          "key": "children_residence_history",
+          "label": "Children Residence History (Last 5 Years)",
+          "type": "table",
+          "row_keys": ["child_name", "from", "to", "city_state", "with", "address"],
+          "max_rows": 10
+        },
+        { "key": "prior_custody_orders", "label": "Prior Custody Orders?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "prior_custody_orders_description", "label": "Prior Custody Orders Description", "type": "textarea", "show_if": "prior_custody_orders == yes" },
+        { "key": "other_court_cases_involving_children", "label": "Other Court Cases Involving Children?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "other_court_cases_description", "label": "Other Court Cases Description", "type": "textarea", "show_if": "other_court_cases_involving_children == yes" }
+      ]
+    },
+    {
+      "id": "orders_requested",
+      "title": "Orders Requested",
+      "fields": [
+        { "key": "requested_legal_custody", "label": "Requested Legal Custody", "type": "radio_group", "options": ["joint", "sole"] },
+        { "key": "requested_physical_custody", "label": "Requested Physical Custody", "type": "radio_group", "options": ["joint", "sole"] },
+        { "key": "visitation_parenting_time_requested", "label": "Visitation / Parenting Time Requested?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "parenting_weekdays", "label": "Parenting Weekdays", "type": "text" },
+        { "key": "parenting_weekends", "label": "Parenting Weekends", "type": "text" },
+        { "key": "parenting_holidays", "label": "Parenting Holidays", "type": "text" },
+        { "key": "parenting_summer_breaks", "label": "Parenting Summer / School Breaks", "type": "text" },
+        { "key": "exchange_location", "label": "Exchange Location", "type": "text" },
+        { "key": "other_parenting_terms", "label": "Other Parenting Terms", "type": "textarea" },
+        { "key": "support_child", "label": "Child Support Requested", "type": "checkbox" },
+        { "key": "support_spousal", "label": "Spousal / Partner Support Requested", "type": "checkbox" },
+        { "key": "support_modify_existing", "label": "Modify Existing Support", "type": "checkbox" },
+        { "key": "property_control", "label": "Property Control Requested", "type": "checkbox" },
+        { "key": "travel_move_away", "label": "Travel / Move-Away Requested", "type": "checkbox" },
+        { "key": "orders_other", "label": "Other Orders", "type": "text" },
+        { "key": "orders_description_and_why", "label": "Orders Description and Why", "type": "textarea" },
+        { "key": "prepare_custody_schedules", "label": "Prepare custody schedules (FL-341(C), (D), (E))?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "settlement",
+      "title": "Settlement & Resolution",
+      "fields": [
+        { "key": "willing_to_resolve_via_stipulation", "label": "Willing to resolve via Stipulation and Order?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "background",
+      "title": "Background / Reasons for Request",
+      "fields": [
+        { "key": "background_reasons", "label": "Background / Reasons", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "emergency_safety",
+      "title": "Emergency / Safety",
+      "fields": [
+        { "key": "requesting_ex_parte", "label": "Requesting Temporary Emergency (Ex Parte) Orders?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "emergency_reason", "label": "Reason for Emergency", "type": "textarea", "show_if": "requesting_ex_parte == yes" }
+      ]
+    },
+    {
+      "id": "income_expenses",
+      "title": "Income & Expenses Snapshot",
+      "fields": [
+        { "key": "petitioner_gross_monthly_income", "label": "Petitioner Gross Monthly Income", "type": "currency" },
+        { "key": "petitioner_income_sources", "label": "Petitioner Income Sources", "type": "text" },
+        { "key": "respondent_income", "label": "Respondent Income", "type": "currency", "optional": true },
+        { "key": "monthly_rent_mortgage", "label": "Monthly Rent / Mortgage", "type": "currency" },
+        { "key": "monthly_childcare", "label": "Monthly Childcare", "type": "currency" },
+        { "key": "monthly_health_insurance", "label": "Monthly Health Insurance", "type": "currency" }
+      ]
+    },
+    {
+      "id": "exchange_communication",
+      "title": "Preferred Exchange Location & Communication",
+      "fields": [
+        { "key": "exchange_location_preference", "label": "Exchange Location Preference", "type": "radio_group", "options": ["police_station", "school", "neutral_site", "other"] },
+        { "key": "exchange_location_other", "label": "Exchange Location (Other)", "type": "text", "show_if": "exchange_location_preference == other" },
+        { "key": "parent_communication_method", "label": "Parent Communication Method", "type": "radio_group", "options": ["talking_parents", "text", "email"] }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" },
+    { "key": "children.*.age", "from": ["children.*.dob"], "rule": "years_since(children[i].dob)" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's your full mailing address?",
+      "fills": ["petitioner_street", "petitioner_city", "petitioner_state", "petitioner_zip"]
+    },
+    {
+      "ask": "What's the other party's full mailing address?",
+      "fills": ["respondent_street", "respondent_city", "respondent_state", "respondent_zip"]
+    }
+  ]
+}

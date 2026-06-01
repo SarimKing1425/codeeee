@@ -1,0 +1,235 @@
+{
+  "slug": "qdro-and-joinder",
+  "title": "Qualified Domestic Relations Order (QDRO) & Joinder",
+  "pdf": "qdro-and-joinder.pdf",
+  "form_number": 14,
+  "estimated_call_minutes": { "intelligent": 18, "literal": 42 },
+  "sections": [
+    {
+      "id": "case_info",
+      "title": "Basic Case Information",
+      "fields": [
+        { "key": "client_role", "label": "Client Role", "type": "radio_group", "options": ["alternate_payee", "participant"] },
+        { "key": "client_name", "label": "Client Name", "type": "text" },
+        { "key": "client_phone", "label": "Client Phone", "type": "phone" },
+        { "key": "client_email", "label": "Client Email", "type": "email" },
+        { "key": "client_street", "label": "Client Street", "type": "text" },
+        { "key": "client_city", "label": "Client City", "type": "text" },
+        { "key": "client_state", "label": "Client State", "type": "text" },
+        { "key": "client_zip", "label": "Client Zip", "type": "text" },
+        { "key": "divorce_county", "label": "County Where Divorce Finalized", "type": "text" },
+        { "key": "case_number", "label": "Case Number", "type": "text" },
+        { "key": "marriage_date", "label": "Date of Marriage (DOM)", "type": "date" },
+        { "key": "separation_date", "label": "Date of Separation (DOS)", "type": "date" },
+        { "key": "judgment_entered_date", "label": "Date Judgment of Dissolution Entered", "type": "date" },
+        { "key": "judgment_is_final", "label": "Is the Judgment FINAL?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "participant",
+      "title": "Participant",
+      "fields": [
+        { "key": "participant_full_legal_name", "label": "Participant Full Legal Name", "type": "text" },
+        { "key": "participant_dob", "label": "Participant DOB", "type": "date" },
+        { "key": "participant_ssn_last4", "label": "Participant SSN (last 4)", "type": "text" },
+        { "key": "participant_phone", "label": "Participant Phone", "type": "phone" },
+        { "key": "participant_email", "label": "Participant Email", "type": "email" },
+        { "key": "participant_address", "label": "Participant Current Address", "type": "text" },
+        { "key": "participant_employer_name", "label": "Participant Employer Name", "type": "text" }
+      ]
+    },
+    {
+      "id": "alternate_payee",
+      "title": "Alternate Payee",
+      "fields": [
+        { "key": "alternate_payee_full_legal_name", "label": "Alternate Payee Full Legal Name", "type": "text" },
+        { "key": "alternate_payee_dob", "label": "Alternate Payee DOB", "type": "date" },
+        { "key": "alternate_payee_ssn_last4", "label": "Alternate Payee SSN (last 4)", "type": "text" },
+        { "key": "alternate_payee_phone", "label": "Alternate Payee Phone", "type": "phone" },
+        { "key": "alternate_payee_email", "label": "Alternate Payee Email", "type": "email" },
+        { "key": "alternate_payee_address", "label": "Alternate Payee Current Address", "type": "text" }
+      ]
+    },
+    {
+      "id": "retirement_plan_type",
+      "title": "Type of Retirement Plan",
+      "fields": [
+        { "key": "plan_type_401k", "label": "401(k)", "type": "checkbox" },
+        { "key": "plan_type_403b", "label": "403(b)", "type": "checkbox" },
+        { "key": "plan_type_457_deferred_comp", "label": "457 Deferred Compensation", "type": "checkbox" },
+        { "key": "plan_type_traditional_pension", "label": "Traditional Pension (defined benefit)", "type": "checkbox" },
+        { "key": "plan_type_cash_balance", "label": "Cash Balance Plan", "type": "checkbox" },
+        { "key": "plan_type_ira_sep_simple", "label": "IRA / SEP / SIMPLE", "type": "checkbox" },
+        { "key": "plan_type_military_retirement", "label": "Military Retirement", "type": "checkbox" },
+        { "key": "plan_type_federal_csrs_fers", "label": "Federal CSRS / FERS", "type": "checkbox" },
+        { "key": "plan_type_calpers", "label": "CalPERS", "type": "checkbox" },
+        { "key": "plan_type_calstrs", "label": "CalSTRS", "type": "checkbox" },
+        { "key": "plan_type_other", "label": "Other Plan Type", "type": "text" },
+        { "key": "plan_type_unknown", "label": "Plan Type Unknown", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "plan_admin",
+      "title": "Plan Administrator Details",
+      "fields": [
+        { "key": "plan_name", "label": "Plan Name", "type": "text" },
+        { "key": "plan_administrator_address", "label": "Plan Administrator Address", "type": "text" },
+        { "key": "plan_administrator_phone", "label": "Plan Administrator Phone", "type": "phone" },
+        { "key": "plan_administrator_email", "label": "Plan Administrator Email", "type": "email" },
+        { "key": "plan_summary_description_attached", "label": "Plan or SPD Attached?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "employer_info",
+      "title": "Employer Information",
+      "fields": [
+        { "key": "employer_during_benefit_accrual", "label": "Employer During Benefit Accrual", "type": "text" },
+        { "key": "employer_address", "label": "Employer Address", "type": "text" },
+        { "key": "hr_benefits_contact_phone", "label": "HR / Benefits Contact Phone", "type": "phone" }
+      ]
+    },
+    {
+      "id": "supporting_documents_retirement",
+      "title": "Supporting Documents",
+      "fields": [
+        { "key": "doc_most_recent_statement", "label": "Most Recent Retirement Statement", "type": "checkbox" },
+        { "key": "doc_statement_at_separation", "label": "Statement Closest to DOS", "type": "checkbox" },
+        { "key": "doc_statement_at_marriage", "label": "Statement Closest to DOM", "type": "checkbox" },
+        { "key": "doc_spd", "label": "Summary Plan Description (SPD)", "type": "checkbox" },
+        { "key": "doc_letters_from_admin", "label": "Letters from Plan Administrator", "type": "checkbox" },
+        { "key": "doc_judgment_msa_division_terms", "label": "Judgment / MSA Identifying Division Terms", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "division_terms",
+      "title": "Division Terms",
+      "fields": [
+        { "key": "judgment_specifies_division", "label": "Does judgment specify retirement division?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "division_method_50_50_community", "label": "50/50 Community Portion", "type": "checkbox" },
+        { "key": "division_method_fixed_dollar", "label": "Fixed Dollar Amount", "type": "checkbox" },
+        { "key": "division_method_percentage", "label": "Percentage Different Than 50/50", "type": "checkbox" },
+        { "key": "division_method_survivor_benefits", "label": "Survivor Benefits Addressed", "type": "checkbox" },
+        { "key": "division_method_separate_property_carve_outs", "label": "Separate Property Carve-Outs", "type": "checkbox" },
+        { "key": "silent_judgment_division_method", "label": "If Silent, Division Method", "type": "radio_group", "options": ["time_rule", "specific_percentage", "specific_dollar_amount"] },
+        { "key": "silent_division_specific_percentage", "label": "Specific Percentage", "type": "text", "show_if": "silent_judgment_division_method == specific_percentage" },
+        { "key": "silent_division_specific_dollar", "label": "Specific Dollar Amount", "type": "currency", "show_if": "silent_judgment_division_method == specific_dollar_amount" },
+        { "key": "include_gains_losses_on_alternate_payee_share", "label": "Include gains/losses on alternate payee's share?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "exclude_pre_marital_balances", "label": "Exclude pre-marital balances?", "type": "radio_group", "options": ["yes", "no", "unknown"] }
+      ]
+    },
+    {
+      "id": "loans_withdrawals",
+      "title": "Loans, Withdrawals, & Account Activity",
+      "fields": [
+        { "key": "participant_took_loans", "label": "Participant took loans from plan?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "outstanding_loan_balance", "label": "Outstanding Loan Balance", "type": "currency", "show_if": "participant_took_loans == yes" },
+        { "key": "loan_before_or_after_dos", "label": "Loan Before or After DOS?", "type": "radio_group", "options": ["before", "after"], "show_if": "participant_took_loans == yes" },
+        { "key": "early_withdrawals_rollovers", "label": "Early withdrawals, hardship withdrawals, or rollovers?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "withdrawals_rollovers_details", "label": "Withdrawals/Rollovers Details", "type": "textarea", "show_if": "early_withdrawals_rollovers == yes" },
+        { "key": "account_rolled_into_different_plan", "label": "Account rolled into different plan?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "transferee_plan_name", "label": "Transferee Plan Name", "type": "text", "show_if": "account_rolled_into_different_plan == yes" }
+      ]
+    },
+    {
+      "id": "survivor_benefits",
+      "title": "Survivor Benefits",
+      "fields": [
+        { "key": "award_survivor_benefits", "label": "Award Survivor Benefits to Alternate Payee?", "type": "radio_group", "options": ["yes", "no", "not_applicable"] },
+        { "key": "pre_retirement_death_benefits_to_ap", "label": "If participant dies before retirement, AP receives share?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "post_retirement_survivor_benefits", "label": "Post-Retirement Survivor Benefits", "type": "radio_group", "options": ["yes_100", "yes_50", "other", "no"] },
+        { "key": "post_retirement_survivor_benefits_other", "label": "Survivor Benefits Other Percentage", "type": "text", "show_if": "post_retirement_survivor_benefits == other" }
+      ]
+    },
+    {
+      "id": "form_of_payment",
+      "title": "Form of Payment",
+      "fields": [
+        { "key": "payment_division_method", "label": "Payment Division Method", "type": "radio_group", "options": ["separate_interest", "shared_interest", "not_sure"] },
+        { "key": "payment_start_when", "label": "Payments Start When", "type": "radio_group", "options": ["participant_retires", "ap_reaches_earliest_retirement_age", "earliest_legal_distribution"] }
+      ]
+    },
+    {
+      "id": "tax_issues",
+      "title": "Tax Issues",
+      "fields": [
+        { "key": "ap_distribution_method", "label": "Alternate Payee Distribution Method", "type": "radio_group", "options": ["rollover", "direct_payment", "unknown"] },
+        { "key": "tax_advantaged_instructions_in_judgment", "label": "Tax-Advantaged Instructions in Judgment?", "type": "radio_group", "options": ["yes", "no", "silent"] }
+      ]
+    },
+    {
+      "id": "joinder",
+      "title": "Joinder Requirements",
+      "fields": [
+        { "key": "need_to_join_plan", "label": "Need to join retirement plan?", "type": "radio_group", "options": ["yes", "already_joined", "unsure"] },
+        { "key": "plan_requires_joinder_before_review", "label": "Plan requires joinder before reviewing QDRO?", "type": "radio_group", "options": ["yes", "no", "unknown"] }
+      ]
+    },
+    {
+      "id": "plan_fees",
+      "title": "Plan Fees",
+      "fields": [
+        { "key": "plan_charges_qdro_fees", "label": "Plan charges QDRO processing fees?", "type": "radio_group", "options": ["yes", "no", "unknown"] },
+        { "key": "qdro_fee_amount", "label": "QDRO Fee Amount", "type": "currency", "show_if": "plan_charges_qdro_fees == yes" },
+        { "key": "qdro_fees_payer", "label": "Who pays QDRO fees", "type": "radio_group", "options": ["50_50_split", "participant", "alternate_payee", "as_ordered_by_judgment"] }
+      ]
+    },
+    {
+      "id": "additional_plan_info",
+      "title": "Additional Plan Information",
+      "fields": [
+        { "key": "participant_years_of_service", "label": "Participant Years of Service", "type": "number" },
+        { "key": "accrued_benefit", "label": "Accrued Benefit", "type": "text" },
+        { "key": "vesting_status", "label": "Vesting Status", "type": "text" },
+        { "key": "plan_membership_start_date", "label": "Date Plan Membership Started", "type": "date" },
+        { "key": "participant_already_retired", "label": "Participant Already Retired?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "participant_retirement_date", "label": "Participant Retirement Date", "type": "date", "show_if": "participant_already_retired == yes" },
+        { "key": "participant_receiving_disability", "label": "Participant Receiving Disability Benefits?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "miscellaneous",
+      "title": "Miscellaneous / Other Concerns",
+      "fields": [
+        { "key": "concern_hiding_funds", "label": "Concern: Participant hiding retirement funds?", "type": "text" },
+        { "key": "concern_multiple_accounts", "label": "Concern: Multiple retirement accounts?", "type": "text" },
+        { "key": "concern_missing_statements", "label": "Concern: Missing statements?", "type": "text" },
+        { "key": "concern_community_vs_separate", "label": "Concern: Community vs. separate property disputes?", "type": "text" },
+        { "key": "concern_participant_cashing_out", "label": "Concern: Participant cashing out?", "type": "text" },
+        { "key": "concern_urgent_deadlines", "label": "Concern: Urgent deadlines?", "type": "text" }
+      ]
+    },
+    {
+      "id": "documents_required",
+      "title": "Documents Required",
+      "fields": [
+        { "key": "doc_judgment_full_copy", "label": "Judgment of Dissolution (full copy)", "type": "checkbox" },
+        { "key": "doc_msa", "label": "Marital Settlement Agreement", "type": "checkbox" },
+        { "key": "doc_stipulations_addendums", "label": "Stipulations / Addendums", "type": "checkbox" },
+        { "key": "doc_most_recent_plan_statement", "label": "Most Recent Plan Statement", "type": "checkbox" },
+        { "key": "doc_statement_at_dos", "label": "Statement Closest to DOS", "type": "checkbox" },
+        { "key": "doc_statement_at_dom", "label": "Statement Closest to DOM", "type": "checkbox" },
+        { "key": "doc_spd_required", "label": "Summary Plan Description (SPD)", "type": "checkbox" },
+        { "key": "doc_annual_benefit_statements", "label": "Annual Benefit Statements", "type": "checkbox" },
+        { "key": "doc_plan_correspondence", "label": "Plan Correspondence", "type": "checkbox" },
+        { "key": "doc_paystubs_contributions", "label": "Pay Stubs Showing Contributions", "type": "checkbox" },
+        { "key": "doc_proof_loans_withdrawals", "label": "Proof of Loans/Withdrawals", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "client_acknowledgment",
+      "title": "Client Acknowledgment",
+      "fields": [
+        { "key": "acknowledges_qdro_process", "label": "Acknowledges QDRO process", "type": "checkbox" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "marriage_duration_years", "from": ["marriage_date", "separation_date"], "rule": "years_between(marriage_date, separation_date)", "note": "Useful for time-rule calculations" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's the client's full mailing address?",
+      "fills": ["client_street", "client_city", "client_state", "client_zip"]
+    }
+  ]
+}

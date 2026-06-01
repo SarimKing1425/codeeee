@@ -1,0 +1,200 @@
+{
+  "slug": "response-to-request-for-orders",
+  "title": "Response to Request for Order (FL-320)",
+  "pdf": "response-to-request-for-orders.pdf",
+  "form_number": 7,
+  "estimated_call_minutes": { "intelligent": 12, "literal": 28 },
+  "sections": [
+    {
+      "id": "header",
+      "title": "Header",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true }
+      ]
+    },
+    {
+      "id": "case_info",
+      "title": "Case Information",
+      "fields": [
+        { "key": "court_county", "label": "Court / County", "type": "text" },
+        { "key": "case_number", "label": "Case Number", "type": "text" },
+        { "key": "department", "label": "Department", "type": "text", "optional": true },
+        { "key": "hearing_date", "label": "Hearing Date", "type": "date", "optional": true },
+        { "key": "judge", "label": "Judge", "type": "text", "optional": true },
+        { "key": "served_fl300_date", "label": "Date Served with Request for Order (FL-300)", "type": "date" }
+      ]
+    },
+    {
+      "id": "petitioner",
+      "title": "Petitioner",
+      "fields": [
+        { "key": "petitioner_full_legal_name", "label": "Petitioner Full Legal Name", "type": "text" },
+        { "key": "petitioner_address", "label": "Petitioner Address", "type": "text" },
+        { "key": "petitioner_phone", "label": "Petitioner Phone", "type": "phone" },
+        { "key": "petitioner_email", "label": "Petitioner Email", "type": "email" }
+      ]
+    },
+    {
+      "id": "respondent",
+      "title": "Respondent (You)",
+      "fields": [
+        { "key": "respondent_full_legal_name", "label": "Respondent Full Legal Name", "type": "text" },
+        { "key": "respondent_street", "label": "Respondent Street", "type": "text" },
+        { "key": "respondent_city", "label": "Respondent City", "type": "text" },
+        { "key": "respondent_state", "label": "Respondent State", "type": "text" },
+        { "key": "respondent_zip", "label": "Respondent Zip", "type": "text" },
+        { "key": "respondent_phone", "label": "Respondent Phone", "type": "phone" },
+        { "key": "respondent_email", "label": "Respondent Email", "type": "email" },
+        { "key": "respondent_self_represented", "label": "Self-represented?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "respondent_attorney_name", "label": "Attorney Name", "type": "text", "show_if": "respondent_self_represented == no" },
+        { "key": "respondent_attorney_phone", "label": "Attorney Phone", "type": "phone", "show_if": "respondent_self_represented == no" }
+      ]
+    },
+    {
+      "id": "orders_requested_by_other",
+      "title": "Orders Requested by Other Party",
+      "fields": [
+        { "key": "orders_child_custody", "label": "Child Custody", "type": "checkbox" },
+        { "key": "orders_visitation", "label": "Visitation / Parenting Time", "type": "checkbox" },
+        { "key": "orders_child_support", "label": "Child Support", "type": "checkbox" },
+        { "key": "orders_spousal_support", "label": "Spousal / Partner Support", "type": "checkbox" },
+        { "key": "orders_attorney_fees", "label": "Attorney's Fees", "type": "checkbox" },
+        { "key": "orders_property_control", "label": "Property Control", "type": "checkbox" },
+        { "key": "orders_domestic_violence", "label": "Domestic Violence Orders", "type": "checkbox" },
+        { "key": "orders_other", "label": "Other Orders", "type": "text" }
+      ]
+    },
+    {
+      "id": "response_to_orders",
+      "title": "Response to Orders",
+      "fields": [
+        { "key": "response_position", "label": "Response Position", "type": "radio_group", "options": ["agree", "disagree"] },
+        { "key": "response_disagree_explanation", "label": "Disagreement Explanation", "type": "textarea", "show_if": "response_position == disagree" }
+      ]
+    },
+    {
+      "id": "custody_visitation",
+      "title": "Child Custody and Visitation",
+      "fields": [
+        {
+          "key": "children",
+          "label": "Children",
+          "type": "table",
+          "row_keys": ["full_name", "dob", "birthplace", "age"],
+          "max_rows": 6,
+          "row_field_types": { "dob": "date", "age": "number" }
+        },
+        {
+          "key": "children_current_living",
+          "label": "Children Current Living Situation",
+          "type": "table",
+          "row_keys": ["child_name", "lives_with", "address", "percent_time"],
+          "max_rows": 6
+        },
+        {
+          "key": "children_residence_history",
+          "label": "Children Residence History (Last 5 Years)",
+          "type": "table",
+          "row_keys": ["child_name", "from", "to", "city_state", "lived_with", "address"],
+          "max_rows": 10
+        },
+        { "key": "prior_custody_orders", "label": "Prior Custody Orders?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "prior_custody_orders_description", "label": "Prior Custody Orders Description", "type": "textarea", "show_if": "prior_custody_orders == yes" },
+        { "key": "requested_legal_custody", "label": "Requested Legal Custody", "type": "radio_group", "options": ["joint", "sole"] },
+        { "key": "requested_physical_custody", "label": "Requested Physical Custody", "type": "radio_group", "options": ["joint", "sole"] },
+        { "key": "parenting_weekdays", "label": "Parenting Weekdays", "type": "text" },
+        { "key": "parenting_weekends", "label": "Parenting Weekends", "type": "text" },
+        { "key": "parenting_holidays", "label": "Parenting Holidays / Vacations", "type": "text" },
+        { "key": "exchange_location", "label": "Exchange Location", "type": "text" },
+        { "key": "supervised_visitation", "label": "Supervised Visitation?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "supervisor_name", "label": "Supervisor Name", "type": "text", "show_if": "supervised_visitation == yes" }
+      ]
+    },
+    {
+      "id": "child_support",
+      "title": "Child Support",
+      "fields": [
+        { "key": "currently_paying_receiving_child_support", "label": "Currently paying or receiving child support?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "child_support_amount", "label": "Child Support Amount", "type": "currency" },
+        { "key": "agrees_with_child_support_amount", "label": "Agree with child support amount?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "respondent_monthly_income", "label": "Respondent Monthly Income", "type": "currency" },
+        { "key": "respondent_monthly_expenses", "label": "Respondent Monthly Expenses", "type": "currency" }
+      ]
+    },
+    {
+      "id": "spousal_support",
+      "title": "Spousal / Partner Support",
+      "fields": [
+        { "key": "currently_paying_receiving_spousal_support", "label": "Currently paying or receiving spousal support?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "spousal_support_amount", "label": "Spousal Support Amount", "type": "currency" },
+        { "key": "agrees_with_spousal_support_amount", "label": "Agree with spousal support amount?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "attorney_fees",
+      "title": "Attorney's Fees and Costs",
+      "fields": [
+        { "key": "attorney_fees_requested", "label": "Attorney Fees Requested?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "agrees_with_attorney_fees", "label": "Agree with attorney fees?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "attorney_fees_explanation", "label": "Attorney Fees Explanation", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "property_control",
+      "title": "Property Control / Use",
+      "fields": [
+        { "key": "property_control_requested", "label": "Property Control Requested?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "property_control_explanation", "label": "Property Control Explanation", "type": "textarea", "show_if": "property_control_requested == yes" }
+      ]
+    },
+    {
+      "id": "domestic_violence_issues",
+      "title": "Domestic Violence Issues",
+      "fields": [
+        { "key": "dv_requested", "label": "DV Requested?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "prior_dvro", "label": "Prior DVRO?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "dv_explanation", "label": "DV Explanation", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "supporting_documents",
+      "title": "Supporting Documents",
+      "fields": [
+        { "key": "doc_fl150", "label": "FL-150 Income and Expense Declaration", "type": "checkbox" },
+        { "key": "doc_court_orders", "label": "Court Orders", "type": "checkbox" },
+        { "key": "doc_reports", "label": "Reports", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "client_statement",
+      "title": "Client Statement",
+      "fields": [
+        { "key": "client_statement", "label": "Client Statement", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "proof_of_service",
+      "title": "Proof of Service",
+      "fields": [
+        { "key": "understands_service_required", "label": "I understand service is required", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "consultant_notes",
+      "title": "Consultant Notes",
+      "fields": [
+        { "key": "consultant_notes", "label": "Consultant Notes", "type": "textarea" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" },
+    { "key": "children.*.age", "from": ["children.*.dob"], "rule": "years_since(children[i].dob)" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's your full mailing address?",
+      "fills": ["respondent_street", "respondent_city", "respondent_state", "respondent_zip"]
+    }
+  ]
+}

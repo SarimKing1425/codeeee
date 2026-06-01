@@ -1,0 +1,88 @@
+{
+  "slug": "request-to-restore-former-name",
+  "title": "Request to Restore Former Name (FL-395)",
+  "pdf": "request-to-restore-former-name.pdf",
+  "form_number": 16,
+  "estimated_call_minutes": { "intelligent": 4, "literal": 8 },
+  "sections": [
+    {
+      "id": "header",
+      "title": "Header",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true }
+      ]
+    },
+    {
+      "id": "case_info",
+      "title": "Case Information",
+      "fields": [
+        { "key": "court_county", "label": "Court / County (where divorce was finalized)", "type": "text" },
+        { "key": "case_number", "label": "Case Number", "type": "text" },
+        { "key": "judgment_entered_date", "label": "Date Judgment of Dissolution Entered (FL-180)", "type": "date" },
+        { "key": "divorce_finalized_in_california", "label": "Divorce finalized in California?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "client_info",
+      "title": "Client (Requesting Party)",
+      "fields": [
+        { "key": "client_current_legal_name", "label": "Current Legal Name (as on Judgment)", "type": "text" },
+        { "key": "client_dob", "label": "Client Date of Birth", "type": "date" },
+        { "key": "client_street", "label": "Client Street Address", "type": "text" },
+        { "key": "client_city", "label": "Client City", "type": "text" },
+        { "key": "client_state", "label": "Client State", "type": "text" },
+        { "key": "client_zip", "label": "Client Zip", "type": "text" },
+        { "key": "client_phone", "label": "Client Phone", "type": "phone" },
+        { "key": "client_email", "label": "Client Email", "type": "email" }
+      ]
+    },
+    {
+      "id": "former_name",
+      "title": "Former Name to Be Restored",
+      "fields": [
+        { "key": "former_name", "label": "Full Former Name", "type": "text" },
+        { "key": "former_name_type", "label": "Type of Former Name", "type": "radio_group", "options": ["maiden_name", "prior_married_name", "other_former_legal_name"] }
+      ]
+    },
+    {
+      "id": "prior_name_history",
+      "title": "Prior Name History",
+      "fields": [
+        { "key": "prior_name_history", "label": "All Prior Legal Names Used", "type": "textarea", "optional": true }
+      ]
+    },
+    {
+      "id": "judgment_details",
+      "title": "Judgment Details",
+      "fields": [
+        { "key": "judgment_includes_name_restoration_request", "label": "Does Judgment (FL-180) include restoration request?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "name_restoration_granted_in_judgment", "label": "Was restoration granted in Judgment?", "type": "radio_group", "options": ["yes", "no", "not_sure"], "show_if": "judgment_includes_name_restoration_request == yes" },
+        { "key": "reason_for_filing_fl395_now", "label": "Reason for filing FL-395 now", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "spouse_info",
+      "title": "Spouse Information (For Record)",
+      "fields": [
+        { "key": "former_spouse_name", "label": "Former Spouse's Name", "type": "text" }
+      ]
+    },
+    {
+      "id": "client_confirmation",
+      "title": "Client Confirmation",
+      "fields": [
+        { "key": "confirm_former_legal_name", "label": "I confirm the name I'm requesting is my former legal name", "type": "checkbox" },
+        { "key": "confirm_part_of_dissolution_case", "label": "I understand this is part of my dissolution case, not a general name change", "type": "checkbox" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's your current mailing address?",
+      "fills": ["client_street", "client_city", "client_state", "client_zip"]
+    }
+  ]
+}

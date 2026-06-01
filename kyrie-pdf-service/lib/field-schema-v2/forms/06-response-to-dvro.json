@@ -1,0 +1,205 @@
+{
+  "slug": "response-to-dvro",
+  "title": "Response to Domestic Violence Restraining Order",
+  "pdf": "response-to-dvro.pdf",
+  "form_number": 6,
+  "estimated_call_minutes": { "intelligent": 16, "literal": 36 },
+  "sections": [
+    {
+      "id": "header",
+      "title": "Header",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true }
+      ]
+    },
+    {
+      "id": "case_court_info",
+      "title": "Case & Court Information",
+      "fields": [
+        { "key": "court_county", "label": "Court / County", "type": "text" },
+        { "key": "case_number", "label": "Case Number", "type": "text", "optional": true },
+        { "key": "department", "label": "Department", "type": "text", "optional": true },
+        { "key": "hearing_date", "label": "Hearing Date", "type": "date", "optional": true },
+        { "key": "judge", "label": "Judge", "type": "text", "optional": true },
+        { "key": "served_dv100_or_dv110_date", "label": "Date Served with DV-100 or TRO (DV-110)", "type": "date" }
+      ]
+    },
+    {
+      "id": "protected_party",
+      "title": "Protected Person",
+      "fields": [
+        { "key": "protected_full_legal_name", "label": "Protected Person Full Legal Name", "type": "text" },
+        { "key": "protected_address", "label": "Protected Person Address", "type": "text", "optional": true }
+      ]
+    },
+    {
+      "id": "restrained_party",
+      "title": "Restrained Person (You)",
+      "fields": [
+        { "key": "restrained_full_legal_name", "label": "Restrained Person Full Legal Name", "type": "text" },
+        { "key": "restrained_dob", "label": "Restrained Person DOB", "type": "date" },
+        { "key": "restrained_gender", "label": "Restrained Person Gender", "type": "radio_group", "options": ["male", "female", "other"] },
+        { "key": "restrained_gender_other", "label": "Gender (Other)", "type": "text", "show_if": "restrained_gender == other" },
+        { "key": "restrained_street", "label": "Restrained Street", "type": "text" },
+        { "key": "restrained_city", "label": "Restrained City", "type": "text" },
+        { "key": "restrained_state", "label": "Restrained State", "type": "text" },
+        { "key": "restrained_zip", "label": "Restrained Zip", "type": "text" },
+        { "key": "restrained_phone", "label": "Restrained Phone", "type": "phone" },
+        { "key": "restrained_email", "label": "Restrained Email", "type": "email" },
+        { "key": "restrained_self_represented", "label": "Self-represented?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "restrained_attorney_name", "label": "Attorney Name", "type": "text", "show_if": "restrained_self_represented == no" },
+        { "key": "restrained_attorney_phone", "label": "Attorney Phone", "type": "phone", "show_if": "restrained_self_represented == no" },
+        { "key": "relationship_to_protected", "label": "Relationship to Protected Person", "type": "radio_group", "options": ["spouse", "former_spouse", "dating_former_dating", "cohabitant", "relative", "other"] },
+        { "key": "relationship_to_protected_other", "label": "Relationship (Other)", "type": "text", "show_if": "relationship_to_protected == other" }
+      ]
+    },
+    {
+      "id": "children",
+      "title": "Children Involved",
+      "fields": [
+        {
+          "key": "children",
+          "label": "Children",
+          "type": "table",
+          "row_keys": ["full_name", "dob", "birthplace", "age", "relationship_to_you", "relationship_to_protected"],
+          "max_rows": 6,
+          "row_field_types": { "dob": "date", "age": "number" }
+        },
+        {
+          "key": "children_current_living",
+          "label": "Children Current Living Situation",
+          "type": "table",
+          "row_keys": ["child_name", "lives_with", "address", "percent_time"],
+          "max_rows": 6
+        },
+        {
+          "key": "children_residence_history",
+          "label": "Children Residence History (Last 5 Years)",
+          "type": "table",
+          "row_keys": ["child_name", "from", "to", "city_state", "with", "address"],
+          "max_rows": 10
+        },
+        { "key": "prior_custody_visitation_orders", "label": "Prior Custody / Visitation Orders?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "prior_custody_orders_description", "label": "Prior Custody Orders Description", "type": "textarea", "show_if": "prior_custody_visitation_orders == yes" },
+        { "key": "wants_custody_visitation_orders", "label": "Want custody or visitation orders?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "requested_legal_custody", "label": "Requested Legal Custody", "type": "radio_group", "options": ["joint", "sole"] },
+        { "key": "requested_physical_custody", "label": "Requested Physical Custody", "type": "radio_group", "options": ["joint", "sole"] },
+        { "key": "visitation_weekdays", "label": "Visitation Weekdays", "type": "text" },
+        { "key": "visitation_weekends", "label": "Visitation Weekends", "type": "text" },
+        { "key": "visitation_holidays", "label": "Visitation Holidays / Vacations", "type": "text" },
+        { "key": "exchange_location", "label": "Exchange Location", "type": "text" },
+        { "key": "supervised_visits", "label": "Supervised Visits?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "supervisor_name", "label": "Supervisor Name", "type": "text", "show_if": "supervised_visits == yes" }
+      ]
+    },
+    {
+      "id": "response_to_allegations",
+      "title": "Response to the Allegations",
+      "fields": [
+        { "key": "response_to_allegations", "label": "Response to Allegations", "type": "radio_group", "options": ["do_not_agree", "agree_with_some_parts", "agree_without_admission"] },
+        { "key": "response_explanation", "label": "Explanation", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "prior_court_cases",
+      "title": "Prior Court Cases / Orders",
+      "fields": [
+        { "key": "case_family_law", "label": "Family Law Case", "type": "checkbox" },
+        { "key": "case_criminal", "label": "Criminal Case", "type": "checkbox" },
+        { "key": "case_dcss", "label": "DCSS Case", "type": "checkbox" },
+        { "key": "case_other", "label": "Other Case Type", "type": "text" },
+        { "key": "any_restraining_orders_in_effect", "label": "Any restraining orders in effect?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "restraining_orders_description", "label": "Restraining Orders Description", "type": "textarea", "show_if": "any_restraining_orders_in_effect == yes" }
+      ]
+    },
+    {
+      "id": "firearms_weapons",
+      "title": "Firearms / Weapons",
+      "fields": [
+        { "key": "owns_or_access_to_weapons", "label": "Own or have access to weapons?", "type": "radio_group", "options": ["yes", "no"] },
+        {
+          "key": "weapons",
+          "label": "Weapons",
+          "type": "table",
+          "row_keys": ["weapon_type", "make_model", "serial_number", "location"],
+          "max_rows": 4,
+          "show_if": "owns_or_access_to_weapons == yes"
+        },
+        { "key": "firearms_status", "label": "Firearms Status", "type": "radio_group", "options": ["surrendered", "not_yet_surrendered"] },
+        { "key": "firearms_not_surrendered_explanation", "label": "Why Not Surrendered", "type": "textarea", "show_if": "firearms_status == not_yet_surrendered" }
+      ]
+    },
+    {
+      "id": "property_residence",
+      "title": "Property / Residence Issues",
+      "fields": [
+        { "key": "live_together", "label": "Live together?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "who_lives_there_now", "label": "Who lives there now?", "type": "text" },
+        { "key": "need_to_retrieve_property", "label": "Need to retrieve property?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "property_items_list", "label": "Property Items List", "type": "textarea", "show_if": "need_to_retrieve_property == yes" }
+      ]
+    },
+    {
+      "id": "financial_issues",
+      "title": "Financial Issues",
+      "fields": [
+        { "key": "support_requested_by_protected", "label": "Support requested?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "agree_with_support_request", "label": "Agree with support request?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "support_request_explanation", "label": "Support Explanation", "type": "textarea" },
+        { "key": "request_own_financial_orders", "label": "Request your own financial orders?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "own_financial_orders_details", "label": "Financial Orders Details", "type": "textarea", "show_if": "request_own_financial_orders == yes" }
+      ]
+    },
+    {
+      "id": "custody_mediation",
+      "title": "Custody Mediation",
+      "fields": [
+        { "key": "request_mediation", "label": "Request mediation?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "agree_to_fcs", "label": "Agree to FCS?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "your_statement",
+      "title": "Your Statement",
+      "fields": [
+        { "key": "your_statement", "label": "Your Statement", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "supporting_evidence",
+      "title": "Supporting Evidence",
+      "fields": [
+        { "key": "evidence_messages", "label": "Messages", "type": "checkbox" },
+        { "key": "evidence_photos", "label": "Photos", "type": "checkbox" },
+        { "key": "evidence_witnesses", "label": "Witnesses", "type": "checkbox" },
+        { "key": "evidence_police_reports", "label": "Police Reports", "type": "checkbox" },
+        { "key": "evidence_medical_records", "label": "Medical Records", "type": "checkbox" },
+        { "key": "evidence_court_orders", "label": "Court Orders", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "proof_of_service",
+      "title": "Proof of Service",
+      "fields": [
+        { "key": "understands_service_required", "label": "I understand service is required before hearing", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "consultant_notes",
+      "title": "Consultant Notes",
+      "fields": [
+        { "key": "consultant_notes", "label": "Consultant Notes", "type": "textarea" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" },
+    { "key": "children.*.age", "from": ["children.*.dob"], "rule": "years_since(children[i].dob)" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's your full mailing address?",
+      "fills": ["restrained_street", "restrained_city", "restrained_state", "restrained_zip"]
+    }
+  ]
+}

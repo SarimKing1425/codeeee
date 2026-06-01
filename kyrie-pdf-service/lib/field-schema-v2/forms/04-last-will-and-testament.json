@@ -1,0 +1,240 @@
+{
+  "slug": "last-will-and-testament",
+  "title": "Last Will and Testament",
+  "pdf": "last-will-and-testament.pdf",
+  "form_number": 4,
+  "estimated_call_minutes": { "intelligent": 15, "literal": 32 },
+  "sections": [
+    {
+      "id": "header",
+      "title": "Header",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true }
+      ]
+    },
+    {
+      "id": "testator",
+      "title": "Client Information (Testator)",
+      "fields": [
+        { "key": "testator_full_legal_name", "label": "Testator Full Legal Name", "type": "text" },
+        { "key": "testator_other_names_used", "label": "Other Names Used", "type": "text", "optional": true },
+        { "key": "testator_dob", "label": "Testator Date of Birth", "type": "date" },
+        { "key": "testator_age", "label": "Testator Age", "type": "number", "derived": true },
+        { "key": "testator_ssn_last4", "label": "Testator SSN (last 4)", "type": "text" },
+        { "key": "testator_street", "label": "Testator Street Address", "type": "text" },
+        { "key": "testator_city", "label": "Testator City", "type": "text" },
+        { "key": "testator_state", "label": "Testator State", "type": "text" },
+        { "key": "testator_zip", "label": "Testator Zip", "type": "text" },
+        { "key": "testator_phone", "label": "Testator Phone", "type": "phone" },
+        { "key": "testator_email", "label": "Testator Email", "type": "email" },
+        { "key": "testator_marital_status", "label": "Marital Status", "type": "radio_group", "options": ["single", "married", "divorced", "widowed", "domestic_partnership"] },
+        { "key": "spouse_full_legal_name", "label": "Spouse Full Legal Name", "type": "text", "optional": true },
+        { "key": "marriage_date", "label": "Date of Marriage", "type": "date", "optional": true },
+        { "key": "has_prenuptial_agreement", "label": "Prenuptial Agreement?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "children_dependents",
+      "title": "Children and Dependents",
+      "fields": [
+        {
+          "key": "children",
+          "label": "Children and Dependents",
+          "type": "table",
+          "row_keys": ["full_legal_name", "dob", "relationship", "lives_with_you"],
+          "max_rows": 8,
+          "row_field_types": { "dob": "date", "lives_with_you": "radio_group:yes|no" }
+        },
+        { "key": "has_stepchildren", "label": "Stepchildren?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "stepchildren_details", "label": "Stepchildren Details", "type": "text", "show_if": "has_stepchildren == yes" },
+        { "key": "has_deceased_children", "label": "Deceased children?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "deceased_children_details", "label": "Deceased Children Details", "type": "text", "show_if": "has_deceased_children == yes" }
+      ]
+    },
+    {
+      "id": "executor",
+      "title": "Executor",
+      "fields": [
+        { "key": "primary_executor_name", "label": "Primary Executor Name", "type": "text" },
+        { "key": "primary_executor_relationship", "label": "Primary Executor Relationship", "type": "text" },
+        { "key": "primary_executor_address", "label": "Primary Executor Address", "type": "text" },
+        { "key": "primary_executor_phone", "label": "Primary Executor Phone", "type": "phone" },
+        { "key": "primary_executor_email", "label": "Primary Executor Email", "type": "email" },
+        { "key": "alternate_executor_name", "label": "Alternate Executor Name", "type": "text" },
+        { "key": "alternate_executor_relationship", "label": "Alternate Executor Relationship", "type": "text" },
+        { "key": "alternate_executor_address", "label": "Alternate Executor Address", "type": "text" },
+        { "key": "alternate_executor_phone", "label": "Alternate Executor Phone", "type": "phone" },
+        { "key": "alternate_executor_email", "label": "Alternate Executor Email", "type": "email" },
+        { "key": "executor_to_be_bonded", "label": "Executor to be bonded?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "guardians_minor_children",
+      "title": "Guardians for Minor Children",
+      "fields": [
+        { "key": "primary_guardian_name", "label": "Primary Guardian Name", "type": "text", "optional": true },
+        { "key": "primary_guardian_relationship", "label": "Primary Guardian Relationship", "type": "text", "optional": true },
+        { "key": "primary_guardian_address", "label": "Primary Guardian Address", "type": "text", "optional": true },
+        { "key": "primary_guardian_phone", "label": "Primary Guardian Phone", "type": "phone", "optional": true },
+        { "key": "alternate_guardian_name", "label": "Alternate Guardian Name", "type": "text", "optional": true },
+        { "key": "alternate_guardian_relationship", "label": "Alternate Guardian Relationship", "type": "text", "optional": true },
+        { "key": "alternate_guardian_address", "label": "Alternate Guardian Address", "type": "text", "optional": true },
+        { "key": "alternate_guardian_phone", "label": "Alternate Guardian Phone", "type": "phone", "optional": true }
+      ]
+    },
+    {
+      "id": "specific_gifts",
+      "title": "Specific Gifts or Bequests",
+      "fields": [
+        {
+          "key": "specific_gifts",
+          "label": "Specific Gifts",
+          "type": "table",
+          "row_keys": ["beneficiary_name", "relationship", "item_or_gift_description", "value"],
+          "max_rows": 10,
+          "row_field_types": { "value": "currency" }
+        },
+        { "key": "charitable_donations", "label": "Charitable Donations?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "charitable_donations_details", "label": "Charitable Donations Details", "type": "textarea", "show_if": "charitable_donations == yes" }
+      ]
+    },
+    {
+      "id": "residuary",
+      "title": "Residuary Estate Distribution",
+      "fields": [
+        { "key": "residuary_distribution", "label": "Residuary Distribution", "type": "radio_group", "options": ["spouse_then_children_equal", "children_equal", "another_person_or_organization", "other"] },
+        { "key": "residuary_other_person_org", "label": "Other Person/Organization Name", "type": "text", "show_if": "residuary_distribution == another_person_or_organization" },
+        { "key": "residuary_other_instructions", "label": "Other Distribution Instructions", "type": "textarea", "show_if": "residuary_distribution == other" },
+        { "key": "residuary_per_stirpes", "label": "Per stirpes if beneficiary predeceases?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "real_property",
+      "title": "Real Property",
+      "fields": [
+        {
+          "key": "real_property",
+          "label": "Real Property",
+          "type": "table",
+          "row_keys": ["address_location", "property_type", "how_titled", "estimated_value"],
+          "max_rows": 6,
+          "row_field_types": { "estimated_value": "currency" }
+        },
+        { "key": "leave_specific_property_to_certain_person", "label": "Leave specific property to a certain person?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "financial_assets",
+      "title": "Financial Assets",
+      "fields": [
+        {
+          "key": "financial_assets",
+          "label": "Financial Assets",
+          "type": "table",
+          "row_keys": ["institution_name", "account_type", "approx_balance", "beneficiary"],
+          "max_rows": 10,
+          "row_field_types": { "approx_balance": "currency" }
+        }
+      ]
+    },
+    {
+      "id": "personal_property",
+      "title": "Personal Property",
+      "fields": [
+        {
+          "key": "personal_property",
+          "label": "Personal Property",
+          "type": "table",
+          "row_keys": ["item_description", "estimated_value", "recipient"],
+          "max_rows": 10,
+          "row_field_types": { "estimated_value": "currency" }
+        }
+      ]
+    },
+    {
+      "id": "debts",
+      "title": "Debts and Liabilities",
+      "fields": [
+        {
+          "key": "debts",
+          "label": "Debts",
+          "type": "table",
+          "row_keys": ["creditor_name", "debt_type", "approx_balance"],
+          "max_rows": 10,
+          "row_field_types": { "approx_balance": "currency" }
+        }
+      ]
+    },
+    {
+      "id": "funeral_burial",
+      "title": "Funeral and Burial Instructions",
+      "fields": [
+        { "key": "funeral_disposition", "label": "Funeral Disposition", "type": "radio_group", "options": ["cremation", "burial", "no_preference"] },
+        { "key": "burial_location", "label": "Desired Location / Cemetery", "type": "text", "optional": true },
+        { "key": "prepaid_arrangements", "label": "Prepaid Arrangements?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "religious_cultural_preferences", "label": "Religious / Cultural Preferences", "type": "text", "optional": true },
+        { "key": "donate_organs", "label": "Donate Organs?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "digital_assets",
+      "title": "Digital Assets",
+      "fields": [
+        { "key": "digital_assets", "label": "Digital Assets", "type": "textarea", "optional": true }
+      ]
+    },
+    {
+      "id": "pet_care",
+      "title": "Pet Care",
+      "fields": [
+        { "key": "has_pets", "label": "Pets?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "pet_caretaker_name", "label": "Pet Caretaker Name", "type": "text", "show_if": "has_pets == yes" },
+        { "key": "pet_caretaker_phone", "label": "Pet Caretaker Phone", "type": "phone", "show_if": "has_pets == yes" },
+        { "key": "leave_money_for_pet_care", "label": "Leave money for pet care?", "type": "radio_group", "options": ["yes", "no"], "show_if": "has_pets == yes" },
+        { "key": "pet_care_amount", "label": "Pet Care Amount", "type": "currency", "show_if": "leave_money_for_pet_care == yes" }
+      ]
+    },
+    {
+      "id": "witnesses",
+      "title": "Witnesses",
+      "fields": [
+        {
+          "key": "witnesses",
+          "label": "Witnesses",
+          "type": "table",
+          "row_keys": ["witness_name", "address", "phone", "relationship"],
+          "max_rows": 4
+        }
+      ]
+    },
+    {
+      "id": "attachments",
+      "title": "Attachments",
+      "fields": [
+        { "key": "attach_id_copy", "label": "Copy of ID", "type": "checkbox" },
+        { "key": "attach_marriage_certificate", "label": "Marriage Certificate", "type": "checkbox" },
+        { "key": "attach_property_deeds", "label": "Property Deeds", "type": "checkbox" },
+        { "key": "attach_title_documents", "label": "Title Documents", "type": "checkbox" },
+        { "key": "attach_beneficiary_designations", "label": "Beneficiary Designations", "type": "checkbox" },
+        { "key": "attach_prepaid_burial_documents", "label": "Prepaid Burial/Cremation Documents", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "notes",
+      "title": "Notes or Special Instructions",
+      "fields": [
+        { "key": "notes", "label": "Notes", "type": "textarea", "optional": true }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" },
+    { "key": "testator_age", "from": ["testator_dob"], "rule": "years_since(testator_dob)" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's your full mailing address?",
+      "fills": ["testator_street", "testator_city", "testator_state", "testator_zip"]
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "slug": "unlawful-detainer-landlord",
+  "title": "Unlawful Detainer (Eviction) – Landlord Questionnaire",
+  "pdf": "unlawful-detainer-landlord.pdf",
+  "form_number": 1,
+  "estimated_call_minutes": { "intelligent": 12, "literal": 28 },
+  "sections": [
+    {
+      "id": "case_court_info",
+      "title": "Case & Court Information",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true },
+        { "key": "court_county", "label": "Court / County", "type": "text" },
+        { "key": "property_county", "label": "Property County (if different)", "type": "text", "optional": true },
+        { "key": "case_number", "label": "Case Number (if filed)", "type": "text", "optional": true },
+        { "key": "department", "label": "Department", "type": "text", "optional": true }
+      ]
+    },
+    {
+      "id": "landlord",
+      "title": "Landlord / Plaintiff",
+      "fields": [
+        { "key": "landlord_full_legal_name", "label": "Landlord Full Legal Name (or Business)", "type": "text" },
+        { "key": "landlord_entity_type", "label": "Landlord Entity Type", "type": "radio_group", "options": ["individual", "llc", "corporation", "trust", "other"] },
+        { "key": "landlord_entity_type_other", "label": "Landlord Entity Type (Other)", "type": "text", "show_if": "landlord_entity_type == other" },
+        { "key": "landlord_street", "label": "Landlord Street Address", "type": "text" },
+        { "key": "landlord_city", "label": "Landlord City", "type": "text" },
+        { "key": "landlord_state", "label": "Landlord State", "type": "text" },
+        { "key": "landlord_zip", "label": "Landlord Zip", "type": "text" },
+        { "key": "landlord_phone", "label": "Landlord Phone", "type": "phone" },
+        { "key": "landlord_email", "label": "Landlord Email", "type": "email" },
+        { "key": "property_manager_name", "label": "Property Manager Name", "type": "text", "optional": true },
+        { "key": "property_manager_contact", "label": "Property Manager Contact Info", "type": "text", "optional": true }
+      ]
+    },
+    {
+      "id": "tenant",
+      "title": "Tenant / Defendant",
+      "fields": [
+        { "key": "tenant_full_legal_names", "label": "Tenant Full Legal Name(s)", "type": "text" },
+        { "key": "tenant_additional_occupants", "label": "Additional Occupants", "type": "text", "optional": true },
+        { "key": "rental_property_street", "label": "Rental Property Street Address", "type": "text" },
+        { "key": "rental_property_city", "label": "Rental Property City", "type": "text" },
+        { "key": "rental_property_state", "label": "Rental Property State", "type": "text" },
+        { "key": "rental_property_zip", "label": "Rental Property Zip", "type": "text" },
+        { "key": "tenant_phone", "label": "Tenant Phone", "type": "phone", "optional": true },
+        { "key": "tenant_email", "label": "Tenant Email", "type": "email", "optional": true }
+      ]
+    },
+    {
+      "id": "rental_agreement",
+      "title": "Rental Agreement Details",
+      "fields": [
+        { "key": "property_type", "label": "Property Type", "type": "radio_group", "options": ["apartment", "house", "room", "commercial", "other"] },
+        { "key": "property_type_other", "label": "Property Type (Other)", "type": "text", "show_if": "property_type == other" },
+        { "key": "tenant_moved_in_date", "label": "Date Tenant Moved In", "type": "date" },
+        { "key": "lease_type", "label": "Lease Type", "type": "radio_group", "options": ["written", "verbal"] },
+        { "key": "lease_term", "label": "Lease Term", "type": "radio_group", "options": ["month_to_month", "fixed_term", "other"] },
+        { "key": "lease_term_other", "label": "Lease Term (Other)", "type": "text", "show_if": "lease_term == other" },
+        { "key": "lease_start_date", "label": "Lease Start Date", "type": "date" },
+        { "key": "lease_end_date", "label": "Lease End Date", "type": "date", "optional": true },
+        { "key": "monthly_rent", "label": "Monthly Rent", "type": "currency" },
+        { "key": "rent_due_date", "label": "Rent Due Date (day of month)", "type": "text" },
+        { "key": "security_deposit", "label": "Security Deposit", "type": "currency" }
+      ]
+    },
+    {
+      "id": "basis_for_eviction",
+      "title": "Basis for Eviction",
+      "fields": [
+        { "key": "basis_nonpayment_of_rent", "label": "Nonpayment of Rent", "type": "checkbox" },
+        { "key": "basis_breach_of_lease", "label": "Breach of Lease", "type": "checkbox" },
+        { "key": "basis_nuisance_illegal", "label": "Nuisance / Illegal Activity", "type": "checkbox" },
+        { "key": "basis_expiration_of_lease", "label": "Expiration of Lease", "type": "checkbox" },
+        { "key": "basis_no_fault_termination", "label": "No-Fault Termination", "type": "checkbox" },
+        { "key": "basis_owner_move_in", "label": "Owner Move-In", "type": "checkbox" },
+        { "key": "basis_substantial_remodel", "label": "Substantial Remodel", "type": "checkbox" },
+        { "key": "basis_other", "label": "Basis Other", "type": "text" }
+      ]
+    },
+    {
+      "id": "notice_served",
+      "title": "Notice Served",
+      "fields": [
+        { "key": "notice_type", "label": "Notice Type", "type": "radio_group", "options": ["3_day_pay_or_quit", "3_day_perform_or_quit", "3_day_quit", "30_day_vacate", "60_day_vacate", "other"] },
+        { "key": "notice_type_other", "label": "Notice Type (Other)", "type": "text", "show_if": "notice_type == other" },
+        { "key": "notice_served_date", "label": "Date Notice Served", "type": "date" },
+        { "key": "notice_expiration_date", "label": "Notice Expiration Date", "type": "date" },
+        { "key": "notice_service_method", "label": "Method of Service", "type": "radio_group", "options": ["personal", "substitute", "posted_mailed", "other"] },
+        { "key": "notice_service_method_other", "label": "Service Method (Other)", "type": "text", "show_if": "notice_service_method == other" },
+        { "key": "notice_served_by", "label": "Who Served the Notice", "type": "text" }
+      ]
+    },
+    {
+      "id": "rent_and_amount_owed",
+      "title": "Rent & Amount Owed",
+      "fields": [
+        { "key": "rent_monthly_rent", "label": "Monthly Rent", "type": "currency" },
+        { "key": "rent_amount_owed", "label": "Amount Owed", "type": "currency" },
+        { "key": "rent_period_of_nonpayment", "label": "Period of Nonpayment", "type": "text" },
+        { "key": "rent_partial_payments_received", "label": "Partial Payments Received?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "rent_partial_payment_amount", "label": "Partial Payment Amount", "type": "currency", "show_if": "rent_partial_payments_received == yes" },
+        { "key": "rent_partial_payment_dates", "label": "Partial Payment Date(s)", "type": "text", "show_if": "rent_partial_payments_received == yes" },
+        { "key": "rent_ledger_available", "label": "Ledger Available?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "tenant_compliance",
+      "title": "Tenant Compliance",
+      "fields": [
+        { "key": "tenant_complied_with_notice", "label": "Did tenant comply with notice?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "tenant_responded_to_notice", "label": "Did tenant respond to notice?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "tenant_compliance_explain", "label": "Explanation", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "property_status",
+      "title": "Property Status",
+      "fields": [
+        { "key": "tenant_still_in_possession", "label": "Tenant still in possession?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "tenant_abandoned_property", "label": "Tenant abandoned property?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "property_damage", "label": "Any property damage?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "property_damage_description", "label": "Property Damage Description", "type": "textarea", "show_if": "property_damage == yes" }
+      ]
+    },
+    {
+      "id": "rent_control",
+      "title": "Rent Control / Just Cause",
+      "fields": [
+        { "key": "subject_to_rent_control", "label": "Property subject to rent control?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "subject_to_ab1482", "label": "Property subject to AB 1482?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "just_cause", "label": "Just Cause (if AB 1482)", "type": "textarea", "show_if": "subject_to_ab1482 == yes" }
+      ]
+    },
+    {
+      "id": "prior_communication",
+      "title": "Prior Communication / Warnings",
+      "fields": [
+        { "key": "previously_warned_tenant", "label": "Previously warned tenant?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "written_notices_or_emails", "label": "Any written notices or emails?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "prior_communication_explain", "label": "Explanation", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "other_occupants",
+      "title": "Other Occupants",
+      "fields": [
+        { "key": "unknown_occupants", "label": "Are there unknown occupants?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "children_in_property", "label": "Children in property?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "related_legal_issues",
+      "title": "Related Legal Issues",
+      "fields": [
+        { "key": "prior_eviction_cases", "label": "Any prior eviction cases?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "tenant_bankruptcy", "label": "Any bankruptcy filed by tenant?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "code_enforcement_complaints", "label": "Any code enforcement complaints?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "requested_relief",
+      "title": "Requested Relief",
+      "fields": [
+        { "key": "relief_possession", "label": "Possession of Property", "type": "checkbox" },
+        { "key": "relief_back_rent", "label": "Back Rent", "type": "checkbox" },
+        { "key": "relief_holdover_damages", "label": "Holdover Damages", "type": "checkbox" },
+        { "key": "relief_court_costs", "label": "Court Costs", "type": "checkbox" },
+        { "key": "relief_attorney_fees", "label": "Attorney Fees", "type": "checkbox" },
+        { "key": "relief_other", "label": "Other Relief", "type": "text" }
+      ]
+    },
+    {
+      "id": "client_statement",
+      "title": "Client Statement",
+      "fields": [
+        { "key": "client_statement", "label": "Timeline of Events", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "documents_provided",
+      "title": "Documents Provided",
+      "fields": [
+        { "key": "doc_lease_agreement", "label": "Lease Agreement", "type": "checkbox" },
+        { "key": "doc_notices_served", "label": "Notice(s) Served", "type": "checkbox" },
+        { "key": "doc_proof_of_service", "label": "Proof of Service", "type": "checkbox" },
+        { "key": "doc_rent_ledger", "label": "Rent Ledger", "type": "checkbox" },
+        { "key": "doc_payment_records", "label": "Payment Records", "type": "checkbox" },
+        { "key": "doc_communications", "label": "Communications with Tenant", "type": "checkbox" },
+        { "key": "doc_photos", "label": "Photos", "type": "checkbox" },
+        { "key": "doc_other", "label": "Other Document", "type": "text" }
+      ]
+    },
+    {
+      "id": "internal_notes",
+      "title": "Internal Notes",
+      "fields": [
+        { "key": "internal_notes", "label": "Office Use Only", "type": "textarea" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" },
+    { "key": "rent_monthly_rent", "from": ["monthly_rent"], "rule": "mirror(monthly_rent)", "note": "Same value appears in two sections of the PDF; ask once, fill both" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's the landlord's full mailing address?",
+      "fills": ["landlord_street", "landlord_city", "landlord_state", "landlord_zip"]
+    },
+    {
+      "ask": "What's the rental property's full address?",
+      "fills": ["rental_property_street", "rental_property_city", "rental_property_state", "rental_property_zip"]
+    }
+  ]
+}

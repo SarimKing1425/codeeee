@@ -1,0 +1,99 @@
+{
+  "slug": "client-intake-sheet",
+  "title": "Client Information Intake Sheet",
+  "pdf": "client-intake-sheet.pdf",
+  "form_number": 18,
+  "estimated_call_minutes": { "intelligent": 4, "literal": 8 },
+  "sections": [
+    {
+      "id": "courthouse_county",
+      "title": "County of Courthouse",
+      "fields": [
+        { "key": "courthouse_county", "label": "Courthouse County", "type": "radio_group", "options": ["los_angeles", "orange_county", "riverside", "san_bernardino"] }
+      ]
+    },
+    {
+      "id": "client_info",
+      "title": "Client Information",
+      "fields": [
+        { "key": "client_first_name", "label": "Client First Name", "type": "text" },
+        { "key": "client_last_name", "label": "Client Last Name", "type": "text" },
+        { "key": "client_age", "label": "Client Age", "type": "number", "derived": true },
+        { "key": "client_dob", "label": "Client Date of Birth", "type": "date" },
+        { "key": "client_physical_street", "label": "Physical Street Address", "type": "text" },
+        { "key": "client_physical_city", "label": "Physical City", "type": "text" },
+        { "key": "client_physical_zip", "label": "Physical CA Zip", "type": "text" },
+        { "key": "client_mailing_street", "label": "Mailing Street Address (or PO Box)", "type": "text", "optional": true },
+        { "key": "client_mailing_city", "label": "Mailing City", "type": "text", "optional": true },
+        { "key": "client_mailing_zip", "label": "Mailing CA Zip", "type": "text", "optional": true },
+        { "key": "client_direct_phone", "label": "Direct Phone", "type": "phone" },
+        { "key": "client_alternate_phone", "label": "Alternate Phone", "type": "phone", "optional": true },
+        { "key": "client_email", "label": "Client Email", "type": "email" },
+        { "key": "client_alternate_email", "label": "Alternate Email", "type": "email", "optional": true },
+        { "key": "client_occupation", "label": "Occupation", "type": "text" }
+      ]
+    },
+    {
+      "id": "benefits",
+      "title": "Benefits",
+      "fields": [
+        { "key": "receives_social_service_benefits", "label": "Receives social service benefits (Cash Aid, Medi-Cal, SSI, Food Stamps, etc.)", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "case_service",
+      "title": "Case & Service Information",
+      "fields": [
+        { "key": "case_type", "label": "Type of Case", "type": "radio_group", "options": ["civil", "probate", "family_law"] },
+        { "key": "case_location", "label": "Case Location", "type": "radio_group", "options": ["san_bernardino", "riverside"] }
+      ]
+    },
+    {
+      "id": "scheduling",
+      "title": "Scheduling",
+      "fields": [
+        { "key": "consultation_date", "label": "Consultation Date", "type": "date" },
+        { "key": "consultation_time", "label": "Consultation Time", "type": "text" },
+        { "key": "expected_due_date", "label": "Expected Due Date", "type": "date" },
+        { "key": "service_charge", "label": "Service Charge", "type": "currency" },
+        { "key": "next_appt_date", "label": "Next Appointment Date", "type": "date" },
+        { "key": "next_appt_time", "label": "Next Appointment Time", "type": "text" },
+        { "key": "payment_plan", "label": "Payment Plan?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "services_requested",
+      "title": "Services Requested",
+      "fields": [
+        { "key": "service_child_custody_visitation", "label": "Child Custody / Visitation", "type": "checkbox" },
+        { "key": "service_divorce_legal_separation", "label": "Divorce / Legal Separation", "type": "checkbox" },
+        { "key": "service_modification", "label": "Modification", "type": "checkbox" },
+        { "key": "service_child_support", "label": "Child Support", "type": "checkbox" },
+        { "key": "service_immigration", "label": "Immigration", "type": "checkbox" },
+        { "key": "service_power_of_attorney", "label": "Power of Attorney", "type": "checkbox" },
+        { "key": "service_wills_trusts", "label": "Will & Trusts", "type": "checkbox" },
+        { "key": "service_adoption", "label": "Adoption", "type": "checkbox" },
+        { "key": "service_emergency_ex_parte", "label": "Emergency Ex-Parte", "type": "checkbox" },
+        { "key": "service_guardianship_conservatorship", "label": "Guardianship / Conservatorship", "type": "checkbox" },
+        { "key": "service_other", "label": "Other Service", "type": "text" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "client_age", "from": ["client_dob"], "rule": "years_since(client_dob)" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's your full name?",
+      "fills": ["client_first_name", "client_last_name"]
+    },
+    {
+      "ask": "What's your physical address? Street, city, and ZIP.",
+      "fills": ["client_physical_street", "client_physical_city", "client_physical_zip"]
+    },
+    {
+      "ask": "Is your mailing address the same, or different? If different, what's the mailing address?",
+      "fills": ["client_mailing_street", "client_mailing_city", "client_mailing_zip"]
+    }
+  ]
+}

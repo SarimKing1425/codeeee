@@ -1,0 +1,213 @@
+{
+  "slug": "conservatorship-of-an-adult",
+  "title": "Conservatorship of an Adult",
+  "pdf": "conservatorship-of-an-adult.pdf",
+  "form_number": 11,
+  "estimated_call_minutes": { "intelligent": 18, "literal": 40 },
+  "sections": [
+    {
+      "id": "header",
+      "title": "Header",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true }
+      ]
+    },
+    {
+      "id": "conservatorship_request_type",
+      "title": "Type of Conservatorship Requested",
+      "fields": [
+        { "key": "conservatorship_request_type", "label": "Conservatorship Request Type", "type": "radio_group", "options": ["temporary", "general_permanent", "both_temporary_and_general", "limited"] }
+      ]
+    },
+    {
+      "id": "conservatorship_case_type",
+      "title": "Type of Case",
+      "fields": [
+        { "key": "conservatorship_case_type", "label": "Conservatorship Case Type", "type": "radio_group", "options": ["of_the_person", "of_the_estate", "both"] }
+      ]
+    },
+    {
+      "id": "conservatee",
+      "title": "Proposed Conservatee",
+      "fields": [
+        { "key": "conservatee_full_legal_name", "label": "Conservatee Full Legal Name", "type": "text" },
+        { "key": "conservatee_dob", "label": "Conservatee DOB", "type": "date" },
+        { "key": "conservatee_age", "label": "Conservatee Age", "type": "number", "derived": true },
+        { "key": "conservatee_gender", "label": "Conservatee Gender", "type": "text", "optional": true },
+        { "key": "conservatee_ssn_last4", "label": "Conservatee SSN (last 4)", "type": "text" },
+        { "key": "conservatee_street", "label": "Conservatee Street", "type": "text" },
+        { "key": "conservatee_city", "label": "Conservatee City", "type": "text" },
+        { "key": "conservatee_state", "label": "Conservatee State", "type": "text" },
+        { "key": "conservatee_zip", "label": "Conservatee Zip", "type": "text" },
+        { "key": "conservatee_phone", "label": "Conservatee Phone", "type": "phone" },
+        { "key": "conservatee_email", "label": "Conservatee Email", "type": "email" },
+        { "key": "conservatee_living_situation", "label": "Conservatee Living Situation", "type": "radio_group", "options": ["own_home", "apartment", "assisted_living", "skilled_nursing", "hospital", "other"] },
+        { "key": "conservatee_living_situation_other", "label": "Living Situation (Other)", "type": "text", "show_if": "conservatee_living_situation == other" },
+        { "key": "conservatee_length_at_current_address", "label": "Length at Current Address", "type": "text" },
+        { "key": "conservatee_county_of_residence", "label": "County of Residence", "type": "text" },
+        { "key": "currently_under_conservatorship_other_county", "label": "Currently under conservatorship in another county?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "proposed_conservators",
+      "title": "Proposed Conservator(s)",
+      "fields": [
+        {
+          "key": "proposed_conservators",
+          "label": "Proposed Conservators",
+          "type": "table",
+          "row_keys": ["full_legal_name", "relationship", "dob", "ssn_last4", "street", "city_state_zip", "phone", "email"],
+          "max_rows": 2,
+          "row_field_types": { "dob": "date" }
+        },
+        { "key": "conservator_marital_status", "label": "Conservator Marital Status", "type": "radio_group", "options": ["single", "married", "domestic_partners", "other"] },
+        { "key": "conservator_occupation", "label": "Conservator Occupation", "type": "text" },
+        { "key": "conservator_employer", "label": "Conservator Employer", "type": "text" },
+        { "key": "conservator_drivers_license_or_id", "label": "Conservator Driver's License or ID #", "type": "text" },
+        { "key": "conservator_lives_with_conservatee", "label": "Lives with conservatee?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "conservator_previously_appointed", "label": "Previously appointed guardian or conservator?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "relationship_family_info",
+      "title": "Relationship and Family Information",
+      "fields": [
+        { "key": "how_long_known_conservatee", "label": "How long have you known the proposed conservatee?", "type": "text" },
+        { "key": "related_by_blood_marriage_adoption", "label": "Related by blood, marriage, or adoption?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "relation_explanation", "label": "Relation Explanation", "type": "text", "show_if": "related_by_blood_marriage_adoption == yes" },
+        {
+          "key": "conservatee_relatives",
+          "label": "Conservatee's Relatives",
+          "type": "table",
+          "row_keys": ["name", "relationship", "address_city_zip", "phone"],
+          "max_rows": 8
+        }
+      ]
+    },
+    {
+      "id": "reason_for_conservatorship",
+      "title": "Reason for Conservatorship",
+      "fields": [
+        { "key": "reason_inability_personal_needs", "label": "Inability to manage personal needs", "type": "checkbox" },
+        { "key": "reason_medical_mental_health", "label": "Medical incapacity or mental health", "type": "checkbox" },
+        { "key": "reason_dementia_alzheimers", "label": "Dementia or Alzheimer's", "type": "checkbox" },
+        { "key": "reason_physical_disability", "label": "Physical Disability", "type": "checkbox" },
+        { "key": "reason_risk_abuse_neglect_exploitation", "label": "Risk of abuse/neglect/exploitation", "type": "checkbox" },
+        { "key": "reason_financial_mismanagement", "label": "Financial Mismanagement", "type": "checkbox" },
+        { "key": "reason_other", "label": "Other Reason", "type": "text" },
+        { "key": "reason_explanation", "label": "Detailed Explanation", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "medical_cognitive",
+      "title": "Medical and Cognitive Condition",
+      "fields": [
+        { "key": "primary_diagnosis", "label": "Primary Diagnosis", "type": "text" },
+        { "key": "treating_physician", "label": "Treating Physician", "type": "text" },
+        { "key": "physician_address", "label": "Physician Address", "type": "text" },
+        { "key": "physician_phone", "label": "Physician Phone", "type": "phone" },
+        { "key": "takes_medication", "label": "Takes medication?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "can_attend_court", "label": "Can attend court?", "type": "radio_group", "options": ["yes", "no", "unknown"] },
+        { "key": "requires_court_appointed_attorney", "label": "Requires court-appointed attorney?", "type": "radio_group", "options": ["yes", "no", "unknown"] }
+      ]
+    },
+    {
+      "id": "estate_info",
+      "title": "Conservatorship of the Estate",
+      "fields": [
+        { "key": "estate_assets_value", "label": "Estimated Value of Assets", "type": "currency" },
+        { "key": "estate_monthly_income", "label": "Monthly Income", "type": "currency" },
+        { "key": "estate_real_property", "label": "Real Property Owned", "type": "text" },
+        { "key": "estate_bank_investment_accounts", "label": "Bank/Investment Accounts", "type": "text" },
+        { "key": "benefit_ssi", "label": "Benefit: SSI", "type": "checkbox" },
+        { "key": "benefit_ssdi", "label": "Benefit: SSDI", "type": "checkbox" },
+        { "key": "benefit_medical", "label": "Benefit: Medi-Cal", "type": "checkbox" },
+        { "key": "benefit_va", "label": "Benefit: VA", "type": "checkbox" },
+        { "key": "benefit_other", "label": "Benefit: Other", "type": "text" },
+        { "key": "estate_debts_obligations", "label": "Debts or Obligations", "type": "text" }
+      ]
+    },
+    {
+      "id": "temporary_conservatorship",
+      "title": "Temporary Conservatorship",
+      "fields": [
+        { "key": "temporary_emergency_reason", "label": "Why is emergency order needed?", "type": "textarea" },
+        { "key": "temporary_start_date", "label": "When should it begin?", "type": "date" },
+        { "key": "risk_of_immediate_harm", "label": "Risk of immediate harm?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "emergency_circumstances_explanation", "label": "Emergency Circumstances Explanation", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "living_arrangements",
+      "title": "Living Arrangements and Care Plan",
+      "fields": [
+        { "key": "conservatee_will_live", "label": "Where Conservatee Will Live", "type": "radio_group", "options": ["home", "facility", "with_conservator", "other"] },
+        { "key": "conservatee_will_live_other", "label": "Where Live (Other)", "type": "text", "show_if": "conservatee_will_live == other" },
+        { "key": "daily_care_provider", "label": "Daily Care Provider", "type": "text" },
+        { "key": "care_plan_description", "label": "Care Plan Description", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "alternatives_considered",
+      "title": "Alternative Options Considered",
+      "fields": [
+        { "key": "alt_poa", "label": "Power of Attorney", "type": "checkbox" },
+        { "key": "alt_advance_directive", "label": "Advance Health Care Directive", "type": "checkbox" },
+        { "key": "alt_representative_payee", "label": "Representative Payee", "type": "checkbox" },
+        { "key": "alt_case_management", "label": "Case Management", "type": "checkbox" },
+        { "key": "alt_other", "label": "Other Alternative", "type": "text" },
+        { "key": "alternatives_not_sufficient_explanation", "label": "Why alternatives not sufficient", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "conservator_background",
+      "title": "Background Information for Conservator(s)",
+      "fields": [
+        { "key": "conservator_convicted_felony_misdemeanor", "label": "Convicted of felony or misdemeanor?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "conservator_filed_bankruptcy", "label": "Filed for bankruptcy?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "conservator_investigated_abuse_neglect_fraud", "label": "Investigated for abuse, neglect, or fraud?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "conservator_background_explanation", "label": "Background Explanation", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "other_info",
+      "title": "Other Relevant Information",
+      "fields": [
+        { "key": "conservatee_nominated_preferred_conservator", "label": "Conservatee nominated preferred conservator?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "aps_involved", "label": "APS Involved?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "existing_restraining_protective_orders", "label": "Existing restraining or protective orders?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "existing_orders_explanation", "label": "Existing Orders Explanation", "type": "textarea", "show_if": "existing_restraining_protective_orders == yes" }
+      ]
+    },
+    {
+      "id": "attachments",
+      "title": "Attachments to Provide",
+      "fields": [
+        { "key": "attach_physician_declaration_gc335", "label": "Physician's Declaration of Capacity (GC-335)", "type": "checkbox" },
+        { "key": "attach_financial_statements", "label": "Financial Statements / Bank Records", "type": "checkbox" },
+        { "key": "attach_medical_records", "label": "Medical Records / Diagnosis Summary", "type": "checkbox" },
+        { "key": "attach_poa_advance_directive", "label": "POA / Advance Directive", "type": "checkbox" },
+        { "key": "attach_conservatee_id_or_ssn", "label": "Conservatee ID or SSN Card", "type": "checkbox" },
+        { "key": "attach_proof_of_residence", "label": "Proof of Residence", "type": "checkbox" },
+        { "key": "attach_supporting_declarations_mc030", "label": "Supporting Declarations (MC-030)", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "consultant_notes",
+      "title": "Consultant Notes",
+      "fields": [
+        { "key": "consultant_notes", "label": "Consultant Notes", "type": "textarea" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" },
+    { "key": "conservatee_age", "from": ["conservatee_dob"], "rule": "years_since(conservatee_dob)" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's the conservatee's full mailing address?",
+      "fills": ["conservatee_street", "conservatee_city", "conservatee_state", "conservatee_zip"]
+    }
+  ]
+}

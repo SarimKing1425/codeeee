@@ -1,0 +1,196 @@
+{
+  "slug": "name-change-petition",
+  "title": "Name Change Petition",
+  "pdf": "name-change-petition.pdf",
+  "form_number": 13,
+  "estimated_call_minutes": { "intelligent": 10, "literal": 22 },
+  "sections": [
+    {
+      "id": "header",
+      "title": "Header",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true }
+      ]
+    },
+    {
+      "id": "petition_type",
+      "title": "Type of Name Change Requested",
+      "fields": [
+        { "key": "petition_type", "label": "Petition Type", "type": "radio_group", "options": ["adult", "minor", "family"] },
+        { "key": "reason_personal_preference", "label": "Reason: Personal Preference", "type": "checkbox" },
+        { "key": "reason_divorce_separation", "label": "Reason: Divorce or Separation", "type": "checkbox" },
+        { "key": "reason_gender_identity", "label": "Reason: Gender Identity / Gender Marker Change", "type": "checkbox" },
+        { "key": "reason_adoption_parentage", "label": "Reason: Adoption / Parentage Issue", "type": "checkbox" },
+        { "key": "reason_immigration_citizenship", "label": "Reason: Immigration / Citizenship", "type": "checkbox" },
+        { "key": "reason_birth_certificate_correction", "label": "Reason: Birth Certificate Correction", "type": "checkbox" },
+        { "key": "reason_other", "label": "Other Reason", "type": "text" },
+        { "key": "reason_explanation", "label": "Brief Explanation", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "court_info",
+      "title": "Court Information",
+      "fields": [
+        { "key": "court_county", "label": "County", "type": "text" },
+        { "key": "courthouse", "label": "Courthouse", "type": "text" },
+        { "key": "case_number", "label": "Case Number", "type": "text", "optional": true }
+      ]
+    },
+    {
+      "id": "petitioner",
+      "title": "Petitioner Information",
+      "fields": [
+        { "key": "petitioner_current_legal_name", "label": "Petitioner Current Legal Name", "type": "text" },
+        { "key": "petitioner_requested_new_name", "label": "Petitioner Requested New Name", "type": "text" },
+        { "key": "petitioner_dob", "label": "Petitioner Date of Birth", "type": "date" },
+        { "key": "petitioner_age", "label": "Petitioner Age", "type": "number", "derived": true },
+        { "key": "petitioner_gender_on_current_id", "label": "Petitioner Gender (on current ID)", "type": "text" },
+        { "key": "petitioner_place_of_birth", "label": "Petitioner Place of Birth", "type": "text" },
+        { "key": "petitioner_ssn_last4", "label": "Petitioner SSN (last 4)", "type": "text" },
+        { "key": "petitioner_drivers_license_id", "label": "Petitioner Driver's License or ID #", "type": "text" },
+        { "key": "petitioner_street", "label": "Petitioner Street Address", "type": "text" },
+        { "key": "petitioner_city", "label": "Petitioner City", "type": "text" },
+        { "key": "petitioner_state", "label": "Petitioner State", "type": "text" },
+        { "key": "petitioner_zip", "label": "Petitioner Zip", "type": "text" },
+        { "key": "petitioner_phone", "label": "Petitioner Phone", "type": "phone" },
+        { "key": "petitioner_email", "label": "Petitioner Email", "type": "email" },
+        { "key": "petitioner_us_citizen", "label": "U.S. Citizen?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "petitioner_immigration_status", "label": "Immigration Status", "type": "text", "show_if": "petitioner_us_citizen == no" }
+      ]
+    },
+    {
+      "id": "minor_info",
+      "title": "Minor's Information",
+      "fields": [
+        {
+          "key": "minors",
+          "label": "Minors",
+          "type": "table",
+          "row_keys": ["current_name", "dob", "age", "place_of_birth", "requested_new_name", "gender"],
+          "max_rows": 6,
+          "row_field_types": { "dob": "date", "age": "number" }
+        },
+        { "key": "child_lives_with", "label": "Child Lives With", "type": "radio_group", "options": ["mother", "father", "both", "guardian", "other"] },
+        { "key": "child_lives_with_other", "label": "Child Lives With (Other)", "type": "text", "show_if": "child_lives_with == other" },
+        { "key": "child_street", "label": "Child Street Address", "type": "text" },
+        { "key": "child_city", "label": "Child City", "type": "text" },
+        { "key": "child_state", "label": "Child State", "type": "text" },
+        { "key": "child_zip", "label": "Child Zip", "type": "text" }
+      ]
+    },
+    {
+      "id": "parents_guardians",
+      "title": "Parents / Guardians (Minor Petitions)",
+      "fields": [
+        { "key": "parent1_full_legal_name", "label": "Parent/Guardian 1 Full Legal Name", "type": "text" },
+        { "key": "parent1_relationship", "label": "Parent/Guardian 1 Relationship", "type": "radio_group", "options": ["mother", "father", "guardian", "other"] },
+        { "key": "parent1_dob", "label": "Parent/Guardian 1 DOB", "type": "date" },
+        { "key": "parent1_street", "label": "Parent/Guardian 1 Street", "type": "text" },
+        { "key": "parent1_city", "label": "Parent/Guardian 1 City", "type": "text" },
+        { "key": "parent1_state", "label": "Parent/Guardian 1 State", "type": "text" },
+        { "key": "parent1_zip", "label": "Parent/Guardian 1 Zip", "type": "text" },
+        { "key": "parent1_phone", "label": "Parent/Guardian 1 Phone", "type": "phone" },
+        { "key": "parent1_email", "label": "Parent/Guardian 1 Email", "type": "email" },
+        { "key": "parent2_full_legal_name", "label": "Parent/Guardian 2 Full Legal Name", "type": "text" },
+        { "key": "parent2_relationship", "label": "Parent/Guardian 2 Relationship", "type": "radio_group", "options": ["mother", "father", "guardian", "other"] },
+        { "key": "parent2_dob", "label": "Parent/Guardian 2 DOB", "type": "date" },
+        { "key": "parent2_street", "label": "Parent/Guardian 2 Street", "type": "text" },
+        { "key": "parent2_city", "label": "Parent/Guardian 2 City", "type": "text" },
+        { "key": "parent2_state", "label": "Parent/Guardian 2 State", "type": "text" },
+        { "key": "parent2_zip", "label": "Parent/Guardian 2 Zip", "type": "text" },
+        { "key": "parent2_phone", "label": "Parent/Guardian 2 Phone", "type": "phone" },
+        { "key": "parent2_email", "label": "Parent/Guardian 2 Email", "type": "email" },
+        { "key": "other_parent_served_or_notified", "label": "Other parent served or notified?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "name_change_details",
+      "title": "Name Change Details",
+      "fields": [
+        { "key": "present_name_on_birth_certificate", "label": "Present Name on Birth Certificate", "type": "text" },
+        { "key": "full_new_name_requested", "label": "Full New Name Requested", "type": "text" },
+        { "key": "previously_changed_name", "label": "Previously changed name?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "previously_changed_name_details", "label": "Previous Name Change Details", "type": "textarea", "show_if": "previously_changed_name == yes" },
+        { "key": "ever_convicted_of_felony", "label": "Ever convicted of a felony?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "felony_county_state_date", "label": "Felony County, State, Date", "type": "text", "show_if": "ever_convicted_of_felony == yes" },
+        { "key": "currently_incarcerated_or_on_parole", "label": "Currently in prison, jail, probation, or parole?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "incarceration_location", "label": "Incarceration / Parole Location", "type": "text", "show_if": "currently_incarcerated_or_on_parole == yes" }
+      ]
+    },
+    {
+      "id": "gender_identity",
+      "title": "Gender Identity",
+      "fields": [
+        { "key": "seeking_gender_marker_change", "label": "Seeking gender marker change?", "type": "checkbox" },
+        { "key": "requested_gender_marker", "label": "Requested Gender Marker", "type": "radio_group", "options": ["female", "male", "non_binary"], "show_if": "seeking_gender_marker_change == true" },
+        { "key": "name_change_conforms_to_gender_identity", "label": "Change name to conform to gender identity?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "publication",
+      "title": "Publication",
+      "fields": [
+        { "key": "request_case_filed_under_seal", "label": "Request case filed under seal?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "case_under_seal_reason", "label": "Reason for Sealing", "type": "textarea", "show_if": "request_case_filed_under_seal == yes" },
+        { "key": "preferred_local_newspaper", "label": "Preferred Local Newspaper", "type": "text" },
+        { "key": "city_of_publication", "label": "City of Publication", "type": "text" }
+      ]
+    },
+    {
+      "id": "criminal_record",
+      "title": "Criminal Record",
+      "fields": [
+        { "key": "ever_convicted_of_crime", "label": "Ever convicted of a crime?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "criminal_offense", "label": "Criminal Offense", "type": "text", "show_if": "ever_convicted_of_crime == yes" },
+        { "key": "criminal_date", "label": "Criminal Date", "type": "date", "show_if": "ever_convicted_of_crime == yes" },
+        { "key": "criminal_county_state", "label": "Criminal County / State", "type": "text", "show_if": "ever_convicted_of_crime == yes" },
+        { "key": "pending_criminal_cases", "label": "Pending criminal cases?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "pending_criminal_case_number_court", "label": "Pending Case Number and Court", "type": "text", "show_if": "pending_criminal_cases == yes" }
+      ]
+    },
+    {
+      "id": "additional_info",
+      "title": "Additional Information",
+      "fields": [
+        { "key": "filed_name_change_before", "label": "Filed a name change petition before?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "prior_name_change_when_where", "label": "Prior Name Change When / Where", "type": "text", "show_if": "filed_name_change_before == yes" },
+        { "key": "owes_court_ordered_obligations", "label": "Owes child support / restitution / court obligations?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "court_ordered_obligations_explain", "label": "Court Obligations Explanation", "type": "textarea", "show_if": "owes_court_ordered_obligations == yes" }
+      ]
+    },
+    {
+      "id": "attachments",
+      "title": "Required Attachments",
+      "fields": [
+        { "key": "attach_government_id", "label": "Government-issued ID", "type": "checkbox" },
+        { "key": "attach_birth_certificate", "label": "Certified copy of birth certificate", "type": "checkbox" },
+        { "key": "attach_proof_of_residency", "label": "Proof of residency", "type": "checkbox" },
+        { "key": "attach_criminal_record_clearance", "label": "Criminal record clearance", "type": "checkbox" },
+        { "key": "attach_declaration", "label": "Declaration in support of name change", "type": "checkbox" },
+        { "key": "attach_supporting_documents", "label": "Other supporting documents", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "consultant_notes",
+      "title": "Consultant Notes",
+      "fields": [
+        { "key": "consultant_notes", "label": "Internal Use Only", "type": "textarea" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" },
+    { "key": "petitioner_age", "from": ["petitioner_dob"], "rule": "years_since(petitioner_dob)" },
+    { "key": "minors.*.age", "from": ["minors.*.dob"], "rule": "years_since(minors[i].dob)" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's your full mailing address?",
+      "fills": ["petitioner_street", "petitioner_city", "petitioner_state", "petitioner_zip"]
+    },
+    {
+      "ask": "What's the child's full address?",
+      "fills": ["child_street", "child_city", "child_state", "child_zip"]
+    }
+  ]
+}

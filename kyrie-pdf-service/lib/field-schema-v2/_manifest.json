@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "generated_at": "2026-06-01",
+  "convention": "see README.md",
+  "forms": [
+    { "number": 1,  "slug": "unlawful-detainer-landlord",          "title": "Unlawful Detainer (Eviction) - Landlord",          "pdf": "unlawful-detainer-landlord.pdf",          "schema": "forms/01-unlawful-detainer.json" },
+    { "number": 2,  "slug": "writ-of-execution",                   "title": "Writ of Execution (EJ-130)",                       "pdf": "writ-of-execution.pdf",                   "schema": "forms/02-writ-of-execution.json" },
+    { "number": 3,  "slug": "trust-and-healthcare-directive",      "title": "Revocable Living Trust & Health Care Directive",   "pdf": "trust-and-healthcare-directive.pdf",      "schema": "forms/03-trust-and-healthcare-directive.json" },
+    { "number": 4,  "slug": "last-will-and-testament",             "title": "Last Will and Testament",                          "pdf": "last-will-and-testament.pdf",             "schema": "forms/04-last-will-and-testament.json" },
+    { "number": 5,  "slug": "response-to-unlawful-detainer",       "title": "Response to Unlawful Detainer",                    "pdf": "response-to-unlawful-detainer.pdf",       "schema": "forms/05-response-to-unlawful-detainer.json" },
+    { "number": 6,  "slug": "response-to-dvro",                    "title": "Response to DVRO",                                 "pdf": "response-to-dvro.pdf",                    "schema": "forms/06-response-to-dvro.json" },
+    { "number": 7,  "slug": "response-to-request-for-orders",      "title": "Response to Request for Order (FL-320)",           "pdf": "response-to-request-for-orders.pdf",      "schema": "forms/07-response-to-rfo.json" },
+    { "number": 8,  "slug": "default-uncontested-divorce-judgment","title": "Default / Uncontested Divorce Judgment",           "pdf": "default-uncontested-divorce-judgment.pdf","schema": "forms/08-default-uncontested-judgment.json" },
+    { "number": 9,  "slug": "guardianship-of-a-minor",             "title": "Guardianship of a Minor",                          "pdf": "guardianship-of-a-minor.pdf",             "schema": "forms/09-guardianship-of-a-minor.json" },
+    { "number": 10, "slug": "birth-certificate-correction",        "title": "Birth Certificate Correction & Amendment",         "pdf": "birth-certificate-correction.pdf",        "schema": "forms/10-birth-certificate-correction.json" },
+    { "number": 11, "slug": "conservatorship-of-an-adult",         "title": "Conservatorship of an Adult",                      "pdf": "conservatorship-of-an-adult.pdf",         "schema": "forms/11-conservatorship-of-an-adult.json" },
+    { "number": 12, "slug": "request-for-orders",                  "title": "Request for Order",                                "pdf": "request-for-orders.pdf",                  "schema": "forms/12-request-for-orders.json" },
+    { "number": 13, "slug": "name-change-petition",                "title": "Name Change Petition",                             "pdf": "name-change-petition.pdf",                "schema": "forms/13-name-change-petition.json" },
+    { "number": 14, "slug": "qdro-and-joinder",                    "title": "QDRO & Joinder",                                   "pdf": "qdro-and-joinder.pdf",                    "schema": "forms/14-qdro-and-joinder.json" },
+    { "number": 15, "slug": "domestic-violence-restraining-order", "title": "Domestic Violence Restraining Order",              "pdf": "domestic-violence-restraining-order.pdf", "schema": "forms/15-domestic-violence-restraining-order.json" },
+    { "number": 16, "slug": "request-to-restore-former-name",      "title": "Request to Restore Former Name (FL-395)",          "pdf": "request-to-restore-former-name.pdf",      "schema": "forms/16-restore-former-name.json" },
+    { "number": 17, "slug": "dissolution-of-marriage",             "title": "Dissolution of Marriage (test case)",              "pdf": "dissolution-of-marriage.pdf",             "schema": "forms/17-dissolution-of-marriage.json" },
+    { "number": 18, "slug": "client-intake-sheet",                 "title": "Client Information Intake Sheet",                  "pdf": "client-intake-sheet.pdf",                 "schema": "forms/18-client-intake-sheet.json" }
+  ]
+}

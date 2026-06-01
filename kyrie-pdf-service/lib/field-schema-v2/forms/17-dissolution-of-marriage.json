@@ -1,0 +1,220 @@
+{
+  "slug": "dissolution-of-marriage",
+  "title": "Dissolution of Marriage",
+  "pdf": "dissolution-of-marriage.pdf",
+  "form_number": 17,
+  "estimated_call_minutes": { "intelligent": 15, "literal": 35 },
+  "sections": [
+    {
+      "id": "case_court_info",
+      "title": "Case & Court Information",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true },
+        { "key": "court_county", "label": "Court / County", "type": "text" },
+        { "key": "case_number", "label": "Case Number", "type": "text", "optional": true },
+        { "key": "existing_family_law_orders", "label": "Existing Family Law Orders?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "existing_family_law_orders_description", "label": "Existing Orders Description / Date", "type": "textarea", "show_if": "existing_family_law_orders == yes" }
+      ]
+    },
+    {
+      "id": "petitioner",
+      "title": "Petitioner",
+      "fields": [
+        { "key": "petitioner_full_legal_name", "label": "Petitioner Full Legal Name", "type": "text" },
+        { "key": "petitioner_street", "label": "Petitioner Street Address", "type": "text" },
+        { "key": "petitioner_city", "label": "Petitioner City", "type": "text" },
+        { "key": "petitioner_state", "label": "Petitioner State", "type": "text" },
+        { "key": "petitioner_zip", "label": "Petitioner Zip", "type": "text" },
+        { "key": "petitioner_phone", "label": "Petitioner Phone", "type": "phone" },
+        { "key": "petitioner_email", "label": "Petitioner Email", "type": "email" },
+        { "key": "petitioner_dob", "label": "Petitioner Date of Birth", "type": "date" },
+        { "key": "petitioner_emergency_contact_name", "label": "Petitioner Emergency Contact Name", "type": "text" },
+        { "key": "petitioner_emergency_contact_phone", "label": "Petitioner Emergency Contact Phone", "type": "phone" }
+      ]
+    },
+    {
+      "id": "respondent",
+      "title": "Respondent (Other Party)",
+      "fields": [
+        { "key": "respondent_full_legal_name", "label": "Respondent Full Legal Name", "type": "text" },
+        { "key": "respondent_street", "label": "Respondent Street Address", "type": "text" },
+        { "key": "respondent_city", "label": "Respondent City", "type": "text" },
+        { "key": "respondent_state", "label": "Respondent State", "type": "text" },
+        { "key": "respondent_zip", "label": "Respondent Zip", "type": "text" },
+        { "key": "respondent_phone", "label": "Respondent Phone", "type": "phone" },
+        { "key": "respondent_email", "label": "Respondent Email", "type": "email" },
+        { "key": "respondent_dob", "label": "Respondent Date of Birth", "type": "date" },
+        { "key": "marriage_date", "label": "Date of Marriage", "type": "date" },
+        { "key": "separation_date", "label": "Date of Separation", "type": "date" },
+        { "key": "total_years_married", "label": "Total Years Married", "type": "number", "derived": true }
+      ]
+    },
+    {
+      "id": "minor_children",
+      "title": "Minor Children",
+      "fields": [
+        {
+          "key": "children",
+          "label": "Minor Children",
+          "type": "table",
+          "row_keys": ["full_name", "dob", "birthplace_city_state", "age"],
+          "max_rows": 6,
+          "row_field_types": { "full_name": "text", "dob": "date", "birthplace_city_state": "text", "age": "number" }
+        },
+        {
+          "key": "children_residence_history",
+          "label": "Children Residence History (Last 5 Years)",
+          "type": "table",
+          "row_keys": ["child_name", "from_month_year", "to_month_year", "with_parent_guardian", "city_state", "address"],
+          "max_rows": 10
+        },
+        {
+          "key": "children_current_living",
+          "label": "Children Current Living Situation",
+          "type": "table",
+          "row_keys": ["child_name", "lives_with", "address", "percent_time"],
+          "max_rows": 6
+        },
+        { "key": "prior_custody_orders", "label": "Prior Custody / Visitation Orders?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "prior_custody_orders_description", "label": "Prior Custody Orders Description", "type": "textarea", "show_if": "prior_custody_orders == yes" }
+      ]
+    },
+    {
+      "id": "residence",
+      "title": "Residence Information",
+      "fields": [
+        { "key": "either_party_lived_ca_6mo", "label": "Either party lived in California past 6 months?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "either_party_lived_county_3mo", "label": "Either party lived in this county past 3 months?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "grounds",
+      "title": "Grounds for Dissolution",
+      "fields": [
+        { "key": "grounds", "label": "Grounds for Dissolution", "type": "radio_group", "options": ["irreconcilable_differences", "permanent_legal_incapacity"] }
+      ]
+    },
+    {
+      "id": "orders_requested",
+      "title": "Orders Requested",
+      "fields": [
+        { "key": "order_dissolution", "label": "Dissolution (Divorce)", "type": "checkbox" },
+        { "key": "order_legal_separation", "label": "Legal Separation", "type": "checkbox" },
+        { "key": "order_nullity", "label": "Nullity of Marriage", "type": "checkbox" },
+        { "key": "order_child_custody_visitation", "label": "Child Custody / Visitation", "type": "checkbox" },
+        { "key": "order_child_support", "label": "Child Support", "type": "checkbox" },
+        { "key": "order_spousal_support", "label": "Spousal Support", "type": "checkbox" },
+        { "key": "order_division_property_debts", "label": "Division of Property / Debts", "type": "checkbox" },
+        { "key": "order_attorney_fees", "label": "Attorney Fees / Costs", "type": "checkbox" },
+        { "key": "order_other", "label": "Other Order", "type": "text" }
+      ]
+    },
+    {
+      "id": "income",
+      "title": "Income Information",
+      "fields": [
+        { "key": "petitioner_gross_monthly_income", "label": "Petitioner's Gross Monthly Income", "type": "currency" },
+        { "key": "petitioner_income_sources", "label": "Petitioner's Income Source(s)", "type": "text" },
+        { "key": "respondent_gross_monthly_income", "label": "Respondent's Gross Monthly Income", "type": "currency", "optional": true },
+        { "key": "respondent_income_sources", "label": "Respondent's Income Source(s)", "type": "text", "optional": true }
+      ]
+    },
+    {
+      "id": "property",
+      "title": "Property Information",
+      "fields": [
+        {
+          "key": "community_property",
+          "label": "Community Property",
+          "type": "table",
+          "row_keys": ["description", "estimated_value", "in_possession_of"],
+          "max_rows": 10,
+          "row_field_types": { "estimated_value": "currency" }
+        },
+        {
+          "key": "community_debts",
+          "label": "Community Debts / Liabilities",
+          "type": "table",
+          "row_keys": ["description", "approx_balance", "responsible_party"],
+          "max_rows": 10,
+          "row_field_types": { "approx_balance": "currency", "responsible_party": "radio_group:petitioner|respondent|both" }
+        },
+        {
+          "key": "separate_property",
+          "label": "Separate Property",
+          "type": "table",
+          "row_keys": ["description", "estimated_value", "owned_by"],
+          "max_rows": 10,
+          "row_field_types": { "estimated_value": "currency", "owned_by": "radio_group:petitioner|respondent" }
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Support Requests",
+      "fields": [
+        { "key": "support_child", "label": "Child Support Requested", "type": "checkbox" },
+        { "key": "support_spousal", "label": "Spousal / Partner Support Requested", "type": "checkbox" },
+        { "key": "support_none", "label": "No Support Requested", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "settlement",
+      "title": "Settlement & Resolution",
+      "fields": [
+        { "key": "resolution_method", "label": "Resolution Method", "type": "radio_group", "options": ["mediation", "court"] }
+      ]
+    },
+    {
+      "id": "emergency_safety",
+      "title": "Emergency / Safety",
+      "fields": [
+        { "key": "existing_dvro", "label": "DVRO or restraining orders in effect?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "existing_dvro_description", "label": "DVRO Description", "type": "textarea", "show_if": "existing_dvro == yes" }
+      ]
+    },
+    {
+      "id": "attachments",
+      "title": "Attachments to Provide",
+      "fields": [
+        { "key": "attach_prior_court_orders", "label": "Prior Court Orders", "type": "checkbox" },
+        { "key": "attach_tax_returns", "label": "Tax Returns", "type": "checkbox" },
+        { "key": "attach_paystubs", "label": "Paystubs", "type": "checkbox" },
+        { "key": "attach_property_documents", "label": "Property Documents", "type": "checkbox" },
+        { "key": "attach_vehicle_titles", "label": "Vehicle Titles", "type": "checkbox" },
+        { "key": "attach_bank_statements", "label": "Bank Statements", "type": "checkbox" },
+        { "key": "attach_other", "label": "Other Attachment", "type": "text" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today", "note": "System date at form generation time" },
+    { "key": "total_years_married", "from": ["marriage_date", "separation_date"], "rule": "years_between(marriage_date, separation_date)" },
+    { "key": "children.*.age", "from": ["children.*.dob"], "rule": "years_since(children[i].dob) at todays_date" },
+    { "key": "petitioner_city", "from": ["petitioner_address_single_line"], "rule": "parse_address(petitioner_address_single_line).city", "optional_intelligent_path": true },
+    { "key": "petitioner_state", "from": ["petitioner_address_single_line"], "rule": "parse_address(petitioner_address_single_line).state", "optional_intelligent_path": true },
+    { "key": "petitioner_zip", "from": ["petitioner_address_single_line"], "rule": "parse_address(petitioner_address_single_line).zip", "optional_intelligent_path": true },
+    { "key": "respondent_city", "from": ["respondent_address_single_line"], "rule": "parse_address(respondent_address_single_line).city", "optional_intelligent_path": true },
+    { "key": "respondent_state", "from": ["respondent_address_single_line"], "rule": "parse_address(respondent_address_single_line).state", "optional_intelligent_path": true },
+    { "key": "respondent_zip", "from": ["respondent_address_single_line"], "rule": "parse_address(respondent_address_single_line).zip", "optional_intelligent_path": true }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's your full mailing address? Include street, city, state, and ZIP — I'll break it up.",
+      "fills": ["petitioner_street", "petitioner_city", "petitioner_state", "petitioner_zip"],
+      "note": "Parse one address answer into the four PDF fields"
+    },
+    {
+      "ask": "What's the other party's full mailing address?",
+      "fills": ["respondent_street", "respondent_city", "respondent_state", "respondent_zip"]
+    },
+    {
+      "ask": "When were you married, and when did you separate? I'll also compute total years married.",
+      "fills": ["marriage_date", "separation_date", "total_years_married"]
+    },
+    {
+      "ask": "List each minor child with their name, date of birth, and where they were born. I'll calculate ages.",
+      "fills": ["children"]
+    }
+  ]
+}

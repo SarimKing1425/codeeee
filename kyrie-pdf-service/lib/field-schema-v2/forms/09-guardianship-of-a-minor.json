@@ -1,0 +1,235 @@
+{
+  "slug": "guardianship-of-a-minor",
+  "title": "Guardianship of a Minor",
+  "pdf": "guardianship-of-a-minor.pdf",
+  "form_number": 9,
+  "estimated_call_minutes": { "intelligent": 14, "literal": 30 },
+  "sections": [
+    {
+      "id": "header",
+      "title": "Header",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true }
+      ]
+    },
+    {
+      "id": "guardianship_request_type",
+      "title": "Type of Guardianship Requested",
+      "fields": [
+        { "key": "guardianship_request_type", "label": "Guardianship Request Type", "type": "radio_group", "options": ["temporary", "general_permanent", "both_temporary_and_general"] }
+      ]
+    },
+    {
+      "id": "guardianship_type",
+      "title": "Type of Guardianship",
+      "fields": [
+        { "key": "guardianship_type", "label": "Guardianship Type", "type": "radio_group", "options": ["of_the_person", "of_the_estate", "both"] }
+      ]
+    },
+    {
+      "id": "minor_info",
+      "title": "Minor Child's Information",
+      "fields": [
+        {
+          "key": "minors",
+          "label": "Minor Children",
+          "type": "table",
+          "row_keys": ["full_legal_name", "dob", "age", "place_of_birth", "current_school_grade"],
+          "max_rows": 4,
+          "row_field_types": { "dob": "date", "age": "number" }
+        },
+        { "key": "minor_current_city", "label": "Minor Current City", "type": "text" },
+        { "key": "minor_current_state", "label": "Minor Current State", "type": "text" },
+        { "key": "minor_current_zip", "label": "Minor Current Zip", "type": "text" },
+        { "key": "minor_length_at_current_address", "label": "Minor Length at Current Address", "type": "text" }
+      ]
+    },
+    {
+      "id": "minor_residence_history",
+      "title": "Minor's Residence History (Past 5 Years)",
+      "fields": [
+        {
+          "key": "minor_residence_history",
+          "label": "Minor Residence History",
+          "type": "table",
+          "row_keys": ["lived_with_names", "dates_from_to", "address", "relationship_to_child"],
+          "max_rows": 10
+        }
+      ]
+    },
+    {
+      "id": "mother",
+      "title": "Mother",
+      "fields": [
+        { "key": "mother_full_name", "label": "Mother Full Name", "type": "text" },
+        { "key": "mother_dob", "label": "Mother DOB", "type": "date" },
+        { "key": "mother_current_street", "label": "Mother Current Street", "type": "text" },
+        { "key": "mother_current_city", "label": "Mother Current City", "type": "text" },
+        { "key": "mother_current_state", "label": "Mother Current State", "type": "text" },
+        { "key": "mother_current_zip", "label": "Mother Current Zip", "type": "text" },
+        { "key": "mother_phone", "label": "Mother Phone", "type": "phone" },
+        { "key": "mother_email", "label": "Mother Email", "type": "email" },
+        { "key": "mother_living", "label": "Mother Living?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "mother_date_of_death", "label": "Mother Date of Death", "type": "date", "show_if": "mother_living == no" },
+        { "key": "mother_consents_to_guardianship", "label": "Mother Consents to Guardianship?", "type": "radio_group", "options": ["yes", "no", "unsure"] }
+      ]
+    },
+    {
+      "id": "father",
+      "title": "Father",
+      "fields": [
+        { "key": "father_full_name", "label": "Father Full Name", "type": "text" },
+        { "key": "father_dob", "label": "Father DOB", "type": "date" },
+        { "key": "father_current_street", "label": "Father Current Street", "type": "text" },
+        { "key": "father_current_city", "label": "Father Current City", "type": "text" },
+        { "key": "father_current_state", "label": "Father Current State", "type": "text" },
+        { "key": "father_current_zip", "label": "Father Current Zip", "type": "text" },
+        { "key": "father_phone", "label": "Father Phone", "type": "phone" },
+        { "key": "father_email", "label": "Father Email", "type": "email" },
+        { "key": "father_living", "label": "Father Living?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "father_date_of_death", "label": "Father Date of Death", "type": "date", "show_if": "father_living == no" },
+        { "key": "father_consents_to_guardianship", "label": "Father Consents to Guardianship?", "type": "radio_group", "options": ["yes", "no", "unsure"] }
+      ]
+    },
+    {
+      "id": "proposed_guardians",
+      "title": "Proposed Guardian(s)",
+      "fields": [
+        {
+          "key": "proposed_guardians",
+          "label": "Proposed Guardians",
+          "type": "table",
+          "row_keys": ["full_name", "dob", "relationship_to_minor", "address", "phone_email"],
+          "max_rows": 2,
+          "row_field_types": { "dob": "date" }
+        },
+        { "key": "guardian_marital_status", "label": "Guardian Marital Status", "type": "radio_group", "options": ["single", "married", "domestic_partners", "other"] },
+        { "key": "guardian_occupation", "label": "Guardian Occupation", "type": "text" },
+        { "key": "guardian_length_time_known_to_child", "label": "Length of Time Known to Child", "type": "text" },
+        { "key": "guardian_currently_lives_with_child", "label": "Currently lives with the child?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "reason_for_guardianship",
+      "title": "Reason for Guardianship",
+      "fields": [
+        { "key": "reason_for_guardianship", "label": "Reason for Guardianship", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "parental_circumstances",
+      "title": "Parental Circumstances",
+      "fields": [
+        { "key": "parent_incarceration", "label": "Incarceration", "type": "checkbox" },
+        { "key": "parent_deportation", "label": "Deportation / Immigration Issue", "type": "checkbox" },
+        { "key": "parent_drug_alcohol_abuse", "label": "Drug or Alcohol Abuse", "type": "checkbox" },
+        { "key": "parent_mental_health_or_medical", "label": "Mental Health or Medical Condition", "type": "checkbox" },
+        { "key": "parent_domestic_violence", "label": "Domestic Violence", "type": "checkbox" },
+        { "key": "parent_homelessness", "label": "Homelessness / Instability", "type": "checkbox" },
+        { "key": "parent_death", "label": "Death of a Parent", "type": "checkbox" },
+        { "key": "parent_abandonment", "label": "Abandonment", "type": "checkbox" },
+        { "key": "parent_other", "label": "Other", "type": "text" },
+        { "key": "parental_circumstances_explanation", "label": "Explanation", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "contact_with_parents",
+      "title": "Contact with Parents",
+      "fields": [
+        { "key": "last_contact_with_mother", "label": "Last Contact with Mother", "type": "text" },
+        { "key": "last_contact_with_father", "label": "Last Contact with Father", "type": "text" },
+        { "key": "either_parent_under_court_order", "label": "Either parent under court order?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "parent_court_case_number_county", "label": "Parent Court Case Number and County", "type": "text", "show_if": "either_parent_under_court_order == yes" }
+      ]
+    },
+    {
+      "id": "siblings",
+      "title": "Siblings of the Minor",
+      "fields": [
+        {
+          "key": "siblings",
+          "label": "Siblings",
+          "type": "table",
+          "row_keys": ["full_name", "dob", "age", "living_with", "relationship_to_minor"],
+          "max_rows": 6,
+          "row_field_types": { "dob": "date", "age": "number" }
+        }
+      ]
+    },
+    {
+      "id": "visitation_plan",
+      "title": "Visitation Plan",
+      "fields": [
+        { "key": "allow_parents_visitation", "label": "Allow Parents Visitation?", "type": "radio_group", "options": ["yes", "no", "supervised_only"] },
+        { "key": "visitation_schedule", "label": "Visitation Schedule", "type": "textarea", "show_if": "allow_parents_visitation in [yes, supervised_only]" }
+      ]
+    },
+    {
+      "id": "guardianship_of_estate",
+      "title": "Guardianship of the Estate",
+      "fields": [
+        { "key": "estate_assets_value", "label": "Estate Assets Value", "type": "currency" },
+        { "key": "estate_source_life_insurance", "label": "Source: Life Insurance", "type": "checkbox" },
+        { "key": "estate_source_inheritance", "label": "Source: Inheritance", "type": "checkbox" },
+        { "key": "estate_source_lawsuit_settlement", "label": "Source: Lawsuit Settlement", "type": "checkbox" },
+        { "key": "estate_source_other", "label": "Source: Other", "type": "text" },
+        { "key": "estate_manage_invest_use_funds", "label": "Manage/invest/use funds for minor?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "estate_file_annual_accounting", "label": "File annual accounting reports?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "temporary_guardianship",
+      "title": "Temporary Guardianship",
+      "fields": [
+        { "key": "temporary_emergency_reason", "label": "Why is emergency order needed?", "type": "textarea" },
+        { "key": "temporary_start_date", "label": "Temporary Start Date", "type": "date" },
+        { "key": "safety_health_school_issues", "label": "Safety, health, or school issues requiring immediate care?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "minor_relatives",
+      "title": "Minor's Relatives (for Notice)",
+      "fields": [
+        {
+          "key": "minor_relatives",
+          "label": "Minor's Relatives",
+          "type": "table",
+          "row_keys": ["name", "relationship", "address", "phone"],
+          "max_rows": 8
+        }
+      ]
+    },
+    {
+      "id": "guardian_background",
+      "title": "Background Information for Guardian(s)",
+      "fields": [
+        { "key": "guardian_convicted_felony_misdemeanor", "label": "Convicted of felony or misdemeanor?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "guardian_investigated_for_abuse_neglect", "label": "Investigated for child abuse or neglect?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "guardian_filed_bankruptcy", "label": "Filed for bankruptcy?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "guardian_background_explanation", "label": "Background Explanation", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "notes",
+      "title": "Additional Notes / Comments",
+      "fields": [
+        { "key": "notes", "label": "Notes", "type": "textarea" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" },
+    { "key": "minors.*.age", "from": ["minors.*.dob"], "rule": "years_since(minors[i].dob)" },
+    { "key": "siblings.*.age", "from": ["siblings.*.dob"], "rule": "years_since(siblings[i].dob)" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's the mother's current address?",
+      "fills": ["mother_current_street", "mother_current_city", "mother_current_state", "mother_current_zip"]
+    },
+    {
+      "ask": "What's the father's current address?",
+      "fills": ["father_current_street", "father_current_city", "father_current_state", "father_current_zip"]
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "slug": "domestic-violence-restraining-order",
+  "title": "Domestic Violence Restraining Order",
+  "pdf": "domestic-violence-restraining-order.pdf",
+  "form_number": 15,
+  "estimated_call_minutes": { "intelligent": 22, "literal": 50 },
+  "sections": [
+    {
+      "id": "header",
+      "title": "Header",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true }
+      ]
+    },
+    {
+      "id": "case_court_info",
+      "title": "Case & Court Information",
+      "fields": [
+        { "key": "court_county", "label": "Court / County", "type": "text" },
+        { "key": "case_number", "label": "Case Number", "type": "text", "optional": true },
+        { "key": "department", "label": "Department", "type": "text", "optional": true },
+        { "key": "next_court_date", "label": "Next Court Date", "type": "date", "optional": true },
+        { "key": "existing_family_law_case", "label": "Existing Family Law Case?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "existing_case_description", "label": "Existing Case Description", "type": "textarea", "show_if": "existing_family_law_case == yes" },
+        { "key": "related_case_numbers", "label": "Related Case Numbers", "type": "text", "show_if": "existing_family_law_case == yes" }
+      ]
+    },
+    {
+      "id": "protected_party",
+      "title": "Protected Party (You)",
+      "fields": [
+        { "key": "protected_full_legal_name", "label": "Protected Full Legal Name", "type": "text" },
+        { "key": "protected_dob", "label": "Protected DOB", "type": "date" },
+        { "key": "protected_age", "label": "Protected Age", "type": "number", "derived": true },
+        { "key": "protected_gender", "label": "Protected Gender", "type": "text" },
+        { "key": "protected_street", "label": "Protected Street", "type": "text" },
+        { "key": "protected_city", "label": "Protected City", "type": "text" },
+        { "key": "protected_state", "label": "Protected State", "type": "text" },
+        { "key": "protected_zip", "label": "Protected Zip", "type": "text" },
+        { "key": "protected_phone", "label": "Protected Phone", "type": "phone" },
+        { "key": "protected_email", "label": "Protected Email", "type": "email" },
+        { "key": "protected_safe_mailing_address", "label": "Safe Mailing Address", "type": "text", "optional": true },
+        { "key": "protected_can_mail_be_sent_safely", "label": "Can mail be sent safely?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "protected_emergency_contact_name", "label": "Emergency Contact Name", "type": "text" },
+        { "key": "protected_emergency_contact_phone", "label": "Emergency Contact Phone", "type": "phone" },
+        { "key": "protected_height", "label": "Protected Height", "type": "text" },
+        { "key": "protected_weight", "label": "Protected Weight", "type": "text" },
+        { "key": "protected_race", "label": "Protected Race", "type": "text" },
+        { "key": "protected_hair_color", "label": "Protected Hair Color", "type": "text" },
+        { "key": "protected_eye_color", "label": "Protected Eye Color", "type": "text" },
+        { "key": "protected_vehicle_make_model", "label": "Protected Vehicle Make/Model", "type": "text" },
+        { "key": "protected_vehicle_year", "label": "Protected Vehicle Year", "type": "text" },
+        { "key": "protected_vehicle_license_plate", "label": "Protected Vehicle License Plate", "type": "text" },
+        { "key": "protected_caid_or_cadl", "label": "Protected CAID or CADL #", "type": "text" }
+      ]
+    },
+    {
+      "id": "restrained_party",
+      "title": "Restrained Party",
+      "fields": [
+        { "key": "restrained_full_legal_name", "label": "Restrained Full Legal Name", "type": "text" },
+        { "key": "restrained_dob_or_approx_age", "label": "Restrained DOB or Approx Age", "type": "text" },
+        { "key": "restrained_gender", "label": "Restrained Gender", "type": "radio_group", "options": ["male", "female", "other"] },
+        { "key": "relationship_to_protected", "label": "Relationship to Protected", "type": "radio_group", "options": ["spouse", "ex_spouse", "dating_former_dating", "co_parent", "family", "roommate", "other"] },
+        { "key": "relationship_other", "label": "Relationship (Other)", "type": "text", "show_if": "relationship_to_protected == other" },
+        { "key": "restrained_street", "label": "Restrained Street", "type": "text" },
+        { "key": "restrained_city", "label": "Restrained City", "type": "text" },
+        { "key": "restrained_state", "label": "Restrained State", "type": "text" },
+        { "key": "restrained_zip", "label": "Restrained Zip", "type": "text" },
+        { "key": "restrained_phone", "label": "Restrained Phone", "type": "phone" },
+        { "key": "restrained_email", "label": "Restrained Email", "type": "email" },
+        { "key": "restrained_workplace_or_location", "label": "Restrained Workplace / Usual Location", "type": "text" },
+        { "key": "restrained_height", "label": "Restrained Height", "type": "text" },
+        { "key": "restrained_weight", "label": "Restrained Weight", "type": "text" },
+        { "key": "restrained_race", "label": "Restrained Race", "type": "text" },
+        { "key": "restrained_hair_color", "label": "Restrained Hair Color", "type": "text" },
+        { "key": "restrained_eye_color", "label": "Restrained Eye Color", "type": "text" },
+        { "key": "restrained_tattoos_body_marks", "label": "Restrained Tattoos / Body Marks", "type": "text" },
+        { "key": "restrained_vehicle_make_model", "label": "Restrained Vehicle Make/Model", "type": "text" },
+        { "key": "restrained_vehicle_year", "label": "Restrained Vehicle Year", "type": "text" },
+        { "key": "restrained_vehicle_license_plate", "label": "Restrained Vehicle License Plate", "type": "text" },
+        { "key": "restrained_caid_or_cadl", "label": "Restrained CAID or CADL #", "type": "text" }
+      ]
+    },
+    {
+      "id": "additional_protected",
+      "title": "Additional Protected Persons",
+      "fields": [
+        {
+          "key": "additional_protected_persons",
+          "label": "Additional Protected Persons",
+          "type": "table",
+          "row_keys": ["full_name", "dob", "relationship_to_you", "lives_with_you"],
+          "max_rows": 6,
+          "row_field_types": { "dob": "date", "lives_with_you": "radio_group:yes|no" }
+        }
+      ]
+    },
+    {
+      "id": "children",
+      "title": "Children",
+      "fields": [
+        {
+          "key": "children",
+          "label": "Children",
+          "type": "table",
+          "row_keys": ["full_name", "dob", "age", "lives_with", "relationship_to_restrained"],
+          "max_rows": 6,
+          "row_field_types": { "dob": "date", "age": "number", "lives_with": "radio_group:protected|restrained|both" }
+        },
+        {
+          "key": "children_residence_history",
+          "label": "Children Residence History (Last 5 Years)",
+          "type": "table",
+          "row_keys": ["child_name", "from", "to", "city_state", "lived_with", "address"],
+          "max_rows": 10
+        },
+        {
+          "key": "children_current_living",
+          "label": "Children Current Living Situation",
+          "type": "table",
+          "row_keys": ["child_name", "lives_with", "address", "percent_time"],
+          "max_rows": 6
+        },
+        { "key": "want_custody", "label": "Want Custody Orders?", "type": "checkbox" },
+        { "key": "want_visitation", "label": "Want Visitation Orders?", "type": "checkbox" },
+        { "key": "want_no_contact", "label": "Want No Contact Orders?", "type": "checkbox" },
+        { "key": "visitation_weekdays", "label": "Visitation Weekdays", "type": "text" },
+        { "key": "visitation_weekends", "label": "Visitation Weekends", "type": "text" },
+        { "key": "visitation_holidays", "label": "Visitation Holidays", "type": "text" },
+        { "key": "visitation_vacations_school_breaks", "label": "Visitation Vacations / School Breaks", "type": "text" },
+        { "key": "exchange_location", "label": "Exchange Location", "type": "radio_group", "options": ["police_station", "neutral_site", "other"] },
+        { "key": "exchange_location_other", "label": "Exchange Location (Other)", "type": "text", "show_if": "exchange_location == other" },
+        { "key": "supervised_visits", "label": "Supervised Visits?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "supervisor_name", "label": "Supervisor Name", "type": "text", "show_if": "supervised_visits == yes" }
+      ]
+    },
+    {
+      "id": "incidents",
+      "title": "Incident Details",
+      "fields": [
+        { "key": "incident_1_date", "label": "Incident 1 Date", "type": "date" },
+        { "key": "incident_1_location", "label": "Incident 1 Location", "type": "text" },
+        { "key": "incident_1_who_present", "label": "Incident 1 Who Was Present", "type": "text" },
+        { "key": "incident_1_harm_type", "label": "Incident 1 Harm Type", "type": "radio_group", "options": ["physical", "mental_emotional", "both"] },
+        { "key": "incident_1_description", "label": "Incident 1 Description", "type": "textarea" },
+        { "key": "incident_1_police_called", "label": "Incident 1 Police Called?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "incident_1_police_report_number", "label": "Incident 1 Police Report #", "type": "text", "show_if": "incident_1_police_called == yes" },
+        { "key": "incident_1_weapon_used_or_threatened", "label": "Incident 1 Weapon Used or Threatened?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "incident_1_weapon_description", "label": "Incident 1 Weapon Description", "type": "textarea", "show_if": "incident_1_weapon_used_or_threatened == yes" },
+
+        { "key": "incident_2_date", "label": "Incident 2 Date", "type": "date" },
+        { "key": "incident_2_location", "label": "Incident 2 Location", "type": "text" },
+        { "key": "incident_2_who_present", "label": "Incident 2 Who Was Present", "type": "text" },
+        { "key": "incident_2_harm_type", "label": "Incident 2 Harm Type", "type": "radio_group", "options": ["physical", "mental_emotional", "both"] },
+        { "key": "incident_2_description", "label": "Incident 2 Description", "type": "textarea" },
+        { "key": "incident_2_police_called", "label": "Incident 2 Police Called?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "incident_2_police_report_number", "label": "Incident 2 Police Report #", "type": "text", "show_if": "incident_2_police_called == yes" },
+        { "key": "incident_2_weapon_used_or_threatened", "label": "Incident 2 Weapon Used or Threatened?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "incident_2_weapon_description", "label": "Incident 2 Weapon Description", "type": "textarea", "show_if": "incident_2_weapon_used_or_threatened == yes" },
+
+        { "key": "incident_3_date", "label": "Incident 3 Date", "type": "date" },
+        { "key": "incident_3_location", "label": "Incident 3 Location", "type": "text" },
+        { "key": "incident_3_who_present", "label": "Incident 3 Who Was Present", "type": "text" },
+        { "key": "incident_3_harm_type", "label": "Incident 3 Harm Type", "type": "radio_group", "options": ["physical", "mental_emotional", "both"] },
+        { "key": "incident_3_description", "label": "Incident 3 Description", "type": "textarea" },
+        { "key": "incident_3_police_called", "label": "Incident 3 Police Called?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "incident_3_police_report_number", "label": "Incident 3 Police Report #", "type": "text", "show_if": "incident_3_police_called == yes" },
+        { "key": "incident_3_weapon_used_or_threatened", "label": "Incident 3 Weapon Used or Threatened?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "incident_3_weapon_description", "label": "Incident 3 Weapon Description", "type": "textarea", "show_if": "incident_3_weapon_used_or_threatened == yes" },
+
+        { "key": "incident_4_date", "label": "Incident 4 Date", "type": "date" },
+        { "key": "incident_4_location", "label": "Incident 4 Location", "type": "text" },
+        { "key": "incident_4_who_present", "label": "Incident 4 Who Was Present", "type": "text" },
+        { "key": "incident_4_harm_type", "label": "Incident 4 Harm Type", "type": "radio_group", "options": ["physical", "mental_emotional", "both"] },
+        { "key": "incident_4_description", "label": "Incident 4 Description", "type": "textarea" },
+        { "key": "incident_4_police_called", "label": "Incident 4 Police Called?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "incident_4_police_report_number", "label": "Incident 4 Police Report #", "type": "text", "show_if": "incident_4_police_called == yes" },
+        { "key": "incident_4_weapon_used_or_threatened", "label": "Incident 4 Weapon Used or Threatened?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "incident_4_weapon_description", "label": "Incident 4 Weapon Description", "type": "textarea", "show_if": "incident_4_weapon_used_or_threatened == yes" }
+      ]
+    },
+    {
+      "id": "firearms_weapons",
+      "title": "Firearms / Weapons",
+      "fields": [
+        { "key": "restrained_owns_weapons", "label": "Restrained owns or has access to weapons?", "type": "radio_group", "options": ["yes", "no", "unknown"] },
+        {
+          "key": "weapons",
+          "label": "Weapons",
+          "type": "table",
+          "row_keys": ["type", "make_model", "serial_number", "location"],
+          "max_rows": 4,
+          "show_if": "restrained_owns_weapons == yes"
+        },
+        { "key": "weapon_used_or_threatened_against_protected", "label": "Restrained ever used or threatened weapon?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "weapon_used_explanation", "label": "Weapon Use Explanation", "type": "textarea", "show_if": "weapon_used_or_threatened_against_protected == yes" }
+      ]
+    },
+    {
+      "id": "tro",
+      "title": "Temporary Emergency Orders (TRO)",
+      "fields": [
+        { "key": "needs_immediate_protection", "label": "Need immediate protection before hearing?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "tro_immediate_orders_explanation", "label": "Why Immediate Orders Necessary", "type": "textarea", "show_if": "needs_immediate_protection == yes" }
+      ]
+    },
+    {
+      "id": "protection_requested",
+      "title": "Protection Requested",
+      "fields": [
+        { "key": "protect_personal_conduct", "label": "Personal Conduct Orders", "type": "checkbox" },
+        { "key": "protect_stay_away", "label": "Stay-Away Orders", "type": "checkbox" },
+        { "key": "protect_stay_away_distance_yards", "label": "Stay-Away Distance (yards)", "type": "number", "show_if": "protect_stay_away == true" },
+        { "key": "protect_move_out", "label": "Move-Out Order", "type": "checkbox" },
+        { "key": "protect_no_guns_firearms", "label": "No Guns or Firearms", "type": "checkbox" },
+        { "key": "protect_child_custody_visitation", "label": "Child Custody / Visitation (DV-105)", "type": "checkbox" },
+        { "key": "protect_no_travel_with_children", "label": "No Travel with Children (DV-108)", "type": "checkbox" },
+        { "key": "protect_additional_people", "label": "Protection for Additional People", "type": "checkbox" },
+        { "key": "protect_other_orders", "label": "Other Orders", "type": "text" }
+      ]
+    },
+    {
+      "id": "service",
+      "title": "Service Information",
+      "fields": [
+        { "key": "service_name", "label": "Service Name", "type": "text" },
+        { "key": "service_street", "label": "Service Street", "type": "text" },
+        { "key": "service_city", "label": "Service City", "type": "text" },
+        { "key": "service_state", "label": "Service State", "type": "text" },
+        { "key": "service_zip", "label": "Service Zip", "type": "text" },
+        { "key": "service_workplace_other_location", "label": "Workplace / Other Known Location", "type": "text" },
+        { "key": "service_preferred_time_place", "label": "Preferred Time/Place for Safe Service", "type": "text" }
+      ]
+    },
+    {
+      "id": "attachments",
+      "title": "Attachments to Provide",
+      "fields": [
+        { "key": "attach_police_reports", "label": "Police Reports", "type": "checkbox" },
+        { "key": "attach_photos", "label": "Photos", "type": "checkbox" },
+        { "key": "attach_witness_statements", "label": "Witness Statements", "type": "checkbox" },
+        { "key": "attach_texts_emails_voicemails", "label": "Texts / Emails / Voicemails", "type": "checkbox" },
+        { "key": "attach_medical_records", "label": "Medical Records", "type": "checkbox" },
+        { "key": "attach_prior_court_orders", "label": "Prior Court Orders", "type": "checkbox" },
+        { "key": "attach_child_custody_documents", "label": "Child Custody Documents", "type": "checkbox" },
+        { "key": "attach_other", "label": "Other Attachment", "type": "text" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" },
+    { "key": "protected_age", "from": ["protected_dob"], "rule": "years_since(protected_dob)" },
+    { "key": "children.*.age", "from": ["children.*.dob"], "rule": "years_since(children[i].dob)" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's your full mailing address?",
+      "fills": ["protected_street", "protected_city", "protected_state", "protected_zip"]
+    },
+    {
+      "ask": "What's the restrained person's address?",
+      "fills": ["restrained_street", "restrained_city", "restrained_state", "restrained_zip"]
+    },
+    {
+      "ask": "Describe yourself physically — height, weight, race, hair color, eye color.",
+      "fills": ["protected_height", "protected_weight", "protected_race", "protected_hair_color", "protected_eye_color"]
+    },
+    {
+      "ask": "Describe the restrained person physically — height, weight, race, hair, eye color, and any tattoos or marks.",
+      "fills": ["restrained_height", "restrained_weight", "restrained_race", "restrained_hair_color", "restrained_eye_color", "restrained_tattoos_body_marks"]
+    },
+    {
+      "ask": "Tell me about your vehicle — make, model, year, and license plate.",
+      "fills": ["protected_vehicle_make_model", "protected_vehicle_year", "protected_vehicle_license_plate"]
+    },
+    {
+      "ask": "Tell me about the restrained person's vehicle if you know it.",
+      "fills": ["restrained_vehicle_make_model", "restrained_vehicle_year", "restrained_vehicle_license_plate"]
+    }
+  ]
+}

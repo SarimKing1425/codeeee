@@ -1,0 +1,141 @@
+{
+  "slug": "writ-of-execution",
+  "title": "Writ of Execution (EJ-130)",
+  "pdf": "writ-of-execution.pdf",
+  "form_number": 2,
+  "estimated_call_minutes": { "intelligent": 8, "literal": 20 },
+  "sections": [
+    {
+      "id": "client_header",
+      "title": "Client Header",
+      "fields": [
+        { "key": "client_name", "label": "Client Name", "type": "text" },
+        { "key": "client_phone", "label": "Client Phone", "type": "phone" },
+        { "key": "client_email", "label": "Client Email", "type": "email" },
+        { "key": "case_number", "label": "Case Number", "type": "text" },
+        { "key": "court_county", "label": "Court County", "type": "text" }
+      ]
+    },
+    {
+      "id": "judgment_info",
+      "title": "Judgment Information",
+      "fields": [
+        { "key": "judgment_creditor_full_name", "label": "Judgment Creditor Full Name", "type": "text" },
+        { "key": "judgment_debtor_full_name", "label": "Judgment Debtor Full Name", "type": "text" },
+        { "key": "judgment_entered_date", "label": "Date Judgment Entered", "type": "date" },
+        { "key": "judgment_type", "label": "Type of Judgment", "type": "radio_group", "options": ["money", "small_claims", "child_support", "spousal_support", "attorney_fee_award", "other"] },
+        { "key": "judgment_type_other", "label": "Judgment Type (Other)", "type": "text", "show_if": "judgment_type == other" },
+        { "key": "judgment_renewed", "label": "Judgment Renewed?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "judgment_renewal_date", "label": "Date of Renewal", "type": "date", "show_if": "judgment_renewed == yes" },
+        { "key": "judgment_entered_county", "label": "County Where Judgment Originally Entered", "type": "text" },
+        { "key": "judgment_total_amount", "label": "Total Amount of Judgment", "type": "currency" }
+      ]
+    },
+    {
+      "id": "amounts_due",
+      "title": "Amounts Due",
+      "fields": [
+        { "key": "amount_judgment_original", "label": "Judgment Amount (Original)", "type": "currency" },
+        { "key": "amount_accrued_interest", "label": "Accrued Interest to Date", "type": "currency" },
+        { "key": "amount_costs_added", "label": "Costs Added After Judgment", "type": "currency" },
+        { "key": "amount_payments_made", "label": "Payments Made Since Judgment", "type": "currency" },
+        { "key": "amount_remaining_balance", "label": "Remaining Balance Owed", "type": "currency", "derived": true },
+        { "key": "amount_daily_interest", "label": "Daily Interest Amount", "type": "currency", "optional": true }
+      ]
+    },
+    {
+      "id": "debtor_info",
+      "title": "Debtor Information",
+      "fields": [
+        { "key": "debtor_full_name", "label": "Judgment Debtor Full Name", "type": "text" },
+        { "key": "debtor_aliases", "label": "Aliases or Other Names Used", "type": "text", "optional": true },
+        { "key": "debtor_address", "label": "Debtor Address (single line)", "type": "text" },
+        { "key": "debtor_phone", "label": "Debtor Phone", "type": "phone", "optional": true },
+        { "key": "debtor_employer_name", "label": "Employer's Name", "type": "text", "optional": true },
+        { "key": "debtor_employer_address", "label": "Employer Address", "type": "text", "optional": true },
+        { "key": "debtor_banks", "label": "Debtor's Known Bank(s)", "type": "text", "optional": true },
+        { "key": "debtor_asset_real_estate", "label": "Asset: Real Estate", "type": "checkbox" },
+        { "key": "debtor_asset_vehicles", "label": "Asset: Vehicles", "type": "checkbox" },
+        { "key": "debtor_asset_bank_accounts", "label": "Asset: Bank Accounts", "type": "checkbox" },
+        { "key": "debtor_asset_business_income", "label": "Asset: Business Income", "type": "checkbox" },
+        { "key": "debtor_asset_wages", "label": "Asset: Wages", "type": "checkbox" },
+        { "key": "debtor_asset_personal_property", "label": "Asset: Personal Property", "type": "checkbox" },
+        { "key": "debtor_asset_other", "label": "Asset: Other", "type": "text" }
+      ]
+    },
+    {
+      "id": "writ_type",
+      "title": "Type of Writ Needed",
+      "fields": [
+        { "key": "writ_bank_levy", "label": "Bank Levy", "type": "checkbox" },
+        { "key": "writ_wage_garnishment", "label": "Wage Garnishment", "type": "checkbox" },
+        { "key": "writ_real_property_levy", "label": "Real Property Levy", "type": "checkbox" },
+        { "key": "writ_vehicle_levy", "label": "Vehicle Levy", "type": "checkbox" },
+        { "key": "writ_till_tap_keeper", "label": "Till Tap / Keeper", "type": "checkbox" },
+        { "key": "writ_earnings_withholding", "label": "Earnings Withholding Order", "type": "checkbox" },
+        { "key": "writ_support_enforcement", "label": "Child/Spousal Support Enforcement", "type": "checkbox" },
+        { "key": "writ_other", "label": "Writ Other", "type": "text" }
+      ]
+    },
+    {
+      "id": "multiple_debtors",
+      "title": "Multiple Debtors",
+      "fields": [
+        { "key": "has_multiple_debtors", "label": "More than one judgment debtor?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "additional_debtor_1_name", "label": "Additional Debtor 1 Name", "type": "text", "show_if": "has_multiple_debtors == yes" },
+        { "key": "additional_debtor_2_name", "label": "Additional Debtor 2 Name", "type": "text", "show_if": "has_multiple_debtors == yes" },
+        { "key": "additional_debtor_3_name", "label": "Additional Debtor 3 Name", "type": "text", "show_if": "has_multiple_debtors == yes" }
+      ]
+    },
+    {
+      "id": "writ_details",
+      "title": "Writ Details",
+      "fields": [
+        { "key": "writ_issuing_county", "label": "County Where Writ to Be Issued", "type": "text" },
+        { "key": "prior_writ_issued", "label": "Prior Writ Issued?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "prior_writ_date", "label": "Prior Writ Date", "type": "date", "show_if": "prior_writ_issued == yes" },
+        { "key": "prior_writ_county", "label": "Prior Writ County", "type": "text", "show_if": "prior_writ_issued == yes" },
+        { "key": "writ_scope", "label": "Writ Scope", "type": "radio_group", "options": ["entire_judgment", "remaining_balance_only", "specific_enforcement_action"] },
+        { "key": "writ_scope_specific_action", "label": "Specific Enforcement Action", "type": "text", "show_if": "writ_scope == specific_enforcement_action" }
+      ]
+    },
+    {
+      "id": "support_arrears",
+      "title": "Child or Spousal Support",
+      "fields": [
+        { "key": "support_ongoing_monthly", "label": "Ongoing Monthly Support Amount", "type": "currency", "optional": true },
+        { "key": "support_arrears", "label": "Past-Due Support (Arrears)", "type": "currency", "optional": true },
+        { "key": "support_arrears_interest", "label": "Interest on Arrears", "type": "currency", "optional": true },
+        { "key": "support_last_payment_date", "label": "Date of Last Payment", "type": "date", "optional": true }
+      ]
+    },
+    {
+      "id": "documents",
+      "title": "Client Documents Required",
+      "fields": [
+        { "key": "doc_judgment_signed", "label": "Judgment (signed by court)", "type": "checkbox" },
+        { "key": "doc_judgment_summary", "label": "Judgment Summary", "type": "checkbox" },
+        { "key": "doc_renewal_orders", "label": "Renewal of Judgment Orders", "type": "checkbox" },
+        { "key": "doc_interest_calculations", "label": "Proof of Interest/Fees Calculations", "type": "checkbox" },
+        { "key": "doc_previous_writs", "label": "Any Previous Writs", "type": "checkbox" },
+        { "key": "doc_debtor_receipts", "label": "Payments or Receipts from Debtor", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "notes",
+      "title": "Additional Notes or Instructions",
+      "fields": [
+        { "key": "additional_notes", "label": "Additional Notes", "type": "textarea" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "amount_remaining_balance", "from": ["amount_judgment_original", "amount_accrued_interest", "amount_costs_added", "amount_payments_made"], "rule": "amount_judgment_original + amount_accrued_interest + amount_costs_added - amount_payments_made" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "Walk me through the dollar amounts: original judgment, accrued interest, any costs added after, and any payments the debtor has made. I'll compute the remaining balance.",
+      "fills": ["amount_judgment_original", "amount_accrued_interest", "amount_costs_added", "amount_payments_made", "amount_remaining_balance"]
+    }
+  ]
+}

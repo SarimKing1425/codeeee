@@ -1,0 +1,219 @@
+{
+  "slug": "trust-and-healthcare-directive",
+  "title": "Revocable Living Trust & Health Care Directive",
+  "pdf": "trust-and-healthcare-directive.pdf",
+  "form_number": 3,
+  "estimated_call_minutes": { "intelligent": 18, "literal": 40 },
+  "sections": [
+    {
+      "id": "header",
+      "title": "Header",
+      "fields": [
+        { "key": "todays_date", "label": "Today's Date", "type": "date", "derived": true }
+      ]
+    },
+    {
+      "id": "client_info",
+      "title": "Client (Trustor/Settlor) Information",
+      "fields": [
+        { "key": "client_full_legal_name", "label": "Client Full Legal Name", "type": "text" },
+        { "key": "client_other_names_used", "label": "Other Names Used", "type": "text", "optional": true },
+        { "key": "client_dob", "label": "Client Date of Birth", "type": "date" },
+        { "key": "client_age", "label": "Client Age", "type": "number", "derived": true },
+        { "key": "client_ssn_last4", "label": "Client SSN (last 4 digits)", "type": "text" },
+        { "key": "client_street", "label": "Client Street Address", "type": "text" },
+        { "key": "client_city", "label": "Client City", "type": "text" },
+        { "key": "client_state", "label": "Client State", "type": "text" },
+        { "key": "client_zip", "label": "Client Zip", "type": "text" },
+        { "key": "client_phone", "label": "Client Phone", "type": "phone" },
+        { "key": "client_email", "label": "Client Email", "type": "email" },
+        { "key": "client_marital_status", "label": "Marital Status", "type": "radio_group", "options": ["single", "married", "divorced", "widowed", "domestic_partnership"] },
+        { "key": "spouse_full_legal_name", "label": "Spouse Full Legal Name", "type": "text", "show_if": "client_marital_status in [married, domestic_partnership]" },
+        { "key": "marriage_date", "label": "Date of Marriage", "type": "date", "show_if": "client_marital_status in [married, domestic_partnership]" }
+      ]
+    },
+    {
+      "id": "trust_type",
+      "title": "Type of Trust Requested",
+      "fields": [
+        { "key": "trust_type", "label": "Type of Trust", "type": "radio_group", "options": ["revocable_living_trust", "irrevocable_trust", "family_trust", "joint_trust", "other"] },
+        { "key": "trust_type_other", "label": "Trust Type (Other)", "type": "text", "show_if": "trust_type == other" }
+      ]
+    },
+    {
+      "id": "beneficiaries",
+      "title": "Family Members / Beneficiaries",
+      "fields": [
+        {
+          "key": "beneficiaries",
+          "label": "Beneficiaries",
+          "type": "table",
+          "row_keys": ["full_legal_name", "relationship", "dob", "address", "primary_or_contingent"],
+          "max_rows": 10,
+          "row_field_types": { "dob": "date", "primary_or_contingent": "radio_group:primary|contingent" }
+        }
+      ]
+    },
+    {
+      "id": "successor_trustees",
+      "title": "Successor Trustee(s)",
+      "fields": [
+        { "key": "primary_successor_trustee_name", "label": "Primary Successor Trustee Name", "type": "text" },
+        { "key": "primary_successor_trustee_relationship", "label": "Primary Successor Trustee Relationship", "type": "text" },
+        { "key": "primary_successor_trustee_address", "label": "Primary Successor Trustee Address", "type": "text" },
+        { "key": "primary_successor_trustee_phone", "label": "Primary Successor Trustee Phone", "type": "phone" },
+        { "key": "primary_successor_trustee_email", "label": "Primary Successor Trustee Email", "type": "email" },
+        { "key": "alternate_successor_trustee_name", "label": "Alternate Successor Trustee Name", "type": "text" },
+        { "key": "alternate_successor_trustee_relationship", "label": "Alternate Successor Trustee Relationship", "type": "text" },
+        { "key": "alternate_successor_trustee_address", "label": "Alternate Successor Trustee Address", "type": "text" },
+        { "key": "alternate_successor_trustee_phone", "label": "Alternate Successor Trustee Phone", "type": "phone" },
+        { "key": "alternate_successor_trustee_email", "label": "Alternate Successor Trustee Email", "type": "email" },
+        { "key": "trustee_serve_without_bond", "label": "Trustee(s) to serve without bond?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "distribution_of_assets",
+      "title": "Distribution of Assets",
+      "fields": [
+        { "key": "distribution_method", "label": "Distribution Method", "type": "radio_group", "options": ["all_to_spouse_then_children", "equally_to_children", "specific_gifts_then_equal", "other"] },
+        { "key": "distribution_other_instructions", "label": "Other Distribution Instructions", "type": "textarea", "show_if": "distribution_method == other" },
+        { "key": "per_stirpes_if_beneficiary_predeceases", "label": "Per stirpes if beneficiary predeceases?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "real_property",
+      "title": "Real Property",
+      "fields": [
+        {
+          "key": "real_property",
+          "label": "Real Property",
+          "type": "table",
+          "row_keys": ["property_type", "address_location", "ownership", "approx_value"],
+          "max_rows": 6,
+          "row_field_types": { "approx_value": "currency", "ownership": "radio_group:sole|joint|community" }
+        },
+        { "key": "transfer_properties_into_trust_now", "label": "Transfer these properties into trust now?", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    },
+    {
+      "id": "financial_assets",
+      "title": "Bank Accounts & Financial Assets",
+      "fields": [
+        {
+          "key": "financial_assets",
+          "label": "Financial Assets",
+          "type": "table",
+          "row_keys": ["institution_name", "account_type", "last_4_digits", "approx_balance", "titled_in_trust"],
+          "max_rows": 10,
+          "row_field_types": { "approx_balance": "currency", "titled_in_trust": "radio_group:yes|no" }
+        }
+      ]
+    },
+    {
+      "id": "personal_property",
+      "title": "Personal Property / Vehicles / Business Interests",
+      "fields": [
+        {
+          "key": "personal_property",
+          "label": "Personal Property",
+          "type": "table",
+          "row_keys": ["description", "location", "estimated_value", "transfer_to_trust"],
+          "max_rows": 10,
+          "row_field_types": { "estimated_value": "currency", "transfer_to_trust": "radio_group:yes|no" }
+        },
+        { "key": "owns_business_or_llc", "label": "Owns business or LLC?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "business_or_llc_name", "label": "Business / LLC Name", "type": "text", "show_if": "owns_business_or_llc == yes" }
+      ]
+    },
+    {
+      "id": "guardians_minor_children",
+      "title": "Guardians for Minor Children",
+      "fields": [
+        { "key": "primary_guardian_name", "label": "Primary Guardian", "type": "text", "optional": true },
+        { "key": "alternate_guardian_name", "label": "Alternate Guardian", "type": "text", "optional": true }
+      ]
+    },
+    {
+      "id": "special_instructions",
+      "title": "Special Instructions or Conditions",
+      "fields": [
+        { "key": "special_instructions", "label": "Special Instructions", "type": "textarea", "optional": true }
+      ]
+    },
+    {
+      "id": "power_of_attorney",
+      "title": "Power of Attorney (Finances)",
+      "fields": [
+        { "key": "include_durable_poa_finances", "label": "Include Durable POA for Finances?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "poa_agent_name", "label": "POA Agent Name", "type": "text", "show_if": "include_durable_poa_finances == yes" },
+        { "key": "poa_alternate_agent_name", "label": "POA Alternate Agent Name", "type": "text", "show_if": "include_durable_poa_finances == yes" }
+      ]
+    },
+    {
+      "id": "healthcare_agent",
+      "title": "Health Care Agent (Medical POA)",
+      "fields": [
+        { "key": "healthcare_primary_agent_name", "label": "Primary Health Care Agent Name", "type": "text" },
+        { "key": "healthcare_primary_agent_relationship", "label": "Primary Agent Relationship", "type": "text" },
+        { "key": "healthcare_primary_agent_address", "label": "Primary Agent Address", "type": "text" },
+        { "key": "healthcare_primary_agent_phone", "label": "Primary Agent Phone", "type": "phone" },
+        { "key": "healthcare_primary_agent_email", "label": "Primary Agent Email", "type": "email" },
+        { "key": "healthcare_alternate_agent_name", "label": "Alternate Health Care Agent Name", "type": "text" },
+        { "key": "healthcare_alternate_agent_relationship", "label": "Alternate Agent Relationship", "type": "text" },
+        { "key": "healthcare_alternate_agent_phone", "label": "Alternate Agent Phone", "type": "phone" },
+        { "key": "healthcare_alternate_agent_email", "label": "Alternate Agent Email", "type": "email" }
+      ]
+    },
+    {
+      "id": "healthcare_decisions",
+      "title": "Health Care Decisions",
+      "fields": [
+        { "key": "life_support_terminally_ill", "label": "Life support if terminally ill?", "type": "radio_group", "options": ["yes", "no", "agent_discretion"] },
+        { "key": "artificial_nutrition_hydration", "label": "Artificial nutrition/hydration if long-term unconscious?", "type": "radio_group", "options": ["yes", "no", "agent_discretion"] },
+        { "key": "organ_tissue_donor", "label": "Organ/tissue donor?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "preferred_hospital", "label": "Preferred Hospital / Medical Facility", "type": "text", "optional": true },
+        { "key": "primary_physician", "label": "Primary Physician", "type": "text", "optional": true },
+        { "key": "primary_physician_phone", "label": "Primary Physician Phone", "type": "phone", "optional": true }
+      ]
+    },
+    {
+      "id": "end_of_life",
+      "title": "End-of-Life & Funeral Wishes",
+      "fields": [
+        { "key": "end_of_life_disposition", "label": "End-of-Life Disposition", "type": "radio_group", "options": ["cremation", "burial", "donate_to_science", "no_preference"] },
+        { "key": "burial_location_or_cemetery", "label": "Location or Cemetery", "type": "text", "optional": true },
+        { "key": "religious_cultural_requests", "label": "Religious / Cultural Requests", "type": "textarea", "optional": true }
+      ]
+    },
+    {
+      "id": "attachments",
+      "title": "Attachments to Provide",
+      "fields": [
+        { "key": "attach_property_deeds", "label": "Property Deeds", "type": "checkbox" },
+        { "key": "attach_financial_statements", "label": "Financial Statements / Account Lists", "type": "checkbox" },
+        { "key": "attach_life_insurance_retirement_beneficiaries", "label": "Life Insurance / Retirement Beneficiaries", "type": "checkbox" },
+        { "key": "attach_drivers_license_id", "label": "Driver's License or ID Copy", "type": "checkbox" },
+        { "key": "attach_previous_will_or_trust", "label": "Previous Will or Trust", "type": "checkbox" },
+        { "key": "attach_marriage_divorce_documents", "label": "Marriage or Divorce Documents", "type": "checkbox" },
+        { "key": "attach_doctors_statement", "label": "Doctor's Statement (for capacity)", "type": "checkbox" }
+      ]
+    },
+    {
+      "id": "consultant_notes",
+      "title": "Consultant Notes",
+      "fields": [
+        { "key": "consultant_notes", "label": "Internal Use Only", "type": "textarea" }
+      ]
+    }
+  ],
+  "derived": [
+    { "key": "todays_date", "from": [], "rule": "auto_today" },
+    { "key": "client_age", "from": ["client_dob"], "rule": "years_since(client_dob)" }
+  ],
+  "intake_groups": [
+    {
+      "ask": "What's your full mailing address?",
+      "fills": ["client_street", "client_city", "client_state", "client_zip"]
+    }
+  ]
+}

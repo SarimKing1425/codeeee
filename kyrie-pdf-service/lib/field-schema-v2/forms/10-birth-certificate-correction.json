@@ -1,0 +1,107 @@
+{
+  "slug": "birth-certificate-correction",
+  "title": "Birth Certificate Correction & Amendment",
+  "pdf": "birth-certificate-correction.pdf",
+  "form_number": 10,
+  "estimated_call_minutes": { "intelligent": 8, "literal": 16 },
+  "sections": [
+    {
+      "id": "child_birth_record",
+      "title": "Child's Current Birth Record",
+      "fields": [
+        { "key": "child_current_full_name", "label": "Child's Current Full Name on Birth Certificate", "type": "text" },
+        { "key": "child_dob", "label": "Child Date of Birth", "type": "date" },
+        { "key": "child_city_of_birth", "label": "City of Birth", "type": "text" },
+        { "key": "child_county_of_birth", "label": "County of Birth", "type": "text" },
+        { "key": "child_state_of_birth", "label": "State of Birth", "type": "text" },
+        { "key": "child_hospital_or_place_of_birth", "label": "Hospital or Place of Birth", "type": "text", "optional": true }
+      ]
+    },
+    {
+      "id": "child_name_change",
+      "title": "Child's Name Change",
+      "fields": [
+        { "key": "current_incorrect_name", "label": "Current Incorrect Name", "type": "text" },
+        { "key": "child_corrected_full_name", "label": "Child's Corrected Full Name", "type": "text" },
+        { "key": "child_corrected_first_name", "label": "Child's Corrected First Name", "type": "text" },
+        { "key": "child_corrected_middle_name", "label": "Child's Corrected Middle Name", "type": "text", "optional": true },
+        { "key": "child_corrected_last_name", "label": "Child's Corrected Last Name", "type": "text" },
+        { "key": "name_change_reason", "label": "Reason for Name Change", "type": "radio_group", "options": ["clerical_error", "misspelling", "court_ordered", "parent_request", "other"] },
+        { "key": "name_change_reason_other", "label": "Name Change Reason (Other)", "type": "text", "show_if": "name_change_reason == other" },
+        { "key": "has_court_order_for_name_change", "label": "Court Order for Name Change?", "type": "radio_group", "options": ["yes", "no"] },
+        { "key": "court_order_court_name", "label": "Court Name", "type": "text", "show_if": "has_court_order_for_name_change == yes" },
+        { "key": "court_order_case_number", "label": "Court Order Case Number", "type": "text", "show_if": "has_court_order_for_name_change == yes" }
+      ]
+    },
+    {
+      "id": "adding_parent",
+      "title": "Adding a Parent",
+      "fields": [
+        { "key": "parent_being_added_full_legal_name", "label": "Parent Being Added Full Legal Name", "type": "text", "optional": true },
+        { "key": "parent_being_added_relationship", "label": "Parent Being Added Relationship", "type": "radio_group", "options": ["father", "mother", "parent_other"], "optional": true },
+        { "key": "parent_being_added_dob", "label": "Parent Being Added DOB", "type": "date", "optional": true },
+        { "key": "parent_being_added_place_of_birth", "label": "Parent Being Added Place of Birth", "type": "text", "optional": true },
+        { "key": "parent_currently_listed_on_birth_cert", "label": "Parent Currently Listed on Birth Cert?", "type": "radio_group", "options": ["no", "incorrect_information"] }
+      ]
+    },
+    {
+      "id": "legal_basis_for_adding_parent",
+      "title": "Legal Basis for Adding Parent",
+      "fields": [
+        { "key": "basis_vdop", "label": "Voluntary Declaration of Parentage", "type": "checkbox" },
+        { "key": "basis_court_order_parentage", "label": "Court Order (paternity/parentage)", "type": "checkbox" },
+        { "key": "basis_marriage_at_time_of_birth", "label": "Marriage to other parent at time of birth", "type": "checkbox" },
+        { "key": "basis_genetic_testing", "label": "Genetic Testing", "type": "checkbox" },
+        { "key": "basis_other", "label": "Other Basis", "type": "text" },
+        { "key": "court_order_basis_court_name", "label": "Court Name (if court order)", "type": "text", "show_if": "basis_court_order_parentage == true" },
+        { "key": "court_order_basis_case_number", "label": "Court Order Case Number (if court order)", "type": "text", "show_if": "basis_court_order_parentage == true" },
+        { "key": "court_order_basis_date_of_order", "label": "Date of Court Order", "type": "date", "show_if": "basis_court_order_parentage == true" }
+      ]
+    },
+    {
+      "id": "mother_birthing_parent",
+      "title": "Mother / Birthing Parent",
+      "fields": [
+        { "key": "mother_full_legal_name", "label": "Mother Full Legal Name", "type": "text" },
+        { "key": "mother_name_on_current_birth_cert", "label": "Mother's Name on Current Birth Cert (if different)", "type": "text", "optional": true },
+        { "key": "mother_dob", "label": "Mother Date of Birth", "type": "date" },
+        { "key": "mother_current_address", "label": "Mother Current Address", "type": "text" }
+      ]
+    },
+    {
+      "id": "father_other_parent",
+      "title": "Father / Other Parent",
+      "fields": [
+        { "key": "father_full_legal_name", "label": "Father Full Legal Name", "type": "text", "optional": true },
+        { "key": "father_dob", "label": "Father Date of Birth", "type": "date", "optional": true },
+        { "key": "father_current_address", "label": "Father Current Address", "type": "text", "optional": true }
+      ]
+    },
+    {
+      "id": "supporting_documents",
+      "title": "Supporting Documents",
+      "fields": [
+        { "key": "doc_current_birth_certificate", "label": "Copy of child's current birth certificate", "type": "checkbox" },
+        { "key": "doc_certified_court_order", "label": "Certified court order", "type": "checkbox" },
+        { "key": "doc_vdop", "label": "Voluntary Declaration of Parentage", "type": "checkbox" },
+        { "key": "doc_government_ids", "label": "Valid government ID(s) of parent(s)", "type": "checkbox" },
+        { "key": "doc_marriage_certificate", "label": "Marriage certificate", "type": "checkbox" },
+        { "key": "doc_other", "label": "Other Supporting Document", "type": "text" }
+      ]
+    },
+    {
+      "id": "client_certification",
+      "title": "Client Certification",
+      "fields": [
+        { "key": "client_certifies_info_accurate", "label": "I certify the information is true and correct", "type": "radio_group", "options": ["yes", "no"] }
+      ]
+    }
+  ],
+  "derived": [],
+  "intake_groups": [
+    {
+      "ask": "What's the corrected full name for the child? First, middle, last.",
+      "fills": ["child_corrected_first_name", "child_corrected_middle_name", "child_corrected_last_name", "child_corrected_full_name"]
+    }
+  ]
+}
