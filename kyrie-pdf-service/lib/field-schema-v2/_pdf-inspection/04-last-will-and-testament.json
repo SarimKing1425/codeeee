@@ -1,0 +1,598 @@
+[
+  {
+    "name": "Todays Date",
+    "type": "text"
+  },
+  {
+    "name": "Full Legal Name",
+    "type": "text"
+  },
+  {
+    "name": "Other Names Used",
+    "type": "text"
+  },
+  {
+    "name": "Date of Birth",
+    "type": "text"
+  },
+  {
+    "name": "Age",
+    "type": "text"
+  },
+  {
+    "name": "SSN last 4 digits",
+    "type": "text"
+  },
+  {
+    "name": "Address",
+    "type": "text"
+  },
+  {
+    "name": "City",
+    "type": "text"
+  },
+  {
+    "name": "State",
+    "type": "text"
+  },
+  {
+    "name": "Zip",
+    "type": "text"
+  },
+  {
+    "name": "Phone",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "Marital Status",
+    "type": "checkbox"
+  },
+  {
+    "name": "Single",
+    "type": "checkbox"
+  },
+  {
+    "name": "Married",
+    "type": "checkbox"
+  },
+  {
+    "name": "Divorced",
+    "type": "checkbox"
+  },
+  {
+    "name": "Widowed",
+    "type": "checkbox"
+  },
+  {
+    "name": "Spouses Full Legal Name if applicable",
+    "type": "text"
+  },
+  {
+    "name": "Date of Marriage",
+    "type": "text"
+  },
+  {
+    "name": "Do you and your spouse have a Prenuptial Agreement",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes",
+    "type": "checkbox"
+  },
+  {
+    "name": "Full Legal Name Date of Birth Relationship Lives With You YN",
+    "type": "text"
+  },
+  {
+    "name": "undefined",
+    "type": "text"
+  },
+  {
+    "name": "undefined_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_3",
+    "type": "text"
+  },
+  {
+    "name": "undefined_4",
+    "type": "text"
+  },
+  {
+    "name": "undefined_5",
+    "type": "text"
+  },
+  {
+    "name": "undefined_6",
+    "type": "text"
+  },
+  {
+    "name": "undefined_7",
+    "type": "text"
+  },
+  {
+    "name": "undefined_8",
+    "type": "text"
+  },
+  {
+    "name": "undefined_9",
+    "type": "text"
+  },
+  {
+    "name": "undefined_10",
+    "type": "text"
+  },
+  {
+    "name": "undefined_11",
+    "type": "text"
+  },
+  {
+    "name": "Do you have stepchildren",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "If yes list names 1",
+    "type": "text"
+  },
+  {
+    "name": "If yes list names 2",
+    "type": "text"
+  },
+  {
+    "name": "Any deceased children",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Name of Primary Executor",
+    "type": "text"
+  },
+  {
+    "name": "Relationship to You",
+    "type": "text"
+  },
+  {
+    "name": "Address_2",
+    "type": "text"
+  },
+  {
+    "name": "Phone_2",
+    "type": "text"
+  },
+  {
+    "name": "Email_2",
+    "type": "text"
+  },
+  {
+    "name": "Name",
+    "type": "text"
+  },
+  {
+    "name": "Relationship",
+    "type": "text"
+  },
+  {
+    "name": "Address_3",
+    "type": "text"
+  },
+  {
+    "name": "Phone_3",
+    "type": "text"
+  },
+  {
+    "name": "Email_3",
+    "type": "text"
+  },
+  {
+    "name": "Would you like the executor to be bonded",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_4",
+    "type": "checkbox"
+  },
+  {
+    "name": "Name_2",
+    "type": "text"
+  },
+  {
+    "name": "Relationship to You_2",
+    "type": "text"
+  },
+  {
+    "name": "Address_4",
+    "type": "text"
+  },
+  {
+    "name": "Phone_4",
+    "type": "text"
+  },
+  {
+    "name": "Name_3",
+    "type": "text"
+  },
+  {
+    "name": "Relationship to You_3",
+    "type": "text"
+  },
+  {
+    "name": "Address_5",
+    "type": "text"
+  },
+  {
+    "name": "Phone_5",
+    "type": "text"
+  },
+  {
+    "name": "Beneficiary Name Relationship Description of Item or Gift Value if known",
+    "type": "text"
+  },
+  {
+    "name": "undefined_12",
+    "type": "text"
+  },
+  {
+    "name": "undefined_13",
+    "type": "text"
+  },
+  {
+    "name": "undefined_14",
+    "type": "text"
+  },
+  {
+    "name": "undefined_15",
+    "type": "text"
+  },
+  {
+    "name": "undefined_16",
+    "type": "text"
+  },
+  {
+    "name": "undefined_17",
+    "type": "text"
+  },
+  {
+    "name": "undefined_18",
+    "type": "text"
+  },
+  {
+    "name": "undefined_19",
+    "type": "text"
+  },
+  {
+    "name": "undefined_20",
+    "type": "text"
+  },
+  {
+    "name": "undefined_21",
+    "type": "text"
+  },
+  {
+    "name": "undefined_22",
+    "type": "text"
+  },
+  {
+    "name": "Would you like to leave charitable donations",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_5",
+    "type": "checkbox"
+  },
+  {
+    "name": "SoCal United Professional Services 1",
+    "type": "text"
+  },
+  {
+    "name": "SoCal United Professional Services 2",
+    "type": "text"
+  },
+  {
+    "name": "SoCal United Professional Services 3",
+    "type": "text"
+  },
+  {
+    "name": "To my spouse if living otherwise to my children in equal shares",
+    "type": "checkbox"
+  },
+  {
+    "name": "To my children in equal shares",
+    "type": "checkbox"
+  },
+  {
+    "name": "To another person or organization",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other instructions",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_23",
+    "type": "text"
+  },
+  {
+    "name": "undefined_24",
+    "type": "text"
+  },
+  {
+    "name": "If any beneficiary predeceases you should their share go to their children per stirpes",
+    "type": "radio",
+    "options": [
+      "Yes_6",
+      "No"
+    ]
+  },
+  {
+    "name": "Location",
+    "type": "text"
+  },
+  {
+    "name": "Rental etc",
+    "type": "text"
+  },
+  {
+    "name": "Community",
+    "type": "text"
+  },
+  {
+    "name": "Value",
+    "type": "text"
+  },
+  {
+    "name": "undefined_25",
+    "type": "text"
+  },
+  {
+    "name": "undefined_26",
+    "type": "text"
+  },
+  {
+    "name": "undefined_27",
+    "type": "text"
+  },
+  {
+    "name": "undefined_28",
+    "type": "text"
+  },
+  {
+    "name": "Would you like to leave a specific property to a certain person",
+    "type": "text"
+  },
+  {
+    "name": "If yes specify",
+    "type": "radio",
+    "options": [
+      "Yes_7",
+      "No_2"
+    ]
+  },
+  {
+    "name": "Name_4",
+    "type": "text"
+  },
+  {
+    "name": "Savings IRA etc",
+    "type": "text"
+  },
+  {
+    "name": "Balance",
+    "type": "text"
+  },
+  {
+    "name": "any",
+    "type": "text"
+  },
+  {
+    "name": "undefined_29",
+    "type": "text"
+  },
+  {
+    "name": "undefined_30",
+    "type": "text"
+  },
+  {
+    "name": "undefined_31",
+    "type": "text"
+  },
+  {
+    "name": "undefined_32",
+    "type": "text"
+  },
+  {
+    "name": "Item Description",
+    "type": "text"
+  },
+  {
+    "name": "Estimated Value",
+    "type": "text"
+  },
+  {
+    "name": "Who Should Receive It",
+    "type": "text"
+  },
+  {
+    "name": "undefined_33",
+    "type": "text"
+  },
+  {
+    "name": "undefined_34",
+    "type": "text"
+  },
+  {
+    "name": "undefined_35",
+    "type": "text"
+  },
+  {
+    "name": "Creditor Name",
+    "type": "text"
+  },
+  {
+    "name": "Type of Debt",
+    "type": "text"
+  },
+  {
+    "name": "Approx Balance",
+    "type": "text"
+  },
+  {
+    "name": "undefined_36",
+    "type": "text"
+  },
+  {
+    "name": "undefined_37",
+    "type": "text"
+  },
+  {
+    "name": "undefined_38",
+    "type": "text"
+  },
+  {
+    "name": "Cremation",
+    "type": "checkbox"
+  },
+  {
+    "name": "Burial",
+    "type": "checkbox"
+  },
+  {
+    "name": "No preference",
+    "type": "checkbox"
+  },
+  {
+    "name": "Desired location or cemetery",
+    "type": "text"
+  },
+  {
+    "name": "Any prepaid arrangements",
+    "type": "radio",
+    "options": [
+      "Yes_8",
+      "No_3"
+    ]
+  },
+  {
+    "name": "Religious or cultural preferences",
+    "type": "text"
+  },
+  {
+    "name": "Do you wish to donate organs",
+    "type": "radio",
+    "options": [
+      "Yes_9",
+      "No_4"
+    ]
+  },
+  {
+    "name": "List online accounts passwords or instructions for digital property optional 1",
+    "type": "text"
+  },
+  {
+    "name": "List online accounts passwords or instructions for digital property optional 2",
+    "type": "text"
+  },
+  {
+    "name": "List online accounts passwords or instructions for digital property optional 3",
+    "type": "text"
+  },
+  {
+    "name": "Do you have pets",
+    "type": "radio",
+    "options": [
+      "Yes_10",
+      "No_5"
+    ]
+  },
+  {
+    "name": "If yes who should care for them",
+    "type": "text"
+  },
+  {
+    "name": "Phone_6",
+    "type": "text"
+  },
+  {
+    "name": "If yes how much",
+    "type": "radio",
+    "options": [
+      "Yes_11",
+      "No_6"
+    ]
+  },
+  {
+    "name": "Would you like to leave money for their care",
+    "type": "text"
+  },
+  {
+    "name": "Witness Name",
+    "type": "text"
+  },
+  {
+    "name": "Address_6",
+    "type": "text"
+  },
+  {
+    "name": "Phone_7",
+    "type": "text"
+  },
+  {
+    "name": "any_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_39",
+    "type": "text"
+  },
+  {
+    "name": "undefined_40",
+    "type": "text"
+  },
+  {
+    "name": "undefined_41",
+    "type": "text"
+  },
+  {
+    "name": "undefined_42",
+    "type": "text"
+  },
+  {
+    "name": "Copy of ID Drivers License or Passport",
+    "type": "checkbox"
+  },
+  {
+    "name": "Marriage Certificate if applicable",
+    "type": "checkbox"
+  },
+  {
+    "name": "Property Deeds",
+    "type": "checkbox"
+  },
+  {
+    "name": "Title Documents Vehicles Boats etc",
+    "type": "checkbox"
+  },
+  {
+    "name": "Beneficiary Designations Life Insurance IRA etc",
+    "type": "checkbox"
+  },
+  {
+    "name": "Prepaid BurialCremation Documents",
+    "type": "checkbox"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  }
+]

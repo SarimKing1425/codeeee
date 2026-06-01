@@ -1,0 +1,741 @@
+{
+  "form": "last-will-and-testament",
+  "summary": {
+    "total": 143,
+    "exact": 4,
+    "prefix": 4,
+    "token_set": 31,
+    "last_token": 7,
+    "unmapped": 97,
+    "duplicate_assignments": 1,
+    "match_rate": "32.2%"
+  },
+  "mapping": {
+    "Todays Date": {
+      "newKey": "todays_date",
+      "confidence": "last_token",
+      "matchedLabel": "Today's Date"
+    },
+    "Full Legal Name": {
+      "newKey": "testator_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Testator Full Legal Name"
+    },
+    "Other Names Used": {
+      "newKey": "testator_other_names_used",
+      "confidence": "exact",
+      "matchedLabel": "Other Names Used"
+    },
+    "Date of Birth": {
+      "newKey": "testator_dob",
+      "confidence": "token_set",
+      "matchedLabel": "Testator Date of Birth"
+    },
+    "Age": {
+      "newKey": "testator_age",
+      "confidence": "last_token",
+      "matchedLabel": "Testator Age"
+    },
+    "SSN last 4 digits": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City": {
+      "newKey": "testator_city",
+      "confidence": "last_token",
+      "matchedLabel": "Testator City"
+    },
+    "State": {
+      "newKey": "testator_state",
+      "confidence": "last_token",
+      "matchedLabel": "Testator State"
+    },
+    "Zip": {
+      "newKey": "testator_zip",
+      "confidence": "last_token",
+      "matchedLabel": "Testator Zip"
+    },
+    "Phone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Marital Status": {
+      "newKey": "testator_marital_status",
+      "confidence": "exact",
+      "matchedLabel": "Marital Status"
+    },
+    "Single": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Married": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Divorced": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Widowed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Spouses Full Legal Name if applicable": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date of Marriage": {
+      "newKey": "marriage_date",
+      "confidence": "exact",
+      "matchedLabel": "Date of Marriage"
+    },
+    "Do you and your spouse have a Prenuptial Agreement": {
+      "newKey": "has_prenuptial_agreement",
+      "confidence": "token_set",
+      "matchedLabel": "Prenuptial Agreement?"
+    },
+    "Yes": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name Date of Birth Relationship Lives With You YN": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": "testator_ssn_last4",
+      "confidence": "last_token",
+      "matchedLabel": "Testator SSN (last 4)"
+    },
+    "undefined_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you have stepchildren": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes list names 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes list names 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Any deceased children": {
+      "newKey": "has_deceased_children",
+      "confidence": "token_set",
+      "matchedLabel": "Deceased children?"
+    },
+    "Yes_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name of Primary Executor": {
+      "newKey": "primary_executor_name",
+      "confidence": "token_set",
+      "matchedLabel": "Primary Executor Name"
+    },
+    "Relationship to You": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address_2": {
+      "newKey": "real_property_2_address_location",
+      "confidence": "token_set",
+      "matchedLabel": "Real Property Row 2 address location"
+    },
+    "Phone_2": {
+      "newKey": "witnesses_2_phone",
+      "confidence": "token_set",
+      "matchedLabel": "Witnesses Row 2 phone"
+    },
+    "Email_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Relationship": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address_3": {
+      "newKey": "real_property_3_address_location",
+      "confidence": "token_set",
+      "matchedLabel": "Real Property Row 3 address location"
+    },
+    "Phone_3": {
+      "newKey": "witnesses_3_phone",
+      "confidence": "token_set",
+      "matchedLabel": "Witnesses Row 3 phone"
+    },
+    "Email_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Would you like the executor to be bonded": {
+      "newKey": "executor_to_be_bonded",
+      "confidence": "token_set",
+      "matchedLabel": "Executor to be bonded?"
+    },
+    "Yes_4": {
+      "newKey": "testator_ssn_last4",
+      "confidence": "last_token",
+      "matchedLabel": "Testator SSN (last 4)"
+    },
+    "Name_2": {
+      "newKey": "children_2_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Children and Dependents Row 2 full legal name"
+    },
+    "Relationship to You_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address_4": {
+      "newKey": "real_property_4_address_location",
+      "confidence": "token_set",
+      "matchedLabel": "Real Property Row 4 address location"
+    },
+    "Phone_4": {
+      "newKey": "witnesses_4_phone",
+      "confidence": "token_set",
+      "matchedLabel": "Witnesses Row 4 phone"
+    },
+    "Name_3": {
+      "newKey": "children_3_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Children and Dependents Row 3 full legal name"
+    },
+    "Relationship to You_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address_5": {
+      "newKey": "real_property_5_address_location",
+      "confidence": "token_set",
+      "matchedLabel": "Real Property Row 5 address location"
+    },
+    "Phone_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Beneficiary Name Relationship Description of Item or Gift Value if known": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_15": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_16": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_17": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_18": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_19": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_20": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_21": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_22": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Would you like to leave charitable donations": {
+      "newKey": "charitable_donations",
+      "confidence": "token_set",
+      "matchedLabel": "Charitable Donations?"
+    },
+    "Yes_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "SoCal United Professional Services 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "SoCal United Professional Services 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "SoCal United Professional Services 3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "To my spouse if living otherwise to my children in equal shares": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "To my children in equal shares": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "To another person or organization": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other instructions": {
+      "newKey": "residuary_other_instructions",
+      "confidence": "token_set",
+      "matchedLabel": "Other Distribution Instructions"
+    },
+    "undefined_23": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_24": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If any beneficiary predeceases you should their share go to their children per stirpes": {
+      "newKey": "residuary_per_stirpes",
+      "confidence": "token_set",
+      "matchedLabel": "Per stirpes if beneficiary predeceases?"
+    },
+    "Location": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Rental etc": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Community": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Value": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_25": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_26": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_27": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_28": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Would you like to leave a specific property to a certain person": {
+      "newKey": "leave_specific_property_to_certain_person",
+      "confidence": "token_set",
+      "matchedLabel": "Leave specific property to a certain person?"
+    },
+    "If yes specify": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name_4": {
+      "newKey": "children_4_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Children and Dependents Row 4 full legal name"
+    },
+    "Savings IRA etc": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Balance": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "any": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_29": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_30": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_31": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_32": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Item Description": {
+      "newKey": "specific_gifts_1_item_or_gift_description",
+      "confidence": "token_set",
+      "matchedLabel": "Specific Gifts Row 1 item or gift description"
+    },
+    "Estimated Value": {
+      "newKey": "real_property_1_estimated_value",
+      "confidence": "token_set",
+      "matchedLabel": "Real Property Row 1 estimated value"
+    },
+    "Who Should Receive It": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_33": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_34": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_35": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Creditor Name": {
+      "newKey": "debts_1_creditor_name",
+      "confidence": "token_set",
+      "matchedLabel": "Debts Row 1 creditor name"
+    },
+    "Type of Debt": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Approx Balance": {
+      "newKey": "financial_assets_1_approx_balance",
+      "confidence": "token_set",
+      "matchedLabel": "Financial Assets Row 1 approx balance"
+    },
+    "undefined_36": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_37": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_38": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Cremation": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Burial": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No preference": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Desired location or cemetery": {
+      "newKey": "burial_location",
+      "confidence": "token_set",
+      "matchedLabel": "Desired Location / Cemetery"
+    },
+    "Any prepaid arrangements": {
+      "newKey": "prepaid_arrangements",
+      "confidence": "token_set",
+      "matchedLabel": "Prepaid Arrangements?"
+    },
+    "Religious or cultural preferences": {
+      "newKey": "religious_cultural_preferences",
+      "confidence": "token_set",
+      "matchedLabel": "Religious / Cultural Preferences"
+    },
+    "Do you wish to donate organs": {
+      "newKey": "donate_organs",
+      "confidence": "token_set",
+      "matchedLabel": "Donate Organs?"
+    },
+    "List online accounts passwords or instructions for digital property optional 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "List online accounts passwords or instructions for digital property optional 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "List online accounts passwords or instructions for digital property optional 3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you have pets": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes who should care for them": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes how much": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Would you like to leave money for their care": {
+      "newKey": "leave_money_for_pet_care",
+      "confidence": "token_set",
+      "matchedLabel": "Leave money for pet care?"
+    },
+    "Witness Name": {
+      "newKey": "witnesses_1_witness_name",
+      "confidence": "token_set",
+      "matchedLabel": "Witnesses Row 1 witness name"
+    },
+    "Address_6": {
+      "newKey": "real_property_6_address_location",
+      "confidence": "token_set",
+      "matchedLabel": "Real Property Row 6 address location"
+    },
+    "Phone_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "any_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_39": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_40": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_41": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_42": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Copy of ID Drivers License or Passport": {
+      "newKey": "attach_id_copy",
+      "confidence": "prefix",
+      "matchedLabel": "Copy of ID"
+    },
+    "Marriage Certificate if applicable": {
+      "newKey": "attach_marriage_certificate",
+      "confidence": "prefix",
+      "matchedLabel": "Marriage Certificate"
+    },
+    "Property Deeds": {
+      "newKey": "attach_property_deeds",
+      "confidence": "exact",
+      "matchedLabel": "Property Deeds"
+    },
+    "Title Documents Vehicles Boats etc": {
+      "newKey": "attach_title_documents",
+      "confidence": "prefix",
+      "matchedLabel": "Title Documents"
+    },
+    "Beneficiary Designations Life Insurance IRA etc": {
+      "newKey": "attach_beneficiary_designations",
+      "confidence": "prefix",
+      "matchedLabel": "Beneficiary Designations"
+    },
+    "Prepaid BurialCremation Documents": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "SSN last 4 digits",
+    "Address",
+    "Phone",
+    "Email",
+    "Single",
+    "Married",
+    "Divorced",
+    "Widowed",
+    "Spouses Full Legal Name if applicable",
+    "Yes",
+    "Full Legal Name Date of Birth Relationship Lives With You YN",
+    "undefined",
+    "undefined_2",
+    "undefined_3",
+    "undefined_5",
+    "undefined_6",
+    "undefined_7",
+    "undefined_8",
+    "undefined_9",
+    "undefined_10",
+    "undefined_11",
+    "Do you have stepchildren",
+    "Yes_2",
+    "If yes list names 1",
+    "If yes list names 2",
+    "Yes_3",
+    "Relationship to You",
+    "Email_2",
+    "Name",
+    "Relationship",
+    "Email_3",
+    "Relationship to You_2",
+    "Relationship to You_3",
+    "Phone_5",
+    "Beneficiary Name Relationship Description of Item or Gift Value if known",
+    "undefined_12",
+    "undefined_13",
+    "undefined_14",
+    "undefined_15",
+    "undefined_16",
+    "undefined_17",
+    "undefined_18",
+    "undefined_19",
+    "undefined_20",
+    "undefined_21",
+    "undefined_22",
+    "Yes_5",
+    "SoCal United Professional Services 1",
+    "SoCal United Professional Services 2",
+    "SoCal United Professional Services 3",
+    "To my spouse if living otherwise to my children in equal shares",
+    "To my children in equal shares",
+    "To another person or organization",
+    "undefined_23",
+    "undefined_24",
+    "Location",
+    "Rental etc",
+    "Community",
+    "Value",
+    "undefined_25",
+    "undefined_26",
+    "undefined_27",
+    "undefined_28",
+    "If yes specify",
+    "Savings IRA etc",
+    "Balance",
+    "any",
+    "undefined_29",
+    "undefined_30",
+    "undefined_31",
+    "undefined_32",
+    "Who Should Receive It",
+    "undefined_33",
+    "undefined_34",
+    "undefined_35",
+    "Type of Debt",
+    "undefined_36",
+    "undefined_37",
+    "undefined_38",
+    "Cremation",
+    "Burial",
+    "No preference",
+    "List online accounts passwords or instructions for digital property optional 1",
+    "List online accounts passwords or instructions for digital property optional 2",
+    "List online accounts passwords or instructions for digital property optional 3",
+    "Do you have pets",
+    "If yes who should care for them",
+    "Phone_6",
+    "If yes how much",
+    "Phone_7",
+    "any_2",
+    "undefined_39",
+    "undefined_40",
+    "undefined_41",
+    "undefined_42",
+    "Prepaid BurialCremation Documents",
+    "Text1"
+  ],
+  "duplicates": [
+    {
+      "key": "testator_ssn_last4",
+      "oldNames": [
+        "undefined_4",
+        "Yes_4"
+      ]
+    }
+  ]
+}

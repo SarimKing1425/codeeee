@@ -1,0 +1,759 @@
+{
+  "form": "conservatorship-of-an-adult",
+  "summary": {
+    "total": 139,
+    "exact": 8,
+    "prefix": 13,
+    "token_set": 23,
+    "last_token": 11,
+    "unmapped": 84,
+    "duplicate_assignments": 6,
+    "match_rate": "39.6%"
+  },
+  "mapping": {
+    "Date": {
+      "newKey": "todays_date",
+      "confidence": "last_token",
+      "matchedLabel": "Today's Date"
+    },
+    "Temporary Conservatorship emergency order": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "General  Permanent Conservatorship longterm care": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Both Temporary and General": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Conservatorship of the Person personal care medical decisions residence": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Conservatorship of the Estate financial or property management": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Both": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name": {
+      "newKey": "conservatee_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Conservatee Full Legal Name"
+    },
+    "Date of Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Age": {
+      "newKey": "conservatee_age",
+      "confidence": "last_token",
+      "matchedLabel": "Conservatee Age"
+    },
+    "Gender optional": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Social Security Number last 4 digits": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Street Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City": {
+      "newKey": "conservatee_city",
+      "confidence": "last_token",
+      "matchedLabel": "Conservatee City"
+    },
+    "State": {
+      "newKey": "conservatee_state",
+      "confidence": "last_token",
+      "matchedLabel": "Conservatee State"
+    },
+    "Zip": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Own Home": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Apartment": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Assisted Living": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Skilled Nursing Facility": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other": {
+      "newKey": "reason_other",
+      "confidence": "prefix",
+      "matchedLabel": "Other Reason"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Length of Time at Current Address": {
+      "newKey": "conservatee_length_at_current_address",
+      "confidence": "token_set",
+      "matchedLabel": "Length at Current Address"
+    },
+    "County of Residence": {
+      "newKey": "conservatee_county_of_residence",
+      "confidence": "exact",
+      "matchedLabel": "County of Residence"
+    },
+    "Yes": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name_2": {
+      "newKey": "proposed_conservators_2_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Proposed Conservators Row 2 full legal name"
+    },
+    "Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "digits": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Conservatee": {
+      "newKey": "conservatee_full_legal_name",
+      "confidence": "prefix",
+      "matchedLabel": "Conservatee Full Legal Name"
+    },
+    "Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip_2": {
+      "newKey": "proposed_conservators_2_city_state_zip",
+      "confidence": "token_set",
+      "matchedLabel": "Proposed Conservators Row 2 city state zip"
+    },
+    "Phone_2": {
+      "newKey": "proposed_conservators_2_phone",
+      "confidence": "token_set",
+      "matchedLabel": "Proposed Conservators Row 2 phone"
+    },
+    "Email_2": {
+      "newKey": "proposed_conservators_2_email",
+      "confidence": "token_set",
+      "matchedLabel": "Proposed Conservators Row 2 email"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": "conservatee_ssn_last4",
+      "confidence": "last_token",
+      "matchedLabel": "Conservatee SSN (last 4)"
+    },
+    "undefined_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Single": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Married": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Domestic Partners": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Occupation": {
+      "newKey": "conservator_occupation",
+      "confidence": "last_token",
+      "matchedLabel": "Conservator Occupation"
+    },
+    "Employer": {
+      "newKey": "conservator_employer",
+      "confidence": "last_token",
+      "matchedLabel": "Conservator Employer"
+    },
+    "Drivers License or ID": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you live with the proposed conservatee": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Have you ever been appointed as a guardian or conservator before": {
+      "newKey": "conservator_previously_appointed",
+      "confidence": "token_set",
+      "matchedLabel": "Previously appointed guardian or conservator?"
+    },
+    "Is the conservatee related to you by blood marriage or adoption": {
+      "newKey": "related_by_blood_marriage_adoption",
+      "confidence": "token_set",
+      "matchedLabel": "Related by blood, marriage, or adoption?"
+    },
+    "undefined_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes explain": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Relationship": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "AddressCityzip": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone_3": {
+      "newKey": "conservatee_relatives_3_phone",
+      "confidence": "token_set",
+      "matchedLabel": "Conservatee's Relatives Row 3 phone"
+    },
+    "undefined_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_15": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_16": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_17": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_18": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Inability to manage personal needs food clothing shelter": {
+      "newKey": "reason_inability_personal_needs",
+      "confidence": "prefix",
+      "matchedLabel": "Inability to manage personal needs"
+    },
+    "Medical incapacity or mental health condition": {
+      "newKey": "reason_medical_mental_health",
+      "confidence": "prefix",
+      "matchedLabel": "Medical incapacity or mental health"
+    },
+    "Dementia or Alzheimers": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Physical disability": {
+      "newKey": "reason_physical_disability",
+      "confidence": "exact",
+      "matchedLabel": "Physical Disability"
+    },
+    "Risk of abuse neglect or exploitation": {
+      "newKey": "reason_risk_abuse_neglect_exploitation",
+      "confidence": "token_set",
+      "matchedLabel": "Risk of abuse/neglect/exploitation"
+    },
+    "Financial mismanagement": {
+      "newKey": "reason_financial_mismanagement",
+      "confidence": "exact",
+      "matchedLabel": "Financial Mismanagement"
+    },
+    "Other_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_19": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Detailed Explanation 1": {
+      "newKey": "reason_explanation",
+      "confidence": "prefix",
+      "matchedLabel": "Detailed Explanation"
+    },
+    "Detailed Explanation 2": {
+      "newKey": "reason_explanation",
+      "confidence": "prefix",
+      "matchedLabel": "Detailed Explanation"
+    },
+    "Detailed Explanation 3": {
+      "newKey": "reason_explanation",
+      "confidence": "prefix",
+      "matchedLabel": "Detailed Explanation"
+    },
+    "Detailed Explanation 4": {
+      "newKey": "reason_explanation",
+      "confidence": "prefix",
+      "matchedLabel": "Detailed Explanation"
+    },
+    "7 Medical and Cognitive Condition": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Primary diagnosis or condition": {
+      "newKey": "primary_diagnosis",
+      "confidence": "prefix",
+      "matchedLabel": "Primary Diagnosis"
+    },
+    "Physicians addressphone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Does the conservatee take medication": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Unknown": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "8 Conservatorship of the Estate if applicable": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_20": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Monthly income Social Security pension etc": {
+      "newKey": "estate_monthly_income",
+      "confidence": "prefix",
+      "matchedLabel": "Monthly Income"
+    },
+    "Real property owned addressvalue": {
+      "newKey": "estate_real_property",
+      "confidence": "prefix",
+      "matchedLabel": "Real Property Owned"
+    },
+    "Does the conservatee receive public benefits": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Debts or obligations": {
+      "newKey": "estate_debts_obligations",
+      "confidence": "exact",
+      "matchedLabel": "Debts or Obligations"
+    },
+    "SSI": {
+      "newKey": "benefit_ssi",
+      "confidence": "last_token",
+      "matchedLabel": "Benefit: SSI"
+    },
+    "SSDI": {
+      "newKey": "benefit_ssdi",
+      "confidence": "last_token",
+      "matchedLabel": "Benefit: SSDI"
+    },
+    "MediCal": {
+      "newKey": "reason_medical_mental_health",
+      "confidence": "prefix",
+      "matchedLabel": "Medical incapacity or mental health"
+    },
+    "VA": {
+      "newKey": "benefit_va",
+      "confidence": "last_token",
+      "matchedLabel": "Benefit: VA"
+    },
+    "Other_4": {
+      "newKey": "conservatee_ssn_last4",
+      "confidence": "last_token",
+      "matchedLabel": "Conservatee SSN (last 4)"
+    },
+    "9 Temporary Conservatorship if applicable": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "When should the temporary conservatorship begin": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Is there a risk of immediate harm to the person or finances": {
+      "newKey": "risk_of_immediate_harm",
+      "confidence": "token_set",
+      "matchedLabel": "Risk of immediate harm?"
+    },
+    "Yes_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "fill_16": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "fill_17": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Where will the conservatee live": {
+      "newKey": "conservatee_will_live",
+      "confidence": "token_set",
+      "matchedLabel": "Where Conservatee Will Live"
+    },
+    "Home": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Facility": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "With Conservator": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Who will provide daily care": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "fill_1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "fill_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Have less restrictive alternatives been considered": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Power of Attorney": {
+      "newKey": "alt_poa",
+      "confidence": "exact",
+      "matchedLabel": "Power of Attorney"
+    },
+    "Representative Payee": {
+      "newKey": "alt_representative_payee",
+      "confidence": "exact",
+      "matchedLabel": "Representative Payee"
+    },
+    "Other_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Advance Health Care Directive": {
+      "newKey": "alt_advance_directive",
+      "confidence": "exact",
+      "matchedLabel": "Advance Health Care Directive"
+    },
+    "If yes explain why these are not sufficient": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Have you ever been convicted of a felony or misdemeanor": {
+      "newKey": "conservator_convicted_felony_misdemeanor",
+      "confidence": "token_set",
+      "matchedLabel": "Convicted of felony or misdemeanor?"
+    },
+    "Have you ever filed for bankruptcy": {
+      "newKey": "conservator_filed_bankruptcy",
+      "confidence": "token_set",
+      "matchedLabel": "Filed for bankruptcy?"
+    },
+    "Have you ever been investigated for abuse neglect or fraud": {
+      "newKey": "conservator_investigated_abuse_neglect_fraud",
+      "confidence": "token_set",
+      "matchedLabel": "Investigated for abuse, neglect, or fraud?"
+    },
+    "If yes explain 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes explain 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Has the conservatee nominated a preferred conservator": {
+      "newKey": "conservatee_nominated_preferred_conservator",
+      "confidence": "token_set",
+      "matchedLabel": "Conservatee nominated preferred conservator?"
+    },
+    "Has Adult Protective Services APS been involved": {
+      "newKey": "aps_involved",
+      "confidence": "token_set",
+      "matchedLabel": "APS Involved?"
+    },
+    "undefined_21": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Are there existing restraining or protective orders": {
+      "newKey": "existing_restraining_protective_orders",
+      "confidence": "token_set",
+      "matchedLabel": "Existing restraining or protective orders?"
+    },
+    "Physicians Declaration of Capacity GC335": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Financial Statements or Bank Records": {
+      "newKey": "attach_financial_statements",
+      "confidence": "token_set",
+      "matchedLabel": "Financial Statements / Bank Records"
+    },
+    "Medical Records or Diagnosis Summary": {
+      "newKey": "attach_medical_records",
+      "confidence": "token_set",
+      "matchedLabel": "Medical Records / Diagnosis Summary"
+    },
+    "Power of Attorney  Advance Directive if any": {
+      "newKey": "alt_poa",
+      "confidence": "prefix",
+      "matchedLabel": "Power of Attorney"
+    },
+    "Copy of Conservatees ID or Social Security Card": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Proof of Residence": {
+      "newKey": "attach_proof_of_residence",
+      "confidence": "exact",
+      "matchedLabel": "Proof of Residence"
+    },
+    "Supporting Declarations MC030": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "16 Consultant Notes Internal Use Only 1": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Consultant Notes"
+    },
+    "16 Consultant Notes Internal Use Only 2": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Consultant Notes"
+    },
+    "16 Consultant Notes Internal Use Only 3": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Consultant Notes"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text2": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Temporary Conservatorship emergency order",
+    "General  Permanent Conservatorship longterm care",
+    "Both Temporary and General",
+    "Conservatorship of the Person personal care medical decisions residence",
+    "Conservatorship of the Estate financial or property management",
+    "Both",
+    "Date of Birth",
+    "Gender optional",
+    "Social Security Number last 4 digits",
+    "Street Address",
+    "Zip",
+    "Phone",
+    "Email",
+    "Own Home",
+    "Apartment",
+    "Assisted Living",
+    "Skilled Nursing Facility",
+    "undefined",
+    "Yes",
+    "No",
+    "Birth",
+    "digits",
+    "Address",
+    "undefined_2",
+    "undefined_3",
+    "undefined_5",
+    "undefined_6",
+    "undefined_7",
+    "undefined_8",
+    "undefined_9",
+    "Single",
+    "Married",
+    "Domestic Partners",
+    "Other_2",
+    "Drivers License or ID",
+    "Do you live with the proposed conservatee",
+    "undefined_10",
+    "If yes explain",
+    "Name",
+    "Relationship",
+    "AddressCityzip",
+    "undefined_11",
+    "undefined_12",
+    "undefined_13",
+    "undefined_14",
+    "undefined_15",
+    "undefined_16",
+    "undefined_17",
+    "undefined_18",
+    "Dementia or Alzheimers",
+    "Other_3",
+    "undefined_19",
+    "7 Medical and Cognitive Condition",
+    "Physicians addressphone",
+    "Does the conservatee take medication",
+    "Yes_5",
+    "No_5",
+    "Unknown",
+    "8 Conservatorship of the Estate if applicable",
+    "undefined_20",
+    "Does the conservatee receive public benefits",
+    "9 Temporary Conservatorship if applicable",
+    "When should the temporary conservatorship begin",
+    "Yes_8",
+    "fill_16",
+    "fill_17",
+    "Home",
+    "Facility",
+    "With Conservator",
+    "Other_5",
+    "Who will provide daily care",
+    "fill_1",
+    "fill_2",
+    "Have less restrictive alternatives been considered",
+    "Other_6",
+    "If yes explain why these are not sufficient",
+    "If yes explain 1",
+    "If yes explain 2",
+    "undefined_21",
+    "Physicians Declaration of Capacity GC335",
+    "Copy of Conservatees ID or Social Security Card",
+    "Supporting Declarations MC030",
+    "Text1",
+    "Text2"
+  ],
+  "duplicates": [
+    {
+      "key": "conservatee_full_legal_name",
+      "oldNames": [
+        "Full Legal Name",
+        "Conservatee"
+      ]
+    },
+    {
+      "key": "conservatee_ssn_last4",
+      "oldNames": [
+        "undefined_4",
+        "Other_4"
+      ]
+    },
+    {
+      "key": "reason_medical_mental_health",
+      "oldNames": [
+        "Medical incapacity or mental health condition",
+        "MediCal"
+      ]
+    },
+    {
+      "key": "reason_explanation",
+      "oldNames": [
+        "Detailed Explanation 1",
+        "Detailed Explanation 2",
+        "Detailed Explanation 3",
+        "Detailed Explanation 4"
+      ]
+    },
+    {
+      "key": "alt_poa",
+      "oldNames": [
+        "Power of Attorney",
+        "Power of Attorney  Advance Directive if any"
+      ]
+    },
+    {
+      "key": "consultant_notes",
+      "oldNames": [
+        "16 Consultant Notes Internal Use Only 1",
+        "16 Consultant Notes Internal Use Only 2",
+        "16 Consultant Notes Internal Use Only 3"
+      ]
+    }
+  ]
+}

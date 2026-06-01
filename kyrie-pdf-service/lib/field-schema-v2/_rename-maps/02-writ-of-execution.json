@@ -1,0 +1,425 @@
+{
+  "form": "writ-of-execution",
+  "summary": {
+    "total": 77,
+    "exact": 11,
+    "prefix": 3,
+    "token_set": 31,
+    "last_token": 4,
+    "unmapped": 28,
+    "duplicate_assignments": 3,
+    "match_rate": "63.6%"
+  },
+  "mapping": {
+    "Client Name": {
+      "newKey": "client_name",
+      "confidence": "exact",
+      "matchedLabel": "Client Name"
+    },
+    "Phone Number": {
+      "newKey": "case_number",
+      "confidence": "last_token",
+      "matchedLabel": "Case Number"
+    },
+    "Email": {
+      "newKey": "client_email",
+      "confidence": "last_token",
+      "matchedLabel": "Client Email"
+    },
+    "Case Number": {
+      "newKey": "case_number",
+      "confidence": "exact",
+      "matchedLabel": "Case Number"
+    },
+    "Court County": {
+      "newKey": "court_county",
+      "confidence": "exact",
+      "matchedLabel": "Court County"
+    },
+    "1 Full name of judgment creditor person owed money": {
+      "newKey": "judgment_creditor_full_name",
+      "confidence": "token_set",
+      "matchedLabel": "Judgment Creditor Full Name"
+    },
+    "2 Full name of judgment debtor person who owes money": {
+      "newKey": "judgment_debtor_full_name",
+      "confidence": "token_set",
+      "matchedLabel": "Judgment Debtor Full Name"
+    },
+    "3 Date judgment was entered": {
+      "newKey": "judgment_entered_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date Judgment Entered"
+    },
+    "Money Judgment": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Small Claims": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Child Support": {
+      "newKey": "writ_support_enforcement",
+      "confidence": "token_set",
+      "matchedLabel": "Child/Spousal Support Enforcement"
+    },
+    "Spousal Support": {
+      "newKey": "writ_support_enforcement",
+      "confidence": "token_set",
+      "matchedLabel": "Child/Spousal Support Enforcement"
+    },
+    "Attorney Fee Award": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "5 Was this judgment renewed": {
+      "newKey": "judgment_renewed",
+      "confidence": "token_set",
+      "matchedLabel": "Judgment Renewed?"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes  Date of renewal": {
+      "newKey": "judgment_renewal_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date of Renewal"
+    },
+    "No": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "6 County where the judgment was originally entered": {
+      "newKey": "judgment_entered_county",
+      "confidence": "token_set",
+      "matchedLabel": "County Where Judgment Originally Entered"
+    },
+    "7 Total amount of judgment": {
+      "newKey": "judgment_total_amount",
+      "confidence": "token_set",
+      "matchedLabel": "Total Amount of Judgment"
+    },
+    "1 Judgment Amount Original amount owed": {
+      "newKey": "amount_judgment_original",
+      "confidence": "token_set",
+      "matchedLabel": "Judgment Amount (Original)"
+    },
+    "2 Accrued interest to date": {
+      "newKey": "amount_accrued_interest",
+      "confidence": "token_set",
+      "matchedLabel": "Accrued Interest to Date"
+    },
+    "3 Costs added after judgment filing fees etc": {
+      "newKey": "amount_costs_added",
+      "confidence": "token_set",
+      "matchedLabel": "Costs Added After Judgment"
+    },
+    "4 Payments made by debtor since the judgment": {
+      "newKey": "amount_payments_made",
+      "confidence": "token_set",
+      "matchedLabel": "Payments Made Since Judgment"
+    },
+    "5 Remaining balance owed": {
+      "newKey": "amount_remaining_balance",
+      "confidence": "token_set",
+      "matchedLabel": "Remaining Balance Owed"
+    },
+    "6 Daily interest amount optional if known": {
+      "newKey": "amount_daily_interest",
+      "confidence": "token_set",
+      "matchedLabel": "Daily Interest Amount"
+    },
+    "1 Judgment Debtors Full Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2 Aliases or other names used": {
+      "newKey": "debtor_aliases",
+      "confidence": "token_set",
+      "matchedLabel": "Aliases or Other Names Used"
+    },
+    "3 Debtors Address 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "3 Debtors Address 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "4 Debtors Phone Number": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "5 Employers Name if known": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "6 Employer Address": {
+      "newKey": "debtor_employer_address",
+      "confidence": "token_set",
+      "matchedLabel": "Employer Address"
+    },
+    "7 Debtors known banks": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Real Estate": {
+      "newKey": "debtor_asset_real_estate",
+      "confidence": "token_set",
+      "matchedLabel": "Asset: Real Estate"
+    },
+    "Vehicles": {
+      "newKey": "debtor_asset_vehicles",
+      "confidence": "last_token",
+      "matchedLabel": "Asset: Vehicles"
+    },
+    "Bank Accounts": {
+      "newKey": "debtor_asset_bank_accounts",
+      "confidence": "token_set",
+      "matchedLabel": "Asset: Bank Accounts"
+    },
+    "Business Income": {
+      "newKey": "debtor_asset_business_income",
+      "confidence": "token_set",
+      "matchedLabel": "Asset: Business Income"
+    },
+    "Wages": {
+      "newKey": "debtor_asset_wages",
+      "confidence": "last_token",
+      "matchedLabel": "Asset: Wages"
+    },
+    "Personal Property": {
+      "newKey": "debtor_asset_personal_property",
+      "confidence": "token_set",
+      "matchedLabel": "Asset: Personal Property"
+    },
+    "Other_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Bank Levy": {
+      "newKey": "writ_bank_levy",
+      "confidence": "exact",
+      "matchedLabel": "Bank Levy"
+    },
+    "Wage Garnishment": {
+      "newKey": "writ_wage_garnishment",
+      "confidence": "exact",
+      "matchedLabel": "Wage Garnishment"
+    },
+    "Real Property Levy": {
+      "newKey": "writ_real_property_levy",
+      "confidence": "exact",
+      "matchedLabel": "Real Property Levy"
+    },
+    "Vehicle Levy": {
+      "newKey": "writ_vehicle_levy",
+      "confidence": "exact",
+      "matchedLabel": "Vehicle Levy"
+    },
+    "Till Tap  Keeper business cash register": {
+      "newKey": "writ_till_tap_keeper",
+      "confidence": "prefix",
+      "matchedLabel": "Till Tap / Keeper"
+    },
+    "Earnings Withholding Order": {
+      "newKey": "writ_earnings_withholding",
+      "confidence": "exact",
+      "matchedLabel": "Earnings Withholding Order"
+    },
+    "Child SupportSpousal Support Enforcement": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Does this case have more than one judgment debtor": {
+      "newKey": "has_multiple_debtors",
+      "confidence": "token_set",
+      "matchedLabel": "More than one judgment debtor?"
+    },
+    "1 Name": {
+      "newKey": "additional_debtor_1_name",
+      "confidence": "token_set",
+      "matchedLabel": "Additional Debtor 1 Name"
+    },
+    "2 Name": {
+      "newKey": "additional_debtor_2_name",
+      "confidence": "token_set",
+      "matchedLabel": "Additional Debtor 2 Name"
+    },
+    "3 Name": {
+      "newKey": "additional_debtor_3_name",
+      "confidence": "token_set",
+      "matchedLabel": "Additional Debtor 3 Name"
+    },
+    "This is usually the county where the debtors property or job is located": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2 Has a prior writ been issued in this case": {
+      "newKey": "prior_writ_issued",
+      "confidence": "token_set",
+      "matchedLabel": "Prior Writ Issued?"
+    },
+    "County": {
+      "newKey": "judgment_entered_county",
+      "confidence": "prefix",
+      "matchedLabel": "County Where Judgment Originally Entered"
+    },
+    "Yes  Date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Entire judgment": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Remaining balance only": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Specific enforcement action": {
+      "newKey": "writ_scope_specific_action",
+      "confidence": "exact",
+      "matchedLabel": "Specific Enforcement Action"
+    },
+    "undefined_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1 Ongoing monthly support amount": {
+      "newKey": "support_ongoing_monthly",
+      "confidence": "token_set",
+      "matchedLabel": "Ongoing Monthly Support Amount"
+    },
+    "2 Pastdue support arrears": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "3 Interest on arrears": {
+      "newKey": "support_arrears_interest",
+      "confidence": "token_set",
+      "matchedLabel": "Interest on Arrears"
+    },
+    "4 Date of last payment": {
+      "newKey": "support_last_payment_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date of Last Payment"
+    },
+    "Judgment signed by court": {
+      "newKey": "doc_judgment_signed",
+      "confidence": "exact",
+      "matchedLabel": "Judgment (signed by court)"
+    },
+    "Judgment summary if available": {
+      "newKey": "doc_judgment_summary",
+      "confidence": "prefix",
+      "matchedLabel": "Judgment Summary"
+    },
+    "Any renewal of judgment orders": {
+      "newKey": "doc_renewal_orders",
+      "confidence": "token_set",
+      "matchedLabel": "Renewal of Judgment Orders"
+    },
+    "Proof of interestfees calculations": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Any previous writs": {
+      "newKey": "doc_previous_writs",
+      "confidence": "exact",
+      "matchedLabel": "Any Previous Writs"
+    },
+    "Payments or receipts from the debtor": {
+      "newKey": "doc_debtor_receipts",
+      "confidence": "token_set",
+      "matchedLabel": "Payments or Receipts from Debtor"
+    },
+    "the debtors assets job or bank 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "the debtors assets job or bank 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "the debtors assets job or bank 3": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Money Judgment",
+    "Small Claims",
+    "Attorney Fee Award",
+    "Other",
+    "undefined",
+    "No",
+    "1 Judgment Debtors Full Name",
+    "3 Debtors Address 1",
+    "3 Debtors Address 2",
+    "4 Debtors Phone Number",
+    "5 Employers Name if known",
+    "7 Debtors known banks",
+    "Other_2",
+    "undefined_2",
+    "Child SupportSpousal Support Enforcement",
+    "Other_3",
+    "undefined_3",
+    "This is usually the county where the debtors property or job is located",
+    "Yes  Date",
+    "No_3",
+    "Entire judgment",
+    "Remaining balance only",
+    "undefined_4",
+    "2 Pastdue support arrears",
+    "Proof of interestfees calculations",
+    "the debtors assets job or bank 1",
+    "the debtors assets job or bank 2",
+    "the debtors assets job or bank 3"
+  ],
+  "duplicates": [
+    {
+      "key": "case_number",
+      "oldNames": [
+        "Phone Number",
+        "Case Number"
+      ]
+    },
+    {
+      "key": "writ_support_enforcement",
+      "oldNames": [
+        "Child Support",
+        "Spousal Support"
+      ]
+    },
+    {
+      "key": "judgment_entered_county",
+      "oldNames": [
+        "6 County where the judgment was originally entered",
+        "County"
+      ]
+    }
+  ]
+}

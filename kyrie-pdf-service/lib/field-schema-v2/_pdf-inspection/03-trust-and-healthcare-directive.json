@@ -1,0 +1,528 @@
+[
+  {
+    "name": "Todays Date",
+    "type": "text"
+  },
+  {
+    "name": "Full Legal Name",
+    "type": "text"
+  },
+  {
+    "name": "Other Names Used if any",
+    "type": "text"
+  },
+  {
+    "name": "Date of Birth",
+    "type": "text"
+  },
+  {
+    "name": "Age",
+    "type": "text"
+  },
+  {
+    "name": "Social Security last 4 digits",
+    "type": "text"
+  },
+  {
+    "name": "Address",
+    "type": "text"
+  },
+  {
+    "name": "City",
+    "type": "text"
+  },
+  {
+    "name": "State",
+    "type": "text"
+  },
+  {
+    "name": "ZIP",
+    "type": "text"
+  },
+  {
+    "name": "Phone",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "Single",
+    "type": "checkbox"
+  },
+  {
+    "name": "Married",
+    "type": "checkbox"
+  },
+  {
+    "name": "Divorced",
+    "type": "checkbox"
+  },
+  {
+    "name": "Widowed",
+    "type": "checkbox"
+  },
+  {
+    "name": "Domestic",
+    "type": "checkbox"
+  },
+  {
+    "name": "Spouses Full Legal Name",
+    "type": "text"
+  },
+  {
+    "name": "Date of Marriage",
+    "type": "text"
+  },
+  {
+    "name": "Revocable Living Trust most common",
+    "type": "checkbox"
+  },
+  {
+    "name": "Irrevocable Trust",
+    "type": "checkbox"
+  },
+  {
+    "name": "Family Trust",
+    "type": "checkbox"
+  },
+  {
+    "name": "Joint Trust Spouses together",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined",
+    "type": "text"
+  },
+  {
+    "name": "Full Legal Name Relationship Date of Birth Address Primary  Contingent",
+    "type": "text"
+  },
+  {
+    "name": "undefined_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_3",
+    "type": "text"
+  },
+  {
+    "name": "undefined_4",
+    "type": "text"
+  },
+  {
+    "name": "undefined_5",
+    "type": "text"
+  },
+  {
+    "name": "undefined_6",
+    "type": "text"
+  },
+  {
+    "name": "undefined_7",
+    "type": "text"
+  },
+  {
+    "name": "undefined_8",
+    "type": "text"
+  },
+  {
+    "name": "undefined_9",
+    "type": "text"
+  },
+  {
+    "name": "undefined_10",
+    "type": "text"
+  },
+  {
+    "name": "undefined_11",
+    "type": "text"
+  },
+  {
+    "name": "undefined_12",
+    "type": "text"
+  },
+  {
+    "name": "undefined_13",
+    "type": "text"
+  },
+  {
+    "name": "undefined_14",
+    "type": "text"
+  },
+  {
+    "name": "undefined_15",
+    "type": "text"
+  },
+  {
+    "name": "undefined_16",
+    "type": "text"
+  },
+  {
+    "name": "undefined_17",
+    "type": "text"
+  },
+  {
+    "name": "undefined_18",
+    "type": "text"
+  },
+  {
+    "name": "undefined_19",
+    "type": "text"
+  },
+  {
+    "name": "undefined_20",
+    "type": "text"
+  },
+  {
+    "name": "Name",
+    "type": "text"
+  },
+  {
+    "name": "Relationship",
+    "type": "text"
+  },
+  {
+    "name": "Address_2",
+    "type": "text"
+  },
+  {
+    "name": "Phone_2",
+    "type": "text"
+  },
+  {
+    "name": "Email_2",
+    "type": "text"
+  },
+  {
+    "name": "Name_2",
+    "type": "text"
+  },
+  {
+    "name": "Relationship_2",
+    "type": "text"
+  },
+  {
+    "name": "Address_3",
+    "type": "text"
+  },
+  {
+    "name": "Phone_3",
+    "type": "text"
+  },
+  {
+    "name": "Email_3",
+    "type": "text"
+  },
+  {
+    "name": "Do you wish for your Trustees to serve without bond",
+    "type": "radio",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "All to my spouse then equally to my children",
+    "type": "checkbox"
+  },
+  {
+    "name": "Equally to my children",
+    "type": "checkbox"
+  },
+  {
+    "name": "Specific gifts before equal distribution",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other instructions",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_21",
+    "type": "text"
+  },
+  {
+    "name": "1",
+    "type": "text"
+  },
+  {
+    "name": "2",
+    "type": "text"
+  },
+  {
+    "name": "If a beneficiary predeceases you should their share go to their children per stirpes",
+    "type": "radio",
+    "options": [
+      "Yes_2",
+      "No_2"
+    ]
+  },
+  {
+    "name": "Location",
+    "type": "text"
+  },
+  {
+    "name": "Property",
+    "type": "text"
+  },
+  {
+    "name": "Community",
+    "type": "text"
+  },
+  {
+    "name": "Value",
+    "type": "text"
+  },
+  {
+    "name": "undefined_22",
+    "type": "text"
+  },
+  {
+    "name": "undefined_23",
+    "type": "text"
+  },
+  {
+    "name": "undefined_24",
+    "type": "text"
+  },
+  {
+    "name": "undefined_25",
+    "type": "text"
+  },
+  {
+    "name": "Would you like to transfer these properties into your trust now",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Name_3",
+    "type": "text"
+  },
+  {
+    "name": "Type",
+    "type": "text"
+  },
+  {
+    "name": "Digits",
+    "type": "text"
+  },
+  {
+    "name": "Balance",
+    "type": "text"
+  },
+  {
+    "name": "YN",
+    "type": "text"
+  },
+  {
+    "name": "undefined_26",
+    "type": "text"
+  },
+  {
+    "name": "undefined_27",
+    "type": "text"
+  },
+  {
+    "name": "undefined_28",
+    "type": "text"
+  },
+  {
+    "name": "undefined_29",
+    "type": "text"
+  },
+  {
+    "name": "undefined_30",
+    "type": "text"
+  },
+  {
+    "name": "Do you own a business or LLC",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_4",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_31",
+    "type": "text"
+  },
+  {
+    "name": "If you have children under 18",
+    "type": "text"
+  },
+  {
+    "name": "Alternate Guardian",
+    "type": "text"
+  },
+  {
+    "name": "Would you like to include a Durable Power of Attorney for Finances",
+    "type": "radio",
+    "options": [
+      "Yes_5",
+      "No_3"
+    ]
+  },
+  {
+    "name": "If yes name of agent",
+    "type": "text"
+  },
+  {
+    "name": "Alternate agent",
+    "type": "text"
+  },
+  {
+    "name": "Name_4",
+    "type": "text"
+  },
+  {
+    "name": "Relationship_3",
+    "type": "text"
+  },
+  {
+    "name": "Address_4",
+    "type": "text"
+  },
+  {
+    "name": "Phone_4",
+    "type": "text"
+  },
+  {
+    "name": "Email_4",
+    "type": "text"
+  },
+  {
+    "name": "Name_5",
+    "type": "text"
+  },
+  {
+    "name": "Relationship_4",
+    "type": "text"
+  },
+  {
+    "name": "Address_5",
+    "type": "text"
+  },
+  {
+    "name": "Phone_5",
+    "type": "text"
+  },
+  {
+    "name": "Email_5",
+    "type": "text"
+  },
+  {
+    "name": "Do you want artificial nutritionhydration if unconscious longterm",
+    "type": "radio",
+    "options": [
+      "Yes_6",
+      "No_4",
+      "Leave to my Agents discretion"
+    ]
+  },
+  {
+    "name": "undefined_32",
+    "type": "radio",
+    "options": [
+      "Yes_7",
+      "No_5",
+      "Leave to my Agents discretion_2"
+    ]
+  },
+  {
+    "name": "Do you want to be an organtissue donor",
+    "type": "radio",
+    "options": [
+      "Yes_8",
+      "No_6"
+    ]
+  },
+  {
+    "name": "Preferred Hospital  Medical Facility 1",
+    "type": "text"
+  },
+  {
+    "name": "Preferred Hospital  Medical Facility 2",
+    "type": "text"
+  },
+  {
+    "name": "Primary Physician",
+    "type": "text"
+  },
+  {
+    "name": "Cremation",
+    "type": "checkbox"
+  },
+  {
+    "name": "Burial",
+    "type": "checkbox"
+  },
+  {
+    "name": "Donate body to science",
+    "type": "checkbox"
+  },
+  {
+    "name": "No preference",
+    "type": "checkbox"
+  },
+  {
+    "name": "Location or cemetery if known",
+    "type": "text"
+  },
+  {
+    "name": "Special religiouscultural requests",
+    "type": "text"
+  },
+  {
+    "name": "Property Deeds",
+    "type": "checkbox"
+  },
+  {
+    "name": "Financial Statements  Account Lists",
+    "type": "checkbox"
+  },
+  {
+    "name": "Life Insurance  Retirement Plan Beneficiaries",
+    "type": "checkbox"
+  },
+  {
+    "name": "Drivers License or ID Copy",
+    "type": "checkbox"
+  },
+  {
+    "name": "Previous Will or Trust if replacing",
+    "type": "checkbox"
+  },
+  {
+    "name": "Marriage or Divorce Documents",
+    "type": "checkbox"
+  },
+  {
+    "name": "Doctors Statement for capacity if needed",
+    "type": "checkbox"
+  },
+  {
+    "name": "17 Consultant Notes Internal Use Only 1",
+    "type": "text"
+  },
+  {
+    "name": "17 Consultant Notes Internal Use Only 2",
+    "type": "text"
+  },
+  {
+    "name": "17 Consultant Notes Internal Use Only 3",
+    "type": "text"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  }
+]

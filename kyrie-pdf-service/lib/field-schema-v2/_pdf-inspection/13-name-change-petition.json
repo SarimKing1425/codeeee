@@ -1,0 +1,495 @@
+[
+  {
+    "name": "Todays Date",
+    "type": "text"
+  },
+  {
+    "name": "Adult 18 or older",
+    "type": "checkbox"
+  },
+  {
+    "name": "Minor under 18",
+    "type": "checkbox"
+  },
+  {
+    "name": "Family multiple persons in one petition",
+    "type": "checkbox"
+  },
+  {
+    "name": "Personal preference",
+    "type": "checkbox"
+  },
+  {
+    "name": "Divorce or separation",
+    "type": "checkbox"
+  },
+  {
+    "name": "Gender identity  gender marker change",
+    "type": "checkbox"
+  },
+  {
+    "name": "Adoption  parentage issue",
+    "type": "checkbox"
+  },
+  {
+    "name": "Immigration or citizenship issue",
+    "type": "checkbox"
+  },
+  {
+    "name": "Correction of birth certificate",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined",
+    "type": "text"
+  },
+  {
+    "name": "Courthouse",
+    "type": "text"
+  },
+  {
+    "name": "Case Number if known",
+    "type": "text"
+  },
+  {
+    "name": "Full Current Legal Name",
+    "type": "text"
+  },
+  {
+    "name": "Requested New Name",
+    "type": "text"
+  },
+  {
+    "name": "Date of Birth",
+    "type": "text"
+  },
+  {
+    "name": "Age",
+    "type": "text"
+  },
+  {
+    "name": "Gender as listed on current ID",
+    "type": "text"
+  },
+  {
+    "name": "Place of Birth City State Country",
+    "type": "text"
+  },
+  {
+    "name": "Social Security Number last 4 digits",
+    "type": "text"
+  },
+  {
+    "name": "Drivers License or ID",
+    "type": "text"
+  },
+  {
+    "name": "Mailing Address",
+    "type": "text"
+  },
+  {
+    "name": "City",
+    "type": "text"
+  },
+  {
+    "name": "State",
+    "type": "text"
+  },
+  {
+    "name": "Zip",
+    "type": "text"
+  },
+  {
+    "name": "Phone",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "US Citizen",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes",
+    "type": "checkbox"
+  },
+  {
+    "name": "No",
+    "type": "text"
+  },
+  {
+    "name": "Name",
+    "type": "text"
+  },
+  {
+    "name": "Birth",
+    "type": "text"
+  },
+  {
+    "name": "Age_2",
+    "type": "text"
+  },
+  {
+    "name": "Birth_2",
+    "type": "text"
+  },
+  {
+    "name": "Name_2",
+    "type": "text"
+  },
+  {
+    "name": "Gender",
+    "type": "text"
+  },
+  {
+    "name": "undefined_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_3",
+    "type": "text"
+  },
+  {
+    "name": "undefined_4",
+    "type": "text"
+  },
+  {
+    "name": "undefined_5",
+    "type": "text"
+  },
+  {
+    "name": "undefined_6",
+    "type": "text"
+  },
+  {
+    "name": "undefined_7",
+    "type": "text"
+  },
+  {
+    "name": "Child lives with",
+    "type": "checkbox"
+  },
+  {
+    "name": "Mother",
+    "type": "checkbox"
+  },
+  {
+    "name": "Father",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both",
+    "type": "checkbox"
+  },
+  {
+    "name": "Guardian",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_2",
+    "type": "text"
+  },
+  {
+    "name": "Childs Address",
+    "type": "text"
+  },
+  {
+    "name": "City_2",
+    "type": "text"
+  },
+  {
+    "name": "State_2",
+    "type": "text"
+  },
+  {
+    "name": "Zip_2",
+    "type": "text"
+  },
+  {
+    "name": "Full Legal Name",
+    "type": "text"
+  },
+  {
+    "name": "Relationship to Child",
+    "type": "checkbox"
+  },
+  {
+    "name": "Mother_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Father_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Guardian_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Date of Birth_2",
+    "type": "text"
+  },
+  {
+    "name": "Address",
+    "type": "text"
+  },
+  {
+    "name": "City_3",
+    "type": "text"
+  },
+  {
+    "name": "State_3",
+    "type": "text"
+  },
+  {
+    "name": "Zip_3",
+    "type": "text"
+  },
+  {
+    "name": "Phone_2",
+    "type": "text"
+  },
+  {
+    "name": "Email_2",
+    "type": "text"
+  },
+  {
+    "name": "Full Legal Name_2",
+    "type": "text"
+  },
+  {
+    "name": "Relationship to Child_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Mother_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Father_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Guardian_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Date of Birth_3",
+    "type": "text"
+  },
+  {
+    "name": "Address_2",
+    "type": "text"
+  },
+  {
+    "name": "City_4",
+    "type": "text"
+  },
+  {
+    "name": "State_4",
+    "type": "text"
+  },
+  {
+    "name": "Zip_4",
+    "type": "text"
+  },
+  {
+    "name": "Phone_3",
+    "type": "text"
+  },
+  {
+    "name": "Email_3",
+    "type": "text"
+  },
+  {
+    "name": "Has the other parent been served or notified of this petition",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "If not do you have their last known address",
+    "type": "text"
+  },
+  {
+    "name": "Present name as it appears on birth certificate",
+    "type": "text"
+  },
+  {
+    "name": "Full new name requested",
+    "type": "text"
+  },
+  {
+    "name": "Have you previously changed your name",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "If yes provide details",
+    "type": "text"
+  },
+  {
+    "name": "Have you ever been convicted of a felony",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_4",
+    "type": "checkbox"
+  },
+  {
+    "name": "If yes list county state and date",
+    "type": "text"
+  },
+  {
+    "name": "Are you currently in state prison county jail or on probation or parole",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_5",
+    "type": "checkbox"
+  },
+  {
+    "name": "If yes where",
+    "type": "text"
+  },
+  {
+    "name": "I am seeking to change my gender marker",
+    "type": "checkbox"
+  },
+  {
+    "name": "Nonbinary",
+    "type": "radio",
+    "options": [
+      "Requested gender marker",
+      "Female",
+      "Male"
+    ]
+  },
+  {
+    "name": "Do you wish to change your name to conform to your gender identity",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_6",
+    "type": "checkbox"
+  },
+  {
+    "name": "Do you request your case be filed under seal for privacysafety",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_7",
+    "type": "checkbox"
+  },
+  {
+    "name": "Preferred local newspaper for publication",
+    "type": "text"
+  },
+  {
+    "name": "City of publication",
+    "type": "text"
+  },
+  {
+    "name": "Have you ever been convicted of a crime",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_8",
+    "type": "checkbox"
+  },
+  {
+    "name": "Offense",
+    "type": "text"
+  },
+  {
+    "name": "Date",
+    "type": "text"
+  },
+  {
+    "name": "CountyState",
+    "type": "text"
+  },
+  {
+    "name": "Are there any pending criminal cases",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_9",
+    "type": "checkbox"
+  },
+  {
+    "name": "If yes case number and court",
+    "type": "text"
+  },
+  {
+    "name": "undefined_8",
+    "type": "radio",
+    "options": [
+      "Yes_10",
+      "No_2"
+    ]
+  },
+  {
+    "name": "Have you filed a name change petition before",
+    "type": "text"
+  },
+  {
+    "name": "Yes_11",
+    "type": "checkbox"
+  },
+  {
+    "name": "No_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Do you owe child support restitution or other courtordered obligations",
+    "type": "text"
+  },
+  {
+    "name": "Copy of current governmentissued ID",
+    "type": "checkbox"
+  },
+  {
+    "name": "Certified copy of birth certificate",
+    "type": "checkbox"
+  },
+  {
+    "name": "Proof of residency utility bill lease etc",
+    "type": "checkbox"
+  },
+  {
+    "name": "Criminal record clearance if applicable",
+    "type": "checkbox"
+  },
+  {
+    "name": "Declaration in support of name change prepared by office",
+    "type": "checkbox"
+  },
+  {
+    "name": "Any supporting documents gender change order adoption order etc",
+    "type": "checkbox"
+  },
+  {
+    "name": "13 Consultant Notes Internal Use Only 1",
+    "type": "text"
+  },
+  {
+    "name": "13 Consultant Notes Internal Use Only 2",
+    "type": "text"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  }
+]

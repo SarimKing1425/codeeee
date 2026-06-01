@@ -1,0 +1,682 @@
+{
+  "form": "default-uncontested-divorce-judgment",
+  "summary": {
+    "total": 125,
+    "exact": 10,
+    "prefix": 9,
+    "token_set": 9,
+    "last_token": 4,
+    "unmapped": 93,
+    "duplicate_assignments": 5,
+    "match_rate": "25.6%"
+  },
+  "mapping": {
+    "Todays Date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Court  County": {
+      "newKey": "court_county",
+      "confidence": "exact",
+      "matchedLabel": "Court / County"
+    },
+    "Case Number": {
+      "newKey": "case_number",
+      "confidence": "exact",
+      "matchedLabel": "Case Number"
+    },
+    "Department if known": {
+      "newKey": "department",
+      "confidence": "prefix",
+      "matchedLabel": "Department"
+    },
+    "Type of Case": {
+      "newKey": "case_type",
+      "confidence": "exact",
+      "matchedLabel": "Type of Case"
+    },
+    "Dissolution Divorce": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Legal Separation": {
+      "newKey": "separation_date",
+      "confidence": "last_token",
+      "matchedLabel": "Date of Separation"
+    },
+    "Date Petition Filed FL100": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Method of Service": {
+      "newKey": "service_method",
+      "confidence": "exact",
+      "matchedLabel": "Method of Service"
+    },
+    "Personal FL115": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "By Mail FL335": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date Summons Served 1": {
+      "newKey": "summons_served_date",
+      "confidence": "prefix",
+      "matchedLabel": "Date Summons Served"
+    },
+    "Date Summons Served 2": {
+      "newKey": "summons_served_date",
+      "confidence": "prefix",
+      "matchedLabel": "Date Summons Served"
+    },
+    "Date Summons Served 3": {
+      "newKey": "summons_served_date",
+      "confidence": "prefix",
+      "matchedLabel": "Date Summons Served"
+    },
+    "Was a Response FL120 Filed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name": {
+      "newKey": "petitioner_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Petitioner Full Legal Name"
+    },
+    "Date of Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "State": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date of Birth_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "State_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you have any existing Family Law Orders or prior cases": {
+      "newKey": "existing_family_law_orders",
+      "confidence": "token_set",
+      "matchedLabel": "Existing Family Law Orders or prior cases?"
+    },
+    "Yes_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes describe and attach copies": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date of Marriage": {
+      "newKey": "marriage_date",
+      "confidence": "exact",
+      "matchedLabel": "Date of Marriage"
+    },
+    "Date of Separation": {
+      "newKey": "separation_date",
+      "confidence": "exact",
+      "matchedLabel": "Date of Separation"
+    },
+    "Total Years Married": {
+      "newKey": "total_years_married",
+      "confidence": "exact",
+      "matchedLabel": "Total Years Married"
+    },
+    "Children of this marriage": {
+      "newKey": "has_children_of_marriage",
+      "confidence": "exact",
+      "matchedLabel": "Children of this marriage?"
+    },
+    "Yes_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Childs Full Name Date of Birth Age Lives With": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "FL142": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date served": {
+      "newKey": "summons_served_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date Summons Served"
+    },
+    "Method": {
+      "newKey": "service_method",
+      "confidence": "prefix",
+      "matchedLabel": "Method of Service"
+    },
+    "Mail": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Has the Respondent completed Preliminary Declaration of Disclosure": {
+      "newKey": "respondent_completed_preliminary_disclosure",
+      "confidence": "token_set",
+      "matchedLabel": "Respondent Preliminary Disclosure?"
+    },
+    "Waived": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Income  Expense Declaration FL150 completed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Estimated Value Debt Who Keeps It PR": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_15": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Retirement Accounts  Pensions": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_16": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_17": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Furniture  Household Goods": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_18": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_19": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_20": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_21": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_22": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Creditor Type of Debt Balance Responsible Party PR": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_23": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_24": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_25": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Description Value Owner PR": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_26": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_27": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Joint": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Sole Petitioner": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Respondent": {
+      "newKey": "respondent_full_legal_name",
+      "confidence": "prefix",
+      "matchedLabel": "Respondent Full Legal Name"
+    },
+    "undefined_28": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Joint_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Sole Petitioner_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Respondent_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_29": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Weekdays": {
+      "newKey": "parenting_weekdays",
+      "confidence": "last_token",
+      "matchedLabel": "Parenting Weekdays"
+    },
+    "Weekends": {
+      "newKey": "parenting_weekends",
+      "confidence": "last_token",
+      "matchedLabel": "Parenting Weekends"
+    },
+    "HolidaysVacations": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Exchange Location": {
+      "newKey": "exchange_location",
+      "confidence": "exact",
+      "matchedLabel": "Exchange Location"
+    },
+    "Amount if known": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Guideline": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "By Agreement": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "None": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Spousal Support Requested": {
+      "newKey": "spousal_support_requested",
+      "confidence": "prefix",
+      "matchedLabel": "Spousal Support?"
+    },
+    "Petitioner": {
+      "newKey": "petitioner_full_legal_name",
+      "confidence": "prefix",
+      "matchedLabel": "Petitioner Full Legal Name"
+    },
+    "Respondent_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Both": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Duration": {
+      "newKey": "spousal_support_duration",
+      "confidence": "last_token",
+      "matchedLabel": "Spousal Support Duration"
+    },
+    "Default no Response filed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Default with Agreement agreement signed no Response filed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Uncontested agreement signed and Response filed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Marital Settlement Agreement Attached": {
+      "newKey": "marital_settlement_attached",
+      "confidence": "exact",
+      "matchedLabel": "Marital Settlement Agreement Attached?"
+    },
+    "Date Agreement Signed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Restoration of Former Name Requested": {
+      "newKey": "restoration_of_former_name",
+      "confidence": "prefix",
+      "matchedLabel": "Restoration of Former Name?"
+    },
+    "If yes specify name to be restored": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "FL100  Petition for Dissolution Filed copy": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "FL115  Proof of Service of Summons Filed copy": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "FL120  Response if filed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Proof of Service by Mail or Personal of response FL335 or FL330": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Copies of any Current Family Law Orders or Prior Judgments": {
+      "newKey": "doc_current_family_law_orders",
+      "confidence": "token_set",
+      "matchedLabel": "Current Family Law Orders"
+    },
+    "Are there restraining or protective orders in place": {
+      "newKey": "restraining_orders_in_place",
+      "confidence": "token_set",
+      "matchedLabel": "Restraining or protective orders in place?"
+    },
+    "undefined_30": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes explain 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes explain 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "10 Consultant Notes Internal Use Only 1": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Consultant Notes"
+    },
+    "10 Consultant Notes Internal Use Only 2": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Consultant Notes"
+    },
+    "10 Consultant Notes Internal Use Only 3": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Consultant Notes"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text2": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Todays Date",
+    "Dissolution Divorce",
+    "Date Petition Filed FL100",
+    "Personal FL115",
+    "By Mail FL335",
+    "Was a Response FL120 Filed",
+    "Yes",
+    "Date of Birth",
+    "Address",
+    "City",
+    "State",
+    "Zip",
+    "Phone",
+    "Email",
+    "Full Legal Name_2",
+    "Date of Birth_2",
+    "Address_2",
+    "City_2",
+    "State_2",
+    "Zip_2",
+    "Phone_2",
+    "Email_2",
+    "Yes_2",
+    "If yes describe and attach copies",
+    "Yes_3",
+    "Childs Full Name Date of Birth Age Lives With",
+    "undefined",
+    "undefined_2",
+    "undefined_3",
+    "undefined_4",
+    "undefined_5",
+    "undefined_6",
+    "undefined_7",
+    "FL142",
+    "Yes_4",
+    "Mail",
+    "Waived",
+    "Income  Expense Declaration FL150 completed",
+    "Yes_6",
+    "Estimated Value Debt Who Keeps It PR",
+    "undefined_8",
+    "undefined_9",
+    "undefined_10",
+    "undefined_11",
+    "undefined_12",
+    "undefined_13",
+    "undefined_14",
+    "undefined_15",
+    "Retirement Accounts  Pensions",
+    "undefined_16",
+    "undefined_17",
+    "Furniture  Household Goods",
+    "undefined_18",
+    "undefined_19",
+    "undefined_20",
+    "undefined_21",
+    "undefined_22",
+    "Creditor Type of Debt Balance Responsible Party PR",
+    "undefined_23",
+    "undefined_24",
+    "undefined_25",
+    "Description Value Owner PR",
+    "undefined_26",
+    "undefined_27",
+    "Joint",
+    "Sole Petitioner",
+    "undefined_28",
+    "Joint_2",
+    "Sole Petitioner_2",
+    "Respondent_2",
+    "undefined_29",
+    "HolidaysVacations",
+    "Amount if known",
+    "Guideline",
+    "By Agreement",
+    "None",
+    "Respondent_3",
+    "Both",
+    "If yes",
+    "Default no Response filed",
+    "Default with Agreement agreement signed no Response filed",
+    "Uncontested agreement signed and Response filed",
+    "Date Agreement Signed",
+    "If yes specify name to be restored",
+    "FL100  Petition for Dissolution Filed copy",
+    "FL115  Proof of Service of Summons Filed copy",
+    "FL120  Response if filed",
+    "Proof of Service by Mail or Personal of response FL335 or FL330",
+    "undefined_30",
+    "If yes explain 1",
+    "If yes explain 2",
+    "Text1",
+    "Text2"
+  ],
+  "duplicates": [
+    {
+      "key": "separation_date",
+      "oldNames": [
+        "Legal Separation",
+        "Date of Separation"
+      ]
+    },
+    {
+      "key": "service_method",
+      "oldNames": [
+        "Method of Service",
+        "Method"
+      ]
+    },
+    {
+      "key": "summons_served_date",
+      "oldNames": [
+        "Date Summons Served 1",
+        "Date Summons Served 2",
+        "Date Summons Served 3",
+        "Date served"
+      ]
+    },
+    {
+      "key": "petitioner_full_legal_name",
+      "oldNames": [
+        "Full Legal Name",
+        "Petitioner"
+      ]
+    },
+    {
+      "key": "consultant_notes",
+      "oldNames": [
+        "10 Consultant Notes Internal Use Only 1",
+        "10 Consultant Notes Internal Use Only 2",
+        "10 Consultant Notes Internal Use Only 3"
+      ]
+    }
+  ]
+}

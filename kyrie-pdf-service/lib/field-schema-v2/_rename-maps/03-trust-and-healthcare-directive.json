@@ -1,0 +1,680 @@
+{
+  "form": "trust-and-healthcare-directive",
+  "summary": {
+    "total": 125,
+    "exact": 6,
+    "prefix": 10,
+    "token_set": 22,
+    "last_token": 5,
+    "unmapped": 82,
+    "duplicate_assignments": 5,
+    "match_rate": "34.4%"
+  },
+  "mapping": {
+    "1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Todays Date": {
+      "newKey": "todays_date",
+      "confidence": "last_token",
+      "matchedLabel": "Today's Date"
+    },
+    "Full Legal Name": {
+      "newKey": "client_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Client Full Legal Name"
+    },
+    "Other Names Used if any": {
+      "newKey": "client_other_names_used",
+      "confidence": "prefix",
+      "matchedLabel": "Other Names Used"
+    },
+    "Date of Birth": {
+      "newKey": "client_dob",
+      "confidence": "token_set",
+      "matchedLabel": "Client Date of Birth"
+    },
+    "Age": {
+      "newKey": "client_age",
+      "confidence": "last_token",
+      "matchedLabel": "Client Age"
+    },
+    "Social Security last 4 digits": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City": {
+      "newKey": "client_city",
+      "confidence": "last_token",
+      "matchedLabel": "Client City"
+    },
+    "State": {
+      "newKey": "client_state",
+      "confidence": "last_token",
+      "matchedLabel": "Client State"
+    },
+    "ZIP": {
+      "newKey": "client_zip",
+      "confidence": "last_token",
+      "matchedLabel": "Client Zip"
+    },
+    "Phone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Single": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Married": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Divorced": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Widowed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Domestic": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Spouses Full Legal Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date of Marriage": {
+      "newKey": "marriage_date",
+      "confidence": "exact",
+      "matchedLabel": "Date of Marriage"
+    },
+    "Revocable Living Trust most common": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Irrevocable Trust": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Family Trust": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Joint Trust Spouses together": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other": {
+      "newKey": "client_other_names_used",
+      "confidence": "prefix",
+      "matchedLabel": "Other Names Used"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name Relationship Date of Birth Address Primary  Contingent": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_15": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_16": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_17": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_18": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_19": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_20": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Relationship": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address_2": {
+      "newKey": "beneficiaries_2_address",
+      "confidence": "token_set",
+      "matchedLabel": "Beneficiaries Row 2 address"
+    },
+    "Phone_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name_2": {
+      "newKey": "beneficiaries_2_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Beneficiaries Row 2 full legal name"
+    },
+    "Relationship_2": {
+      "newKey": "beneficiaries_2_relationship",
+      "confidence": "token_set",
+      "matchedLabel": "Beneficiaries Row 2 relationship"
+    },
+    "Address_3": {
+      "newKey": "beneficiaries_3_address",
+      "confidence": "token_set",
+      "matchedLabel": "Beneficiaries Row 3 address"
+    },
+    "Phone_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you wish for your Trustees to serve without bond": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "All to my spouse then equally to my children": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Equally to my children": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Specific gifts before equal distribution": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other instructions": {
+      "newKey": "distribution_other_instructions",
+      "confidence": "token_set",
+      "matchedLabel": "Other Distribution Instructions"
+    },
+    "undefined_21": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If a beneficiary predeceases you should their share go to their children per stirpes": {
+      "newKey": "per_stirpes_if_beneficiary_predeceases",
+      "confidence": "token_set",
+      "matchedLabel": "Per stirpes if beneficiary predeceases?"
+    },
+    "Location": {
+      "newKey": "burial_location_or_cemetery",
+      "confidence": "prefix",
+      "matchedLabel": "Location or Cemetery"
+    },
+    "Property": {
+      "newKey": "attach_property_deeds",
+      "confidence": "prefix",
+      "matchedLabel": "Property Deeds"
+    },
+    "Community": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Value": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_22": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_23": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_24": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_25": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Would you like to transfer these properties into your trust now": {
+      "newKey": "transfer_properties_into_trust_now",
+      "confidence": "token_set",
+      "matchedLabel": "Transfer these properties into trust now?"
+    },
+    "Yes_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name_3": {
+      "newKey": "beneficiaries_3_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Beneficiaries Row 3 full legal name"
+    },
+    "Type": {
+      "newKey": "trust_type",
+      "confidence": "prefix",
+      "matchedLabel": "Type of Trust"
+    },
+    "Digits": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Balance": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "YN": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_26": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_27": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_28": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_29": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_30": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you own a business or LLC": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_31": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If you have children under 18": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Alternate Guardian": {
+      "newKey": "alternate_guardian_name",
+      "confidence": "exact",
+      "matchedLabel": "Alternate Guardian"
+    },
+    "Would you like to include a Durable Power of Attorney for Finances": {
+      "newKey": "include_durable_poa_finances",
+      "confidence": "token_set",
+      "matchedLabel": "Include Durable POA for Finances?"
+    },
+    "If yes name of agent": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Alternate agent": {
+      "newKey": "healthcare_alternate_agent_relationship",
+      "confidence": "prefix",
+      "matchedLabel": "Alternate Agent Relationship"
+    },
+    "Name_4": {
+      "newKey": "beneficiaries_4_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Beneficiaries Row 4 full legal name"
+    },
+    "Relationship_3": {
+      "newKey": "beneficiaries_3_relationship",
+      "confidence": "token_set",
+      "matchedLabel": "Beneficiaries Row 3 relationship"
+    },
+    "Address_4": {
+      "newKey": "beneficiaries_4_address",
+      "confidence": "token_set",
+      "matchedLabel": "Beneficiaries Row 4 address"
+    },
+    "Phone_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name_5": {
+      "newKey": "beneficiaries_5_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Beneficiaries Row 5 full legal name"
+    },
+    "Relationship_4": {
+      "newKey": "beneficiaries_4_relationship",
+      "confidence": "token_set",
+      "matchedLabel": "Beneficiaries Row 4 relationship"
+    },
+    "Address_5": {
+      "newKey": "beneficiaries_5_address",
+      "confidence": "token_set",
+      "matchedLabel": "Beneficiaries Row 5 address"
+    },
+    "Phone_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you want artificial nutritionhydration if unconscious longterm": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_32": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you want to be an organtissue donor": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Preferred Hospital  Medical Facility 1": {
+      "newKey": "preferred_hospital",
+      "confidence": "prefix",
+      "matchedLabel": "Preferred Hospital / Medical Facility"
+    },
+    "Preferred Hospital  Medical Facility 2": {
+      "newKey": "preferred_hospital",
+      "confidence": "prefix",
+      "matchedLabel": "Preferred Hospital / Medical Facility"
+    },
+    "Primary Physician": {
+      "newKey": "primary_physician",
+      "confidence": "exact",
+      "matchedLabel": "Primary Physician"
+    },
+    "Cremation": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Burial": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Donate body to science": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No preference": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Location or cemetery if known": {
+      "newKey": "burial_location_or_cemetery",
+      "confidence": "prefix",
+      "matchedLabel": "Location or Cemetery"
+    },
+    "Special religiouscultural requests": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Property Deeds": {
+      "newKey": "attach_property_deeds",
+      "confidence": "exact",
+      "matchedLabel": "Property Deeds"
+    },
+    "Financial Statements  Account Lists": {
+      "newKey": "attach_financial_statements",
+      "confidence": "exact",
+      "matchedLabel": "Financial Statements / Account Lists"
+    },
+    "Life Insurance  Retirement Plan Beneficiaries": {
+      "newKey": "attach_life_insurance_retirement_beneficiaries",
+      "confidence": "token_set",
+      "matchedLabel": "Life Insurance / Retirement Beneficiaries"
+    },
+    "Drivers License or ID Copy": {
+      "newKey": "attach_drivers_license_id",
+      "confidence": "token_set",
+      "matchedLabel": "Driver's License or ID Copy"
+    },
+    "Previous Will or Trust if replacing": {
+      "newKey": "attach_previous_will_or_trust",
+      "confidence": "prefix",
+      "matchedLabel": "Previous Will or Trust"
+    },
+    "Marriage or Divorce Documents": {
+      "newKey": "attach_marriage_divorce_documents",
+      "confidence": "exact",
+      "matchedLabel": "Marriage or Divorce Documents"
+    },
+    "Doctors Statement for capacity if needed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "17 Consultant Notes Internal Use Only 1": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Internal Use Only"
+    },
+    "17 Consultant Notes Internal Use Only 2": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Internal Use Only"
+    },
+    "17 Consultant Notes Internal Use Only 3": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Internal Use Only"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Social Security last 4 digits",
+    "Address",
+    "Phone",
+    "Email",
+    "Single",
+    "Married",
+    "Divorced",
+    "Widowed",
+    "Domestic",
+    "Spouses Full Legal Name",
+    "Revocable Living Trust most common",
+    "Irrevocable Trust",
+    "Family Trust",
+    "Joint Trust Spouses together",
+    "undefined",
+    "Full Legal Name Relationship Date of Birth Address Primary  Contingent",
+    "undefined_2",
+    "undefined_3",
+    "undefined_4",
+    "undefined_5",
+    "undefined_6",
+    "undefined_7",
+    "undefined_8",
+    "undefined_9",
+    "undefined_10",
+    "undefined_11",
+    "undefined_12",
+    "undefined_13",
+    "undefined_14",
+    "undefined_15",
+    "undefined_16",
+    "undefined_17",
+    "undefined_18",
+    "undefined_19",
+    "undefined_20",
+    "Name",
+    "Relationship",
+    "Phone_2",
+    "Email_2",
+    "Phone_3",
+    "Email_3",
+    "Do you wish for your Trustees to serve without bond",
+    "All to my spouse then equally to my children",
+    "Equally to my children",
+    "Specific gifts before equal distribution",
+    "undefined_21",
+    "1",
+    "2",
+    "Community",
+    "Value",
+    "undefined_22",
+    "undefined_23",
+    "undefined_24",
+    "undefined_25",
+    "Yes_3",
+    "Digits",
+    "Balance",
+    "YN",
+    "undefined_26",
+    "undefined_27",
+    "undefined_28",
+    "undefined_29",
+    "undefined_30",
+    "Do you own a business or LLC",
+    "Yes_4",
+    "undefined_31",
+    "If you have children under 18",
+    "If yes name of agent",
+    "Phone_4",
+    "Email_4",
+    "Phone_5",
+    "Email_5",
+    "Do you want artificial nutritionhydration if unconscious longterm",
+    "undefined_32",
+    "Do you want to be an organtissue donor",
+    "Cremation",
+    "Burial",
+    "Donate body to science",
+    "No preference",
+    "Special religiouscultural requests",
+    "Doctors Statement for capacity if needed",
+    "Text1"
+  ],
+  "duplicates": [
+    {
+      "key": "client_other_names_used",
+      "oldNames": [
+        "Other Names Used if any",
+        "Other"
+      ]
+    },
+    {
+      "key": "burial_location_or_cemetery",
+      "oldNames": [
+        "Location",
+        "Location or cemetery if known"
+      ]
+    },
+    {
+      "key": "attach_property_deeds",
+      "oldNames": [
+        "Property",
+        "Property Deeds"
+      ]
+    },
+    {
+      "key": "preferred_hospital",
+      "oldNames": [
+        "Preferred Hospital  Medical Facility 1",
+        "Preferred Hospital  Medical Facility 2"
+      ]
+    },
+    {
+      "key": "consultant_notes",
+      "oldNames": [
+        "17 Consultant Notes Internal Use Only 1",
+        "17 Consultant Notes Internal Use Only 2",
+        "17 Consultant Notes Internal Use Only 3"
+      ]
+    }
+  ]
+}

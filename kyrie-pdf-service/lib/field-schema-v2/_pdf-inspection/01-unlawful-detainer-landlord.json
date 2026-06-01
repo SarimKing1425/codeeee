@@ -1,0 +1,538 @@
+[
+  {
+    "name": "Todays Date",
+    "type": "text"
+  },
+  {
+    "name": "Court  County",
+    "type": "text"
+  },
+  {
+    "name": "Property County if different",
+    "type": "text"
+  },
+  {
+    "name": "Case Number if already filed",
+    "type": "text"
+  },
+  {
+    "name": "Department if known",
+    "type": "text"
+  },
+  {
+    "name": "Full Legal Name or Business Name",
+    "type": "text"
+  },
+  {
+    "name": "Type",
+    "type": "checkbox"
+  },
+  {
+    "name": "Individual",
+    "type": "checkbox"
+  },
+  {
+    "name": "LLC",
+    "type": "checkbox"
+  },
+  {
+    "name": "Corporation",
+    "type": "checkbox"
+  },
+  {
+    "name": "Trust",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other",
+    "type": "text"
+  },
+  {
+    "name": "Address",
+    "type": "text"
+  },
+  {
+    "name": "City",
+    "type": "text"
+  },
+  {
+    "name": "State",
+    "type": "text"
+  },
+  {
+    "name": "Zip",
+    "type": "text"
+  },
+  {
+    "name": "Phone",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "Property Manager if any",
+    "type": "text"
+  },
+  {
+    "name": "Manager Contact Info",
+    "type": "text"
+  },
+  {
+    "name": "Full Legal Names",
+    "type": "text"
+  },
+  {
+    "name": "Additional Occupants if known",
+    "type": "text"
+  },
+  {
+    "name": "City_2",
+    "type": "text"
+  },
+  {
+    "name": "State_2",
+    "type": "text"
+  },
+  {
+    "name": "Zip_2",
+    "type": "text"
+  },
+  {
+    "name": "Tenant Phone if known",
+    "type": "text"
+  },
+  {
+    "name": "Tenant Email if known",
+    "type": "text"
+  },
+  {
+    "name": "Apartment",
+    "type": "checkbox"
+  },
+  {
+    "name": "House",
+    "type": "checkbox"
+  },
+  {
+    "name": "Room",
+    "type": "checkbox"
+  },
+  {
+    "name": "Commercial",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Type of Property",
+    "type": "text"
+  },
+  {
+    "name": "Date Tenant Moved In",
+    "type": "text"
+  },
+  {
+    "name": "Written",
+    "type": "checkbox"
+  },
+  {
+    "name": "Verbal",
+    "type": "checkbox"
+  },
+  {
+    "name": "MonthtoMonth",
+    "type": "checkbox"
+  },
+  {
+    "name": "Fixed Term",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_3",
+    "type": "text"
+  },
+  {
+    "name": "Lease Start Date",
+    "type": "text"
+  },
+  {
+    "name": "Lease End Date if applicable",
+    "type": "text"
+  },
+  {
+    "name": "Monthly Rent",
+    "type": "text"
+  },
+  {
+    "name": "Rent Due Date",
+    "type": "text"
+  },
+  {
+    "name": "Security Deposit",
+    "type": "text"
+  },
+  {
+    "name": "Nonpayment of Rent",
+    "type": "checkbox"
+  },
+  {
+    "name": "Breach of Lease nonmonetary violation",
+    "type": "checkbox"
+  },
+  {
+    "name": "Nuisance  Illegal Activity",
+    "type": "checkbox"
+  },
+  {
+    "name": "Expiration of Lease",
+    "type": "checkbox"
+  },
+  {
+    "name": "NoFault Termination 3060 Day Notice",
+    "type": "checkbox"
+  },
+  {
+    "name": "Owner MoveIn",
+    "type": "checkbox"
+  },
+  {
+    "name": "Substantial Remodel",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_4",
+    "type": "text"
+  },
+  {
+    "name": "3Day Notice to Pay Rent or Quit",
+    "type": "checkbox"
+  },
+  {
+    "name": "3Day Notice to Perform or Quit",
+    "type": "checkbox"
+  },
+  {
+    "name": "3Day Notice to Quit",
+    "type": "checkbox"
+  },
+  {
+    "name": "30Day Notice to Vacate",
+    "type": "checkbox"
+  },
+  {
+    "name": "60Day Notice to Vacate",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_5",
+    "type": "text"
+  },
+  {
+    "name": "Date Notice Served",
+    "type": "text"
+  },
+  {
+    "name": "Expiration Date of Notice",
+    "type": "text"
+  },
+  {
+    "name": "Personal",
+    "type": "checkbox"
+  },
+  {
+    "name": "Substitute Service",
+    "type": "checkbox"
+  },
+  {
+    "name": "Posted  Mailed",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_4",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_6",
+    "type": "text"
+  },
+  {
+    "name": "Who served the notice",
+    "type": "text"
+  },
+  {
+    "name": "Monthly Rent_2",
+    "type": "text"
+  },
+  {
+    "name": "Amount Owed",
+    "type": "text"
+  },
+  {
+    "name": "Period of Nonpayment",
+    "type": "text"
+  },
+  {
+    "name": "Partial Payments Received",
+    "type": "radio",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "If yes amount",
+    "type": "text"
+  },
+  {
+    "name": "Dates",
+    "type": "text"
+  },
+  {
+    "name": "Ledger available",
+    "type": "radio",
+    "options": [
+      "Yes_2",
+      "No_2"
+    ]
+  },
+  {
+    "name": "Did tenant comply with notice",
+    "type": "radio",
+    "options": [
+      "Yes_3",
+      "No_3"
+    ]
+  },
+  {
+    "name": "Did tenant respond to notice",
+    "type": "radio",
+    "options": [
+      "Yes_4",
+      "No_4"
+    ]
+  },
+  {
+    "name": "Is tenant still in possession",
+    "type": "radio",
+    "options": [
+      "Yes_5",
+      "No_5"
+    ]
+  },
+  {
+    "name": "Has tenant abandoned property",
+    "type": "radio",
+    "options": [
+      "Yes_6",
+      "No_6"
+    ]
+  },
+  {
+    "name": "Any property damage",
+    "type": "radio",
+    "options": [
+      "Yes_7",
+      "No_7"
+    ]
+  },
+  {
+    "name": "Describe",
+    "type": "text"
+  },
+  {
+    "name": "Is property subject to rent control",
+    "type": "radio",
+    "options": [
+      "Yes_8",
+      "No_8"
+    ]
+  },
+  {
+    "name": "Is property subject to AB 1482 Tenant Protection Act",
+    "type": "radio",
+    "options": [
+      "Yes_9",
+      "No_9"
+    ]
+  },
+  {
+    "name": "SoCal United Professional Services 1",
+    "type": "text"
+  },
+  {
+    "name": "SoCal United Professional Services 2",
+    "type": "text"
+  },
+  {
+    "name": "Have you previously warned tenant",
+    "type": "radio",
+    "options": [
+      "Yes_10",
+      "No_10"
+    ]
+  },
+  {
+    "name": "Any written notices or emails",
+    "type": "radio",
+    "options": [
+      "Yes_11",
+      "No_11"
+    ]
+  },
+  {
+    "name": "Explain 1_2",
+    "type": "text"
+  },
+  {
+    "name": "Explain 2_2",
+    "type": "text"
+  },
+  {
+    "name": "Are there unknown occupants",
+    "type": "radio",
+    "options": [
+      "Yes_12",
+      "No_12"
+    ]
+  },
+  {
+    "name": "Children in property",
+    "type": "radio",
+    "options": [
+      "Yes_13",
+      "No_13"
+    ]
+  },
+  {
+    "name": "Yes_14",
+    "type": "checkbox"
+  },
+  {
+    "name": "Any bankruptcy filed by tenant",
+    "type": "radio",
+    "options": [
+      "No_14",
+      "Yes_15"
+    ]
+  },
+  {
+    "name": "No_15",
+    "type": "checkbox"
+  },
+  {
+    "name": "Any code enforcement complaints",
+    "type": "radio",
+    "options": [
+      "Yes_16",
+      "No_16"
+    ]
+  },
+  {
+    "name": "Possession of Property",
+    "type": "checkbox"
+  },
+  {
+    "name": "Back Rent",
+    "type": "checkbox"
+  },
+  {
+    "name": "Holdover Damages",
+    "type": "checkbox"
+  },
+  {
+    "name": "Court Costs",
+    "type": "checkbox"
+  },
+  {
+    "name": "Attorney Fees",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_7",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_5",
+    "type": "text"
+  },
+  {
+    "name": "Provide a timeline of events keep it simple and factual 1",
+    "type": "text"
+  },
+  {
+    "name": "Provide a timeline of events keep it simple and factual 2",
+    "type": "text"
+  },
+  {
+    "name": "Provide a timeline of events keep it simple and factual 3",
+    "type": "text"
+  },
+  {
+    "name": "SoCal United Professional Services",
+    "type": "text"
+  },
+  {
+    "name": "Lease Agreement",
+    "type": "checkbox"
+  },
+  {
+    "name": "Notices Served",
+    "type": "checkbox"
+  },
+  {
+    "name": "Proof of Service",
+    "type": "checkbox"
+  },
+  {
+    "name": "Rent Ledger",
+    "type": "checkbox"
+  },
+  {
+    "name": "Payment Records",
+    "type": "checkbox"
+  },
+  {
+    "name": "Communications with Tenant",
+    "type": "checkbox"
+  },
+  {
+    "name": "Photos if applicable",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_8",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_6",
+    "type": "text"
+  },
+  {
+    "name": "17 INTERNAL NOTES OFFICE USE ONLY 1",
+    "type": "text"
+  },
+  {
+    "name": "17 INTERNAL NOTES OFFICE USE ONLY 2",
+    "type": "text"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  }
+]

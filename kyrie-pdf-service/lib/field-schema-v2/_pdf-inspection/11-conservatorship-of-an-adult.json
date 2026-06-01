@@ -1,0 +1,604 @@
+[
+  {
+    "name": "Date",
+    "type": "text"
+  },
+  {
+    "name": "Temporary Conservatorship emergency order",
+    "type": "checkbox"
+  },
+  {
+    "name": "General  Permanent Conservatorship longterm care",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both Temporary and General",
+    "type": "checkbox"
+  },
+  {
+    "name": "Conservatorship of the Person personal care medical decisions residence",
+    "type": "checkbox"
+  },
+  {
+    "name": "Conservatorship of the Estate financial or property management",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both",
+    "type": "checkbox"
+  },
+  {
+    "name": "Full Legal Name",
+    "type": "text"
+  },
+  {
+    "name": "Date of Birth",
+    "type": "text"
+  },
+  {
+    "name": "Age",
+    "type": "text"
+  },
+  {
+    "name": "Gender optional",
+    "type": "text"
+  },
+  {
+    "name": "Social Security Number last 4 digits",
+    "type": "text"
+  },
+  {
+    "name": "Street Address",
+    "type": "text"
+  },
+  {
+    "name": "City",
+    "type": "text"
+  },
+  {
+    "name": "State",
+    "type": "text"
+  },
+  {
+    "name": "Zip",
+    "type": "text"
+  },
+  {
+    "name": "Phone",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "Own Home",
+    "type": "checkbox"
+  },
+  {
+    "name": "Apartment",
+    "type": "checkbox"
+  },
+  {
+    "name": "Assisted Living",
+    "type": "checkbox"
+  },
+  {
+    "name": "Skilled Nursing Facility",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined",
+    "type": "text"
+  },
+  {
+    "name": "Length of Time at Current Address",
+    "type": "text"
+  },
+  {
+    "name": "County of Residence",
+    "type": "text"
+  },
+  {
+    "name": "Yes",
+    "type": "checkbox"
+  },
+  {
+    "name": "No",
+    "type": "checkbox"
+  },
+  {
+    "name": "Full Legal Name_2",
+    "type": "text"
+  },
+  {
+    "name": "Birth",
+    "type": "text"
+  },
+  {
+    "name": "digits",
+    "type": "text"
+  },
+  {
+    "name": "Conservatee",
+    "type": "text"
+  },
+  {
+    "name": "Address",
+    "type": "text"
+  },
+  {
+    "name": "Zip_2",
+    "type": "text"
+  },
+  {
+    "name": "Phone_2",
+    "type": "text"
+  },
+  {
+    "name": "Email_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_3",
+    "type": "text"
+  },
+  {
+    "name": "undefined_4",
+    "type": "text"
+  },
+  {
+    "name": "undefined_5",
+    "type": "text"
+  },
+  {
+    "name": "undefined_6",
+    "type": "text"
+  },
+  {
+    "name": "undefined_7",
+    "type": "text"
+  },
+  {
+    "name": "undefined_8",
+    "type": "text"
+  },
+  {
+    "name": "undefined_9",
+    "type": "text"
+  },
+  {
+    "name": "Single",
+    "type": "checkbox"
+  },
+  {
+    "name": "Married",
+    "type": "checkbox"
+  },
+  {
+    "name": "Domestic Partners",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Occupation",
+    "type": "text"
+  },
+  {
+    "name": "Employer",
+    "type": "text"
+  },
+  {
+    "name": "Drivers License or ID",
+    "type": "text"
+  },
+  {
+    "name": "Do you live with the proposed conservatee",
+    "type": "radio",
+    "options": [
+      "Yes_2",
+      "No_2"
+    ]
+  },
+  {
+    "name": "Have you ever been appointed as a guardian or conservator before",
+    "type": "radio",
+    "options": [
+      "Yes_3",
+      "No_3"
+    ]
+  },
+  {
+    "name": "Is the conservatee related to you by blood marriage or adoption",
+    "type": "text"
+  },
+  {
+    "name": "undefined_10",
+    "type": "radio",
+    "options": [
+      "Yes_4",
+      "No_4"
+    ]
+  },
+  {
+    "name": "If yes explain",
+    "type": "text"
+  },
+  {
+    "name": "Name",
+    "type": "text"
+  },
+  {
+    "name": "Relationship",
+    "type": "text"
+  },
+  {
+    "name": "AddressCityzip",
+    "type": "text"
+  },
+  {
+    "name": "Phone_3",
+    "type": "text"
+  },
+  {
+    "name": "undefined_11",
+    "type": "text"
+  },
+  {
+    "name": "undefined_12",
+    "type": "text"
+  },
+  {
+    "name": "undefined_13",
+    "type": "text"
+  },
+  {
+    "name": "undefined_14",
+    "type": "text"
+  },
+  {
+    "name": "undefined_15",
+    "type": "text"
+  },
+  {
+    "name": "undefined_16",
+    "type": "text"
+  },
+  {
+    "name": "undefined_17",
+    "type": "text"
+  },
+  {
+    "name": "undefined_18",
+    "type": "text"
+  },
+  {
+    "name": "Inability to manage personal needs food clothing shelter",
+    "type": "checkbox"
+  },
+  {
+    "name": "Medical incapacity or mental health condition",
+    "type": "checkbox"
+  },
+  {
+    "name": "Dementia or Alzheimers",
+    "type": "checkbox"
+  },
+  {
+    "name": "Physical disability",
+    "type": "checkbox"
+  },
+  {
+    "name": "Risk of abuse neglect or exploitation",
+    "type": "checkbox"
+  },
+  {
+    "name": "Financial mismanagement",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_19",
+    "type": "text"
+  },
+  {
+    "name": "Detailed Explanation 1",
+    "type": "text"
+  },
+  {
+    "name": "Detailed Explanation 2",
+    "type": "text"
+  },
+  {
+    "name": "Detailed Explanation 3",
+    "type": "text"
+  },
+  {
+    "name": "Detailed Explanation 4",
+    "type": "text"
+  },
+  {
+    "name": "7 Medical and Cognitive Condition",
+    "type": "text"
+  },
+  {
+    "name": "Primary diagnosis or condition",
+    "type": "text"
+  },
+  {
+    "name": "Physicians addressphone",
+    "type": "text"
+  },
+  {
+    "name": "Does the conservatee take medication",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_5",
+    "type": "checkbox"
+  },
+  {
+    "name": "No_5",
+    "type": "radio",
+    "options": [
+      "Can the conservatee attend court",
+      "Yes_6",
+      "No_6"
+    ]
+  },
+  {
+    "name": "Unknown",
+    "type": "radio",
+    "options": [
+      "Does the conservatee require a courtappointed attorney",
+      "Yes_7",
+      "No_7"
+    ]
+  },
+  {
+    "name": "8 Conservatorship of the Estate if applicable",
+    "type": "text"
+  },
+  {
+    "name": "undefined_20",
+    "type": "text"
+  },
+  {
+    "name": "Monthly income Social Security pension etc",
+    "type": "text"
+  },
+  {
+    "name": "Real property owned addressvalue",
+    "type": "text"
+  },
+  {
+    "name": "Does the conservatee receive public benefits",
+    "type": "text"
+  },
+  {
+    "name": "Debts or obligations",
+    "type": "checkbox"
+  },
+  {
+    "name": "SSI",
+    "type": "checkbox"
+  },
+  {
+    "name": "SSDI",
+    "type": "checkbox"
+  },
+  {
+    "name": "MediCal",
+    "type": "checkbox"
+  },
+  {
+    "name": "VA",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_4",
+    "type": "text"
+  },
+  {
+    "name": "9 Temporary Conservatorship if applicable",
+    "type": "text"
+  },
+  {
+    "name": "When should the temporary conservatorship begin",
+    "type": "text"
+  },
+  {
+    "name": "Is there a risk of immediate harm to the person or finances",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_8",
+    "type": "checkbox"
+  },
+  {
+    "name": "fill_16",
+    "type": "text"
+  },
+  {
+    "name": "fill_17",
+    "type": "text"
+  },
+  {
+    "name": "Where will the conservatee live",
+    "type": "checkbox"
+  },
+  {
+    "name": "Home",
+    "type": "checkbox"
+  },
+  {
+    "name": "Facility",
+    "type": "checkbox"
+  },
+  {
+    "name": "With Conservator",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_5",
+    "type": "text"
+  },
+  {
+    "name": "Who will provide daily care",
+    "type": "text"
+  },
+  {
+    "name": "fill_1",
+    "type": "text"
+  },
+  {
+    "name": "fill_2",
+    "type": "text"
+  },
+  {
+    "name": "Have less restrictive alternatives been considered",
+    "type": "checkbox"
+  },
+  {
+    "name": "Power of Attorney",
+    "type": "checkbox"
+  },
+  {
+    "name": "Representative Payee",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_6",
+    "type": "checkbox"
+  },
+  {
+    "name": "Advance Health Care Directive",
+    "type": "text"
+  },
+  {
+    "name": "If yes explain why these are not sufficient",
+    "type": "text"
+  },
+  {
+    "name": "Have you ever been convicted of a felony or misdemeanor",
+    "type": "radio",
+    "options": [
+      "Yes_9",
+      "No_8"
+    ]
+  },
+  {
+    "name": "Have you ever filed for bankruptcy",
+    "type": "radio",
+    "options": [
+      "Yes_10",
+      "No_9"
+    ]
+  },
+  {
+    "name": "Have you ever been investigated for abuse neglect or fraud",
+    "type": "radio",
+    "options": [
+      "Yes_11",
+      "No_10"
+    ]
+  },
+  {
+    "name": "If yes explain 1",
+    "type": "text"
+  },
+  {
+    "name": "If yes explain 2",
+    "type": "text"
+  },
+  {
+    "name": "Has the conservatee nominated a preferred conservator",
+    "type": "radio",
+    "options": [
+      "Yes_12",
+      "No_11"
+    ]
+  },
+  {
+    "name": "Has Adult Protective Services APS been involved",
+    "type": "radio",
+    "options": [
+      "Yes_13",
+      "No_12"
+    ]
+  },
+  {
+    "name": "undefined_21",
+    "type": "radio",
+    "options": [
+      "Yes_14",
+      "No_13"
+    ]
+  },
+  {
+    "name": "Are there existing restraining or protective orders",
+    "type": "text"
+  },
+  {
+    "name": "Physicians Declaration of Capacity GC335",
+    "type": "checkbox"
+  },
+  {
+    "name": "Financial Statements or Bank Records",
+    "type": "checkbox"
+  },
+  {
+    "name": "Medical Records or Diagnosis Summary",
+    "type": "checkbox"
+  },
+  {
+    "name": "Power of Attorney  Advance Directive if any",
+    "type": "checkbox"
+  },
+  {
+    "name": "Copy of Conservatees ID or Social Security Card",
+    "type": "checkbox"
+  },
+  {
+    "name": "Proof of Residence",
+    "type": "checkbox"
+  },
+  {
+    "name": "Supporting Declarations MC030",
+    "type": "checkbox"
+  },
+  {
+    "name": "16 Consultant Notes Internal Use Only 1",
+    "type": "text"
+  },
+  {
+    "name": "16 Consultant Notes Internal Use Only 2",
+    "type": "text"
+  },
+  {
+    "name": "16 Consultant Notes Internal Use Only 3",
+    "type": "text"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  },
+  {
+    "name": "Text2",
+    "type": "text"
+  }
+]

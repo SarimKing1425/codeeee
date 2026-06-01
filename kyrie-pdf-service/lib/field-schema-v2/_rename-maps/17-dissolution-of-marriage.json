@@ -1,0 +1,866 @@
+{
+  "form": "dissolution-of-marriage",
+  "summary": {
+    "total": 165,
+    "exact": 20,
+    "prefix": 4,
+    "token_set": 19,
+    "last_token": 0,
+    "unmapped": 122,
+    "duplicate_assignments": 3,
+    "match_rate": "26.1%"
+  },
+  "mapping": {
+    "1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Todays Date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Court  County": {
+      "newKey": "court_county",
+      "confidence": "exact",
+      "matchedLabel": "Court / County"
+    },
+    "Case Number if any": {
+      "newKey": "case_number",
+      "confidence": "prefix",
+      "matchedLabel": "Case Number"
+    },
+    "Existing Family Law Orders": {
+      "newKey": "existing_family_law_orders",
+      "confidence": "exact",
+      "matchedLabel": "Existing Family Law Orders?"
+    },
+    "Yes": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes describedate": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name": {
+      "newKey": "petitioner_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Petitioner Full Legal Name"
+    },
+    "Street Address": {
+      "newKey": "petitioner_street",
+      "confidence": "token_set",
+      "matchedLabel": "Petitioner Street Address"
+    },
+    "City": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "State": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date of Birth": {
+      "newKey": "petitioner_dob",
+      "confidence": "token_set",
+      "matchedLabel": "Petitioner Date of Birth"
+    },
+    "AlternateEmergency Contact Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Emergency Contact Phone": {
+      "newKey": "petitioner_emergency_contact_phone",
+      "confidence": "token_set",
+      "matchedLabel": "Petitioner Emergency Contact Phone"
+    },
+    "Full Legal Name_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Street Address_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City_2": {
+      "newKey": "children_2_birthplace_city_state",
+      "confidence": "token_set",
+      "matchedLabel": "Minor Children Row 2 birthplace city state"
+    },
+    "State_2": {
+      "newKey": "children_2_birthplace_city_state",
+      "confidence": "token_set",
+      "matchedLabel": "Minor Children Row 2 birthplace city state"
+    },
+    "Zip_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date of Birth_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date of Marriage": {
+      "newKey": "marriage_date",
+      "confidence": "exact",
+      "matchedLabel": "Date of Marriage"
+    },
+    "Date of Separation": {
+      "newKey": "separation_date",
+      "confidence": "exact",
+      "matchedLabel": "Date of Separation"
+    },
+    "Total Years Married": {
+      "newKey": "total_years_married",
+      "confidence": "exact",
+      "matchedLabel": "Total Years Married"
+    },
+    "Childs Full Name Date of Birth Birthplace City State Age": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "MonthYear": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "MonthYear_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "State_3": {
+      "newKey": "children_3_birthplace_city_state",
+      "confidence": "token_set",
+      "matchedLabel": "Minor Children Row 3 birthplace city state"
+    },
+    "Name_2": {
+      "newKey": "children_2_full_name",
+      "confidence": "token_set",
+      "matchedLabel": "Minor Children Row 2 full name"
+    },
+    "Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_15": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_16": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_17": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_18": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_19": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_20": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_21": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_22": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_23": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_24": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_25": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_26": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_27": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_28": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_29": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_30": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_31": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_32": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_33": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_34": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_35": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Childs Name Currently Lives With Address Percentage of Time": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_36": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_37": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_38": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_39": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_40": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_41": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_42": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Prior Custody  Visitation Orders": {
+      "newKey": "prior_custody_orders",
+      "confidence": "exact",
+      "matchedLabel": "Prior Custody / Visitation Orders?"
+    },
+    "If yes describe court case number date orders 1": {
+      "newKey": "case_number",
+      "confidence": "token_set",
+      "matchedLabel": "Case Number"
+    },
+    "If yes describe court case number date orders 2": {
+      "newKey": "case_number",
+      "confidence": "token_set",
+      "matchedLabel": "Case Number"
+    },
+    "Has either party lived in California for the past 6 months": {
+      "newKey": "either_party_lived_ca_6mo",
+      "confidence": "token_set",
+      "matchedLabel": "Either party lived in California past 6 months?"
+    },
+    "Has either party lived in this county for the past 3 months": {
+      "newKey": "either_party_lived_county_3mo",
+      "confidence": "token_set",
+      "matchedLabel": "Either party lived in this county past 3 months?"
+    },
+    "Irreconcilable Differences": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Permanent Legal Incapacity to Make Decisions": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Dissolution Divorce": {
+      "newKey": "order_dissolution",
+      "confidence": "exact",
+      "matchedLabel": "Dissolution (Divorce)"
+    },
+    "Legal Separation": {
+      "newKey": "order_legal_separation",
+      "confidence": "exact",
+      "matchedLabel": "Legal Separation"
+    },
+    "Nullity of Marriage": {
+      "newKey": "order_nullity",
+      "confidence": "exact",
+      "matchedLabel": "Nullity of Marriage"
+    },
+    "Child Custody  Visitation": {
+      "newKey": "order_child_custody_visitation",
+      "confidence": "exact",
+      "matchedLabel": "Child Custody / Visitation"
+    },
+    "Child Support": {
+      "newKey": "order_child_support",
+      "confidence": "exact",
+      "matchedLabel": "Child Support"
+    },
+    "Spousal Support": {
+      "newKey": "order_spousal_support",
+      "confidence": "exact",
+      "matchedLabel": "Spousal Support"
+    },
+    "Division of Property  Debts": {
+      "newKey": "order_division_property_debts",
+      "confidence": "exact",
+      "matchedLabel": "Division of Property / Debts"
+    },
+    "Attorney Fees  Costs": {
+      "newKey": "order_attorney_fees",
+      "confidence": "exact",
+      "matchedLabel": "Attorney Fees / Costs"
+    },
+    "Other": {
+      "newKey": "order_other",
+      "confidence": "prefix",
+      "matchedLabel": "Other Order"
+    },
+    "undefined_43": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Petitioners Gross Monthly Income": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Sources": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Respondents Gross Monthly Income if known": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Sources_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "A Community Property Assets Acquired During Marriage": {
+      "newKey": "community_property",
+      "confidence": "token_set",
+      "matchedLabel": "Community Property"
+    },
+    "SoCal United Professional Services": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Description of Asset Estimated Value In Whose Possession": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_5": {
+      "newKey": "children_residence_history_1_child_name",
+      "confidence": "token_set",
+      "matchedLabel": "Children Residence History (Last 5 Years) Row 1 child name"
+    },
+    "2_5": {
+      "newKey": "children_residence_history_2_child_name",
+      "confidence": "token_set",
+      "matchedLabel": "Children Residence History (Last 5 Years) Row 2 child name"
+    },
+    "1_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_44": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_45": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_46": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Description of": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Approximate": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Responsible Party": {
+      "newKey": "community_debts_1_responsible_party",
+      "confidence": "token_set",
+      "matchedLabel": "Community Debts / Liabilities Row 1 responsible party"
+    },
+    "Debt 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Debt 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Balance 1": {
+      "newKey": "community_debts_1_approx_balance",
+      "confidence": "token_set",
+      "matchedLabel": "Community Debts / Liabilities Row 1 approx balance"
+    },
+    "Balance 2": {
+      "newKey": "community_debts_2_approx_balance",
+      "confidence": "token_set",
+      "matchedLabel": "Community Debts / Liabilities Row 2 approx balance"
+    },
+    "PetitionerRespondentBoth 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "PetitionerRespondentBoth 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Description of Asset Estimated Value Owned By PetitionerRespondent": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_47": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_48": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_49": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_50": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_51": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_52": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_53": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_54": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Child Support_2": {
+      "newKey": "order_child_support",
+      "confidence": "prefix",
+      "matchedLabel": "Child Support"
+    },
+    "Spousal  Partner Support": {
+      "newKey": "support_spousal",
+      "confidence": "prefix",
+      "matchedLabel": "Spousal / Partner Support Requested"
+    },
+    "None": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Mediation": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No proceed through court": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Are there any Domestic Violence Orders DVRO or restraining orders in effect": {
+      "newKey": "existing_dvro",
+      "confidence": "token_set",
+      "matchedLabel": "DVRO or restraining orders in effect?"
+    },
+    "If yes describe": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Prior Court Orders": {
+      "newKey": "attach_prior_court_orders",
+      "confidence": "exact",
+      "matchedLabel": "Prior Court Orders"
+    },
+    "Tax Returns": {
+      "newKey": "attach_tax_returns",
+      "confidence": "exact",
+      "matchedLabel": "Tax Returns"
+    },
+    "Paystubs": {
+      "newKey": "attach_paystubs",
+      "confidence": "exact",
+      "matchedLabel": "Paystubs"
+    },
+    "Property Documents": {
+      "newKey": "attach_property_documents",
+      "confidence": "exact",
+      "matchedLabel": "Property Documents"
+    },
+    "Vehicle Titles": {
+      "newKey": "attach_vehicle_titles",
+      "confidence": "exact",
+      "matchedLabel": "Vehicle Titles"
+    },
+    "Bank Statements": {
+      "newKey": "attach_bank_statements",
+      "confidence": "exact",
+      "matchedLabel": "Bank Statements"
+    },
+    "Other_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_55": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Todays Date",
+    "Yes",
+    "If yes describedate",
+    "City",
+    "State",
+    "Zip",
+    "Phone",
+    "Email",
+    "AlternateEmergency Contact Name",
+    "Full Legal Name_2",
+    "Street Address_2",
+    "Zip_2",
+    "Phone_2",
+    "Email_2",
+    "Date of Birth_2",
+    "Childs Full Name Date of Birth Birthplace City State Age",
+    "undefined",
+    "undefined_2",
+    "undefined_3",
+    "undefined_4",
+    "undefined_5",
+    "undefined_6",
+    "undefined_7",
+    "undefined_8",
+    "undefined_9",
+    "undefined_10",
+    "undefined_11",
+    "Name",
+    "MonthYear",
+    "MonthYear_2",
+    "Address",
+    "undefined_12",
+    "undefined_13",
+    "undefined_14",
+    "undefined_15",
+    "undefined_16",
+    "undefined_17",
+    "undefined_18",
+    "undefined_19",
+    "undefined_20",
+    "undefined_21",
+    "undefined_22",
+    "undefined_23",
+    "undefined_24",
+    "undefined_25",
+    "undefined_26",
+    "undefined_27",
+    "undefined_28",
+    "undefined_29",
+    "undefined_30",
+    "undefined_31",
+    "undefined_32",
+    "undefined_33",
+    "undefined_34",
+    "undefined_35",
+    "Childs Name Currently Lives With Address Percentage of Time",
+    "undefined_36",
+    "undefined_37",
+    "undefined_38",
+    "undefined_39",
+    "undefined_40",
+    "undefined_41",
+    "undefined_42",
+    "Irreconcilable Differences",
+    "Permanent Legal Incapacity to Make Decisions",
+    "undefined_43",
+    "Petitioners Gross Monthly Income",
+    "Sources",
+    "Respondents Gross Monthly Income if known",
+    "Sources_2",
+    "SoCal United Professional Services",
+    "1",
+    "2",
+    "Description of Asset Estimated Value In Whose Possession",
+    "1_2",
+    "2_2",
+    "1_3",
+    "2_3",
+    "1_4",
+    "2_4",
+    "1_6",
+    "2_6",
+    "1_7",
+    "2_7",
+    "1_8",
+    "2_8",
+    "undefined_44",
+    "undefined_45",
+    "undefined_46",
+    "Description of",
+    "Approximate",
+    "Debt 1",
+    "Debt 2",
+    "PetitionerRespondentBoth 1",
+    "PetitionerRespondentBoth 2",
+    "1_9",
+    "2_9",
+    "1_10",
+    "2_10",
+    "1_11",
+    "2_11",
+    "1_12",
+    "2_12",
+    "1_13",
+    "2_13",
+    "1_14",
+    "2_14",
+    "Description of Asset Estimated Value Owned By PetitionerRespondent",
+    "undefined_47",
+    "undefined_48",
+    "undefined_49",
+    "undefined_50",
+    "undefined_51",
+    "undefined_52",
+    "undefined_53",
+    "undefined_54",
+    "None",
+    "Mediation",
+    "No proceed through court",
+    "If yes describe",
+    "Other_2",
+    "undefined_55"
+  ],
+  "duplicates": [
+    {
+      "key": "case_number",
+      "oldNames": [
+        "Case Number if any",
+        "If yes describe court case number date orders 1",
+        "If yes describe court case number date orders 2"
+      ]
+    },
+    {
+      "key": "children_2_birthplace_city_state",
+      "oldNames": [
+        "City_2",
+        "State_2"
+      ]
+    },
+    {
+      "key": "order_child_support",
+      "oldNames": [
+        "Child Support",
+        "Child Support_2"
+      ]
+    }
+  ]
+}

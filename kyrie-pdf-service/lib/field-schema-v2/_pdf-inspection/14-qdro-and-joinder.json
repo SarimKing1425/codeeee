@@ -1,0 +1,535 @@
+[
+  {
+    "name": "1 Client Name",
+    "type": "text"
+  },
+  {
+    "name": "Alternate Payee or",
+    "type": "text"
+  },
+  {
+    "name": "undefined",
+    "type": "text"
+  },
+  {
+    "name": "2 Client Phone Number",
+    "type": "text"
+  },
+  {
+    "name": "3 Client Email",
+    "type": "text"
+  },
+  {
+    "name": "5 County Where Divorce was Finalized",
+    "type": "text"
+  },
+  {
+    "name": "6 Case Number",
+    "type": "text"
+  },
+  {
+    "name": "7 Date of Marriage DOM",
+    "type": "text"
+  },
+  {
+    "name": "8 Date of Separation DOS",
+    "type": "text"
+  },
+  {
+    "name": "9 Date Judgment of Dissolution Was Entered",
+    "type": "text"
+  },
+  {
+    "name": "10Is the Judgment FINAL YesNo if no attach current status",
+    "type": "text"
+  },
+  {
+    "name": "Yes or",
+    "type": "text"
+  },
+  {
+    "name": "1 Full Legal Name",
+    "type": "text"
+  },
+  {
+    "name": "2 Date of Birth",
+    "type": "text"
+  },
+  {
+    "name": "3 Social Security Number last 4 ok for intake",
+    "type": "text"
+  },
+  {
+    "name": "4 Phone Number",
+    "type": "text"
+  },
+  {
+    "name": "5 Email",
+    "type": "text"
+  },
+  {
+    "name": "6 Current Address include city  state",
+    "type": "text"
+  },
+  {
+    "name": "SoCal United Professional Services",
+    "type": "text"
+  },
+  {
+    "name": "Alternate Payee other spouse entitled to benefits",
+    "type": "text"
+  },
+  {
+    "name": "1 Full Legal Name_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_2",
+    "type": "text"
+  },
+  {
+    "name": "3 Social Security Number last 4 is okay for intake",
+    "type": "text"
+  },
+  {
+    "name": "4 Phone Number_2",
+    "type": "text"
+  },
+  {
+    "name": "6 Current Address include city  state_2",
+    "type": "text"
+  },
+  {
+    "name": "401k",
+    "type": "checkbox"
+  },
+  {
+    "name": "403b",
+    "type": "checkbox"
+  },
+  {
+    "name": "457 Deferred Compensation Plan",
+    "type": "checkbox"
+  },
+  {
+    "name": "Traditional Pension defined benefit",
+    "type": "checkbox"
+  },
+  {
+    "name": "Cash Balance Plan",
+    "type": "checkbox"
+  },
+  {
+    "name": "IRA  SEP  SIMPLE",
+    "type": "checkbox"
+  },
+  {
+    "name": "Military Retirement",
+    "type": "checkbox"
+  },
+  {
+    "name": "Federal CSRS  FERS",
+    "type": "checkbox"
+  },
+  {
+    "name": "CalPERS",
+    "type": "checkbox"
+  },
+  {
+    "name": "CalSTRS",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other",
+    "type": "checkbox"
+  },
+  {
+    "name": "Unknown attach ALL retirement statements available",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_3",
+    "type": "text"
+  },
+  {
+    "name": "B Plan Administrator Details if known",
+    "type": "text"
+  },
+  {
+    "name": "3 Plan Administrator Phone",
+    "type": "text"
+  },
+  {
+    "name": "4 Plan Administrator Email",
+    "type": "text"
+  },
+  {
+    "name": "5 Plan or Summary Plan Description Attached",
+    "type": "text"
+  },
+  {
+    "name": "Yes",
+    "type": "text"
+  },
+  {
+    "name": "1 Employer during benefit accrual",
+    "type": "text"
+  },
+  {
+    "name": "3 HR or Benefits Department contact number",
+    "type": "text"
+  },
+  {
+    "name": "Most recent retirement account statement",
+    "type": "checkbox"
+  },
+  {
+    "name": "Statements closest to Date of Separation",
+    "type": "checkbox"
+  },
+  {
+    "name": "Statement closest to Date of Marriage",
+    "type": "checkbox"
+  },
+  {
+    "name": "Summary Plan Description SPD",
+    "type": "checkbox"
+  },
+  {
+    "name": "Any letters received from plan administrator",
+    "type": "checkbox"
+  },
+  {
+    "name": "Judgment  MSA identifying division terms",
+    "type": "checkbox"
+  },
+  {
+    "name": "o",
+    "type": "radio",
+    "options": [
+      "Yes_2",
+      "No"
+    ]
+  },
+  {
+    "name": "5050 division of community portion",
+    "type": "checkbox"
+  },
+  {
+    "name": "Fixed dollar amount",
+    "type": "checkbox"
+  },
+  {
+    "name": "Percentage different than 5050",
+    "type": "checkbox"
+  },
+  {
+    "name": "Survivor benefits addressed",
+    "type": "checkbox"
+  },
+  {
+    "name": "Separate property carveouts",
+    "type": "checkbox"
+  },
+  {
+    "name": "Standard Time Rule formula marital fraction",
+    "type": "checkbox"
+  },
+  {
+    "name": "o_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "o_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Specific percentage",
+    "type": "text"
+  },
+  {
+    "name": "Specific dollar amount",
+    "type": "text"
+  },
+  {
+    "name": "o_4",
+    "type": "radio",
+    "options": [
+      "Yes_3",
+      "No_2"
+    ]
+  },
+  {
+    "name": "Yes provide clients premarital balance statement",
+    "type": "checkbox"
+  },
+  {
+    "name": "No_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Unknown",
+    "type": "checkbox"
+  },
+  {
+    "name": "o_5",
+    "type": "radio",
+    "options": [
+      "Yes_4",
+      "No_4"
+    ]
+  },
+  {
+    "name": "Outstanding loan balance",
+    "type": "text"
+  },
+  {
+    "name": "o_6",
+    "type": "radio",
+    "options": [
+      "Yes_5",
+      "No_5"
+    ]
+  },
+  {
+    "name": "Provide details  dates",
+    "type": "text"
+  },
+  {
+    "name": "o_7",
+    "type": "checkbox"
+  },
+  {
+    "name": "No_6",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes  Identify transferee plan",
+    "type": "text"
+  },
+  {
+    "name": "Yes Strongly recommended",
+    "type": "checkbox"
+  },
+  {
+    "name": "No_7",
+    "type": "checkbox"
+  },
+  {
+    "name": "Not applicable 401kIRA type",
+    "type": "checkbox"
+  },
+  {
+    "name": "o_8",
+    "type": "radio",
+    "options": [
+      "Yes_6",
+      "No_8"
+    ]
+  },
+  {
+    "name": "Yes 100",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes 50",
+    "type": "checkbox"
+  },
+  {
+    "name": "o_9",
+    "type": "checkbox"
+  },
+  {
+    "name": "No_9",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other percentage",
+    "type": "text"
+  },
+  {
+    "name": "Separate interest division each gets own lifetime benefit",
+    "type": "checkbox"
+  },
+  {
+    "name": "Shared interest division alternate payee receives portion only while",
+    "type": "checkbox"
+  },
+  {
+    "name": "Not sure  need plan guidance",
+    "type": "checkbox"
+  },
+  {
+    "name": "Participant retires",
+    "type": "checkbox"
+  },
+  {
+    "name": "Alternate Payee reaches earliest retirement age allowed by the plan",
+    "type": "checkbox"
+  },
+  {
+    "name": "Agree on earliest legal distribution",
+    "type": "checkbox"
+  },
+  {
+    "name": "Rollover into herhis own retirement account",
+    "type": "checkbox"
+  },
+  {
+    "name": "Direct payment",
+    "type": "checkbox"
+  },
+  {
+    "name": "Unknown depends on plan rules",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes attach",
+    "type": "checkbox"
+  },
+  {
+    "name": "No_10",
+    "type": "checkbox"
+  },
+  {
+    "name": "Judgment is silent",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_7",
+    "type": "checkbox"
+  },
+  {
+    "name": "Already joined",
+    "type": "checkbox"
+  },
+  {
+    "name": "Unsure",
+    "type": "checkbox"
+  },
+  {
+    "name": "o_10",
+    "type": "radio",
+    "options": [
+      "Yes_8",
+      "No_11",
+      "Unknown_2"
+    ]
+  },
+  {
+    "name": "undefined_4",
+    "type": "text"
+  },
+  {
+    "name": "Yes amount",
+    "type": "checkbox"
+  },
+  {
+    "name": "No_12",
+    "type": "checkbox"
+  },
+  {
+    "name": "Unknown_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "5050 split",
+    "type": "checkbox"
+  },
+  {
+    "name": "Participant",
+    "type": "checkbox"
+  },
+  {
+    "name": "Alternate Payee",
+    "type": "checkbox"
+  },
+  {
+    "name": "As ordered by Judgment",
+    "type": "checkbox"
+  },
+  {
+    "name": "1 Participants years of service",
+    "type": "text"
+  },
+  {
+    "name": "2 Accrued benefit if pension",
+    "type": "text"
+  },
+  {
+    "name": "3 Vesting status",
+    "type": "text"
+  },
+  {
+    "name": "4 Date plan membership started",
+    "type": "text"
+  },
+  {
+    "name": "Yes  provide retirement date",
+    "type": "checkbox"
+  },
+  {
+    "name": "No_13",
+    "type": "checkbox"
+  },
+  {
+    "name": "o_11",
+    "type": "radio",
+    "options": [
+      "Yes_9",
+      "No_14"
+    ]
+  },
+  {
+    "name": "Judgment of Dissolution full copy",
+    "type": "checkbox"
+  },
+  {
+    "name": "Marital Settlement Agreement if applicable",
+    "type": "checkbox"
+  },
+  {
+    "name": "Any stipulations or addendums regarding retirement",
+    "type": "checkbox"
+  },
+  {
+    "name": "Most recent plan statement",
+    "type": "checkbox"
+  },
+  {
+    "name": "Statement closest to Date of Separation",
+    "type": "checkbox"
+  },
+  {
+    "name": "Statement closest to Date of Marriage_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Summary Plan Description SPD_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Annual benefit statements",
+    "type": "checkbox"
+  },
+  {
+    "name": "Any correspondence from the plan",
+    "type": "checkbox"
+  },
+  {
+    "name": "Pay stubs showing contributions",
+    "type": "checkbox"
+  },
+  {
+    "name": "Proof of loans or withdrawals",
+    "type": "checkbox"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  },
+  {
+    "name": "Text2",
+    "type": "text"
+  }
+]

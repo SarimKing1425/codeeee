@@ -1,0 +1,213 @@
+{
+  "form": "client-intake-sheet",
+  "summary": {
+    "total": 39,
+    "exact": 2,
+    "prefix": 1,
+    "token_set": 3,
+    "last_token": 2,
+    "unmapped": 31,
+    "duplicate_assignments": 0,
+    "match_rate": "20.5%"
+  },
+  "mapping": {
+    "LOS ANGELES": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "ORANGE COUNTY": {
+      "newKey": "courthouse_county",
+      "confidence": "last_token",
+      "matchedLabel": "Courthouse County"
+    },
+    "RIVERSIDE": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "SAN BERN": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Age": {
+      "newKey": "client_age",
+      "confidence": "last_token",
+      "matchedLabel": "Client Age"
+    },
+    "DOB": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Physical Address": {
+      "newKey": "client_physical_street",
+      "confidence": "token_set",
+      "matchedLabel": "Physical Street Address"
+    },
+    "City": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "CA Zip": {
+      "newKey": "client_physical_zip",
+      "confidence": "token_set",
+      "matchedLabel": "Physical CA Zip"
+    },
+    "Mailing Address": {
+      "newKey": "client_mailing_street",
+      "confidence": "token_set",
+      "matchedLabel": "Mailing Street Address (or PO Box)"
+    },
+    "City_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "CA Zip_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Alternate Email": {
+      "newKey": "client_alternate_email",
+      "confidence": "exact",
+      "matchedLabel": "Alternate Email"
+    },
+    "Occupation": {
+      "newKey": "client_occupation",
+      "confidence": "exact",
+      "matchedLabel": "Occupation"
+    },
+    "YES": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "NO": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Civil": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Probate": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Family Law": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other": {
+      "newKey": "service_other",
+      "confidence": "prefix",
+      "matchedLabel": "Other Service"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text13": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "LOS ANGELES",
+    "RIVERSIDE",
+    "SAN BERN",
+    "Name",
+    "DOB",
+    "City",
+    "City_2",
+    "CA Zip_2",
+    "undefined",
+    "undefined_2",
+    "undefined_3",
+    "undefined_4",
+    "Email",
+    "YES",
+    "NO",
+    "Civil",
+    "Probate",
+    "Family Law",
+    "Text1",
+    "Text2",
+    "Text3",
+    "Text4",
+    "Text5",
+    "Text6",
+    "Text7",
+    "Text8",
+    "Text9",
+    "Text10",
+    "Text11",
+    "Text12",
+    "Text13"
+  ],
+  "duplicates": []
+}

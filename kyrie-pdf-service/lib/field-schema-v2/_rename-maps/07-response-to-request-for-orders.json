@@ -1,0 +1,546 @@
+{
+  "form": "response-to-request-for-orders",
+  "summary": {
+    "total": 104,
+    "exact": 14,
+    "prefix": 8,
+    "token_set": 9,
+    "last_token": 6,
+    "unmapped": 67,
+    "duplicate_assignments": 1,
+    "match_rate": "35.6%"
+  },
+  "mapping": {
+    "Todays Date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Court  County": {
+      "newKey": "court_county",
+      "confidence": "exact",
+      "matchedLabel": "Court / County"
+    },
+    "Case Number": {
+      "newKey": "case_number",
+      "confidence": "exact",
+      "matchedLabel": "Case Number"
+    },
+    "Department if known": {
+      "newKey": "department",
+      "confidence": "prefix",
+      "matchedLabel": "Department"
+    },
+    "Hearing Date if known": {
+      "newKey": "hearing_date",
+      "confidence": "prefix",
+      "matchedLabel": "Hearing Date"
+    },
+    "Judge if known": {
+      "newKey": "judge",
+      "confidence": "prefix",
+      "matchedLabel": "Judge"
+    },
+    "Date You Were Served with the Request for Order FL300": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name": {
+      "newKey": "petitioner_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Petitioner Full Legal Name"
+    },
+    "Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address_2": {
+      "newKey": "children_current_living_2_address",
+      "confidence": "token_set",
+      "matchedLabel": "Children Current Living Situation Row 2 address"
+    },
+    "City": {
+      "newKey": "respondent_city",
+      "confidence": "last_token",
+      "matchedLabel": "Respondent City"
+    },
+    "State": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip": {
+      "newKey": "respondent_zip",
+      "confidence": "last_token",
+      "matchedLabel": "Respondent Zip"
+    },
+    "Phone_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Are you selfrepresented": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If no Attorneys Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Child Custody": {
+      "newKey": "orders_child_custody",
+      "confidence": "exact",
+      "matchedLabel": "Child Custody"
+    },
+    "Visitation  Parenting Time": {
+      "newKey": "orders_visitation",
+      "confidence": "exact",
+      "matchedLabel": "Visitation / Parenting Time"
+    },
+    "Child Support": {
+      "newKey": "orders_child_support",
+      "confidence": "exact",
+      "matchedLabel": "Child Support"
+    },
+    "Spousal  Partner Support": {
+      "newKey": "orders_spousal_support",
+      "confidence": "exact",
+      "matchedLabel": "Spousal / Partner Support"
+    },
+    "Attorneys Fees and Costs": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Property Control  Use of Property": {
+      "newKey": "orders_property_control",
+      "confidence": "prefix",
+      "matchedLabel": "Property Control"
+    },
+    "Domestic Violence Orders": {
+      "newKey": "orders_domestic_violence",
+      "confidence": "exact",
+      "matchedLabel": "Domestic Violence Orders"
+    },
+    "Other": {
+      "newKey": "orders_other",
+      "confidence": "prefix",
+      "matchedLabel": "Other Orders"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "I AGREE": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "I DISAGREE": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Childs Full Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date of Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Birthplace City State": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Age": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Childs Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Currently Lives With": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address_3": {
+      "newKey": "children_current_living_3_address",
+      "confidence": "token_set",
+      "matchedLabel": "Children Current Living Situation Row 3 address"
+    },
+    "of Time": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "C Residence History Last 5 Years": {
+      "newKey": "children_residence_history",
+      "confidence": "token_set",
+      "matchedLabel": "Children Residence History (Last 5 Years)"
+    },
+    "undefined_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Childs Name_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "From To": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City  State": {
+      "newKey": "children_residence_history_1_city_state",
+      "confidence": "token_set",
+      "matchedLabel": "Children Residence History (Last 5 Years) Row 1 city state"
+    },
+    "Lived With": {
+      "newKey": "children_residence_history_1_lived_with",
+      "confidence": "token_set",
+      "matchedLabel": "Children Residence History (Last 5 Years) Row 1 lived with"
+    },
+    "Address_4": {
+      "newKey": "children_current_living_4_address",
+      "confidence": "token_set",
+      "matchedLabel": "Children Current Living Situation Row 4 address"
+    },
+    "undefined_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_15": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_16": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_17": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_18": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_19": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_20": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_21": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_22": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "D Prior Custody Orders": {
+      "newKey": "prior_custody_orders",
+      "confidence": "token_set",
+      "matchedLabel": "Prior Custody Orders?"
+    },
+    "E Other Cases Involving Children": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Joint Legal": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Joint Physical": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Sole Legal": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Sole Physical": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Weekdays": {
+      "newKey": "parenting_weekdays",
+      "confidence": "last_token",
+      "matchedLabel": "Parenting Weekdays"
+    },
+    "Weekends": {
+      "newKey": "parenting_weekends",
+      "confidence": "last_token",
+      "matchedLabel": "Parenting Weekends"
+    },
+    "HolidaysVacations": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Exchange Location": {
+      "newKey": "exchange_location",
+      "confidence": "exact",
+      "matchedLabel": "Exchange Location"
+    },
+    "Supervised Visitation": {
+      "newKey": "supervised_visitation",
+      "confidence": "exact",
+      "matchedLabel": "Supervised Visitation?"
+    },
+    "If yes by whom": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "6 Child Support if applicable": {
+      "newKey": "orders_child_support",
+      "confidence": "token_set",
+      "matchedLabel": "Child Support"
+    },
+    "Amount": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Agree": {
+      "newKey": "agrees_with_child_support_amount",
+      "confidence": "prefix",
+      "matchedLabel": "Agree with child support amount?"
+    },
+    "Explain": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Income": {
+      "newKey": "respondent_monthly_income",
+      "confidence": "last_token",
+      "matchedLabel": "Respondent Monthly Income"
+    },
+    "Expenses": {
+      "newKey": "respondent_monthly_expenses",
+      "confidence": "last_token",
+      "matchedLabel": "Respondent Monthly Expenses"
+    },
+    "Current": {
+      "newKey": "currently_paying_receiving_child_support",
+      "confidence": "prefix",
+      "matchedLabel": "Currently paying or receiving child support?"
+    },
+    "Amount_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Agree_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Explain_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Requested": {
+      "newKey": "requested_legal_custody",
+      "confidence": "prefix",
+      "matchedLabel": "Requested Legal Custody"
+    },
+    "Agree_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Explain_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Requested_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Explain_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "DV requested": {
+      "newKey": "dv_requested",
+      "confidence": "exact",
+      "matchedLabel": "DV Requested?"
+    },
+    "Prior DVRO": {
+      "newKey": "prior_dvro",
+      "confidence": "exact",
+      "matchedLabel": "Prior DVRO?"
+    },
+    "Explain_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "FL150": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Court Orders": {
+      "newKey": "doc_court_orders",
+      "confidence": "exact",
+      "matchedLabel": "Court Orders"
+    },
+    "Reports": {
+      "newKey": "doc_reports",
+      "confidence": "exact",
+      "matchedLabel": "Reports"
+    },
+    "I understand service is required": {
+      "newKey": "understands_service_required",
+      "confidence": "exact",
+      "matchedLabel": "I understand service is required"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text4": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Todays Date",
+    "Date You Were Served with the Request for Order FL300",
+    "Address",
+    "Phone",
+    "Email",
+    "Full Legal Name_2",
+    "State",
+    "Phone_2",
+    "Email_2",
+    "Are you selfrepresented",
+    "If no Attorneys Name",
+    "undefined",
+    "Attorneys Fees and Costs",
+    "undefined_2",
+    "I AGREE",
+    "I DISAGREE",
+    "Childs Full Name",
+    "Date of Birth",
+    "Birthplace City State",
+    "Age",
+    "undefined_3",
+    "undefined_4",
+    "undefined_5",
+    "undefined_6",
+    "Childs Name",
+    "Currently Lives With",
+    "of Time",
+    "undefined_7",
+    "undefined_8",
+    "undefined_9",
+    "Childs Name_2",
+    "From To",
+    "undefined_10",
+    "undefined_11",
+    "undefined_12",
+    "undefined_13",
+    "undefined_14",
+    "undefined_15",
+    "undefined_16",
+    "undefined_17",
+    "undefined_18",
+    "undefined_19",
+    "undefined_20",
+    "undefined_21",
+    "undefined_22",
+    "E Other Cases Involving Children",
+    "Joint Legal",
+    "Joint Physical",
+    "Sole Legal",
+    "Sole Physical",
+    "HolidaysVacations",
+    "If yes by whom",
+    "Amount",
+    "Explain",
+    "Amount_2",
+    "Agree_2",
+    "Explain_2",
+    "Agree_3",
+    "Explain_3",
+    "Requested_2",
+    "Explain_4",
+    "Explain_5",
+    "FL150",
+    "Text1",
+    "Text2",
+    "Text3",
+    "Text4"
+  ],
+  "duplicates": [
+    {
+      "key": "orders_child_support",
+      "oldNames": [
+        "Child Support",
+        "6 Child Support if applicable"
+      ]
+    }
+  ]
+}

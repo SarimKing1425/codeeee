@@ -1,0 +1,148 @@
+{
+  "form": "request-to-restore-former-name",
+  "summary": {
+    "total": 26,
+    "exact": 2,
+    "prefix": 0,
+    "token_set": 4,
+    "last_token": 6,
+    "unmapped": 14,
+    "duplicate_assignments": 0,
+    "match_rate": "46.2%"
+  },
+  "mapping": {
+    "Todays Date": {
+      "newKey": "todays_date",
+      "confidence": "last_token",
+      "matchedLabel": "Today's Date"
+    },
+    "Court  County where divorce was finalized": {
+      "newKey": "court_county",
+      "confidence": "exact",
+      "matchedLabel": "Court / County (where divorce was finalized)"
+    },
+    "Case Number": {
+      "newKey": "case_number",
+      "confidence": "exact",
+      "matchedLabel": "Case Number"
+    },
+    "Date Judgment of Dissolution Entered FL180": {
+      "newKey": "judgment_entered_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date Judgment of Dissolution Entered (FL-180)"
+    },
+    "Was the divorce finalized in California": {
+      "newKey": "divorce_finalized_in_california",
+      "confidence": "token_set",
+      "matchedLabel": "Divorce finalized in California?"
+    },
+    "Date of Birth": {
+      "newKey": "client_dob",
+      "confidence": "token_set",
+      "matchedLabel": "Client Date of Birth"
+    },
+    "City": {
+      "newKey": "client_city",
+      "confidence": "last_token",
+      "matchedLabel": "Client City"
+    },
+    "State": {
+      "newKey": "client_state",
+      "confidence": "last_token",
+      "matchedLabel": "Client State"
+    },
+    "Zip": {
+      "newKey": "client_zip",
+      "confidence": "last_token",
+      "matchedLabel": "Client Zip"
+    },
+    "Phone": {
+      "newKey": "client_phone",
+      "confidence": "last_token",
+      "matchedLabel": "Client Phone"
+    },
+    "Email": {
+      "newKey": "client_email",
+      "confidence": "last_token",
+      "matchedLabel": "Client Email"
+    },
+    "Maiden Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Prior Married Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other Former Legal Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "fill_1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "fill_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "fill_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Does the Judgment FL180 already include a request to restore name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes was it granted in the Judgment": {
+      "newKey": "name_restoration_granted_in_judgment",
+      "confidence": "token_set",
+      "matchedLabel": "Was restoration granted in Judgment?"
+    },
+    "fill_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "fill_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "6 SPOUSE INFORMATION FOR RECORD ONLY": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text2": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Maiden Name",
+    "Prior Married Name",
+    "Other Former Legal Name",
+    "fill_1",
+    "fill_2",
+    "fill_3",
+    "Does the Judgment FL180 already include a request to restore name",
+    "fill_4",
+    "fill_5",
+    "6 SPOUSE INFORMATION FOR RECORD ONLY",
+    "Yes_4",
+    "Yes_5",
+    "Text1",
+    "Text2"
+  ],
+  "duplicates": []
+}

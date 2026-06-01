@@ -1,0 +1,636 @@
+{
+  "form": "unlawful-detainer-landlord",
+  "summary": {
+    "total": 119,
+    "exact": 34,
+    "prefix": 10,
+    "token_set": 15,
+    "last_token": 1,
+    "unmapped": 59,
+    "duplicate_assignments": 3,
+    "match_rate": "50.4%"
+  },
+  "mapping": {
+    "Todays Date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Court  County": {
+      "newKey": "court_county",
+      "confidence": "exact",
+      "matchedLabel": "Court / County"
+    },
+    "Property County if different": {
+      "newKey": "property_county",
+      "confidence": "exact",
+      "matchedLabel": "Property County (if different)"
+    },
+    "Case Number if already filed": {
+      "newKey": "case_number",
+      "confidence": "token_set",
+      "matchedLabel": "Case Number (if filed)"
+    },
+    "Department if known": {
+      "newKey": "department",
+      "confidence": "prefix",
+      "matchedLabel": "Department"
+    },
+    "Full Legal Name or Business Name": {
+      "newKey": "landlord_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Landlord Full Legal Name (or Business)"
+    },
+    "Type": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Individual": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "LLC": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Corporation": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Trust": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other": {
+      "newKey": "relief_other",
+      "confidence": "prefix",
+      "matchedLabel": "Other Relief"
+    },
+    "Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "State": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Property Manager if any": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Manager Contact Info": {
+      "newKey": "property_manager_contact",
+      "confidence": "token_set",
+      "matchedLabel": "Property Manager Contact Info"
+    },
+    "Full Legal Names": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Additional Occupants if known": {
+      "newKey": "tenant_additional_occupants",
+      "confidence": "prefix",
+      "matchedLabel": "Additional Occupants"
+    },
+    "City_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "State_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Tenant Phone if known": {
+      "newKey": "tenant_phone",
+      "confidence": "prefix",
+      "matchedLabel": "Tenant Phone"
+    },
+    "Tenant Email if known": {
+      "newKey": "tenant_email",
+      "confidence": "prefix",
+      "matchedLabel": "Tenant Email"
+    },
+    "Apartment": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "House": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Room": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Commercial": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Type of Property": {
+      "newKey": "property_type",
+      "confidence": "token_set",
+      "matchedLabel": "Property Type"
+    },
+    "Date Tenant Moved In": {
+      "newKey": "tenant_moved_in_date",
+      "confidence": "exact",
+      "matchedLabel": "Date Tenant Moved In"
+    },
+    "Written": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Verbal": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "MonthtoMonth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Fixed Term": {
+      "newKey": "lease_term",
+      "confidence": "last_token",
+      "matchedLabel": "Lease Term"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Lease Start Date": {
+      "newKey": "lease_start_date",
+      "confidence": "exact",
+      "matchedLabel": "Lease Start Date"
+    },
+    "Lease End Date if applicable": {
+      "newKey": "lease_end_date",
+      "confidence": "prefix",
+      "matchedLabel": "Lease End Date"
+    },
+    "Monthly Rent": {
+      "newKey": "monthly_rent",
+      "confidence": "exact",
+      "matchedLabel": "Monthly Rent"
+    },
+    "Rent Due Date": {
+      "newKey": "rent_due_date",
+      "confidence": "prefix",
+      "matchedLabel": "Rent Due Date (day of month)"
+    },
+    "Security Deposit": {
+      "newKey": "security_deposit",
+      "confidence": "exact",
+      "matchedLabel": "Security Deposit"
+    },
+    "Nonpayment of Rent": {
+      "newKey": "basis_nonpayment_of_rent",
+      "confidence": "exact",
+      "matchedLabel": "Nonpayment of Rent"
+    },
+    "Breach of Lease nonmonetary violation": {
+      "newKey": "basis_breach_of_lease",
+      "confidence": "prefix",
+      "matchedLabel": "Breach of Lease"
+    },
+    "Nuisance  Illegal Activity": {
+      "newKey": "basis_nuisance_illegal",
+      "confidence": "exact",
+      "matchedLabel": "Nuisance / Illegal Activity"
+    },
+    "Expiration of Lease": {
+      "newKey": "basis_expiration_of_lease",
+      "confidence": "exact",
+      "matchedLabel": "Expiration of Lease"
+    },
+    "NoFault Termination 3060 Day Notice": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Owner MoveIn": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Substantial Remodel": {
+      "newKey": "basis_substantial_remodel",
+      "confidence": "exact",
+      "matchedLabel": "Substantial Remodel"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "3Day Notice to Pay Rent or Quit": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "3Day Notice to Perform or Quit": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "3Day Notice to Quit": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "30Day Notice to Vacate": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "60Day Notice to Vacate": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date Notice Served": {
+      "newKey": "notice_served_date",
+      "confidence": "exact",
+      "matchedLabel": "Date Notice Served"
+    },
+    "Expiration Date of Notice": {
+      "newKey": "notice_expiration_date",
+      "confidence": "token_set",
+      "matchedLabel": "Notice Expiration Date"
+    },
+    "Personal": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Substitute Service": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Posted  Mailed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Who served the notice": {
+      "newKey": "notice_served_by",
+      "confidence": "exact",
+      "matchedLabel": "Who Served the Notice"
+    },
+    "Monthly Rent_2": {
+      "newKey": "monthly_rent",
+      "confidence": "prefix",
+      "matchedLabel": "Monthly Rent"
+    },
+    "Amount Owed": {
+      "newKey": "rent_amount_owed",
+      "confidence": "exact",
+      "matchedLabel": "Amount Owed"
+    },
+    "Period of Nonpayment": {
+      "newKey": "rent_period_of_nonpayment",
+      "confidence": "exact",
+      "matchedLabel": "Period of Nonpayment"
+    },
+    "Partial Payments Received": {
+      "newKey": "rent_partial_payments_received",
+      "confidence": "exact",
+      "matchedLabel": "Partial Payments Received?"
+    },
+    "If yes amount": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Dates": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Ledger available": {
+      "newKey": "rent_ledger_available",
+      "confidence": "exact",
+      "matchedLabel": "Ledger Available?"
+    },
+    "Did tenant comply with notice": {
+      "newKey": "tenant_complied_with_notice",
+      "confidence": "exact",
+      "matchedLabel": "Did tenant comply with notice?"
+    },
+    "Did tenant respond to notice": {
+      "newKey": "tenant_responded_to_notice",
+      "confidence": "exact",
+      "matchedLabel": "Did tenant respond to notice?"
+    },
+    "Is tenant still in possession": {
+      "newKey": "tenant_still_in_possession",
+      "confidence": "token_set",
+      "matchedLabel": "Tenant still in possession?"
+    },
+    "Has tenant abandoned property": {
+      "newKey": "tenant_abandoned_property",
+      "confidence": "token_set",
+      "matchedLabel": "Tenant abandoned property?"
+    },
+    "Any property damage": {
+      "newKey": "property_damage",
+      "confidence": "exact",
+      "matchedLabel": "Any property damage?"
+    },
+    "Describe": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Is property subject to rent control": {
+      "newKey": "subject_to_rent_control",
+      "confidence": "token_set",
+      "matchedLabel": "Property subject to rent control?"
+    },
+    "Is property subject to AB 1482 Tenant Protection Act": {
+      "newKey": "subject_to_ab1482",
+      "confidence": "token_set",
+      "matchedLabel": "Property subject to AB 1482?"
+    },
+    "SoCal United Professional Services 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "SoCal United Professional Services 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Have you previously warned tenant": {
+      "newKey": "previously_warned_tenant",
+      "confidence": "token_set",
+      "matchedLabel": "Previously warned tenant?"
+    },
+    "Any written notices or emails": {
+      "newKey": "written_notices_or_emails",
+      "confidence": "exact",
+      "matchedLabel": "Any written notices or emails?"
+    },
+    "Explain 1_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Explain 2_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Are there unknown occupants": {
+      "newKey": "unknown_occupants",
+      "confidence": "exact",
+      "matchedLabel": "Are there unknown occupants?"
+    },
+    "Children in property": {
+      "newKey": "children_in_property",
+      "confidence": "exact",
+      "matchedLabel": "Children in property?"
+    },
+    "Yes_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Any bankruptcy filed by tenant": {
+      "newKey": "tenant_bankruptcy",
+      "confidence": "exact",
+      "matchedLabel": "Any bankruptcy filed by tenant?"
+    },
+    "No_15": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Any code enforcement complaints": {
+      "newKey": "code_enforcement_complaints",
+      "confidence": "exact",
+      "matchedLabel": "Any code enforcement complaints?"
+    },
+    "Possession of Property": {
+      "newKey": "relief_possession",
+      "confidence": "exact",
+      "matchedLabel": "Possession of Property"
+    },
+    "Back Rent": {
+      "newKey": "relief_back_rent",
+      "confidence": "exact",
+      "matchedLabel": "Back Rent"
+    },
+    "Holdover Damages": {
+      "newKey": "relief_holdover_damages",
+      "confidence": "exact",
+      "matchedLabel": "Holdover Damages"
+    },
+    "Court Costs": {
+      "newKey": "relief_court_costs",
+      "confidence": "exact",
+      "matchedLabel": "Court Costs"
+    },
+    "Attorney Fees": {
+      "newKey": "relief_attorney_fees",
+      "confidence": "exact",
+      "matchedLabel": "Attorney Fees"
+    },
+    "Other_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Provide a timeline of events keep it simple and factual 1": {
+      "newKey": "client_statement",
+      "confidence": "token_set",
+      "matchedLabel": "Timeline of Events"
+    },
+    "Provide a timeline of events keep it simple and factual 2": {
+      "newKey": "client_statement",
+      "confidence": "token_set",
+      "matchedLabel": "Timeline of Events"
+    },
+    "Provide a timeline of events keep it simple and factual 3": {
+      "newKey": "client_statement",
+      "confidence": "token_set",
+      "matchedLabel": "Timeline of Events"
+    },
+    "SoCal United Professional Services": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Lease Agreement": {
+      "newKey": "doc_lease_agreement",
+      "confidence": "exact",
+      "matchedLabel": "Lease Agreement"
+    },
+    "Notices Served": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Proof of Service": {
+      "newKey": "doc_proof_of_service",
+      "confidence": "exact",
+      "matchedLabel": "Proof of Service"
+    },
+    "Rent Ledger": {
+      "newKey": "doc_rent_ledger",
+      "confidence": "exact",
+      "matchedLabel": "Rent Ledger"
+    },
+    "Payment Records": {
+      "newKey": "doc_payment_records",
+      "confidence": "exact",
+      "matchedLabel": "Payment Records"
+    },
+    "Communications with Tenant": {
+      "newKey": "doc_communications",
+      "confidence": "exact",
+      "matchedLabel": "Communications with Tenant"
+    },
+    "Photos if applicable": {
+      "newKey": "doc_photos",
+      "confidence": "prefix",
+      "matchedLabel": "Photos"
+    },
+    "Other_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "17 INTERNAL NOTES OFFICE USE ONLY 1": {
+      "newKey": "internal_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Office Use Only"
+    },
+    "17 INTERNAL NOTES OFFICE USE ONLY 2": {
+      "newKey": "internal_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Office Use Only"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Todays Date",
+    "Type",
+    "Individual",
+    "LLC",
+    "Corporation",
+    "Trust",
+    "Address",
+    "City",
+    "State",
+    "Zip",
+    "Phone",
+    "Email",
+    "Property Manager if any",
+    "Full Legal Names",
+    "City_2",
+    "State_2",
+    "Zip_2",
+    "Apartment",
+    "House",
+    "Room",
+    "Commercial",
+    "Other_2",
+    "Written",
+    "Verbal",
+    "MonthtoMonth",
+    "undefined",
+    "Other_3",
+    "NoFault Termination 3060 Day Notice",
+    "Owner MoveIn",
+    "undefined_2",
+    "Other_4",
+    "3Day Notice to Pay Rent or Quit",
+    "3Day Notice to Perform or Quit",
+    "3Day Notice to Quit",
+    "30Day Notice to Vacate",
+    "60Day Notice to Vacate",
+    "undefined_3",
+    "Other_5",
+    "Personal",
+    "Substitute Service",
+    "Posted  Mailed",
+    "undefined_4",
+    "Other_6",
+    "If yes amount",
+    "Dates",
+    "Describe",
+    "SoCal United Professional Services 1",
+    "SoCal United Professional Services 2",
+    "Explain 1_2",
+    "Explain 2_2",
+    "Yes_14",
+    "No_15",
+    "Other_7",
+    "undefined_5",
+    "SoCal United Professional Services",
+    "Notices Served",
+    "Other_8",
+    "undefined_6",
+    "Text1"
+  ],
+  "duplicates": [
+    {
+      "key": "monthly_rent",
+      "oldNames": [
+        "Monthly Rent",
+        "Monthly Rent_2"
+      ]
+    },
+    {
+      "key": "client_statement",
+      "oldNames": [
+        "Provide a timeline of events keep it simple and factual 1",
+        "Provide a timeline of events keep it simple and factual 2",
+        "Provide a timeline of events keep it simple and factual 3"
+      ]
+    },
+    {
+      "key": "internal_notes",
+      "oldNames": [
+        "17 INTERNAL NOTES OFFICE USE ONLY 1",
+        "17 INTERNAL NOTES OFFICE USE ONLY 2"
+      ]
+    }
+  ]
+}

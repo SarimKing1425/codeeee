@@ -1,0 +1,662 @@
+{
+  "form": "name-change-petition",
+  "summary": {
+    "total": 121,
+    "exact": 5,
+    "prefix": 8,
+    "token_set": 32,
+    "last_token": 7,
+    "unmapped": 69,
+    "duplicate_assignments": 5,
+    "match_rate": "43.0%"
+  },
+  "mapping": {
+    "Todays Date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Adult 18 or older": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Minor under 18": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Family multiple persons in one petition": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Personal preference": {
+      "newKey": "reason_personal_preference",
+      "confidence": "token_set",
+      "matchedLabel": "Reason: Personal Preference"
+    },
+    "Divorce or separation": {
+      "newKey": "reason_divorce_separation",
+      "confidence": "token_set",
+      "matchedLabel": "Reason: Divorce or Separation"
+    },
+    "Gender identity  gender marker change": {
+      "newKey": "reason_gender_identity",
+      "confidence": "token_set",
+      "matchedLabel": "Reason: Gender Identity / Gender Marker Change"
+    },
+    "Adoption  parentage issue": {
+      "newKey": "reason_adoption_parentage",
+      "confidence": "token_set",
+      "matchedLabel": "Reason: Adoption / Parentage Issue"
+    },
+    "Immigration or citizenship issue": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Correction of birth certificate": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other": {
+      "newKey": "reason_other",
+      "confidence": "prefix",
+      "matchedLabel": "Other Reason"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Courthouse": {
+      "newKey": "courthouse",
+      "confidence": "exact",
+      "matchedLabel": "Courthouse"
+    },
+    "Case Number if known": {
+      "newKey": "case_number",
+      "confidence": "prefix",
+      "matchedLabel": "Case Number"
+    },
+    "Full Current Legal Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Requested New Name": {
+      "newKey": "petitioner_requested_new_name",
+      "confidence": "token_set",
+      "matchedLabel": "Petitioner Requested New Name"
+    },
+    "Date of Birth": {
+      "newKey": "petitioner_dob",
+      "confidence": "token_set",
+      "matchedLabel": "Petitioner Date of Birth"
+    },
+    "Age": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Gender as listed on current ID": {
+      "newKey": "petitioner_gender_on_current_id",
+      "confidence": "token_set",
+      "matchedLabel": "Petitioner Gender (on current ID)"
+    },
+    "Place of Birth City State Country": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Social Security Number last 4 digits": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Drivers License or ID": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Mailing Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City": {
+      "newKey": "city_of_publication",
+      "confidence": "prefix",
+      "matchedLabel": "City of Publication"
+    },
+    "State": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "US Citizen": {
+      "newKey": "petitioner_us_citizen",
+      "confidence": "last_token",
+      "matchedLabel": "U.S. Citizen?"
+    },
+    "Yes": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Age_2": {
+      "newKey": "minors_2_age",
+      "confidence": "token_set",
+      "matchedLabel": "Minors Row 2 age"
+    },
+    "Birth_2": {
+      "newKey": "minors_2_place_of_birth",
+      "confidence": "token_set",
+      "matchedLabel": "Minors Row 2 place of birth"
+    },
+    "Name_2": {
+      "newKey": "minors_2_current_name",
+      "confidence": "token_set",
+      "matchedLabel": "Minors Row 2 current name"
+    },
+    "Gender": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": "petitioner_ssn_last4",
+      "confidence": "last_token",
+      "matchedLabel": "Petitioner SSN (last 4)"
+    },
+    "undefined_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Child lives with": {
+      "newKey": "child_lives_with",
+      "confidence": "exact",
+      "matchedLabel": "Child Lives With"
+    },
+    "Mother": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Father": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Both": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Guardian": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Childs Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City_2": {
+      "newKey": "parent2_city",
+      "confidence": "token_set",
+      "matchedLabel": "Parent/Guardian 2 City"
+    },
+    "State_2": {
+      "newKey": "parent2_state",
+      "confidence": "token_set",
+      "matchedLabel": "Parent/Guardian 2 State"
+    },
+    "Zip_2": {
+      "newKey": "parent2_zip",
+      "confidence": "token_set",
+      "matchedLabel": "Parent/Guardian 2 Zip"
+    },
+    "Full Legal Name": {
+      "newKey": "parent1_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Parent/Guardian 1 Full Legal Name"
+    },
+    "Relationship to Child": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Mother_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Father_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Guardian_2": {
+      "newKey": "parent2_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Parent/Guardian 2 Full Legal Name"
+    },
+    "Date of Birth_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "State_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone_2": {
+      "newKey": "parent2_phone",
+      "confidence": "token_set",
+      "matchedLabel": "Parent/Guardian 2 Phone"
+    },
+    "Email_2": {
+      "newKey": "parent2_email",
+      "confidence": "token_set",
+      "matchedLabel": "Parent/Guardian 2 Email"
+    },
+    "Full Legal Name_2": {
+      "newKey": "parent2_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Parent/Guardian 2 Full Legal Name"
+    },
+    "Relationship to Child_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Mother_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Father_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Guardian_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date of Birth_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City_4": {
+      "newKey": "petitioner_ssn_last4",
+      "confidence": "last_token",
+      "matchedLabel": "Petitioner SSN (last 4)"
+    },
+    "State_4": {
+      "newKey": "petitioner_ssn_last4",
+      "confidence": "last_token",
+      "matchedLabel": "Petitioner SSN (last 4)"
+    },
+    "Zip_4": {
+      "newKey": "petitioner_ssn_last4",
+      "confidence": "last_token",
+      "matchedLabel": "Petitioner SSN (last 4)"
+    },
+    "Phone_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Has the other parent been served or notified of this petition": {
+      "newKey": "other_parent_served_or_notified",
+      "confidence": "token_set",
+      "matchedLabel": "Other parent served or notified?"
+    },
+    "Yes_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If not do you have their last known address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Present name as it appears on birth certificate": {
+      "newKey": "present_name_on_birth_certificate",
+      "confidence": "token_set",
+      "matchedLabel": "Present Name on Birth Certificate"
+    },
+    "Full new name requested": {
+      "newKey": "full_new_name_requested",
+      "confidence": "exact",
+      "matchedLabel": "Full New Name Requested"
+    },
+    "Have you previously changed your name": {
+      "newKey": "previously_changed_name",
+      "confidence": "token_set",
+      "matchedLabel": "Previously changed name?"
+    },
+    "Yes_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes provide details": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Have you ever been convicted of a felony": {
+      "newKey": "ever_convicted_of_felony",
+      "confidence": "token_set",
+      "matchedLabel": "Ever convicted of a felony?"
+    },
+    "Yes_4": {
+      "newKey": "petitioner_ssn_last4",
+      "confidence": "last_token",
+      "matchedLabel": "Petitioner SSN (last 4)"
+    },
+    "If yes list county state and date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Are you currently in state prison county jail or on probation or parole": {
+      "newKey": "currently_incarcerated_or_on_parole",
+      "confidence": "token_set",
+      "matchedLabel": "Currently in prison, jail, probation, or parole?"
+    },
+    "Yes_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes where": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "I am seeking to change my gender marker": {
+      "newKey": "seeking_gender_marker_change",
+      "confidence": "token_set",
+      "matchedLabel": "Seeking gender marker change?"
+    },
+    "Nonbinary": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you wish to change your name to conform to your gender identity": {
+      "newKey": "name_change_conforms_to_gender_identity",
+      "confidence": "token_set",
+      "matchedLabel": "Change name to conform to gender identity?"
+    },
+    "Yes_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you request your case be filed under seal for privacysafety": {
+      "newKey": "request_case_filed_under_seal",
+      "confidence": "token_set",
+      "matchedLabel": "Request case filed under seal?"
+    },
+    "Yes_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Preferred local newspaper for publication": {
+      "newKey": "preferred_local_newspaper",
+      "confidence": "prefix",
+      "matchedLabel": "Preferred Local Newspaper"
+    },
+    "City of publication": {
+      "newKey": "city_of_publication",
+      "confidence": "exact",
+      "matchedLabel": "City of Publication"
+    },
+    "Have you ever been convicted of a crime": {
+      "newKey": "ever_convicted_of_crime",
+      "confidence": "token_set",
+      "matchedLabel": "Ever convicted of a crime?"
+    },
+    "Yes_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Offense": {
+      "newKey": "criminal_offense",
+      "confidence": "last_token",
+      "matchedLabel": "Criminal Offense"
+    },
+    "Date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "CountyState": {
+      "newKey": "court_county",
+      "confidence": "prefix",
+      "matchedLabel": "County"
+    },
+    "Are there any pending criminal cases": {
+      "newKey": "pending_criminal_cases",
+      "confidence": "token_set",
+      "matchedLabel": "Pending criminal cases?"
+    },
+    "Yes_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes case number and court": {
+      "newKey": "case_number",
+      "confidence": "token_set",
+      "matchedLabel": "Case Number"
+    },
+    "undefined_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Have you filed a name change petition before": {
+      "newKey": "filed_name_change_before",
+      "confidence": "token_set",
+      "matchedLabel": "Filed a name change petition before?"
+    },
+    "Yes_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you owe child support restitution or other courtordered obligations": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Copy of current governmentissued ID": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Certified copy of birth certificate": {
+      "newKey": "attach_birth_certificate",
+      "confidence": "exact",
+      "matchedLabel": "Certified copy of birth certificate"
+    },
+    "Proof of residency utility bill lease etc": {
+      "newKey": "attach_proof_of_residency",
+      "confidence": "prefix",
+      "matchedLabel": "Proof of residency"
+    },
+    "Criminal record clearance if applicable": {
+      "newKey": "attach_criminal_record_clearance",
+      "confidence": "prefix",
+      "matchedLabel": "Criminal record clearance"
+    },
+    "Declaration in support of name change prepared by office": {
+      "newKey": "attach_declaration",
+      "confidence": "prefix",
+      "matchedLabel": "Declaration in support of name change"
+    },
+    "Any supporting documents gender change order adoption order etc": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "13 Consultant Notes Internal Use Only 1": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Internal Use Only"
+    },
+    "13 Consultant Notes Internal Use Only 2": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Internal Use Only"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Todays Date",
+    "Adult 18 or older",
+    "Minor under 18",
+    "Family multiple persons in one petition",
+    "Immigration or citizenship issue",
+    "Correction of birth certificate",
+    "undefined",
+    "Full Current Legal Name",
+    "Age",
+    "Place of Birth City State Country",
+    "Social Security Number last 4 digits",
+    "Drivers License or ID",
+    "Mailing Address",
+    "State",
+    "Zip",
+    "Phone",
+    "Email",
+    "Yes",
+    "No",
+    "Name",
+    "Birth",
+    "Gender",
+    "undefined_2",
+    "undefined_3",
+    "undefined_5",
+    "undefined_6",
+    "undefined_7",
+    "Mother",
+    "Father",
+    "Both",
+    "Guardian",
+    "Other_2",
+    "Childs Address",
+    "Relationship to Child",
+    "Mother_2",
+    "Father_2",
+    "Date of Birth_2",
+    "Address",
+    "City_3",
+    "State_3",
+    "Zip_3",
+    "Relationship to Child_2",
+    "Mother_3",
+    "Father_3",
+    "Guardian_3",
+    "Date of Birth_3",
+    "Address_2",
+    "Phone_3",
+    "Email_3",
+    "Yes_2",
+    "If not do you have their last known address",
+    "Yes_3",
+    "If yes provide details",
+    "If yes list county state and date",
+    "Yes_5",
+    "If yes where",
+    "Nonbinary",
+    "Yes_6",
+    "Yes_7",
+    "Yes_8",
+    "Date",
+    "Yes_9",
+    "undefined_8",
+    "Yes_11",
+    "No_3",
+    "Do you owe child support restitution or other courtordered obligations",
+    "Copy of current governmentissued ID",
+    "Any supporting documents gender change order adoption order etc",
+    "Text1"
+  ],
+  "duplicates": [
+    {
+      "key": "case_number",
+      "oldNames": [
+        "Case Number if known",
+        "If yes case number and court"
+      ]
+    },
+    {
+      "key": "city_of_publication",
+      "oldNames": [
+        "City",
+        "City of publication"
+      ]
+    },
+    {
+      "key": "petitioner_ssn_last4",
+      "oldNames": [
+        "undefined_4",
+        "City_4",
+        "State_4",
+        "Zip_4",
+        "Yes_4"
+      ]
+    },
+    {
+      "key": "parent2_full_legal_name",
+      "oldNames": [
+        "Guardian_2",
+        "Full Legal Name_2"
+      ]
+    },
+    {
+      "key": "consultant_notes",
+      "oldNames": [
+        "13 Consultant Notes Internal Use Only 1",
+        "13 Consultant Notes Internal Use Only 2"
+      ]
+    }
+  ]
+}

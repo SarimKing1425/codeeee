@@ -1,0 +1,577 @@
+[
+  {
+    "name": "Todays Date",
+    "type": "text"
+  },
+  {
+    "name": "Temporary Guardianship shortterm emergency order",
+    "type": "checkbox"
+  },
+  {
+    "name": "General  Permanent Guardianship longterm order",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both Temporary and General",
+    "type": "checkbox"
+  },
+  {
+    "name": "Guardianship of the Person custody and care of the child",
+    "type": "checkbox"
+  },
+  {
+    "name": "Guardianship of the Estate control of money or property belonging to the child",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both",
+    "type": "checkbox"
+  },
+  {
+    "name": "Name",
+    "type": "text"
+  },
+  {
+    "name": "Birth",
+    "type": "text"
+  },
+  {
+    "name": "Age",
+    "type": "text"
+  },
+  {
+    "name": "Country",
+    "type": "text"
+  },
+  {
+    "name": "Grade",
+    "type": "text"
+  },
+  {
+    "name": "undefined",
+    "type": "text"
+  },
+  {
+    "name": "undefined_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_3",
+    "type": "text"
+  },
+  {
+    "name": "undefined_4",
+    "type": "text"
+  },
+  {
+    "name": "undefined_5",
+    "type": "text"
+  },
+  {
+    "name": "undefined_6",
+    "type": "text"
+  },
+  {
+    "name": "undefined_7",
+    "type": "text"
+  },
+  {
+    "name": "undefined_8",
+    "type": "text"
+  },
+  {
+    "name": "undefined_9",
+    "type": "text"
+  },
+  {
+    "name": "undefined_10",
+    "type": "text"
+  },
+  {
+    "name": "City",
+    "type": "text"
+  },
+  {
+    "name": "State",
+    "type": "text"
+  },
+  {
+    "name": "Zip",
+    "type": "text"
+  },
+  {
+    "name": "How long has the child lived at this address",
+    "type": "text"
+  },
+  {
+    "name": "To",
+    "type": "text"
+  },
+  {
+    "name": "State_2",
+    "type": "text"
+  },
+  {
+    "name": "Names",
+    "type": "text"
+  },
+  {
+    "name": "Child",
+    "type": "text"
+  },
+  {
+    "name": "undefined_11",
+    "type": "text"
+  },
+  {
+    "name": "undefined_12",
+    "type": "text"
+  },
+  {
+    "name": "undefined_13",
+    "type": "text"
+  },
+  {
+    "name": "undefined_14",
+    "type": "text"
+  },
+  {
+    "name": "undefined_15",
+    "type": "text"
+  },
+  {
+    "name": "undefined_16",
+    "type": "text"
+  },
+  {
+    "name": "undefined_17",
+    "type": "text"
+  },
+  {
+    "name": "undefined_18",
+    "type": "text"
+  },
+  {
+    "name": "Full Name",
+    "type": "text"
+  },
+  {
+    "name": "Date of Birth",
+    "type": "text"
+  },
+  {
+    "name": "Current Address",
+    "type": "text"
+  },
+  {
+    "name": "CityStateZip",
+    "type": "text"
+  },
+  {
+    "name": "Phone",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "Living",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes",
+    "type": "checkbox"
+  },
+  {
+    "name": "If deceased date of death",
+    "type": "text"
+  },
+  {
+    "name": "Unsure",
+    "type": "radio",
+    "options": [
+      "If living does she consent to the guardianship",
+      "Yes_2",
+      "No"
+    ]
+  },
+  {
+    "name": "Full Name_2",
+    "type": "text"
+  },
+  {
+    "name": "Date of Birth_2",
+    "type": "text"
+  },
+  {
+    "name": "Current Address_2",
+    "type": "text"
+  },
+  {
+    "name": "CityStateZip_2",
+    "type": "text"
+  },
+  {
+    "name": "Phone_2",
+    "type": "text"
+  },
+  {
+    "name": "Email_2",
+    "type": "text"
+  },
+  {
+    "name": "Living_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "If deceased date of death_2",
+    "type": "text"
+  },
+  {
+    "name": "Unsure_2",
+    "type": "radio",
+    "options": [
+      "If living does he consent to the guardianship",
+      "Yes_4",
+      "No_2"
+    ]
+  },
+  {
+    "name": "Guardians Full Name Date of Birth Relationship to Minor Address Phone  Email",
+    "type": "text"
+  },
+  {
+    "name": "undefined_19",
+    "type": "text"
+  },
+  {
+    "name": "undefined_20",
+    "type": "text"
+  },
+  {
+    "name": "undefined_21",
+    "type": "text"
+  },
+  {
+    "name": "undefined_22",
+    "type": "text"
+  },
+  {
+    "name": "undefined_23",
+    "type": "text"
+  },
+  {
+    "name": "undefined_24",
+    "type": "text"
+  },
+  {
+    "name": "undefined_25",
+    "type": "text"
+  },
+  {
+    "name": "undefined_26",
+    "type": "text"
+  },
+  {
+    "name": "undefined_27",
+    "type": "text"
+  },
+  {
+    "name": "Marital Status of Proposed Guardians",
+    "type": "checkbox"
+  },
+  {
+    "name": "Single",
+    "type": "checkbox"
+  },
+  {
+    "name": "Married",
+    "type": "checkbox"
+  },
+  {
+    "name": "Domestic Partners",
+    "type": "checkbox"
+  },
+  {
+    "name": "Occupation",
+    "type": "text"
+  },
+  {
+    "name": "Length of Time Known to Child",
+    "type": "text"
+  },
+  {
+    "name": "Does the proposed guardian currently live with the child",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_5",
+    "type": "checkbox"
+  },
+  {
+    "name": "Incarceration",
+    "type": "checkbox"
+  },
+  {
+    "name": "Deportation  Immigration issue",
+    "type": "checkbox"
+  },
+  {
+    "name": "Drug or alcohol abuse",
+    "type": "checkbox"
+  },
+  {
+    "name": "Mental health or medical condition",
+    "type": "checkbox"
+  },
+  {
+    "name": "Domestic violence",
+    "type": "checkbox"
+  },
+  {
+    "name": "Homelessness  instability",
+    "type": "checkbox"
+  },
+  {
+    "name": "Death of a parent",
+    "type": "checkbox"
+  },
+  {
+    "name": "Abandonment",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_28",
+    "type": "text"
+  },
+  {
+    "name": "undefined_29",
+    "type": "text"
+  },
+  {
+    "name": "When was the last contact with the childs mother",
+    "type": "text"
+  },
+  {
+    "name": "Yes_6",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_30",
+    "type": "checkbox"
+  },
+  {
+    "name": "Are either parent currently ordered by the court Family or Juvenile",
+    "type": "text"
+  },
+  {
+    "name": "Full Name Date of Birth Age Living With Relationship to Minor",
+    "type": "text"
+  },
+  {
+    "name": "undefined_31",
+    "type": "text"
+  },
+  {
+    "name": "undefined_32",
+    "type": "text"
+  },
+  {
+    "name": "undefined_33",
+    "type": "text"
+  },
+  {
+    "name": "undefined_34",
+    "type": "text"
+  },
+  {
+    "name": "undefined_35",
+    "type": "text"
+  },
+  {
+    "name": "undefined_36",
+    "type": "text"
+  },
+  {
+    "name": "undefined_37",
+    "type": "text"
+  },
+  {
+    "name": "undefined_38",
+    "type": "text"
+  },
+  {
+    "name": "undefined_39",
+    "type": "text"
+  },
+  {
+    "name": "Supervised Only",
+    "type": "radio",
+    "options": [
+      "Would you agree to allow the parents visitation",
+      "Yes_7",
+      "No_3"
+    ]
+  },
+  {
+    "name": "If you are requesting guardianship of the estate please complete",
+    "type": "text"
+  },
+  {
+    "name": "Sources of funds or property",
+    "type": "checkbox"
+  },
+  {
+    "name": "Life Insurance",
+    "type": "checkbox"
+  },
+  {
+    "name": "Inheritance",
+    "type": "checkbox"
+  },
+  {
+    "name": "Settlement",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_2",
+    "type": "text"
+  },
+  {
+    "name": "Do you intend to manage invest or use these funds for the minor",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_8",
+    "type": "checkbox"
+  },
+  {
+    "name": "Will you file annual accounting reports with the court",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_9",
+    "type": "checkbox"
+  },
+  {
+    "name": "When do you need the temporary guardianship to start",
+    "type": "text"
+  },
+  {
+    "name": "Are there safety health or school issues requiring immediate care",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_10",
+    "type": "checkbox"
+  },
+  {
+    "name": "Name_2",
+    "type": "text"
+  },
+  {
+    "name": "Relationship",
+    "type": "text"
+  },
+  {
+    "name": "Address",
+    "type": "text"
+  },
+  {
+    "name": "Phone Number",
+    "type": "text"
+  },
+  {
+    "name": "undefined_40",
+    "type": "text"
+  },
+  {
+    "name": "undefined_41",
+    "type": "text"
+  },
+  {
+    "name": "undefined_42",
+    "type": "text"
+  },
+  {
+    "name": "undefined_43",
+    "type": "text"
+  },
+  {
+    "name": "undefined_44",
+    "type": "text"
+  },
+  {
+    "name": "undefined_45",
+    "type": "text"
+  },
+  {
+    "name": "undefined_46",
+    "type": "text"
+  },
+  {
+    "name": "undefined_47",
+    "type": "text"
+  },
+  {
+    "name": "Have you ever been convicted of a felony or misdemeanor",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_11",
+    "type": "checkbox"
+  },
+  {
+    "name": "Have you ever been investigated for child abuse or neglect",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_12",
+    "type": "checkbox"
+  },
+  {
+    "name": "Have you ever filed for bankruptcy",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_13",
+    "type": "checkbox"
+  },
+  {
+    "name": "SoCal United Professional Services 1",
+    "type": "text"
+  },
+  {
+    "name": "SoCal United Professional Services 2",
+    "type": "text"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  },
+  {
+    "name": "Text2",
+    "type": "text"
+  },
+  {
+    "name": "Text3",
+    "type": "text"
+  },
+  {
+    "name": "Text4",
+    "type": "text"
+  },
+  {
+    "name": "Text5",
+    "type": "text"
+  }
+]

@@ -1,0 +1,663 @@
+{
+  "form": "qdro-and-joinder",
+  "summary": {
+    "total": 126,
+    "exact": 18,
+    "prefix": 7,
+    "token_set": 20,
+    "last_token": 2,
+    "unmapped": 79,
+    "duplicate_assignments": 2,
+    "match_rate": "37.3%"
+  },
+  "mapping": {
+    "1 Client Name": {
+      "newKey": "client_name",
+      "confidence": "token_set",
+      "matchedLabel": "Client Name"
+    },
+    "Alternate Payee or": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2 Client Phone Number": {
+      "newKey": "client_phone",
+      "confidence": "token_set",
+      "matchedLabel": "Client Phone"
+    },
+    "3 Client Email": {
+      "newKey": "client_email",
+      "confidence": "token_set",
+      "matchedLabel": "Client Email"
+    },
+    "5 County Where Divorce was Finalized": {
+      "newKey": "divorce_county",
+      "confidence": "token_set",
+      "matchedLabel": "County Where Divorce Finalized"
+    },
+    "6 Case Number": {
+      "newKey": "case_number",
+      "confidence": "token_set",
+      "matchedLabel": "Case Number"
+    },
+    "7 Date of Marriage DOM": {
+      "newKey": "marriage_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date of Marriage (DOM)"
+    },
+    "8 Date of Separation DOS": {
+      "newKey": "separation_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date of Separation (DOS)"
+    },
+    "9 Date Judgment of Dissolution Was Entered": {
+      "newKey": "judgment_entered_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date Judgment of Dissolution Entered"
+    },
+    "10Is the Judgment FINAL YesNo if no attach current status": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes or": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1 Full Legal Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2 Date of Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "3 Social Security Number last 4 ok for intake": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "4 Phone Number": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "5 Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "6 Current Address include city  state": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "SoCal United Professional Services": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Alternate Payee other spouse entitled to benefits": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1 Full Legal Name_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "3 Social Security Number last 4 is okay for intake": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "4 Phone Number_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "6 Current Address include city  state_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "401k": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "403b": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "457 Deferred Compensation Plan": {
+      "newKey": "plan_type_457_deferred_comp",
+      "confidence": "prefix",
+      "matchedLabel": "457 Deferred Compensation"
+    },
+    "Traditional Pension defined benefit": {
+      "newKey": "plan_type_traditional_pension",
+      "confidence": "exact",
+      "matchedLabel": "Traditional Pension (defined benefit)"
+    },
+    "Cash Balance Plan": {
+      "newKey": "plan_type_cash_balance",
+      "confidence": "exact",
+      "matchedLabel": "Cash Balance Plan"
+    },
+    "IRA  SEP  SIMPLE": {
+      "newKey": "plan_type_ira_sep_simple",
+      "confidence": "exact",
+      "matchedLabel": "IRA / SEP / SIMPLE"
+    },
+    "Military Retirement": {
+      "newKey": "plan_type_military_retirement",
+      "confidence": "exact",
+      "matchedLabel": "Military Retirement"
+    },
+    "Federal CSRS  FERS": {
+      "newKey": "plan_type_federal_csrs_fers",
+      "confidence": "exact",
+      "matchedLabel": "Federal CSRS / FERS"
+    },
+    "CalPERS": {
+      "newKey": "plan_type_calpers",
+      "confidence": "exact",
+      "matchedLabel": "CalPERS"
+    },
+    "CalSTRS": {
+      "newKey": "plan_type_calstrs",
+      "confidence": "exact",
+      "matchedLabel": "CalSTRS"
+    },
+    "Other": {
+      "newKey": "plan_type_other",
+      "confidence": "prefix",
+      "matchedLabel": "Other Plan Type"
+    },
+    "Unknown attach ALL retirement statements available": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "B Plan Administrator Details if known": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "3 Plan Administrator Phone": {
+      "newKey": "plan_administrator_phone",
+      "confidence": "token_set",
+      "matchedLabel": "Plan Administrator Phone"
+    },
+    "4 Plan Administrator Email": {
+      "newKey": "plan_administrator_email",
+      "confidence": "token_set",
+      "matchedLabel": "Plan Administrator Email"
+    },
+    "5 Plan or Summary Plan Description Attached": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1 Employer during benefit accrual": {
+      "newKey": "employer_during_benefit_accrual",
+      "confidence": "token_set",
+      "matchedLabel": "Employer During Benefit Accrual"
+    },
+    "3 HR or Benefits Department contact number": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Most recent retirement account statement": {
+      "newKey": "doc_most_recent_statement",
+      "confidence": "token_set",
+      "matchedLabel": "Most Recent Retirement Statement"
+    },
+    "Statements closest to Date of Separation": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Statement closest to Date of Marriage": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Summary Plan Description SPD": {
+      "newKey": "doc_spd",
+      "confidence": "exact",
+      "matchedLabel": "Summary Plan Description (SPD)"
+    },
+    "Any letters received from plan administrator": {
+      "newKey": "doc_letters_from_admin",
+      "confidence": "token_set",
+      "matchedLabel": "Letters from Plan Administrator"
+    },
+    "Judgment  MSA identifying division terms": {
+      "newKey": "doc_judgment_msa_division_terms",
+      "confidence": "exact",
+      "matchedLabel": "Judgment / MSA Identifying Division Terms"
+    },
+    "o": {
+      "newKey": "plan_type_other",
+      "confidence": "prefix",
+      "matchedLabel": "Other Plan Type"
+    },
+    "5050 division of community portion": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Fixed dollar amount": {
+      "newKey": "division_method_fixed_dollar",
+      "confidence": "exact",
+      "matchedLabel": "Fixed Dollar Amount"
+    },
+    "Percentage different than 5050": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Survivor benefits addressed": {
+      "newKey": "division_method_survivor_benefits",
+      "confidence": "exact",
+      "matchedLabel": "Survivor Benefits Addressed"
+    },
+    "Separate property carveouts": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Standard Time Rule formula marital fraction": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "o_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "o_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Specific percentage": {
+      "newKey": "silent_division_specific_percentage",
+      "confidence": "exact",
+      "matchedLabel": "Specific Percentage"
+    },
+    "Specific dollar amount": {
+      "newKey": "silent_division_specific_dollar",
+      "confidence": "exact",
+      "matchedLabel": "Specific Dollar Amount"
+    },
+    "o_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes provide clients premarital balance statement": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Unknown": {
+      "newKey": "plan_type_unknown",
+      "confidence": "last_token",
+      "matchedLabel": "Plan Type Unknown"
+    },
+    "o_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Outstanding loan balance": {
+      "newKey": "outstanding_loan_balance",
+      "confidence": "exact",
+      "matchedLabel": "Outstanding Loan Balance"
+    },
+    "o_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Provide details  dates": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "o_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes  Identify transferee plan": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes Strongly recommended": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Not applicable 401kIRA type": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "o_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes 100": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes 50": {
+      "newKey": "division_method_percentage",
+      "confidence": "last_token",
+      "matchedLabel": "Percentage Different Than 50/50"
+    },
+    "o_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other percentage": {
+      "newKey": "post_retirement_survivor_benefits_other",
+      "confidence": "token_set",
+      "matchedLabel": "Survivor Benefits Other Percentage"
+    },
+    "Separate interest division each gets own lifetime benefit": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Shared interest division alternate payee receives portion only while": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Not sure  need plan guidance": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Participant retires": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Alternate Payee reaches earliest retirement age allowed by the plan": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Agree on earliest legal distribution": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Rollover into herhis own retirement account": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Direct payment": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Unknown depends on plan rules": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes attach": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Judgment is silent": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Already joined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Unsure": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "o_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes amount": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Unknown_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "5050 split": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Participant": {
+      "newKey": "participant_full_legal_name",
+      "confidence": "prefix",
+      "matchedLabel": "Participant Full Legal Name"
+    },
+    "Alternate Payee": {
+      "newKey": "alternate_payee_full_legal_name",
+      "confidence": "prefix",
+      "matchedLabel": "Alternate Payee Full Legal Name"
+    },
+    "As ordered by Judgment": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1 Participants years of service": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2 Accrued benefit if pension": {
+      "newKey": "accrued_benefit",
+      "confidence": "token_set",
+      "matchedLabel": "Accrued Benefit"
+    },
+    "3 Vesting status": {
+      "newKey": "vesting_status",
+      "confidence": "token_set",
+      "matchedLabel": "Vesting Status"
+    },
+    "4 Date plan membership started": {
+      "newKey": "plan_membership_start_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date Plan Membership Started"
+    },
+    "Yes  provide retirement date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "No_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "o_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Judgment of Dissolution full copy": {
+      "newKey": "doc_judgment_full_copy",
+      "confidence": "exact",
+      "matchedLabel": "Judgment of Dissolution (full copy)"
+    },
+    "Marital Settlement Agreement if applicable": {
+      "newKey": "doc_msa",
+      "confidence": "prefix",
+      "matchedLabel": "Marital Settlement Agreement"
+    },
+    "Any stipulations or addendums regarding retirement": {
+      "newKey": "doc_stipulations_addendums",
+      "confidence": "token_set",
+      "matchedLabel": "Stipulations / Addendums"
+    },
+    "Most recent plan statement": {
+      "newKey": "doc_most_recent_plan_statement",
+      "confidence": "exact",
+      "matchedLabel": "Most Recent Plan Statement"
+    },
+    "Statement closest to Date of Separation": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Statement closest to Date of Marriage_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Summary Plan Description SPD_2": {
+      "newKey": "doc_spd",
+      "confidence": "prefix",
+      "matchedLabel": "Summary Plan Description (SPD)"
+    },
+    "Annual benefit statements": {
+      "newKey": "doc_annual_benefit_statements",
+      "confidence": "exact",
+      "matchedLabel": "Annual Benefit Statements"
+    },
+    "Any correspondence from the plan": {
+      "newKey": "doc_plan_correspondence",
+      "confidence": "token_set",
+      "matchedLabel": "Plan Correspondence"
+    },
+    "Pay stubs showing contributions": {
+      "newKey": "doc_paystubs_contributions",
+      "confidence": "exact",
+      "matchedLabel": "Pay Stubs Showing Contributions"
+    },
+    "Proof of loans or withdrawals": {
+      "newKey": "doc_proof_loans_withdrawals",
+      "confidence": "token_set",
+      "matchedLabel": "Proof of Loans/Withdrawals"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text2": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Alternate Payee or",
+    "undefined",
+    "10Is the Judgment FINAL YesNo if no attach current status",
+    "Yes or",
+    "1 Full Legal Name",
+    "2 Date of Birth",
+    "3 Social Security Number last 4 ok for intake",
+    "4 Phone Number",
+    "5 Email",
+    "6 Current Address include city  state",
+    "SoCal United Professional Services",
+    "Alternate Payee other spouse entitled to benefits",
+    "1 Full Legal Name_2",
+    "undefined_2",
+    "3 Social Security Number last 4 is okay for intake",
+    "4 Phone Number_2",
+    "6 Current Address include city  state_2",
+    "401k",
+    "403b",
+    "Unknown attach ALL retirement statements available",
+    "undefined_3",
+    "B Plan Administrator Details if known",
+    "5 Plan or Summary Plan Description Attached",
+    "Yes",
+    "3 HR or Benefits Department contact number",
+    "Statements closest to Date of Separation",
+    "Statement closest to Date of Marriage",
+    "5050 division of community portion",
+    "Percentage different than 5050",
+    "Separate property carveouts",
+    "Standard Time Rule formula marital fraction",
+    "o_2",
+    "o_3",
+    "o_4",
+    "Yes provide clients premarital balance statement",
+    "No_3",
+    "o_5",
+    "o_6",
+    "Provide details  dates",
+    "o_7",
+    "No_6",
+    "Yes  Identify transferee plan",
+    "Yes Strongly recommended",
+    "No_7",
+    "Not applicable 401kIRA type",
+    "o_8",
+    "Yes 100",
+    "o_9",
+    "No_9",
+    "Separate interest division each gets own lifetime benefit",
+    "Shared interest division alternate payee receives portion only while",
+    "Not sure  need plan guidance",
+    "Participant retires",
+    "Alternate Payee reaches earliest retirement age allowed by the plan",
+    "Agree on earliest legal distribution",
+    "Rollover into herhis own retirement account",
+    "Direct payment",
+    "Unknown depends on plan rules",
+    "Yes attach",
+    "No_10",
+    "Judgment is silent",
+    "Yes_7",
+    "Already joined",
+    "Unsure",
+    "o_10",
+    "undefined_4",
+    "Yes amount",
+    "No_12",
+    "Unknown_3",
+    "5050 split",
+    "As ordered by Judgment",
+    "1 Participants years of service",
+    "Yes  provide retirement date",
+    "No_13",
+    "o_11",
+    "Statement closest to Date of Separation",
+    "Statement closest to Date of Marriage_2",
+    "Text1",
+    "Text2"
+  ],
+  "duplicates": [
+    {
+      "key": "plan_type_other",
+      "oldNames": [
+        "Other",
+        "o"
+      ]
+    },
+    {
+      "key": "doc_spd",
+      "oldNames": [
+        "Summary Plan Description SPD",
+        "Summary Plan Description SPD_2"
+      ]
+    }
+  ]
+}

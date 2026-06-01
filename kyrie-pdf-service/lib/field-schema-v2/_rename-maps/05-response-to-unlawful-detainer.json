@@ -1,0 +1,691 @@
+{
+  "form": "response-to-unlawful-detainer",
+  "summary": {
+    "total": 130,
+    "exact": 29,
+    "prefix": 6,
+    "token_set": 20,
+    "last_token": 3,
+    "unmapped": 72,
+    "duplicate_assignments": 3,
+    "match_rate": "44.6%"
+  },
+  "mapping": {
+    "Todays Date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Court  County": {
+      "newKey": "court_county",
+      "confidence": "exact",
+      "matchedLabel": "Court / County"
+    },
+    "Case Number": {
+      "newKey": "case_number",
+      "confidence": "exact",
+      "matchedLabel": "Case Number"
+    },
+    "Department if known": {
+      "newKey": "department",
+      "confidence": "prefix",
+      "matchedLabel": "Department"
+    },
+    "Hearing Date if known": {
+      "newKey": "hearing_date",
+      "confidence": "prefix",
+      "matchedLabel": "Hearing Date"
+    },
+    "Judge if known": {
+      "newKey": "judge",
+      "confidence": "prefix",
+      "matchedLabel": "Judge"
+    },
+    "Method of Service": {
+      "newKey": "summons_service_method",
+      "confidence": "exact",
+      "matchedLabel": "Method of Service"
+    },
+    "Personal": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Posted  Mailed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Substitute": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date You Were Served with Summons  Complaint 1": {
+      "newKey": "summons_served_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date Served with Summons & Complaint"
+    },
+    "Date You Were Served with Summons  Complaint 2": {
+      "newKey": "summons_served_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date Served with Summons & Complaint"
+    },
+    "Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "State": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name": {
+      "newKey": "tenant_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Tenant Full Legal Name"
+    },
+    "Date of Birth": {
+      "newKey": "tenant_dob",
+      "confidence": "token_set",
+      "matchedLabel": "Tenant Date of Birth"
+    },
+    "Rental Property Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "State_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": "tenant_email",
+      "confidence": "last_token",
+      "matchedLabel": "Tenant Email"
+    },
+    "Do you have an attorney": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes Attorneys Name 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes Attorneys Name 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Type of Property": {
+      "newKey": "property_type",
+      "confidence": "token_set",
+      "matchedLabel": "Property Type"
+    },
+    "Apartment": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "House": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Room": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other": {
+      "newKey": "defense_other",
+      "confidence": "prefix",
+      "matchedLabel": "Other Defense"
+    },
+    "Date Moved In": {
+      "newKey": "tenant_moved_in_date",
+      "confidence": "exact",
+      "matchedLabel": "Date Moved In"
+    },
+    "Monthly Rent": {
+      "newKey": "monthly_rent",
+      "confidence": "exact",
+      "matchedLabel": "Monthly Rent"
+    },
+    "Due Date": {
+      "newKey": "rent_due_date",
+      "confidence": "token_set",
+      "matchedLabel": "Rent Due Date (day of month)"
+    },
+    "Landlord or Managers Name": {
+      "newKey": "landlord_name",
+      "confidence": "token_set",
+      "matchedLabel": "Landlord Name"
+    },
+    "Written": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Verbal": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "MonthtoMonth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "One Year": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Is the lease still active": {
+      "newKey": "lease_still_active",
+      "confidence": "token_set",
+      "matchedLabel": "Lease Still Active?"
+    },
+    "3Day Notice to Pay Rent or Quit": {
+      "newKey": "attach_notice_to_quit",
+      "confidence": "token_set",
+      "matchedLabel": "Notice to Quit"
+    },
+    "3Day Notice to Perform or Quit": {
+      "newKey": "attach_notice_to_quit",
+      "confidence": "token_set",
+      "matchedLabel": "Notice to Quit"
+    },
+    "30Day Notice to Vacate": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "60Day Notice to Vacate": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "90Day Notice Section 8 or foreclosure": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date notice was served": {
+      "newKey": "notice_served_date",
+      "confidence": "token_set",
+      "matchedLabel": "Date Notice Served"
+    },
+    "Personal_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Posted  Mailed_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Substitute_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Did you comply with the notice": {
+      "newKey": "tenant_complied_with_notice",
+      "confidence": "exact",
+      "matchedLabel": "Did you comply with the notice?"
+    },
+    "Explain": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "I paid the rent": {
+      "newKey": "defense_paid_rent",
+      "confidence": "exact",
+      "matchedLabel": "I paid the rent"
+    },
+    "The amount claimed is wrong": {
+      "newKey": "defense_amount_wrong",
+      "confidence": "token_set",
+      "matchedLabel": "Amount claimed is wrong"
+    },
+    "The landlord refused rent": {
+      "newKey": "defense_landlord_refused_rent",
+      "confidence": "token_set",
+      "matchedLabel": "Landlord refused rent"
+    },
+    "Property was unsafe": {
+      "newKey": "defense_property_unsafe",
+      "confidence": "exact",
+      "matchedLabel": "Property was unsafe"
+    },
+    "Landlord failed to make repairs": {
+      "newKey": "defense_failed_repairs",
+      "confidence": "exact",
+      "matchedLabel": "Landlord failed to make repairs"
+    },
+    "Eviction is retaliation": {
+      "newKey": "defense_retaliation",
+      "confidence": "exact",
+      "matchedLabel": "Eviction is retaliation"
+    },
+    "Discrimination": {
+      "newKey": "defense_discrimination",
+      "confidence": "exact",
+      "matchedLabel": "Discrimination"
+    },
+    "Notice or summons served incorrectly": {
+      "newKey": "defense_improper_service",
+      "confidence": "exact",
+      "matchedLabel": "Notice or summons served incorrectly"
+    },
+    "I never received the notice": {
+      "newKey": "defense_never_received_notice",
+      "confidence": "exact",
+      "matchedLabel": "I never received the notice"
+    },
+    "No valid legal reason": {
+      "newKey": "defense_no_valid_legal_reason",
+      "confidence": "exact",
+      "matchedLabel": "No valid legal reason"
+    },
+    "Violation of rent control": {
+      "newKey": "defense_rent_control_violation",
+      "confidence": "exact",
+      "matchedLabel": "Violation of rent control"
+    },
+    "Other_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Monthly Rent_2": {
+      "newKey": "monthly_rent",
+      "confidence": "prefix",
+      "matchedLabel": "Monthly Rent"
+    },
+    "Date of Last Payment": {
+      "newKey": "last_payment_date",
+      "confidence": "exact",
+      "matchedLabel": "Date of Last Payment"
+    },
+    "Amount Paid": {
+      "newKey": "amount_paid",
+      "confidence": "exact",
+      "matchedLabel": "Amount Paid"
+    },
+    "Rent Owed": {
+      "newKey": "rent_owed",
+      "confidence": "exact",
+      "matchedLabel": "Rent Owed"
+    },
+    "Payment Method": {
+      "newKey": "payment_method",
+      "confidence": "exact",
+      "matchedLabel": "Payment Method"
+    },
+    "Cash": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Check": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zelle": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you have proof": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Problems mold leaks pests": {
+      "newKey": "property_problems",
+      "confidence": "token_set",
+      "matchedLabel": "Property Problems (mold, leaks, pests)?"
+    },
+    "Yes_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If yes describe": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Did you notify landlord": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "How": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Written_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Were repairs made": {
+      "newKey": "repairs_made",
+      "confidence": "token_set",
+      "matchedLabel": "Repairs made?"
+    },
+    "Yes_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If no explain": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Did you file any complaints code rent etc before eviction": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you believe eviction is discriminatory": {
+      "newKey": "believes_eviction_is_discriminatory",
+      "confidence": "token_set",
+      "matchedLabel": "Believe eviction is discriminatory?"
+    },
+    "Yes_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Explain_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Did you apply for rental assistance": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date submitted": {
+      "newKey": "rental_assistance_date_submitted",
+      "confidence": "exact",
+      "matchedLabel": "Date Submitted"
+    },
+    "Pending": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Did you show proof to landlord": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Any other adults": {
+      "newKey": "other_adults",
+      "confidence": "exact",
+      "matchedLabel": "Any other adults?"
+    },
+    "Yes_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Names": {
+      "newKey": "other_adults_names",
+      "confidence": "last_token",
+      "matchedLabel": "Other Adults Names"
+    },
+    "Children": {
+      "newKey": "has_children",
+      "confidence": "exact",
+      "matchedLabel": "Children?"
+    },
+    "Yes_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Ages": {
+      "newKey": "children_ages",
+      "confidence": "last_token",
+      "matchedLabel": "Children Ages"
+    },
+    "Are they named in the case": {
+      "newKey": "occupants_named_in_case",
+      "confidence": "exact",
+      "matchedLabel": "Are they named in the case?"
+    },
+    "Yes_15": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "SoCal United Professional Services": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Have you discussed settlement": {
+      "newKey": "discussed_settlement",
+      "confidence": "token_set",
+      "matchedLabel": "Discussed settlement?"
+    },
+    "undefined_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Is landlord allowing more time or moveout plan": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you want to remain in the property": {
+      "newKey": "wants_to_remain_in_property",
+      "confidence": "token_set",
+      "matchedLabel": "Want to remain in the property?"
+    },
+    "Are you in bankruptcy": {
+      "newKey": "in_bankruptcy",
+      "confidence": "token_set",
+      "matchedLabel": "In bankruptcy?"
+    },
+    "Was property foreclosed": {
+      "newKey": "property_foreclosed",
+      "confidence": "token_set",
+      "matchedLabel": "Property foreclosed?"
+    },
+    "Other lawsuits with landlord": {
+      "newKey": "other_lawsuits_with_landlord",
+      "confidence": "exact",
+      "matchedLabel": "Other lawsuits with landlord?"
+    },
+    "Copy of Lease": {
+      "newKey": "attach_lease",
+      "confidence": "exact",
+      "matchedLabel": "Copy of Lease"
+    },
+    "Notice to Quit": {
+      "newKey": "attach_notice_to_quit",
+      "confidence": "exact",
+      "matchedLabel": "Notice to Quit"
+    },
+    "Rent Receipts": {
+      "newKey": "attach_rent_receipts",
+      "confidence": "exact",
+      "matchedLabel": "Rent Receipts"
+    },
+    "Photos of Property": {
+      "newKey": "attach_photos",
+      "confidence": "prefix",
+      "matchedLabel": "Photos"
+    },
+    "Communications": {
+      "newKey": "attach_communications",
+      "confidence": "exact",
+      "matchedLabel": "Communications"
+    },
+    "Proof of Rent Relief": {
+      "newKey": "attach_rent_relief_proof",
+      "confidence": "exact",
+      "matchedLabel": "Proof of Rent Relief"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text2": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Todays Date",
+    "Personal",
+    "Posted  Mailed",
+    "Substitute",
+    "Name",
+    "Address",
+    "City",
+    "State",
+    "Zip",
+    "Phone",
+    "Rental Property Address",
+    "City_2",
+    "State_2",
+    "Zip_2",
+    "Phone_2",
+    "Do you have an attorney",
+    "Yes",
+    "If yes Attorneys Name 1",
+    "If yes Attorneys Name 2",
+    "Apartment",
+    "House",
+    "Room",
+    "Written",
+    "Verbal",
+    "MonthtoMonth",
+    "One Year",
+    "Other_2",
+    "undefined",
+    "30Day Notice to Vacate",
+    "60Day Notice to Vacate",
+    "90Day Notice Section 8 or foreclosure",
+    "Other_3",
+    "undefined_2",
+    "Personal_2",
+    "Posted  Mailed_2",
+    "Substitute_2",
+    "Other_4",
+    "undefined_3",
+    "Explain",
+    "Other_5",
+    "undefined_4",
+    "Cash",
+    "Check",
+    "Zelle",
+    "Other_6",
+    "Do you have proof",
+    "Yes_4",
+    "Yes_5",
+    "If yes describe",
+    "Did you notify landlord",
+    "Yes_6",
+    "How",
+    "Written_2",
+    "Yes_7",
+    "If no explain",
+    "Did you file any complaints code rent etc before eviction",
+    "Yes_8",
+    "Yes_9",
+    "Explain_2",
+    "Did you apply for rental assistance",
+    "Yes_10",
+    "Pending",
+    "Did you show proof to landlord",
+    "Yes_12",
+    "Yes_13",
+    "Yes_14",
+    "Yes_15",
+    "SoCal United Professional Services",
+    "undefined_5",
+    "Is landlord allowing more time or moveout plan",
+    "Text1",
+    "Text2"
+  ],
+  "duplicates": [
+    {
+      "key": "summons_served_date",
+      "oldNames": [
+        "Date You Were Served with Summons  Complaint 1",
+        "Date You Were Served with Summons  Complaint 2"
+      ]
+    },
+    {
+      "key": "monthly_rent",
+      "oldNames": [
+        "Monthly Rent",
+        "Monthly Rent_2"
+      ]
+    },
+    {
+      "key": "attach_notice_to_quit",
+      "oldNames": [
+        "3Day Notice to Pay Rent or Quit",
+        "3Day Notice to Perform or Quit",
+        "Notice to Quit"
+      ]
+    }
+  ]
+}

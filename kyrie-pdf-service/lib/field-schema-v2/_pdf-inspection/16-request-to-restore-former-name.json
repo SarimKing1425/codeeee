@@ -1,0 +1,119 @@
+[
+  {
+    "name": "Todays Date",
+    "type": "text"
+  },
+  {
+    "name": "Court  County where divorce was finalized",
+    "type": "text"
+  },
+  {
+    "name": "Case Number",
+    "type": "text"
+  },
+  {
+    "name": "Date Judgment of Dissolution Entered FL180",
+    "type": "text"
+  },
+  {
+    "name": "Was the divorce finalized in California",
+    "type": "radio",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "name": "Date of Birth",
+    "type": "text"
+  },
+  {
+    "name": "City",
+    "type": "text"
+  },
+  {
+    "name": "State",
+    "type": "text"
+  },
+  {
+    "name": "Zip",
+    "type": "text"
+  },
+  {
+    "name": "Phone",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "Maiden Name",
+    "type": "checkbox"
+  },
+  {
+    "name": "Prior Married Name",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other Former Legal Name",
+    "type": "checkbox"
+  },
+  {
+    "name": "fill_1",
+    "type": "text"
+  },
+  {
+    "name": "fill_2",
+    "type": "text"
+  },
+  {
+    "name": "fill_3",
+    "type": "text"
+  },
+  {
+    "name": "Does the Judgment FL180 already include a request to restore name",
+    "type": "radio",
+    "options": [
+      "Yes_2",
+      "No_2"
+    ]
+  },
+  {
+    "name": "If yes was it granted in the Judgment",
+    "type": "radio",
+    "options": [
+      "Yes_3",
+      "No_3",
+      "Not Sure"
+    ]
+  },
+  {
+    "name": "fill_4",
+    "type": "text"
+  },
+  {
+    "name": "fill_5",
+    "type": "text"
+  },
+  {
+    "name": "6 SPOUSE INFORMATION FOR RECORD ONLY",
+    "type": "text"
+  },
+  {
+    "name": "Yes_4",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_5",
+    "type": "checkbox"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  },
+  {
+    "name": "Text2",
+    "type": "text"
+  }
+]

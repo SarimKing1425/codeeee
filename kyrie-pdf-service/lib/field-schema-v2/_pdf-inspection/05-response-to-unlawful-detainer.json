@@ -1,0 +1,559 @@
+[
+  {
+    "name": "Todays Date",
+    "type": "text"
+  },
+  {
+    "name": "Court  County",
+    "type": "text"
+  },
+  {
+    "name": "Case Number",
+    "type": "text"
+  },
+  {
+    "name": "Department if known",
+    "type": "text"
+  },
+  {
+    "name": "Hearing Date if known",
+    "type": "text"
+  },
+  {
+    "name": "Judge if known",
+    "type": "text"
+  },
+  {
+    "name": "Method of Service",
+    "type": "checkbox"
+  },
+  {
+    "name": "Personal",
+    "type": "checkbox"
+  },
+  {
+    "name": "Posted  Mailed",
+    "type": "checkbox"
+  },
+  {
+    "name": "Substitute",
+    "type": "checkbox"
+  },
+  {
+    "name": "Date You Were Served with Summons  Complaint 1",
+    "type": "text"
+  },
+  {
+    "name": "Date You Were Served with Summons  Complaint 2",
+    "type": "text"
+  },
+  {
+    "name": "Name",
+    "type": "text"
+  },
+  {
+    "name": "Address",
+    "type": "text"
+  },
+  {
+    "name": "City",
+    "type": "text"
+  },
+  {
+    "name": "State",
+    "type": "text"
+  },
+  {
+    "name": "Zip",
+    "type": "text"
+  },
+  {
+    "name": "Phone",
+    "type": "text"
+  },
+  {
+    "name": "Full Legal Name",
+    "type": "text"
+  },
+  {
+    "name": "Date of Birth",
+    "type": "text"
+  },
+  {
+    "name": "Rental Property Address",
+    "type": "text"
+  },
+  {
+    "name": "City_2",
+    "type": "text"
+  },
+  {
+    "name": "State_2",
+    "type": "text"
+  },
+  {
+    "name": "Zip_2",
+    "type": "text"
+  },
+  {
+    "name": "Phone_2",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "Do you have an attorney",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes",
+    "type": "checkbox"
+  },
+  {
+    "name": "If yes Attorneys Name 1",
+    "type": "text"
+  },
+  {
+    "name": "If yes Attorneys Name 2",
+    "type": "text"
+  },
+  {
+    "name": "Type of Property",
+    "type": "checkbox"
+  },
+  {
+    "name": "Apartment",
+    "type": "checkbox"
+  },
+  {
+    "name": "House",
+    "type": "checkbox"
+  },
+  {
+    "name": "Room",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other",
+    "type": "text"
+  },
+  {
+    "name": "Date Moved In",
+    "type": "text"
+  },
+  {
+    "name": "Monthly Rent",
+    "type": "text"
+  },
+  {
+    "name": "Due Date",
+    "type": "text"
+  },
+  {
+    "name": "Landlord or Managers Name",
+    "type": "text"
+  },
+  {
+    "name": "Written",
+    "type": "checkbox"
+  },
+  {
+    "name": "Verbal",
+    "type": "checkbox"
+  },
+  {
+    "name": "MonthtoMonth",
+    "type": "checkbox"
+  },
+  {
+    "name": "One Year",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined",
+    "type": "text"
+  },
+  {
+    "name": "Is the lease still active",
+    "type": "radio",
+    "options": [
+      "Yes_2",
+      "No"
+    ]
+  },
+  {
+    "name": "3Day Notice to Pay Rent or Quit",
+    "type": "checkbox"
+  },
+  {
+    "name": "3Day Notice to Perform or Quit",
+    "type": "checkbox"
+  },
+  {
+    "name": "30Day Notice to Vacate",
+    "type": "checkbox"
+  },
+  {
+    "name": "60Day Notice to Vacate",
+    "type": "checkbox"
+  },
+  {
+    "name": "90Day Notice Section 8 or foreclosure",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_2",
+    "type": "text"
+  },
+  {
+    "name": "Date notice was served",
+    "type": "text"
+  },
+  {
+    "name": "Personal_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Posted  Mailed_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Substitute_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_4",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_3",
+    "type": "text"
+  },
+  {
+    "name": "Did you comply with the notice",
+    "type": "radio",
+    "options": [
+      "Yes_3",
+      "No_2"
+    ]
+  },
+  {
+    "name": "Explain",
+    "type": "text"
+  },
+  {
+    "name": "I paid the rent",
+    "type": "checkbox"
+  },
+  {
+    "name": "The amount claimed is wrong",
+    "type": "checkbox"
+  },
+  {
+    "name": "The landlord refused rent",
+    "type": "checkbox"
+  },
+  {
+    "name": "Property was unsafe",
+    "type": "checkbox"
+  },
+  {
+    "name": "Landlord failed to make repairs",
+    "type": "checkbox"
+  },
+  {
+    "name": "Eviction is retaliation",
+    "type": "checkbox"
+  },
+  {
+    "name": "Discrimination",
+    "type": "checkbox"
+  },
+  {
+    "name": "Notice or summons served incorrectly",
+    "type": "checkbox"
+  },
+  {
+    "name": "I never received the notice",
+    "type": "checkbox"
+  },
+  {
+    "name": "No valid legal reason",
+    "type": "checkbox"
+  },
+  {
+    "name": "Violation of rent control",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_5",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_4",
+    "type": "text"
+  },
+  {
+    "name": "Monthly Rent_2",
+    "type": "text"
+  },
+  {
+    "name": "Date of Last Payment",
+    "type": "text"
+  },
+  {
+    "name": "Amount Paid",
+    "type": "text"
+  },
+  {
+    "name": "Rent Owed",
+    "type": "text"
+  },
+  {
+    "name": "Payment Method",
+    "type": "checkbox"
+  },
+  {
+    "name": "Cash",
+    "type": "checkbox"
+  },
+  {
+    "name": "Check",
+    "type": "checkbox"
+  },
+  {
+    "name": "Zelle",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_6",
+    "type": "text"
+  },
+  {
+    "name": "Do you have proof",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_4",
+    "type": "checkbox"
+  },
+  {
+    "name": "Problems mold leaks pests",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_5",
+    "type": "checkbox"
+  },
+  {
+    "name": "If yes describe",
+    "type": "text"
+  },
+  {
+    "name": "Did you notify landlord",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_6",
+    "type": "checkbox"
+  },
+  {
+    "name": "How",
+    "type": "checkbox"
+  },
+  {
+    "name": "Written_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Were repairs made",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_7",
+    "type": "checkbox"
+  },
+  {
+    "name": "If no explain",
+    "type": "text"
+  },
+  {
+    "name": "Did you file any complaints code rent etc before eviction",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_8",
+    "type": "checkbox"
+  },
+  {
+    "name": "Do you believe eviction is discriminatory",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_9",
+    "type": "checkbox"
+  },
+  {
+    "name": "Explain_2",
+    "type": "text"
+  },
+  {
+    "name": "Did you apply for rental assistance",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_10",
+    "type": "checkbox"
+  },
+  {
+    "name": "Date submitted",
+    "type": "text"
+  },
+  {
+    "name": "Pending",
+    "type": "radio",
+    "options": [
+      "Was it approved",
+      "Yes_11",
+      "No_3"
+    ]
+  },
+  {
+    "name": "Did you show proof to landlord",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_12",
+    "type": "checkbox"
+  },
+  {
+    "name": "Any other adults",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_13",
+    "type": "checkbox"
+  },
+  {
+    "name": "Names",
+    "type": "text"
+  },
+  {
+    "name": "Children",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_14",
+    "type": "checkbox"
+  },
+  {
+    "name": "Ages",
+    "type": "text"
+  },
+  {
+    "name": "Are they named in the case",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_15",
+    "type": "checkbox"
+  },
+  {
+    "name": "SoCal United Professional Services",
+    "type": "radio",
+    "options": [
+      "Yes_16",
+      "No_4"
+    ]
+  },
+  {
+    "name": "Have you discussed settlement",
+    "type": "text"
+  },
+  {
+    "name": "undefined_5",
+    "type": "radio",
+    "options": [
+      "Yes_17",
+      "No_5"
+    ]
+  },
+  {
+    "name": "Is landlord allowing more time or moveout plan",
+    "type": "text"
+  },
+  {
+    "name": "Do you want to remain in the property",
+    "type": "radio",
+    "options": [
+      "Yes_18",
+      "No_6"
+    ]
+  },
+  {
+    "name": "Are you in bankruptcy",
+    "type": "radio",
+    "options": [
+      "Yes_19",
+      "No_7"
+    ]
+  },
+  {
+    "name": "Was property foreclosed",
+    "type": "radio",
+    "options": [
+      "Yes_20",
+      "No_8"
+    ]
+  },
+  {
+    "name": "Other lawsuits with landlord",
+    "type": "radio",
+    "options": [
+      "Yes_21",
+      "No_9"
+    ]
+  },
+  {
+    "name": "Copy of Lease",
+    "type": "checkbox"
+  },
+  {
+    "name": "Notice to Quit",
+    "type": "checkbox"
+  },
+  {
+    "name": "Rent Receipts",
+    "type": "checkbox"
+  },
+  {
+    "name": "Photos of Property",
+    "type": "checkbox"
+  },
+  {
+    "name": "Communications",
+    "type": "checkbox"
+  },
+  {
+    "name": "Proof of Rent Relief",
+    "type": "checkbox"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  },
+  {
+    "name": "Text2",
+    "type": "text"
+  }
+]

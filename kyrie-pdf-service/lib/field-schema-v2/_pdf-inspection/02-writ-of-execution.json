@@ -1,0 +1,314 @@
+[
+  {
+    "name": "Client Name",
+    "type": "text"
+  },
+  {
+    "name": "Phone Number",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "Case Number",
+    "type": "text"
+  },
+  {
+    "name": "Court County",
+    "type": "text"
+  },
+  {
+    "name": "1 Full name of judgment creditor person owed money",
+    "type": "text"
+  },
+  {
+    "name": "2 Full name of judgment debtor person who owes money",
+    "type": "text"
+  },
+  {
+    "name": "3 Date judgment was entered",
+    "type": "text"
+  },
+  {
+    "name": "Money Judgment",
+    "type": "checkbox"
+  },
+  {
+    "name": "Small Claims",
+    "type": "checkbox"
+  },
+  {
+    "name": "Child Support",
+    "type": "checkbox"
+  },
+  {
+    "name": "Spousal Support",
+    "type": "checkbox"
+  },
+  {
+    "name": "Attorney Fee Award",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other",
+    "type": "checkbox"
+  },
+  {
+    "name": "5 Was this judgment renewed",
+    "type": "text"
+  },
+  {
+    "name": "undefined",
+    "type": "text"
+  },
+  {
+    "name": "Yes  Date of renewal",
+    "type": "checkbox"
+  },
+  {
+    "name": "No",
+    "type": "checkbox"
+  },
+  {
+    "name": "6 County where the judgment was originally entered",
+    "type": "text"
+  },
+  {
+    "name": "7 Total amount of judgment",
+    "type": "text"
+  },
+  {
+    "name": "1 Judgment Amount Original amount owed",
+    "type": "text"
+  },
+  {
+    "name": "2 Accrued interest to date",
+    "type": "text"
+  },
+  {
+    "name": "3 Costs added after judgment filing fees etc",
+    "type": "text"
+  },
+  {
+    "name": "4 Payments made by debtor since the judgment",
+    "type": "text"
+  },
+  {
+    "name": "5 Remaining balance owed",
+    "type": "text"
+  },
+  {
+    "name": "6 Daily interest amount optional if known",
+    "type": "text"
+  },
+  {
+    "name": "1 Judgment Debtors Full Name",
+    "type": "text"
+  },
+  {
+    "name": "2 Aliases or other names used",
+    "type": "text"
+  },
+  {
+    "name": "3 Debtors Address 1",
+    "type": "text"
+  },
+  {
+    "name": "3 Debtors Address 2",
+    "type": "text"
+  },
+  {
+    "name": "4 Debtors Phone Number",
+    "type": "text"
+  },
+  {
+    "name": "5 Employers Name if known",
+    "type": "text"
+  },
+  {
+    "name": "6 Employer Address",
+    "type": "text"
+  },
+  {
+    "name": "7 Debtors known banks",
+    "type": "text"
+  },
+  {
+    "name": "Real Estate",
+    "type": "checkbox"
+  },
+  {
+    "name": "Vehicles",
+    "type": "checkbox"
+  },
+  {
+    "name": "Bank Accounts",
+    "type": "checkbox"
+  },
+  {
+    "name": "Business Income",
+    "type": "checkbox"
+  },
+  {
+    "name": "Wages",
+    "type": "checkbox"
+  },
+  {
+    "name": "Personal Property",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_2",
+    "type": "text"
+  },
+  {
+    "name": "Bank Levy",
+    "type": "checkbox"
+  },
+  {
+    "name": "Wage Garnishment",
+    "type": "checkbox"
+  },
+  {
+    "name": "Real Property Levy",
+    "type": "checkbox"
+  },
+  {
+    "name": "Vehicle Levy",
+    "type": "checkbox"
+  },
+  {
+    "name": "Till Tap  Keeper business cash register",
+    "type": "checkbox"
+  },
+  {
+    "name": "Earnings Withholding Order",
+    "type": "checkbox"
+  },
+  {
+    "name": "Child SupportSpousal Support Enforcement",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_3",
+    "type": "text"
+  },
+  {
+    "name": "Does this case have more than one judgment debtor",
+    "type": "radio",
+    "options": [
+      "Yes",
+      "No_2"
+    ]
+  },
+  {
+    "name": "1 Name",
+    "type": "text"
+  },
+  {
+    "name": "2 Name",
+    "type": "text"
+  },
+  {
+    "name": "3 Name",
+    "type": "text"
+  },
+  {
+    "name": "This is usually the county where the debtors property or job is located",
+    "type": "text"
+  },
+  {
+    "name": "2 Has a prior writ been issued in this case",
+    "type": "text"
+  },
+  {
+    "name": "County",
+    "type": "text"
+  },
+  {
+    "name": "Yes  Date",
+    "type": "checkbox"
+  },
+  {
+    "name": "No_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Entire judgment",
+    "type": "checkbox"
+  },
+  {
+    "name": "Remaining balance only",
+    "type": "checkbox"
+  },
+  {
+    "name": "Specific enforcement action",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_4",
+    "type": "text"
+  },
+  {
+    "name": "1 Ongoing monthly support amount",
+    "type": "text"
+  },
+  {
+    "name": "2 Pastdue support arrears",
+    "type": "text"
+  },
+  {
+    "name": "3 Interest on arrears",
+    "type": "text"
+  },
+  {
+    "name": "4 Date of last payment",
+    "type": "text"
+  },
+  {
+    "name": "Judgment signed by court",
+    "type": "checkbox"
+  },
+  {
+    "name": "Judgment summary if available",
+    "type": "checkbox"
+  },
+  {
+    "name": "Any renewal of judgment orders",
+    "type": "checkbox"
+  },
+  {
+    "name": "Proof of interestfees calculations",
+    "type": "checkbox"
+  },
+  {
+    "name": "Any previous writs",
+    "type": "checkbox"
+  },
+  {
+    "name": "Payments or receipts from the debtor",
+    "type": "checkbox"
+  },
+  {
+    "name": "the debtors assets job or bank 1",
+    "type": "text"
+  },
+  {
+    "name": "the debtors assets job or bank 2",
+    "type": "text"
+  },
+  {
+    "name": "the debtors assets job or bank 3",
+    "type": "text"
+  }
+]

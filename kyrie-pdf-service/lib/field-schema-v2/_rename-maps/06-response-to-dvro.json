@@ -1,0 +1,743 @@
+{
+  "form": "response-to-dvro",
+  "summary": {
+    "total": 142,
+    "exact": 17,
+    "prefix": 11,
+    "token_set": 15,
+    "last_token": 7,
+    "unmapped": 92,
+    "duplicate_assignments": 2,
+    "match_rate": "35.2%"
+  },
+  "mapping": {
+    "Todays Date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Court  County": {
+      "newKey": "court_county",
+      "confidence": "exact",
+      "matchedLabel": "Court / County"
+    },
+    "Case Number if known": {
+      "newKey": "case_number",
+      "confidence": "prefix",
+      "matchedLabel": "Case Number"
+    },
+    "Department if known": {
+      "newKey": "department",
+      "confidence": "prefix",
+      "matchedLabel": "Department"
+    },
+    "Hearing Date if known": {
+      "newKey": "hearing_date",
+      "confidence": "prefix",
+      "matchedLabel": "Hearing Date"
+    },
+    "Judge if known": {
+      "newKey": "judge",
+      "confidence": "prefix",
+      "matchedLabel": "Judge"
+    },
+    "Date You Were Served with DV100 or Temporary Restraining Order DV110": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name": {
+      "newKey": "protected_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Protected Person Full Legal Name"
+    },
+    "Address if known": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Legal Name_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Date of Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other": {
+      "newKey": "case_other",
+      "confidence": "prefix",
+      "matchedLabel": "Other Case Type"
+    },
+    "Street Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City": {
+      "newKey": "restrained_city",
+      "confidence": "last_token",
+      "matchedLabel": "Restrained City"
+    },
+    "State": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip": {
+      "newKey": "restrained_zip",
+      "confidence": "last_token",
+      "matchedLabel": "Restrained Zip"
+    },
+    "Phone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": "restrained_email",
+      "confidence": "last_token",
+      "matchedLabel": "Restrained Email"
+    },
+    "Are you selfrepresented": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If no Attorney Name": {
+      "newKey": "restrained_attorney_name",
+      "confidence": "token_set",
+      "matchedLabel": "Attorney Name"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Relationship to Protected Person": {
+      "newKey": "relationship_to_protected",
+      "confidence": "exact",
+      "matchedLabel": "Relationship to Protected Person"
+    },
+    "Spouse": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Former Spouse": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Dating  Former Dating": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Cohabitant": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Relative": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City State": {
+      "newKey": "children_residence_history_1_city_state",
+      "confidence": "token_set",
+      "matchedLabel": "Children Residence History (Last 5 Years) Row 1 city state"
+    },
+    "Age": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "You": {
+      "newKey": "your_statement",
+      "confidence": "prefix",
+      "matchedLabel": "Your Statement"
+    },
+    "Protected Person": {
+      "newKey": "protected_full_legal_name",
+      "confidence": "prefix",
+      "matchedLabel": "Protected Person Full Legal Name"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name_2": {
+      "newKey": "children_2_full_name",
+      "confidence": "token_set",
+      "matchedLabel": "Children Row 2 full name"
+    },
+    "ParentGuardian": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Time": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_15": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_16": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_17": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_18": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name_3": {
+      "newKey": "children_3_full_name",
+      "confidence": "token_set",
+      "matchedLabel": "Children Row 3 full name"
+    },
+    "MonthYear": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "MonthYear_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "State_2": {
+      "newKey": "children_residence_history_2_city_state",
+      "confidence": "token_set",
+      "matchedLabel": "Children Residence History (Last 5 Years) Row 2 city state"
+    },
+    "Name_4": {
+      "newKey": "children_4_full_name",
+      "confidence": "token_set",
+      "matchedLabel": "Children Row 4 full name"
+    },
+    "Address_2": {
+      "newKey": "children_current_living_2_address",
+      "confidence": "token_set",
+      "matchedLabel": "Children Current Living Situation Row 2 address"
+    },
+    "undefined_19": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_20": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_21": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_22": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_23": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_24": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_25": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_26": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_27": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_28": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_29": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_30": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_31": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_32": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_33": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_34": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_35": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_36": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_37": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_38": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_39": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_40": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_41": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_42": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "D Prior Custody  Visitation Orders": {
+      "newKey": "prior_custody_visitation_orders",
+      "confidence": "token_set",
+      "matchedLabel": "Prior Custody / Visitation Orders?"
+    },
+    "E Other Court Cases Involving Children": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you want custody or visitation orders": {
+      "newKey": "wants_custody_visitation_orders",
+      "confidence": "token_set",
+      "matchedLabel": "Want custody or visitation orders?"
+    },
+    "Joint Legal": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Joint Physical": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Sole Legal": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Sole Physical": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Weekdays": {
+      "newKey": "visitation_weekdays",
+      "confidence": "last_token",
+      "matchedLabel": "Visitation Weekdays"
+    },
+    "Weekends": {
+      "newKey": "visitation_weekends",
+      "confidence": "last_token",
+      "matchedLabel": "Visitation Weekends"
+    },
+    "HolidaysVacations": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Exchange Location": {
+      "newKey": "exchange_location",
+      "confidence": "exact",
+      "matchedLabel": "Exchange Location"
+    },
+    "Supervised Visits": {
+      "newKey": "supervised_visits",
+      "confidence": "exact",
+      "matchedLabel": "Supervised Visits?"
+    },
+    "If yes who supervises": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "I DO NOT AGREE with the request": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "I AGREE with some parts": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "I AGREE without admission": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "5 Prior Court Cases or Orders": {
+      "newKey": "evidence_court_orders",
+      "confidence": "token_set",
+      "matchedLabel": "Court Orders"
+    },
+    "Any other cases": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Family Law": {
+      "newKey": "case_family_law",
+      "confidence": "prefix",
+      "matchedLabel": "Family Law Case"
+    },
+    "Criminal": {
+      "newKey": "case_criminal",
+      "confidence": "prefix",
+      "matchedLabel": "Criminal Case"
+    },
+    "DCSS": {
+      "newKey": "case_dcss",
+      "confidence": "prefix",
+      "matchedLabel": "DCSS Case"
+    },
+    "Other_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_43": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_44": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_45": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Any restraining orders in effect": {
+      "newKey": "any_restraining_orders_in_effect",
+      "confidence": "exact",
+      "matchedLabel": "Any restraining orders in effect?"
+    },
+    "Describe": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you own or have access to weapons": {
+      "newKey": "owns_or_access_to_weapons",
+      "confidence": "token_set",
+      "matchedLabel": "Own or have access to weapons?"
+    },
+    "Ever usedthreatened": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Explain": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Firearms surrendered": {
+      "newKey": "firearms_not_surrendered_explanation",
+      "confidence": "last_token",
+      "matchedLabel": "Why Not Surrendered"
+    },
+    "undefined_46": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Not yet surrendered explain": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Do you live together": {
+      "newKey": "live_together",
+      "confidence": "token_set",
+      "matchedLabel": "Live together?"
+    },
+    "Who lives there now": {
+      "newKey": "who_lives_there_now",
+      "confidence": "exact",
+      "matchedLabel": "Who lives there now?"
+    },
+    "Need to retrieve property": {
+      "newKey": "need_to_retrieve_property",
+      "confidence": "exact",
+      "matchedLabel": "Need to retrieve property?"
+    },
+    "List items": {
+      "newKey": "property_items_list",
+      "confidence": "token_set",
+      "matchedLabel": "Property Items List"
+    },
+    "Support requested": {
+      "newKey": "support_requested_by_protected",
+      "confidence": "exact",
+      "matchedLabel": "Support requested?"
+    },
+    "Do you agree": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Explain_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Request your own financial orders": {
+      "newKey": "request_own_financial_orders",
+      "confidence": "exact",
+      "matchedLabel": "Request your own financial orders?"
+    },
+    "Details": {
+      "newKey": "own_financial_orders_details",
+      "confidence": "last_token",
+      "matchedLabel": "Financial Orders Details"
+    },
+    "Request mediation": {
+      "newKey": "request_mediation",
+      "confidence": "exact",
+      "matchedLabel": "Request mediation?"
+    },
+    "Agree to FCS": {
+      "newKey": "agree_to_fcs",
+      "confidence": "exact",
+      "matchedLabel": "Agree to FCS?"
+    },
+    "Messages": {
+      "newKey": "evidence_messages",
+      "confidence": "exact",
+      "matchedLabel": "Messages"
+    },
+    "Photos": {
+      "newKey": "evidence_photos",
+      "confidence": "exact",
+      "matchedLabel": "Photos"
+    },
+    "Witnesses": {
+      "newKey": "evidence_witnesses",
+      "confidence": "exact",
+      "matchedLabel": "Witnesses"
+    },
+    "Police Reports": {
+      "newKey": "evidence_police_reports",
+      "confidence": "exact",
+      "matchedLabel": "Police Reports"
+    },
+    "Medical Records": {
+      "newKey": "evidence_medical_records",
+      "confidence": "exact",
+      "matchedLabel": "Medical Records"
+    },
+    "Court": {
+      "newKey": "court_county",
+      "confidence": "prefix",
+      "matchedLabel": "Court / County"
+    },
+    "I understand service is required before hearing": {
+      "newKey": "understands_service_required",
+      "confidence": "exact",
+      "matchedLabel": "I understand service is required before hearing"
+    },
+    "14 Consultant Notes": {
+      "newKey": "consultant_notes",
+      "confidence": "token_set",
+      "matchedLabel": "Consultant Notes"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text4": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Todays Date",
+    "Date You Were Served with DV100 or Temporary Restraining Order DV110",
+    "Address if known",
+    "Full Legal Name_2",
+    "Date of Birth",
+    "undefined",
+    "Street Address",
+    "State",
+    "Phone",
+    "Are you selfrepresented",
+    "Yes",
+    "undefined_2",
+    "Spouse",
+    "Former Spouse",
+    "Dating  Former Dating",
+    "Cohabitant",
+    "Relative",
+    "Other_2",
+    "Name",
+    "Birth",
+    "Age",
+    "undefined_3",
+    "undefined_4",
+    "undefined_5",
+    "undefined_6",
+    "undefined_7",
+    "undefined_8",
+    "undefined_9",
+    "undefined_10",
+    "undefined_11",
+    "undefined_12",
+    "undefined_13",
+    "undefined_14",
+    "ParentGuardian",
+    "Address",
+    "Time",
+    "undefined_15",
+    "undefined_16",
+    "undefined_17",
+    "undefined_18",
+    "MonthYear",
+    "MonthYear_2",
+    "undefined_19",
+    "undefined_20",
+    "undefined_21",
+    "undefined_22",
+    "undefined_23",
+    "undefined_24",
+    "undefined_25",
+    "undefined_26",
+    "undefined_27",
+    "undefined_28",
+    "undefined_29",
+    "undefined_30",
+    "undefined_31",
+    "undefined_32",
+    "undefined_33",
+    "undefined_34",
+    "undefined_35",
+    "undefined_36",
+    "undefined_37",
+    "undefined_38",
+    "undefined_39",
+    "undefined_40",
+    "undefined_41",
+    "undefined_42",
+    "E Other Court Cases Involving Children",
+    "Joint Legal",
+    "Joint Physical",
+    "Sole Legal",
+    "Sole Physical",
+    "HolidaysVacations",
+    "If yes who supervises",
+    "I DO NOT AGREE with the request",
+    "I AGREE with some parts",
+    "I AGREE without admission",
+    "Any other cases",
+    "Other_3",
+    "undefined_43",
+    "undefined_44",
+    "undefined_45",
+    "Describe",
+    "Ever usedthreatened",
+    "Explain",
+    "undefined_46",
+    "Not yet surrendered explain",
+    "Do you agree",
+    "Explain_2",
+    "Text1",
+    "Text2",
+    "Text3",
+    "Text4"
+  ],
+  "duplicates": [
+    {
+      "key": "court_county",
+      "oldNames": [
+        "Court  County",
+        "Court"
+      ]
+    },
+    {
+      "key": "protected_full_legal_name",
+      "oldNames": [
+        "Full Legal Name",
+        "Protected Person"
+      ]
+    }
+  ]
+}

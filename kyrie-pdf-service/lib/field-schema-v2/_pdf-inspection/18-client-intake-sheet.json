@@ -1,0 +1,158 @@
+[
+  {
+    "name": "LOS ANGELES",
+    "type": "text"
+  },
+  {
+    "name": "ORANGE COUNTY",
+    "type": "text"
+  },
+  {
+    "name": "RIVERSIDE",
+    "type": "text"
+  },
+  {
+    "name": "SAN BERN",
+    "type": "text"
+  },
+  {
+    "name": "Name",
+    "type": "text"
+  },
+  {
+    "name": "Age",
+    "type": "text"
+  },
+  {
+    "name": "DOB",
+    "type": "text"
+  },
+  {
+    "name": "Physical Address",
+    "type": "text"
+  },
+  {
+    "name": "City",
+    "type": "text"
+  },
+  {
+    "name": "CA Zip",
+    "type": "text"
+  },
+  {
+    "name": "Mailing Address",
+    "type": "text"
+  },
+  {
+    "name": "City_2",
+    "type": "text"
+  },
+  {
+    "name": "CA Zip_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined",
+    "type": "text"
+  },
+  {
+    "name": "undefined_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_3",
+    "type": "text"
+  },
+  {
+    "name": "undefined_4",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "Alternate Email",
+    "type": "text"
+  },
+  {
+    "name": "Occupation",
+    "type": "text"
+  },
+  {
+    "name": "YES",
+    "type": "text"
+  },
+  {
+    "name": "NO",
+    "type": "text"
+  },
+  {
+    "name": "Civil",
+    "type": "text"
+  },
+  {
+    "name": "Probate",
+    "type": "text"
+  },
+  {
+    "name": "Family Law",
+    "type": "text"
+  },
+  {
+    "name": "Other",
+    "type": "text"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  },
+  {
+    "name": "Text2",
+    "type": "text"
+  },
+  {
+    "name": "Text3",
+    "type": "text"
+  },
+  {
+    "name": "Text4",
+    "type": "text"
+  },
+  {
+    "name": "Text5",
+    "type": "text"
+  },
+  {
+    "name": "Text6",
+    "type": "text"
+  },
+  {
+    "name": "Text7",
+    "type": "text"
+  },
+  {
+    "name": "Text8",
+    "type": "text"
+  },
+  {
+    "name": "Text9",
+    "type": "text"
+  },
+  {
+    "name": "Text10",
+    "type": "text"
+  },
+  {
+    "name": "Text11",
+    "type": "text"
+  },
+  {
+    "name": "Text12",
+    "type": "text"
+  },
+  {
+    "name": "Text13",
+    "type": "text"
+  }
+]

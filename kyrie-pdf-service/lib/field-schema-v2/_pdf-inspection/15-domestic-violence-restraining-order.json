@@ -1,0 +1,940 @@
+[
+  {
+    "name": "Todays Date",
+    "type": "text"
+  },
+  {
+    "name": "Court  County",
+    "type": "text"
+  },
+  {
+    "name": "Case Number if known 1",
+    "type": "text"
+  },
+  {
+    "name": "Case Number if known 2",
+    "type": "text"
+  },
+  {
+    "name": "Department if known",
+    "type": "text"
+  },
+  {
+    "name": "Existing Family Law Case",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined",
+    "type": "text"
+  },
+  {
+    "name": "Related Case Numbers",
+    "type": "text"
+  },
+  {
+    "name": "Full Legal Name",
+    "type": "text"
+  },
+  {
+    "name": "Date of Birth",
+    "type": "text"
+  },
+  {
+    "name": "Age",
+    "type": "text"
+  },
+  {
+    "name": "Gender",
+    "type": "text"
+  },
+  {
+    "name": "Street Address",
+    "type": "text"
+  },
+  {
+    "name": "City",
+    "type": "text"
+  },
+  {
+    "name": "State",
+    "type": "text"
+  },
+  {
+    "name": "Zip",
+    "type": "text"
+  },
+  {
+    "name": "Phone",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "Preferred Safe Mailing Address if different",
+    "type": "text"
+  },
+  {
+    "name": "Can mail be safely sent here",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "AlternateEmergency Contact Name",
+    "type": "text"
+  },
+  {
+    "name": "Emergency Contact Phone",
+    "type": "text"
+  },
+  {
+    "name": "Height",
+    "type": "text"
+  },
+  {
+    "name": "Weight",
+    "type": "text"
+  },
+  {
+    "name": "Race",
+    "type": "text"
+  },
+  {
+    "name": "Hair color",
+    "type": "text"
+  },
+  {
+    "name": "Eye color",
+    "type": "text"
+  },
+  {
+    "name": "Vehicle Make and Model",
+    "type": "text"
+  },
+  {
+    "name": "Year",
+    "type": "text"
+  },
+  {
+    "name": "License Plate",
+    "type": "text"
+  },
+  {
+    "name": "CAID or CADL",
+    "type": "text"
+  },
+  {
+    "name": "Full Legal Name_2",
+    "type": "text"
+  },
+  {
+    "name": "Date of Birth or Approx Age",
+    "type": "text"
+  },
+  {
+    "name": "undefined_2",
+    "type": "radio",
+    "options": [
+      "Gender_2",
+      "M",
+      "F"
+    ]
+  },
+  {
+    "name": "Relationship to You",
+    "type": "checkbox"
+  },
+  {
+    "name": "Spouse",
+    "type": "checkbox"
+  },
+  {
+    "name": "ExSpouse",
+    "type": "checkbox"
+  },
+  {
+    "name": "CoParent",
+    "type": "checkbox"
+  },
+  {
+    "name": "Family",
+    "type": "checkbox"
+  },
+  {
+    "name": "Roommate",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other",
+    "type": "text"
+  },
+  {
+    "name": "Street Address_2",
+    "type": "text"
+  },
+  {
+    "name": "City_2",
+    "type": "text"
+  },
+  {
+    "name": "State_2",
+    "type": "text"
+  },
+  {
+    "name": "Zip_2",
+    "type": "text"
+  },
+  {
+    "name": "Phone_2",
+    "type": "text"
+  },
+  {
+    "name": "Email_2",
+    "type": "text"
+  },
+  {
+    "name": "Workplace or Usual Location",
+    "type": "text"
+  },
+  {
+    "name": "Height_2",
+    "type": "text"
+  },
+  {
+    "name": "Weight_2",
+    "type": "text"
+  },
+  {
+    "name": "Race_2",
+    "type": "text"
+  },
+  {
+    "name": "Hair color_2",
+    "type": "text"
+  },
+  {
+    "name": "Eye color_2",
+    "type": "text"
+  },
+  {
+    "name": "Any tattoos or body marks",
+    "type": "text"
+  },
+  {
+    "name": "Vehicle Make and Model_2",
+    "type": "text"
+  },
+  {
+    "name": "Year_2",
+    "type": "text"
+  },
+  {
+    "name": "License Plate_2",
+    "type": "text"
+  },
+  {
+    "name": "CAID or CADL_2",
+    "type": "text"
+  },
+  {
+    "name": "Full Name Date of Birth Relationship to You Lives With You YN",
+    "type": "text"
+  },
+  {
+    "name": "undefined_3",
+    "type": "text"
+  },
+  {
+    "name": "undefined_4",
+    "type": "text"
+  },
+  {
+    "name": "undefined_5",
+    "type": "text"
+  },
+  {
+    "name": "undefined_6",
+    "type": "text"
+  },
+  {
+    "name": "undefined_7",
+    "type": "text"
+  },
+  {
+    "name": "undefined_8",
+    "type": "text"
+  },
+  {
+    "name": "undefined_9",
+    "type": "text"
+  },
+  {
+    "name": "undefined_10",
+    "type": "text"
+  },
+  {
+    "name": "undefined_11",
+    "type": "text"
+  },
+  {
+    "name": "undefined_12",
+    "type": "text"
+  },
+  {
+    "name": "undefined_13",
+    "type": "text"
+  },
+  {
+    "name": "undefined_14",
+    "type": "text"
+  },
+  {
+    "name": "undefined_15",
+    "type": "text"
+  },
+  {
+    "name": "undefined_16",
+    "type": "text"
+  },
+  {
+    "name": "Protected Party",
+    "type": "checkbox"
+  },
+  {
+    "name": "Restrained Party",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_17",
+    "type": "text"
+  },
+  {
+    "name": "undefined_18",
+    "type": "text"
+  },
+  {
+    "name": "undefined_19",
+    "type": "text"
+  },
+  {
+    "name": "undefined_20",
+    "type": "text"
+  },
+  {
+    "name": "Protected Party_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Restrained Party_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_21",
+    "type": "text"
+  },
+  {
+    "name": "undefined_22",
+    "type": "text"
+  },
+  {
+    "name": "undefined_23",
+    "type": "text"
+  },
+  {
+    "name": "undefined_24",
+    "type": "text"
+  },
+  {
+    "name": "Protected Party_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Restrained Party_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_25",
+    "type": "text"
+  },
+  {
+    "name": "Name",
+    "type": "text"
+  },
+  {
+    "name": "MonthYear",
+    "type": "text"
+  },
+  {
+    "name": "MonthYear_2",
+    "type": "text"
+  },
+  {
+    "name": "State_3",
+    "type": "text"
+  },
+  {
+    "name": "Name_2",
+    "type": "text"
+  },
+  {
+    "name": "Address",
+    "type": "text"
+  },
+  {
+    "name": "undefined_26",
+    "type": "text"
+  },
+  {
+    "name": "undefined_27",
+    "type": "text"
+  },
+  {
+    "name": "undefined_28",
+    "type": "text"
+  },
+  {
+    "name": "undefined_29",
+    "type": "text"
+  },
+  {
+    "name": "undefined_30",
+    "type": "text"
+  },
+  {
+    "name": "undefined_31",
+    "type": "text"
+  },
+  {
+    "name": "undefined_32",
+    "type": "text"
+  },
+  {
+    "name": "undefined_33",
+    "type": "text"
+  },
+  {
+    "name": "undefined_34",
+    "type": "text"
+  },
+  {
+    "name": "undefined_35",
+    "type": "text"
+  },
+  {
+    "name": "undefined_36",
+    "type": "text"
+  },
+  {
+    "name": "undefined_37",
+    "type": "text"
+  },
+  {
+    "name": "Name_3",
+    "type": "text"
+  },
+  {
+    "name": "MonthYear_3",
+    "type": "text"
+  },
+  {
+    "name": "MonthYear_4",
+    "type": "text"
+  },
+  {
+    "name": "State_4",
+    "type": "text"
+  },
+  {
+    "name": "Name_4",
+    "type": "text"
+  },
+  {
+    "name": "Address_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_38",
+    "type": "text"
+  },
+  {
+    "name": "undefined_39",
+    "type": "text"
+  },
+  {
+    "name": "undefined_40",
+    "type": "text"
+  },
+  {
+    "name": "undefined_41",
+    "type": "text"
+  },
+  {
+    "name": "undefined_42",
+    "type": "text"
+  },
+  {
+    "name": "undefined_43",
+    "type": "text"
+  },
+  {
+    "name": "Childs Name Currently Lives With Address Percentage of Time",
+    "type": "text"
+  },
+  {
+    "name": "undefined_44",
+    "type": "text"
+  },
+  {
+    "name": "undefined_45",
+    "type": "text"
+  },
+  {
+    "name": "undefined_46",
+    "type": "text"
+  },
+  {
+    "name": "undefined_47",
+    "type": "text"
+  },
+  {
+    "name": "undefined_48",
+    "type": "text"
+  },
+  {
+    "name": "undefined_49",
+    "type": "text"
+  },
+  {
+    "name": "undefined_50",
+    "type": "text"
+  },
+  {
+    "name": "Custody",
+    "type": "checkbox"
+  },
+  {
+    "name": "Visitation",
+    "type": "checkbox"
+  },
+  {
+    "name": "No Contact",
+    "type": "checkbox"
+  },
+  {
+    "name": "Weekdays",
+    "type": "text"
+  },
+  {
+    "name": "Weekends",
+    "type": "text"
+  },
+  {
+    "name": "Holidays",
+    "type": "text"
+  },
+  {
+    "name": "Vacations  School Breaks 1",
+    "type": "text"
+  },
+  {
+    "name": "Vacations  School Breaks 2",
+    "type": "text"
+  },
+  {
+    "name": "Police Station",
+    "type": "checkbox"
+  },
+  {
+    "name": "Neutral Site",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Supervised Visits",
+    "type": "radio",
+    "options": [
+      "Yes_3",
+      "No"
+    ]
+  },
+  {
+    "name": "undefined_51",
+    "type": "text"
+  },
+  {
+    "name": "Date of Incident",
+    "type": "text"
+  },
+  {
+    "name": "Location",
+    "type": "text"
+  },
+  {
+    "name": "Who Was Present",
+    "type": "text"
+  },
+  {
+    "name": "Physical",
+    "type": "checkbox"
+  },
+  {
+    "name": "Mental  Emotional",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both_4",
+    "type": "checkbox"
+  },
+  {
+    "name": "Were Police Called",
+    "type": "radio",
+    "options": [
+      "Yes_4",
+      "No_2"
+    ]
+  },
+  {
+    "name": "Report",
+    "type": "text"
+  },
+  {
+    "name": "Did the Person Use or Threaten to Use a Weapon",
+    "type": "text"
+  },
+  {
+    "name": "undefined_52",
+    "type": "radio",
+    "options": [
+      "Yes_5",
+      "No_3"
+    ]
+  },
+  {
+    "name": "undefined_53",
+    "type": "text"
+  },
+  {
+    "name": "Date of Incident_2",
+    "type": "text"
+  },
+  {
+    "name": "Who Was Present_2",
+    "type": "text"
+  },
+  {
+    "name": "Physical_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Mental  Emotional_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both_5",
+    "type": "checkbox"
+  },
+  {
+    "name": "Were Police Called_2",
+    "type": "radio",
+    "options": [
+      "Yes_6",
+      "No_4"
+    ]
+  },
+  {
+    "name": "Report_2",
+    "type": "text"
+  },
+  {
+    "name": "Did the Person Use or Threaten to Use a Weapon_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_54",
+    "type": "radio",
+    "options": [
+      "Yes_7",
+      "No_5"
+    ]
+  },
+  {
+    "name": "Date of Incident_3",
+    "type": "text"
+  },
+  {
+    "name": "Location_2",
+    "type": "text"
+  },
+  {
+    "name": "Who Was Present_3",
+    "type": "text"
+  },
+  {
+    "name": "Physical_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Mental  Emotional_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both_6",
+    "type": "checkbox"
+  },
+  {
+    "name": "Were Police Called_3",
+    "type": "radio",
+    "options": [
+      "Yes_8",
+      "No_6"
+    ]
+  },
+  {
+    "name": "Report_3",
+    "type": "text"
+  },
+  {
+    "name": "Did the Person Use or Threaten to Use a Weapon_3",
+    "type": "radio",
+    "options": [
+      "Yes_9",
+      "No_7"
+    ]
+  },
+  {
+    "name": "If yes describe_2",
+    "type": "text"
+  },
+  {
+    "name": "Date of Incident_4",
+    "type": "text"
+  },
+  {
+    "name": "Location_3",
+    "type": "text"
+  },
+  {
+    "name": "Who Was Present_4",
+    "type": "text"
+  },
+  {
+    "name": "Physical_4",
+    "type": "checkbox"
+  },
+  {
+    "name": "Mental  Emotional_4",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both_7",
+    "type": "checkbox"
+  },
+  {
+    "name": "Were Police Called_4",
+    "type": "radio",
+    "options": [
+      "Yes_10",
+      "No_8"
+    ]
+  },
+  {
+    "name": "Report_4",
+    "type": "text"
+  },
+  {
+    "name": "undefined_55",
+    "type": "radio",
+    "options": [
+      "Yes_11",
+      "No_9"
+    ]
+  },
+  {
+    "name": "Did the Person Use or Threaten to Use a Weapon_4",
+    "type": "text"
+  },
+  {
+    "name": "ammunition or other dangerous weapons",
+    "type": "radio",
+    "options": [
+      "Yes_12",
+      "No_10",
+      "Unknown"
+    ]
+  },
+  {
+    "name": "Has the restrained person ever used or threatened to use a firearm or weapon",
+    "type": "text"
+  },
+  {
+    "name": "against you or anyone else",
+    "type": "radio",
+    "options": [
+      "Yes_13",
+      "No_11"
+    ]
+  },
+  {
+    "name": "Do you need immediate protection before the hearing",
+    "type": "radio",
+    "options": [
+      "Yes_14",
+      "No_12"
+    ]
+  },
+  {
+    "name": "Personal Conduct Orders no contact no harassment no threats",
+    "type": "checkbox"
+  },
+  {
+    "name": "StayAway Orders stay at least",
+    "type": "checkbox"
+  },
+  {
+    "name": "yards away from me  family  home  work",
+    "type": "text"
+  },
+  {
+    "name": "MoveOut Order restrained person must leave the residence",
+    "type": "checkbox"
+  },
+  {
+    "name": "No Guns or Firearms",
+    "type": "checkbox"
+  },
+  {
+    "name": "Child Custody  Visitation Orders attach DV105",
+    "type": "checkbox"
+  },
+  {
+    "name": "No Travel with Children attach DV108",
+    "type": "checkbox"
+  },
+  {
+    "name": "Protection for Additional People listed above",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other Orders",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_56",
+    "type": "text"
+  },
+  {
+    "name": "Name_5",
+    "type": "text"
+  },
+  {
+    "name": "Street Address_3",
+    "type": "text"
+  },
+  {
+    "name": "City_3",
+    "type": "text"
+  },
+  {
+    "name": "State_5",
+    "type": "text"
+  },
+  {
+    "name": "Zip_3",
+    "type": "text"
+  },
+  {
+    "name": "Workplace or Other Known Location",
+    "type": "text"
+  },
+  {
+    "name": "Preferred timeplace for safe service if known",
+    "type": "text"
+  },
+  {
+    "name": "Police Reports",
+    "type": "checkbox"
+  },
+  {
+    "name": "Photos",
+    "type": "checkbox"
+  },
+  {
+    "name": "Witness Statements",
+    "type": "checkbox"
+  },
+  {
+    "name": "Texts  Emails  Voicemails",
+    "type": "checkbox"
+  },
+  {
+    "name": "Medical Records",
+    "type": "checkbox"
+  },
+  {
+    "name": "Prior Court Orders",
+    "type": "checkbox"
+  },
+  {
+    "name": "Child Custody Documents",
+    "type": "checkbox"
+  },
+  {
+    "name": "Other_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_57",
+    "type": "text"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  },
+  {
+    "name": "Text2",
+    "type": "text"
+  },
+  {
+    "name": "Text3",
+    "type": "text"
+  },
+  {
+    "name": "Text4",
+    "type": "text"
+  },
+  {
+    "name": "Text5",
+    "type": "text"
+  },
+  {
+    "name": "Text6",
+    "type": "text"
+  },
+  {
+    "name": "Text7",
+    "type": "text"
+  }
+]

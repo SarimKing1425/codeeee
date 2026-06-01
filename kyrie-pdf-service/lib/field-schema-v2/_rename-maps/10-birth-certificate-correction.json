@@ -1,0 +1,280 @@
+{
+  "form": "birth-certificate-correction",
+  "summary": {
+    "total": 48,
+    "exact": 3,
+    "prefix": 4,
+    "token_set": 14,
+    "last_token": 0,
+    "unmapped": 27,
+    "duplicate_assignments": 3,
+    "match_rate": "43.8%"
+  },
+  "mapping": {
+    "1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "1 Childs Full Name as it CURRENTLY appears on the birth certificate": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "2 Childs Date of Birth MMDDYYYY": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "3 City of Birth": {
+      "newKey": "child_city_of_birth",
+      "confidence": "token_set",
+      "matchedLabel": "City of Birth"
+    },
+    "4 County of Birth": {
+      "newKey": "child_county_of_birth",
+      "confidence": "token_set",
+      "matchedLabel": "County of Birth"
+    },
+    "5 State of Birth": {
+      "newKey": "child_state_of_birth",
+      "confidence": "token_set",
+      "matchedLabel": "State of Birth"
+    },
+    "6 Hospital or Place of Birth if known 1": {
+      "newKey": "child_hospital_or_place_of_birth",
+      "confidence": "token_set",
+      "matchedLabel": "Hospital or Place of Birth"
+    },
+    "6 Hospital or Place of Birth if known 2": {
+      "newKey": "child_hospital_or_place_of_birth",
+      "confidence": "token_set",
+      "matchedLabel": "Hospital or Place of Birth"
+    },
+    "7 What name is currently listed incorrectly or needs to be changed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "First Middle Last": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Clerical error": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Misspelling": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Courtordered name change": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Parent request": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Other Explain": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "10Is there a court order for the name change": {
+      "newKey": "has_court_order_for_name_change",
+      "confidence": "token_set",
+      "matchedLabel": "Court Order for Name Change?"
+    },
+    "If yes Court Name  Case Number 1": {
+      "newKey": "court_order_court_name",
+      "confidence": "token_set",
+      "matchedLabel": "Court Name"
+    },
+    "11Parent to be ADDED Full Legal Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Father": {
+      "newKey": "father_full_legal_name",
+      "confidence": "prefix",
+      "matchedLabel": "Father Full Legal Name"
+    },
+    "Mother": {
+      "newKey": "mother_full_legal_name",
+      "confidence": "prefix",
+      "matchedLabel": "Mother Full Legal Name"
+    },
+    "Parent other": {
+      "newKey": "basis_marriage_at_time_of_birth",
+      "confidence": "token_set",
+      "matchedLabel": "Marriage to other parent at time of birth"
+    },
+    "13Date of Birth of Parent Being Added": {
+      "newKey": "parent_being_added_place_of_birth",
+      "confidence": "token_set",
+      "matchedLabel": "Parent Being Added Place of Birth"
+    },
+    "14Place of Birth of Parent Being Added City State Country": {
+      "newKey": "child_city_of_birth",
+      "confidence": "token_set",
+      "matchedLabel": "City of Birth"
+    },
+    "No_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Incorrect information listed": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Voluntary Declaration of Parentage VDOP": {
+      "newKey": "basis_vdop",
+      "confidence": "prefix",
+      "matchedLabel": "Voluntary Declaration of Parentage"
+    },
+    "Court Order paternity  parentage": {
+      "newKey": "basis_court_order_parentage",
+      "confidence": "exact",
+      "matchedLabel": "Court Order (paternity/parentage)"
+    },
+    "Marriage to other parent at time of birth": {
+      "newKey": "basis_marriage_at_time_of_birth",
+      "confidence": "exact",
+      "matchedLabel": "Marriage to other parent at time of birth"
+    },
+    "Genetic testing": {
+      "newKey": "basis_genetic_testing",
+      "confidence": "exact",
+      "matchedLabel": "Genetic Testing"
+    },
+    "Other Explain_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "17If court order exists": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Case Number": {
+      "newKey": "court_order_case_number",
+      "confidence": "token_set",
+      "matchedLabel": "Court Order Case Number"
+    },
+    "Date of Order": {
+      "newKey": "court_order_basis_date_of_order",
+      "confidence": "token_set",
+      "matchedLabel": "Date of Court Order"
+    },
+    "18Full Legal Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "19Name as it appears on current birth certificate if different": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "20Date of Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "22Full Legal Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "23Date of Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "24Current Address 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "24Current Address 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "24Current Address 3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Copy of childs current birth certificate": {
+      "newKey": "doc_current_birth_certificate",
+      "confidence": "token_set",
+      "matchedLabel": "Copy of child's current birth certificate"
+    },
+    "Marriage certificate if applicable": {
+      "newKey": "doc_marriage_certificate",
+      "confidence": "prefix",
+      "matchedLabel": "Marriage certificate"
+    },
+    "I certify that the information provided is true and correct to the best of my knowledge": {
+      "newKey": "client_certifies_info_accurate",
+      "confidence": "token_set",
+      "matchedLabel": "I certify the information is true and correct"
+    },
+    "Yes or": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "1 Childs Full Name as it CURRENTLY appears on the birth certificate",
+    "2 Childs Date of Birth MMDDYYYY",
+    "7 What name is currently listed incorrectly or needs to be changed",
+    "First Middle Last",
+    "Clerical error",
+    "Misspelling",
+    "Courtordered name change",
+    "Parent request",
+    "Other Explain",
+    "undefined",
+    "11Parent to be ADDED Full Legal Name",
+    "No_2",
+    "Incorrect information listed",
+    "Other Explain_2",
+    "undefined_2",
+    "17If court order exists",
+    "18Full Legal Name",
+    "19Name as it appears on current birth certificate if different",
+    "20Date of Birth",
+    "1",
+    "2",
+    "22Full Legal Name",
+    "23Date of Birth",
+    "24Current Address 1",
+    "24Current Address 2",
+    "24Current Address 3",
+    "Yes or"
+  ],
+  "duplicates": [
+    {
+      "key": "child_city_of_birth",
+      "oldNames": [
+        "3 City of Birth",
+        "14Place of Birth of Parent Being Added City State Country"
+      ]
+    },
+    {
+      "key": "child_hospital_or_place_of_birth",
+      "oldNames": [
+        "6 Hospital or Place of Birth if known 1",
+        "6 Hospital or Place of Birth if known 2"
+      ]
+    },
+    {
+      "key": "basis_marriage_at_time_of_birth",
+      "oldNames": [
+        "Parent other",
+        "Marriage to other parent at time of birth"
+      ]
+    }
+  ]
+}

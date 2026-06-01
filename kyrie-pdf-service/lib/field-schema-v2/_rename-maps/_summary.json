@@ -1,0 +1,200 @@
+[
+  {
+    "slug": "unlawful-detainer-landlord",
+    "total": 119,
+    "exact": 34,
+    "prefix": 10,
+    "token_set": 15,
+    "last_token": 1,
+    "unmapped": 59,
+    "duplicate_assignments": 3,
+    "match_rate": "50.4%"
+  },
+  {
+    "slug": "writ-of-execution",
+    "total": 77,
+    "exact": 11,
+    "prefix": 3,
+    "token_set": 31,
+    "last_token": 4,
+    "unmapped": 28,
+    "duplicate_assignments": 3,
+    "match_rate": "63.6%"
+  },
+  {
+    "slug": "trust-and-healthcare-directive",
+    "total": 125,
+    "exact": 6,
+    "prefix": 10,
+    "token_set": 22,
+    "last_token": 5,
+    "unmapped": 82,
+    "duplicate_assignments": 5,
+    "match_rate": "34.4%"
+  },
+  {
+    "slug": "last-will-and-testament",
+    "total": 143,
+    "exact": 4,
+    "prefix": 4,
+    "token_set": 31,
+    "last_token": 7,
+    "unmapped": 97,
+    "duplicate_assignments": 1,
+    "match_rate": "32.2%"
+  },
+  {
+    "slug": "response-to-unlawful-detainer",
+    "total": 130,
+    "exact": 29,
+    "prefix": 6,
+    "token_set": 20,
+    "last_token": 3,
+    "unmapped": 72,
+    "duplicate_assignments": 3,
+    "match_rate": "44.6%"
+  },
+  {
+    "slug": "response-to-dvro",
+    "total": 142,
+    "exact": 17,
+    "prefix": 11,
+    "token_set": 15,
+    "last_token": 7,
+    "unmapped": 92,
+    "duplicate_assignments": 2,
+    "match_rate": "35.2%"
+  },
+  {
+    "slug": "response-to-request-for-orders",
+    "total": 104,
+    "exact": 14,
+    "prefix": 8,
+    "token_set": 9,
+    "last_token": 6,
+    "unmapped": 67,
+    "duplicate_assignments": 1,
+    "match_rate": "35.6%"
+  },
+  {
+    "slug": "default-uncontested-divorce-judgment",
+    "total": 125,
+    "exact": 10,
+    "prefix": 9,
+    "token_set": 9,
+    "last_token": 4,
+    "unmapped": 93,
+    "duplicate_assignments": 5,
+    "match_rate": "25.6%"
+  },
+  {
+    "slug": "guardianship-of-a-minor",
+    "total": 140,
+    "exact": 10,
+    "prefix": 2,
+    "token_set": 17,
+    "last_token": 3,
+    "unmapped": 108,
+    "duplicate_assignments": 3,
+    "match_rate": "22.9%"
+  },
+  {
+    "slug": "birth-certificate-correction",
+    "total": 48,
+    "exact": 3,
+    "prefix": 4,
+    "token_set": 14,
+    "last_token": 0,
+    "unmapped": 27,
+    "duplicate_assignments": 3,
+    "match_rate": "43.8%"
+  },
+  {
+    "slug": "conservatorship-of-an-adult",
+    "total": 139,
+    "exact": 8,
+    "prefix": 13,
+    "token_set": 23,
+    "last_token": 11,
+    "unmapped": 84,
+    "duplicate_assignments": 6,
+    "match_rate": "39.6%"
+  },
+  {
+    "slug": "request-for-orders",
+    "total": 113,
+    "exact": 6,
+    "prefix": 7,
+    "token_set": 14,
+    "last_token": 5,
+    "unmapped": 81,
+    "duplicate_assignments": 2,
+    "match_rate": "28.3%"
+  },
+  {
+    "slug": "name-change-petition",
+    "total": 121,
+    "exact": 5,
+    "prefix": 8,
+    "token_set": 32,
+    "last_token": 7,
+    "unmapped": 69,
+    "duplicate_assignments": 5,
+    "match_rate": "43.0%"
+  },
+  {
+    "slug": "qdro-and-joinder",
+    "total": 126,
+    "exact": 18,
+    "prefix": 7,
+    "token_set": 20,
+    "last_token": 2,
+    "unmapped": 79,
+    "duplicate_assignments": 2,
+    "match_rate": "37.3%"
+  },
+  {
+    "slug": "domestic-violence-restraining-order",
+    "total": 221,
+    "exact": 14,
+    "prefix": 7,
+    "token_set": 35,
+    "last_token": 3,
+    "unmapped": 162,
+    "duplicate_assignments": 5,
+    "match_rate": "26.7%"
+  },
+  {
+    "slug": "request-to-restore-former-name",
+    "total": 26,
+    "exact": 2,
+    "prefix": 0,
+    "token_set": 4,
+    "last_token": 6,
+    "unmapped": 14,
+    "duplicate_assignments": 0,
+    "match_rate": "46.2%"
+  },
+  {
+    "slug": "dissolution-of-marriage",
+    "total": 165,
+    "exact": 20,
+    "prefix": 4,
+    "token_set": 19,
+    "last_token": 0,
+    "unmapped": 122,
+    "duplicate_assignments": 3,
+    "match_rate": "26.1%"
+  },
+  {
+    "slug": "client-intake-sheet",
+    "total": 39,
+    "exact": 2,
+    "prefix": 1,
+    "token_set": 3,
+    "last_token": 2,
+    "unmapped": 31,
+    "duplicate_assignments": 0,
+    "match_rate": "20.5%"
+  }
+]

@@ -1,0 +1,522 @@
+[
+  {
+    "name": "Todays Date",
+    "type": "text"
+  },
+  {
+    "name": "Court  County",
+    "type": "text"
+  },
+  {
+    "name": "Case Number",
+    "type": "text"
+  },
+  {
+    "name": "Department if known",
+    "type": "text"
+  },
+  {
+    "name": "Type of Case",
+    "type": "checkbox"
+  },
+  {
+    "name": "Dissolution Divorce",
+    "type": "checkbox"
+  },
+  {
+    "name": "Legal Separation",
+    "type": "checkbox"
+  },
+  {
+    "name": "Date Petition Filed FL100",
+    "type": "text"
+  },
+  {
+    "name": "Method of Service",
+    "type": "checkbox"
+  },
+  {
+    "name": "Personal FL115",
+    "type": "checkbox"
+  },
+  {
+    "name": "By Mail FL335",
+    "type": "checkbox"
+  },
+  {
+    "name": "Date Summons Served 1",
+    "type": "text"
+  },
+  {
+    "name": "Date Summons Served 2",
+    "type": "text"
+  },
+  {
+    "name": "Date Summons Served 3",
+    "type": "text"
+  },
+  {
+    "name": "Was a Response FL120 Filed",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes",
+    "type": "checkbox"
+  },
+  {
+    "name": "Full Legal Name",
+    "type": "text"
+  },
+  {
+    "name": "Date of Birth",
+    "type": "text"
+  },
+  {
+    "name": "Address",
+    "type": "text"
+  },
+  {
+    "name": "City",
+    "type": "text"
+  },
+  {
+    "name": "State",
+    "type": "text"
+  },
+  {
+    "name": "Zip",
+    "type": "text"
+  },
+  {
+    "name": "Phone",
+    "type": "text"
+  },
+  {
+    "name": "Email",
+    "type": "text"
+  },
+  {
+    "name": "Full Legal Name_2",
+    "type": "text"
+  },
+  {
+    "name": "Date of Birth_2",
+    "type": "text"
+  },
+  {
+    "name": "Address_2",
+    "type": "text"
+  },
+  {
+    "name": "City_2",
+    "type": "text"
+  },
+  {
+    "name": "State_2",
+    "type": "text"
+  },
+  {
+    "name": "Zip_2",
+    "type": "text"
+  },
+  {
+    "name": "Phone_2",
+    "type": "text"
+  },
+  {
+    "name": "Email_2",
+    "type": "text"
+  },
+  {
+    "name": "Do you have any existing Family Law Orders or prior cases",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "If yes describe and attach copies",
+    "type": "text"
+  },
+  {
+    "name": "Date of Marriage",
+    "type": "text"
+  },
+  {
+    "name": "Date of Separation",
+    "type": "text"
+  },
+  {
+    "name": "Total Years Married",
+    "type": "text"
+  },
+  {
+    "name": "Children of this marriage",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Childs Full Name Date of Birth Age Lives With",
+    "type": "text"
+  },
+  {
+    "name": "undefined",
+    "type": "text"
+  },
+  {
+    "name": "undefined_2",
+    "type": "text"
+  },
+  {
+    "name": "undefined_3",
+    "type": "text"
+  },
+  {
+    "name": "undefined_4",
+    "type": "text"
+  },
+  {
+    "name": "undefined_5",
+    "type": "text"
+  },
+  {
+    "name": "undefined_6",
+    "type": "text"
+  },
+  {
+    "name": "undefined_7",
+    "type": "text"
+  },
+  {
+    "name": "FL142",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_4",
+    "type": "checkbox"
+  },
+  {
+    "name": "Date served",
+    "type": "text"
+  },
+  {
+    "name": "Method",
+    "type": "checkbox"
+  },
+  {
+    "name": "Mail",
+    "type": "checkbox"
+  },
+  {
+    "name": "Has the Respondent completed Preliminary Declaration of Disclosure",
+    "type": "checkbox"
+  },
+  {
+    "name": "Waived",
+    "type": "radio",
+    "options": [
+      "Yes_5",
+      "No"
+    ]
+  },
+  {
+    "name": "Income  Expense Declaration FL150 completed",
+    "type": "checkbox"
+  },
+  {
+    "name": "Yes_6",
+    "type": "checkbox"
+  },
+  {
+    "name": "Estimated Value Debt Who Keeps It PR",
+    "type": "text"
+  },
+  {
+    "name": "undefined_8",
+    "type": "text"
+  },
+  {
+    "name": "undefined_9",
+    "type": "text"
+  },
+  {
+    "name": "undefined_10",
+    "type": "text"
+  },
+  {
+    "name": "undefined_11",
+    "type": "text"
+  },
+  {
+    "name": "undefined_12",
+    "type": "text"
+  },
+  {
+    "name": "undefined_13",
+    "type": "text"
+  },
+  {
+    "name": "undefined_14",
+    "type": "text"
+  },
+  {
+    "name": "undefined_15",
+    "type": "text"
+  },
+  {
+    "name": "Retirement Accounts  Pensions",
+    "type": "text"
+  },
+  {
+    "name": "undefined_16",
+    "type": "text"
+  },
+  {
+    "name": "undefined_17",
+    "type": "text"
+  },
+  {
+    "name": "Furniture  Household Goods",
+    "type": "text"
+  },
+  {
+    "name": "undefined_18",
+    "type": "text"
+  },
+  {
+    "name": "undefined_19",
+    "type": "text"
+  },
+  {
+    "name": "undefined_20",
+    "type": "text"
+  },
+  {
+    "name": "undefined_21",
+    "type": "text"
+  },
+  {
+    "name": "undefined_22",
+    "type": "text"
+  },
+  {
+    "name": "Creditor Type of Debt Balance Responsible Party PR",
+    "type": "text"
+  },
+  {
+    "name": "undefined_23",
+    "type": "text"
+  },
+  {
+    "name": "undefined_24",
+    "type": "text"
+  },
+  {
+    "name": "undefined_25",
+    "type": "text"
+  },
+  {
+    "name": "Description Value Owner PR",
+    "type": "text"
+  },
+  {
+    "name": "undefined_26",
+    "type": "text"
+  },
+  {
+    "name": "undefined_27",
+    "type": "text"
+  },
+  {
+    "name": "Joint",
+    "type": "checkbox"
+  },
+  {
+    "name": "Sole Petitioner",
+    "type": "checkbox"
+  },
+  {
+    "name": "Respondent",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_28",
+    "type": "checkbox"
+  },
+  {
+    "name": "Joint_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Sole Petitioner_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "Respondent_2",
+    "type": "checkbox"
+  },
+  {
+    "name": "undefined_29",
+    "type": "checkbox"
+  },
+  {
+    "name": "Weekdays",
+    "type": "text"
+  },
+  {
+    "name": "Weekends",
+    "type": "text"
+  },
+  {
+    "name": "HolidaysVacations",
+    "type": "text"
+  },
+  {
+    "name": "Exchange Location",
+    "type": "text"
+  },
+  {
+    "name": "Amount if known",
+    "type": "text"
+  },
+  {
+    "name": "Guideline",
+    "type": "checkbox"
+  },
+  {
+    "name": "By Agreement",
+    "type": "checkbox"
+  },
+  {
+    "name": "None",
+    "type": "checkbox"
+  },
+  {
+    "name": "Spousal Support Requested",
+    "type": "radio",
+    "options": [
+      "Yes_7",
+      "No_2"
+    ]
+  },
+  {
+    "name": "Petitioner",
+    "type": "checkbox"
+  },
+  {
+    "name": "Respondent_3",
+    "type": "checkbox"
+  },
+  {
+    "name": "Both",
+    "type": "checkbox"
+  },
+  {
+    "name": "If yes",
+    "type": "text"
+  },
+  {
+    "name": "Duration",
+    "type": "text"
+  },
+  {
+    "name": "Default no Response filed",
+    "type": "checkbox"
+  },
+  {
+    "name": "Default with Agreement agreement signed no Response filed",
+    "type": "checkbox"
+  },
+  {
+    "name": "Uncontested agreement signed and Response filed",
+    "type": "checkbox"
+  },
+  {
+    "name": "Marital Settlement Agreement Attached",
+    "type": "radio",
+    "options": [
+      "Yes_8",
+      "No_3"
+    ]
+  },
+  {
+    "name": "Date Agreement Signed",
+    "type": "text"
+  },
+  {
+    "name": "Restoration of Former Name Requested",
+    "type": "radio",
+    "options": [
+      "Yes_9",
+      "No_4"
+    ]
+  },
+  {
+    "name": "If yes specify name to be restored",
+    "type": "text"
+  },
+  {
+    "name": "FL100  Petition for Dissolution Filed copy",
+    "type": "checkbox"
+  },
+  {
+    "name": "FL115  Proof of Service of Summons Filed copy",
+    "type": "checkbox"
+  },
+  {
+    "name": "FL120  Response if filed",
+    "type": "checkbox"
+  },
+  {
+    "name": "Proof of Service by Mail or Personal of response FL335 or FL330",
+    "type": "checkbox"
+  },
+  {
+    "name": "Copies of any Current Family Law Orders or Prior Judgments",
+    "type": "checkbox"
+  },
+  {
+    "name": "Are there restraining or protective orders in place",
+    "type": "text"
+  },
+  {
+    "name": "undefined_30",
+    "type": "radio",
+    "options": [
+      "Yes_10",
+      "No_5"
+    ]
+  },
+  {
+    "name": "If yes explain 1",
+    "type": "text"
+  },
+  {
+    "name": "If yes explain 2",
+    "type": "text"
+  },
+  {
+    "name": "10 Consultant Notes Internal Use Only 1",
+    "type": "text"
+  },
+  {
+    "name": "10 Consultant Notes Internal Use Only 2",
+    "type": "text"
+  },
+  {
+    "name": "10 Consultant Notes Internal Use Only 3",
+    "type": "text"
+  },
+  {
+    "name": "Text1",
+    "type": "text"
+  },
+  {
+    "name": "Text2",
+    "type": "text"
+  }
+]

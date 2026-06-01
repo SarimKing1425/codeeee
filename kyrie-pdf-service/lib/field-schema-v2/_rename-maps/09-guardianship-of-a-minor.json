@@ -1,0 +1,740 @@
+{
+  "form": "guardianship-of-a-minor",
+  "summary": {
+    "total": 140,
+    "exact": 10,
+    "prefix": 2,
+    "token_set": 17,
+    "last_token": 3,
+    "unmapped": 108,
+    "duplicate_assignments": 3,
+    "match_rate": "22.9%"
+  },
+  "mapping": {
+    "Todays Date": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Temporary Guardianship shortterm emergency order": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "General  Permanent Guardianship longterm order": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Both Temporary and General": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Guardianship of the Person custody and care of the child": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Guardianship of the Estate control of money or property belonging to the child": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Both": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Age": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Country": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Grade": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_7": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "City": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "State": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Zip": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "How long has the child lived at this address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "To": {
+      "newKey": "todays_date",
+      "confidence": "prefix",
+      "matchedLabel": "Today's Date"
+    },
+    "State_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Names": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Child": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_14": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_15": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_16": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_17": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_18": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Name": {
+      "newKey": "minors_1_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Minor Children Row 1 full legal name"
+    },
+    "Date of Birth": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Current Address": {
+      "newKey": "minor_length_at_current_address",
+      "confidence": "token_set",
+      "matchedLabel": "Minor Length at Current Address"
+    },
+    "CityStateZip": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Living": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Yes": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If deceased date of death": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Unsure": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Name_2": {
+      "newKey": "minors_2_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Minor Children Row 2 full legal name"
+    },
+    "Date of Birth_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Current Address_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "CityStateZip_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone_2": {
+      "newKey": "proposed_guardians_2_phone_email",
+      "confidence": "token_set",
+      "matchedLabel": "Proposed Guardians Row 2 phone email"
+    },
+    "Email_2": {
+      "newKey": "proposed_guardians_2_phone_email",
+      "confidence": "token_set",
+      "matchedLabel": "Proposed Guardians Row 2 phone email"
+    },
+    "Living_2": {
+      "newKey": "siblings_2_living_with",
+      "confidence": "token_set",
+      "matchedLabel": "Siblings Row 2 living with"
+    },
+    "Yes_3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If deceased date of death_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Unsure_2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Guardians Full Name Date of Birth Relationship to Minor Address Phone  Email": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_19": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_20": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_21": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_22": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_23": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_24": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_25": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_26": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_27": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Marital Status of Proposed Guardians": {
+      "newKey": "proposed_guardians",
+      "confidence": "token_set",
+      "matchedLabel": "Proposed Guardians"
+    },
+    "Single": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Married": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Domestic Partners": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Occupation": {
+      "newKey": "guardian_occupation",
+      "confidence": "last_token",
+      "matchedLabel": "Guardian Occupation"
+    },
+    "Length of Time Known to Child": {
+      "newKey": "guardian_length_time_known_to_child",
+      "confidence": "exact",
+      "matchedLabel": "Length of Time Known to Child"
+    },
+    "Does the proposed guardian currently live with the child": {
+      "newKey": "guardian_currently_lives_with_child",
+      "confidence": "token_set",
+      "matchedLabel": "Currently lives with the child?"
+    },
+    "Yes_5": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Incarceration": {
+      "newKey": "parent_incarceration",
+      "confidence": "exact",
+      "matchedLabel": "Incarceration"
+    },
+    "Deportation  Immigration issue": {
+      "newKey": "parent_deportation",
+      "confidence": "exact",
+      "matchedLabel": "Deportation / Immigration Issue"
+    },
+    "Drug or alcohol abuse": {
+      "newKey": "parent_drug_alcohol_abuse",
+      "confidence": "exact",
+      "matchedLabel": "Drug or Alcohol Abuse"
+    },
+    "Mental health or medical condition": {
+      "newKey": "parent_mental_health_or_medical",
+      "confidence": "exact",
+      "matchedLabel": "Mental Health or Medical Condition"
+    },
+    "Domestic violence": {
+      "newKey": "parent_domestic_violence",
+      "confidence": "exact",
+      "matchedLabel": "Domestic Violence"
+    },
+    "Homelessness  instability": {
+      "newKey": "parent_homelessness",
+      "confidence": "exact",
+      "matchedLabel": "Homelessness / Instability"
+    },
+    "Death of a parent": {
+      "newKey": "parent_death",
+      "confidence": "exact",
+      "matchedLabel": "Death of a Parent"
+    },
+    "Abandonment": {
+      "newKey": "parent_abandonment",
+      "confidence": "exact",
+      "matchedLabel": "Abandonment"
+    },
+    "Other": {
+      "newKey": "parent_other",
+      "confidence": "exact",
+      "matchedLabel": "Other"
+    },
+    "undefined_28": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_29": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "When was the last contact with the childs mother": {
+      "newKey": "last_contact_with_mother",
+      "confidence": "token_set",
+      "matchedLabel": "Last Contact with Mother"
+    },
+    "Yes_6": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_30": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Are either parent currently ordered by the court Family or Juvenile": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Full Name Date of Birth Age Living With Relationship to Minor": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_31": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_32": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_33": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_34": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_35": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_36": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_37": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_38": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_39": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Supervised Only": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "If you are requesting guardianship of the estate please complete": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Sources of funds or property": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Life Insurance": {
+      "newKey": "estate_source_life_insurance",
+      "confidence": "token_set",
+      "matchedLabel": "Source: Life Insurance"
+    },
+    "Inheritance": {
+      "newKey": "estate_source_inheritance",
+      "confidence": "last_token",
+      "matchedLabel": "Source: Inheritance"
+    },
+    "Settlement": {
+      "newKey": "estate_source_lawsuit_settlement",
+      "confidence": "last_token",
+      "matchedLabel": "Source: Lawsuit Settlement"
+    },
+    "Other_2": {
+      "newKey": "parent_other",
+      "confidence": "prefix",
+      "matchedLabel": "Other"
+    },
+    "Do you intend to manage invest or use these funds for the minor": {
+      "newKey": "estate_manage_invest_use_funds",
+      "confidence": "token_set",
+      "matchedLabel": "Manage/invest/use funds for minor?"
+    },
+    "Yes_8": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Will you file annual accounting reports with the court": {
+      "newKey": "estate_file_annual_accounting",
+      "confidence": "token_set",
+      "matchedLabel": "File annual accounting reports?"
+    },
+    "Yes_9": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "When do you need the temporary guardianship to start": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Are there safety health or school issues requiring immediate care": {
+      "newKey": "safety_health_school_issues",
+      "confidence": "token_set",
+      "matchedLabel": "Safety, health, or school issues requiring immediate care?"
+    },
+    "Yes_10": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Name_2": {
+      "newKey": "minors_2_full_legal_name",
+      "confidence": "token_set",
+      "matchedLabel": "Minor Children Row 2 full legal name"
+    },
+    "Relationship": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Address": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Phone Number": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_40": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_41": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_42": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_43": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_44": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_45": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_46": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "undefined_47": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Have you ever been convicted of a felony or misdemeanor": {
+      "newKey": "guardian_convicted_felony_misdemeanor",
+      "confidence": "token_set",
+      "matchedLabel": "Convicted of felony or misdemeanor?"
+    },
+    "Yes_11": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Have you ever been investigated for child abuse or neglect": {
+      "newKey": "guardian_investigated_for_abuse_neglect",
+      "confidence": "token_set",
+      "matchedLabel": "Investigated for child abuse or neglect?"
+    },
+    "Yes_12": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Have you ever filed for bankruptcy": {
+      "newKey": "guardian_filed_bankruptcy",
+      "confidence": "token_set",
+      "matchedLabel": "Filed for bankruptcy?"
+    },
+    "Yes_13": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "SoCal United Professional Services 1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "SoCal United Professional Services 2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text1": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text2": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text3": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text4": {
+      "newKey": null,
+      "confidence": "none"
+    },
+    "Text5": {
+      "newKey": null,
+      "confidence": "none"
+    }
+  },
+  "unmapped": [
+    "Todays Date",
+    "Temporary Guardianship shortterm emergency order",
+    "General  Permanent Guardianship longterm order",
+    "Both Temporary and General",
+    "Guardianship of the Person custody and care of the child",
+    "Guardianship of the Estate control of money or property belonging to the child",
+    "Both",
+    "Name",
+    "Birth",
+    "Age",
+    "Country",
+    "Grade",
+    "undefined",
+    "undefined_2",
+    "undefined_3",
+    "undefined_4",
+    "undefined_5",
+    "undefined_6",
+    "undefined_7",
+    "undefined_8",
+    "undefined_9",
+    "undefined_10",
+    "City",
+    "State",
+    "Zip",
+    "How long has the child lived at this address",
+    "State_2",
+    "Names",
+    "Child",
+    "undefined_11",
+    "undefined_12",
+    "undefined_13",
+    "undefined_14",
+    "undefined_15",
+    "undefined_16",
+    "undefined_17",
+    "undefined_18",
+    "Date of Birth",
+    "CityStateZip",
+    "Phone",
+    "Email",
+    "Living",
+    "Yes",
+    "If deceased date of death",
+    "Unsure",
+    "Date of Birth_2",
+    "Current Address_2",
+    "CityStateZip_2",
+    "Yes_3",
+    "If deceased date of death_2",
+    "Unsure_2",
+    "Guardians Full Name Date of Birth Relationship to Minor Address Phone  Email",
+    "undefined_19",
+    "undefined_20",
+    "undefined_21",
+    "undefined_22",
+    "undefined_23",
+    "undefined_24",
+    "undefined_25",
+    "undefined_26",
+    "undefined_27",
+    "Single",
+    "Married",
+    "Domestic Partners",
+    "Yes_5",
+    "undefined_28",
+    "undefined_29",
+    "Yes_6",
+    "undefined_30",
+    "Are either parent currently ordered by the court Family or Juvenile",
+    "Full Name Date of Birth Age Living With Relationship to Minor",
+    "undefined_31",
+    "undefined_32",
+    "undefined_33",
+    "undefined_34",
+    "undefined_35",
+    "undefined_36",
+    "undefined_37",
+    "undefined_38",
+    "undefined_39",
+    "Supervised Only",
+    "If you are requesting guardianship of the estate please complete",
+    "Sources of funds or property",
+    "Yes_8",
+    "Yes_9",
+    "When do you need the temporary guardianship to start",
+    "Yes_10",
+    "Relationship",
+    "Address",
+    "Phone Number",
+    "undefined_40",
+    "undefined_41",
+    "undefined_42",
+    "undefined_43",
+    "undefined_44",
+    "undefined_45",
+    "undefined_46",
+    "undefined_47",
+    "Yes_11",
+    "Yes_12",
+    "Yes_13",
+    "SoCal United Professional Services 1",
+    "SoCal United Professional Services 2",
+    "Text1",
+    "Text2",
+    "Text3",
+    "Text4",
+    "Text5"
+  ],
+  "duplicates": [
+    {
+      "key": "minors_2_full_legal_name",
+      "oldNames": [
+        "Full Name_2",
+        "Name_2"
+      ]
+    },
+    {
+      "key": "proposed_guardians_2_phone_email",
+      "oldNames": [
+        "Phone_2",
+        "Email_2"
+      ]
+    },
+    {
+      "key": "parent_other",
+      "oldNames": [
+        "Other",
+        "Other_2"
+      ]
+    }
+  ]
+}
