@@ -1,0 +1,510 @@
+# Client Intake Sheet
+
+*Combined reference file — Document 18 of 18.* This file has three parts:
+1. **Part 1** — the original source questionnaire (Markdown), exactly as previously created.
+2. **Part 2** — the same questionnaire as built into the AcroForm PDF, with every AcroForm field name written exactly in the box / blank / statement it fills.
+3. **Part 3** — the DocuSign/DocSpring JSON schema for this form, exactly as generated.
+
+---
+
+## PART 1 — Original Source Markdown
+
+# Client Information Intake Sheet
+
+**SoCal United Professional Services**
+
+---
+
+## County of Courthouse (mark "x")
+
+| Los Angeles | Orange County | Riverside | San Bernardino |
+|-------------|---------------|-----------|----------------|
+| ___ | ___ | ___ | ___ |
+
+---
+
+## Client Information
+
+- **Name:** _________________________________________________ *(first name, last name)*
+- **Age:** _______ **D.O.B:** _________
+
+- **Physical Address:** _________________________________ **City:** ___________ **CA Zip:** __________
+
+- **Mailing Address:** __________________________________ **City:** ___________ **CA Zip:** __________
+  *(P.O. Box, if any)*
+
+- **Direct #:** ( ) _______________ - _______________ **Alternate #:** ( ) _______________ - _______________
+
+- **Email:** _________________________________ **Alternate Email:** _________________________________
+
+- **Occupation:** _____________________________________________
+
+---
+
+## Benefits
+
+**Do you receive any social service benefits: Cash Aid, Medi-Cal, SSI, Food Stamps or something else?**
+
+☐ YES  ☐ NO
+
+---
+
+## Case & Service Information
+
+**Type of Case:** *(Mark X)*
+- Civil ___  Probate ___  Family Law ___
+
+**Location:**
+- San Bernardino ___  Riverside ___
+
+---
+
+## Scheduling
+
+| | |
+|--|--|
+| **Consultation date:** | _________________ |
+| **Consultation time:** | _________________ am/pm |
+| **Expected due date:** | _________________ |
+| **Service charge:** | $________________ |
+| **Next Appt date:** | _________________ |
+| **Time:** | _________________ am/pm |
+| **Payment plan:** | Y___ N___ |
+
+---
+
+## Services Requested (Check all that apply)
+
+- ☐ Child Custody / Visitation
+- ☐ Divorce / Legal Separation
+- ☐ Modification
+- ☐ Child Support
+- ☐ Immigration
+- ☐ Power of Attorney
+- ☐ Will & Trusts
+- ☐ Adoption
+- ☐ Emergency Ex-Parte
+- ☐ Guardianship / Conservatorship
+- ☐ Other: _________________________________________________
+
+---
+
+## PART 2 — AcroForm Field Map (field names placed in their blanks)
+
+> **Legend for Part 2:** Each `⟨field_name⟩` token is an actual AcroForm (PDF form) field, placed exactly at the blank, line, or checkbox it fills in the form. The text around it is the form's own printed text. Field names are reproduced **exactly** as they appear in the PDF's AcroForm dictionary (the `/T` field-name values).
+
+*— Page 1 —*
+
+SoCal United Professional Services
+Client information Intake Sheet
+Location: San Bernardino _____ Riverside ______
+Consultation date: ___________ Consultation time: __________ am/pm
+Expected due date: __________ Service charge: $_________
+Next Appt date: __________ time:________ am/pm Payment plan Y__ N__
+COUNTY OF COURTHOUSE: (mark “x”)
+⟨LOS ANGELES⟩ ⟨ORANGE COUNTY⟩ ⟨RIVERSIDE⟩ ⟨SAN BERN⟩
+LOS ANGELES _______ ORANGE COUNTY_______ RIVERSIDE _______ SAN BERN _______
+Name:___________________________________________ ⟨Name⟩ Age: ⟨Age⟩ ______D.O.B ⟨DOB⟩ ________
+(first name, last name)
+Physical Address: ______________________________________ ⟨Physical Address⟩ City_________ ⟨City⟩ CA Zip ________ ⟨CA Zip⟩
+Mailing Address: ______________________________________ ⟨Mailing Address⟩ City_________ ⟨City_2⟩ CA Zip ⟨CA Zip_2⟩ ________
+(PO. BOX, if any)
+Direct #:( ⟨Text12⟩ ) ⟨undefined⟩ __________ - ⟨undefined_2⟩ __________ Alternate #: ( ⟨Text13⟩ ) _________ ⟨undefined_3⟩ - _________ ⟨undefined_4⟩
+Email: ⟨Email⟩ _______________________________ Alternate Email: ________________________ ⟨Alternate Email⟩
+Occupation: ⟨Occupation⟩ ___________________________
+Do you receive any social service benefits: Cash Aid, Medi-Cal, SSI, Food stamps or something else:
+⟨YES⟩ ⟨NO⟩
+YES______ NO______
+Type of Case: (Mark X) ⟨Probate⟩ ⟨Family Law⟩
+Civil ⟨Civil⟩ ____ Probate ____ Family Law ____
+Type of service:(mark X for all that apply)
+⟨Text1⟩ Child Custody / Visitation ⟨Text6⟩ Power of Attorney ⟨Text9⟩ Emergency Ex-Parte
+⟨Text2⟩ Divorce / Legal Separation ⟨Text7⟩ Will & Trusts ⟨Text10⟩ Guardianship / Conservatorship
+⟨Text3⟩ Modification ⟨Text8⟩ Adoption ⟨Text11⟩ Other: ________________ ⟨Other⟩
+⟨Text4⟩ Child Support
+⟨Text5⟩ Immigration
+
+*— Page 2 —*
+
+---
+
+## PART 3 — DocuSign / DocSpring JSON (as generated)
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://api.docspring.com/api/v1/templates/tpl_PLQsRdadbnECptQaSQ/schema.json",
+  "title": "Client Intake Sheet.pdf",
+  "description": "JSON Schema generated by DocSpring.com",
+  "definitions": {},
+  "type": "object",
+  "properties": {
+    "los_angeles": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Los Angeles",
+      "description": "LOS ANGELES"
+    },
+    "orange_county": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Orange County",
+      "description": "ORANGE COUNTY"
+    },
+    "riverside": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Riverside",
+      "description": "RIVERSIDE"
+    },
+    "san_bern": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "San Bern",
+      "description": "SAN BERN"
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Name",
+      "description": "Name"
+    },
+    "age": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Age",
+      "description": "Age"
+    },
+    "dob": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Dob",
+      "description": "D.O.B"
+    },
+    "physical_address": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Physical Address",
+      "description": "Physical Address"
+    },
+    "city": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "City",
+      "description": "City"
+    },
+    "ca_zip": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Ca Zip",
+      "description": "CA Zip"
+    },
+    "mailing_address": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Mailing Address",
+      "description": "Mailing Address"
+    },
+    "city_2": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "City 2",
+      "description": "City"
+    },
+    "ca_zip_2": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Ca Zip 2",
+      "description": "CA Zip"
+    },
+    "prim_phone_middle": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text12"
+    },
+    "prim_phone_ending": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text12"
+    },
+    "alt_phone_middle": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text12"
+    },
+    "alt_phone_ending": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text12"
+    },
+    "email": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Email",
+      "description": "Email"
+    },
+    "alternate_email": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Alternate Email",
+      "description": "Alternate Email"
+    },
+    "occupation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Occupation",
+      "description": "Occupation"
+    },
+    "yes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Yes",
+      "description": "YES"
+    },
+    "no": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "No",
+      "description": "NO"
+    },
+    "civil": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Civil",
+      "description": "Civil"
+    },
+    "probate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Probate",
+      "description": "Probate"
+    },
+    "family_law": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Family Law",
+      "description": "Family Law"
+    },
+    "other": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Other",
+      "description": "Other"
+    },
+    "child_custody_or_visit=X": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text1"
+    },
+    "diverce_": {
+      "type": "object",
+      "title": "Diverce",
+      "additionalProperties": false,
+      "properties": {
+        "_legal_separation=X": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Text1"
+        }
+      }
+    },
+    "modification=X": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text1"
+    },
+    "child_support=X": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text4"
+    },
+    "immigration=X": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text5"
+    },
+    "power_of_attorney=X": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text6"
+    },
+    "will_&amp;_trust=X": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text7"
+    },
+    "adoption=X": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text8"
+    },
+    "emergency_x_parte=X": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text9"
+    },
+    "guardianship_": {
+      "type": "object",
+      "title": "Guardianship",
+      "additionalProperties": false,
+      "properties": {
+        "_conservatorship=X": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Text10"
+        }
+      }
+    },
+    "other_type_of_service": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Other",
+      "description": "Other"
+    },
+    "prim_phone_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text12"
+    },
+    "alt_phone_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Text12"
+    },
+    "san_bernardino=X": {
+      "type": "string",
+      "title": "San Bernardino=x"
+    },
+    "riverside=X": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Riverside",
+      "description": "RIVERSIDE"
+    },
+    "date": {
+      "type": "string",
+      "title": "date"
+    },
+    "consultation_time": {
+      "type": "string",
+      "title": "Consultation Time"
+    },
+    "consultation_date": {
+      "type": "string",
+      "title": "Consultation Date"
+    },
+    "service_charge": {
+      "type": "string",
+      "title": "Service Charge"
+    },
+    "next_appt_date": {
+      "type": "string",
+      "title": "Next Appt Date"
+    },
+    "next_appt_time": {
+      "type": "string",
+      "title": "Next Appt Time"
+    },
+    "payment_plan_Y=X": {
+      "type": "string",
+      "title": "payment_plan_Y=X"
+    },
+    "payment_plan_N=X": {
+      "type": "string",
+      "title": "Payment Plan N=x"
+    }
+  },
+  "required": [
+    "san_bernardino=X",
+    "date",
+    "consultation_time",
+    "consultation_date",
+    "service_charge",
+    "next_appt_date",
+    "next_appt_time",
+    "payment_plan_Y=X",
+    "payment_plan_N=X"
+  ],
+  "additionalProperties": false
+}
+```
