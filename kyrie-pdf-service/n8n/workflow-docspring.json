@@ -1,0 +1,428 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kyrie-pdf-generate",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -32,
+        368
+      ],
+      "id": "307e2fa6-5a7e-4577-a094-f4d3735dd423",
+      "name": "Webhook",
+      "webhookId": "c8dea2a5-5cbe-42e0-b61c-b3d4d142368c"
+    },
+    {
+      "parameters": {
+        "content": "## Kyrie - PDF Generation & Send  (v5: phone-based Client lookup)\n\nWebhook -> Prep Payload -> GPT Translator (gpt-4o-mini) -> Fill PDF (https://codeeee.onrender.com) -> Email + Update Call Log + **Find Client by Phone -> Append PDF to Client.Attachments**.\n\n**v5 change:** The Client linking step no longer depends on the Call Log row having a `Client` link populated (v4 broke when the upstream scripting didn't set it). v5 SEARCHES the Clients table by phone number (last 10 digits, normalized) and appends the completed PDF to that Client's existing `Attachments` field, preserving any prior files.\n\n**Plug in:**\n- GPT Translator: OpenAI credential.\n- Update Call Log, Find Client by Phone, Append PDF to Client: replace `Bearer YOUR_AIRTABLE_PAT` in all three.\n- Email PDF to Staff: Gmail credential.\n\nIf no Clients row matches the phone, the chain skips silently (onError: continue). The completed PDF still lives on the Call Log row and in the staff inbox.",
+        "height": 360,
+        "width": 720
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -192,
+        -160
+      ],
+      "id": "053370a2-fa6e-485d-a46d-2a58cfebb3ca",
+      "name": "note"
+    },
+    {
+      "parameters": {
+        "jsCode": "// DocSpring version — KEY_MAPS removed. DocSpring uses semantic keys directly.\n// This node:\n//   - normalizes the incoming VAPI webhook body\n//   - resolves which form was being filled\n//   - extracts {kyrieFieldKey: rawAnswer} captured during the call\n//   - emits { recordId, formName, callId, fromNumber, rawAnswers } for GPT\n\nconst body = $input.first().json.body || $input.first().json;\n\n// Pull what the post-call processor put into the Call Log row\nconst recordId = body.recordId || body.callLogRecordId;\nconst formName = body.formName || body.formTemplate || body['Form Name'];\nconst callId = body.callId || body.vapiCallId || body['VAPI Call ID'];\nconst fromNumber = body.fromNumber || body.clientPhone || body['Client Phone'];\n\n// rawAnswers can come in as either JSON string or already-parsed object\nlet rawAnswers = body.rawAnswers || body['Form Answers (JSON)'] || {};\nif (typeof rawAnswers === 'string') {\n  try { rawAnswers = JSON.parse(rawAnswers); } catch { rawAnswers = {}; }\n}\n\nif (!formName) throw new Error('Prep Payload: missing formName');\nif (!recordId) throw new Error('Prep Payload: missing Call Log recordId');\n\nreturn [{\n  json: {\n    recordId,\n    formName,\n    callId,\n    fromNumber,\n    rawAnswers,\n  },\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        464
+      ],
+      "id": "aaf25731-d060-4f76-8be6-211f7c6958f6",
+      "name": "Prep Payload"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  model: \"gpt-4o-mini\",\n  temperature: 0.1,\n  response_format: { type: \"json_object\" },\n  messages: [\n    {\n      role: \"system\",\n      content: \"You map call-captured intake answers into a CANONICAL semantic key format for filling a US legal-intake PDF via DocSpring.\\n\\nYou receive: formName, validFieldKeys (the COMPLETE list of semantic keys for this form), rawAnswers ({kyrieKey: callerAnswer} captured during the call).\\n\\nOutput a single JSON object whose keys are EXCLUSIVELY drawn from validFieldKeys and whose values are the appropriate value for that key.\\n\\nRules:\\n- Never invent keys. Only use keys present in validFieldKeys.\\n- For an address like '1234 Main St, Sacramento, CA 95814', parse into separate _street/_city/_state/_zip keys when those exist for that party.\\n- For dates, output YYYY-MM-DD.\\n- For derived keys (todays_date, *_age, total_years_married), compute them from the available data.\\n- For checkbox/radio_group fields (keys with __option suffix), output true for the chosen option(s) and omit the others.\\n- If a key has no usable answer, omit it (do not output null or empty string).\\n- Output JSON only.\"\n    },\n    {\n      role: \"user\",\n      content: \"formName: \" + $json.formName + \"\\n\\nvalidFieldKeys:\\n\" + ($(\"Get Template Meta\").item.json.validFieldKeys || []).join(\"\\n\") + \"\\n\\nrawAnswers:\\n\" + JSON.stringify($json.rawAnswers, null, 2)\n    }\n  ]\n}) }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        432,
+        464
+      ],
+      "id": "c9c1f3a8-3c5d-4f12-aab1-1f7b3e9a2b50",
+      "name": "GPT Translator"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.docspring.com/api/v1/templates/{{ $node[\"Parse Template Meta\"].json.docSpringTemplateId }}/submissions?wait=true",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ data: JSON.parse($json.choices[0].message.content), test: false, metadata: { callId: $(\"Prep Payload\").item.json.callId, formName: $(\"Prep Payload\").item.json.formName, callLogRecordId: $(\"Prep Payload\").item.json.recordId } }) }}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        656,
+        464
+      ],
+      "id": "890acbac-a9dd-49b5-85ab-3326ed0bf3d7",
+      "name": "DocSpring Submit",
+      "notes": "POSTs collected answers to DocSpring. wait=true blocks until the PDF is rendered, so the response includes the download_url directly. Auth: configure an HTTP Basic Auth credential named \"DocSpring API\" with Token ID as user, Token Secret as password."
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"DocSpring Submit\"].json.submission.download_url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        880,
+        320
+      ],
+      "id": "26db9fcc-5429-4c8a-b5a0-0438852ae71a",
+      "name": "Download Filled PDF"
+    },
+    {
+      "parameters": {
+        "sendTo": "nexusityfunnels@gmail.com",
+        "subject": "={{ \"Completed Intake PDF - \" + $(\"Prep Payload\").item.json.clientName + \" (\" + $(\"Prep Payload\").item.json.formName + \")\" }}",
+        "message": "={{ \"<div style=\\\"font-family:Arial,sans-serif;color:#1f2933;font-size:13px;\\\">Completed intake form for <b>\" + $(\"Prep Payload\").item.json.clientName + \"</b> is attached.<br><br>Form: \" + $(\"Prep Payload\").item.json.formName + \"<br>Phone: \" + $(\"Prep Payload\").item.json.clientPhone + \"<br><br><a href=\\\"\" + $(\"Fill PDF\").item.json.url + \"\\\">Open PDF online</a><br><br><span style=\\\"color:#9aa3ad;font-size:11px;\\\">Kyrie - SoCal United Professional Services</span></div>\" }}",
+        "options": {
+          "attachmentsUi": {
+            "attachmentsBinary": [
+              {}
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1104,
+        320
+      ],
+      "id": "317dfe5a-b716-4314-abed-e11f59a3a275",
+      "name": "Email PDF to Staff",
+      "webhookId": "55774185-2bfc-411e-961b-103cb8fbbea3",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "1qoEdfIngiD7sNa5",
+          "name": "Gmail account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.airtable.com/v0/appboF9L8CJ3mGx7f/tblsAKvBTKmDQjOQr/{{ $(\"Prep Payload\").item.json.recordId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_AIRTABLE_PAT"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ typecast: true, fields: { \"PDF Status\": \"Done\", \"PDF Link\": $node[\"DocSpring Submit\"].json.submission.download_url, \"Completed PDF\": [ { url: $node[\"DocSpring Submit\"].json.submission.download_url } ] } }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        880,
+        544
+      ],
+      "id": "f2087eb6-5304-409a-bc2f-a373802e0944",
+      "name": "Update Call Log"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.airtable.com/v0/appboF9L8CJ3mGx7f/tbl4VxojMhfx4Mtdg",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_AIRTABLE_PAT"
+            }
+          ]
+        },
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "filterByFormula",
+              "value": "={{ (() => { const lt = String($('Prep Payload').item.json.clientPhone || '').replace(/\\\\D/g,'').slice(-10); if(!lt) return 'FALSE()'; const norm = (f) => `SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE({${f}},\\\" \\\",\\\"\\\"),\\\"-\\\",\\\"\\\"),\\\"+\\\",\\\"\\\"),\\\"(\\\",\\\"\\\")`; return `OR(FIND(\\\"${lt}\\\",${norm('Phone')}),FIND(\\\"${lt}\\\",${norm('Alt Phone')}))`; })() }}"
+            },
+            {
+              "name": "maxRecords",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1104,
+        544
+      ],
+      "id": "b16c84ee-1f4d-4ddb-9a0f-c5a3217f9be8",
+      "name": "Find Client by Phone",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.airtable.com/v0/appboF9L8CJ3mGx7f/tbl4VxojMhfx4Mtdg/{{ $json.records[0].id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_AIRTABLE_PAT"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ fields: { Attachments: [ ...(($json.records[0].fields && $json.records[0].fields.Attachments) || []).map(a => ({ id: a.id })), { url: $node[\"DocSpring Submit\"].json.submission.download_url, filename: $(\"Prep Payload\").item.json.formName + \" - \" + $(\"Prep Payload\").item.json.clientName + \" - \" + $(\"Prep Payload\").item.json.today + \".pdf\" } ] } }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1328,
+        544
+      ],
+      "id": "e9d22f51-7c2e-4d6c-bb13-2f1d7b9e8c40",
+      "name": "Append PDF to Client",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.airtable.com/v0/appboF9L8CJ3mGx7f/tblZB8Nfl3LCUFL22",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "filterByFormula",
+              "value": "={{\"{Form Name}=\\\"\" + $json.formName + \"\\\"\"}}"
+            },
+            {
+              "name": "maxRecords",
+              "value": "1"
+            },
+            {
+              "name": "fields[]",
+              "value": "DocSpring Template ID"
+            },
+            {
+              "name": "fields[]",
+              "value": "Field Keys"
+            },
+            {
+              "name": "fields[]",
+              "value": "Form Name"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_AIRTABLE_PAT"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "get-template-meta-node",
+      "name": "Get Template Meta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        600,
+        200
+      ],
+      "notes": "Looks up the DocSpring Template ID and the canonical Field Keys for the form being filled. Replaces the 1500-line static KEY_MAPS that used to live in Prep Payload."
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse \"Field Keys\" multilineText into a clean array of semantic keys.\n// The column stores entries one-per-line as \"snake_case_key | Human Label\".\n// We only want the keys (the left of the |), and skip section headers (# ...).\n\nconst at = $input.first().json;\nconst record = (at.records || [])[0];\nif (!record) throw new Error('Get Template Meta: no Airtable row matched formName \"' + $(\"Prep Payload\").item.json.formName + '\"');\n\nconst templateId = record.fields['DocSpring Template ID'];\nif (!templateId) throw new Error('Form Templates row has no DocSpring Template ID set yet — upload + map the form in DocSpring first.');\n\nconst raw = record.fields['Field Keys'] || '';\nconst validFieldKeys = raw\n  .split(/\\r?\\n/)\n  .map((l) => l.trim())\n  .filter((l) => l && !l.startsWith('#'))\n  .map((l) => l.split('|')[0].trim())\n  .filter(Boolean);\n\nreturn [{\n  json: {\n    docSpringTemplateId: templateId,\n    validFieldKeys,\n    formName: record.fields['Form Name'],\n  }\n}];"
+      },
+      "id": "parse-template-meta-node",
+      "name": "Parse Template Meta",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        200
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Prep Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prep Payload": {
+      "main": [
+        [
+          {
+            "node": "Get Template Meta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT Translator": {
+      "main": [
+        [
+          {
+            "node": "DocSpring Submit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Filled PDF": {
+      "main": [
+        [
+          {
+            "node": "Email PDF to Staff",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Call Log": {
+      "main": [
+        [
+          {
+            "node": "Find Client by Phone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Client by Phone": {
+      "main": [
+        [
+          {
+            "node": "Append PDF to Client",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Template Meta": {
+      "main": [
+        [
+          {
+            "node": "Parse Template Meta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Template Meta": {
+      "main": [
+        [
+          {
+            "node": "GPT Translator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DocSpring Submit": {
+      "main": [
+        [
+          {
+            "node": "Download Filled PDF",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update Call Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "29e651ac667bcf8dce73812cf60dd10e5aa4cb72c48ea6aa4907b0738054ccc2"
+  },
+  "name": "Kyrie PDF Workflow (DocSpring)"
+}
