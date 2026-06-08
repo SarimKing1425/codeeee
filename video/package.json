@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npx remotion studio",
-    "build": "npx remotion render",
-    "render": "npx remotion render TechReel out/reel.mp4",
-    "render:gif": "npx remotion render TechReel out/reel.gif"
+    "dev": "remotion studio",
+    "build": "remotion render",
+    "render": "remotion render TechReel out/reel.mp4",
+    "render:gif": "remotion render TechReel out/reel.gif"
   },
   "dependencies": {
     "@remotion/cli": "4.0.474",
