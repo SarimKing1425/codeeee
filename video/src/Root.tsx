@@ -1,5 +1,5 @@
 import React from "react";
-import { Composition } from "remotion";
+import { Composition, registerRoot } from "remotion";
 import { TechReel, TECH_REEL_DURATION_FRAMES } from "./compositions/TechReel";
 import { TextReveal } from "./compositions/TextReveal";
 import { CodeWindow } from "./compositions/CodeWindow";
@@ -73,3 +73,5 @@ export const RemotionRoot = () => {
     </>
   );
 };
+
+registerRoot(RemotionRoot);
