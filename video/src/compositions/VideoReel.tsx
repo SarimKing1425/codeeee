@@ -29,7 +29,7 @@ const S3_START = 780;
 const S3_END   = 1680;  // Process layout
 
 // Set this to your video's actual frame count (fps × seconds)
-export const VIDEO_REEL_FRAMES = 1800;
+export const VIDEO_REEL_FRAMES = 2901; // 48.35s × 60fps
 
 export interface VideoReelProps {
   accentColor: string;
@@ -51,7 +51,7 @@ export const VideoReel: React.FC<VideoReelProps> = ({ accentColor }) => {
 
       {/* ── Primary footage ──────────────────────────────────────────────── */}
       <Video
-        src={staticFile("clip.mp4")}
+        src={staticFile("clip_h264.mp4")}
         style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
 
