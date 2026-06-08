@@ -8,46 +8,28 @@ import {
   useVideoConfig,
   interpolate,
 } from "remotion";
-import { LowerThird } from "../components/LowerThird";
 import { BottomGradient } from "../components/BottomGradient";
+import { SceneLowerThird } from "../components/SceneLowerThird";
+import { IdeaStack } from "../components/IdeaStack";
+import { AlertBox } from "../components/AlertBox";
+import { ProcessLayout } from "../components/ProcessLayout";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// EDIT THESE to match your video's actual duration and your audio timestamps.
-// Duration = fps × seconds.  Default: 60fps × 45s = 2700 frames.
-// Check your video length in the Studio timeline and adjust accordingly.
+// SCENE MAP  (edit these frame numbers to nudge timing)
 // ─────────────────────────────────────────────────────────────────────────────
-export const VIDEO_REEL_FRAMES = 2700; // ← adjust to your clip length
+const S1_START = 0;
+const S1_END   = 180;   // Lower-third card
 
-const FPS = 60;
-const s = (seconds: number) => Math.round(seconds * FPS);
+const S2_START = 180;
+const S2_END   = 780;   // Idea stack
+const ALERT_START = 660;
+const ALERT_END   = 780;
 
-// Lower third cue sheet — edit timestamps (in seconds) freely
-const LOWER_THIRDS = [
-  {
-    label: "Strategy",
-    title: "ROI-Based Decisions",
-    startFrame: s(3),
-    endFrame: s(8),
-  },
-  {
-    label: "Operations",
-    title: "Automate One Step at a Time",
-    startFrame: s(12),
-    endFrame: s(18),
-  },
-  {
-    label: "Growth",
-    title: "Scale What Works",
-    startFrame: s(22),
-    endFrame: s(27),
-  },
-  {
-    label: "Mindset",
-    title: "Measure Everything",
-    startFrame: s(31),
-    endFrame: s(36),
-  },
-];
+const S3_START = 780;
+const S3_END   = 1680;  // Process layout
+
+// Set this to your video's actual frame count (fps × seconds)
+export const VIDEO_REEL_FRAMES = 1800;
 
 export interface VideoReelProps {
   accentColor: string;
@@ -57,7 +39,6 @@ export const VideoReel: React.FC<VideoReelProps> = ({ accentColor }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
 
-  // Global fade-in (first 20 frames) and fade-out (last 20 frames)
   const globalOpacity = interpolate(
     frame,
     [0, 20, durationInFrames - 20, durationInFrames],
@@ -68,37 +49,42 @@ export const VideoReel: React.FC<VideoReelProps> = ({ accentColor }) => {
   return (
     <AbsoluteFill style={{ background: "#000", opacity: globalOpacity }}>
 
-      {/* ── Primary video track ──────────────────────────────────────────── */}
+      {/* ── Primary footage ──────────────────────────────────────────────── */}
       <Video
         src={staticFile("clip.mp4")}
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-        }}
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
 
-      {/* ── Cinematic gradient overlays ──────────────────────────────────── */}
+      {/* ── Always-on base gradient ──────────────────────────────────────── */}
       <BottomGradient />
 
-      {/* ── Lower thirds ─────────────────────────────────────────────────── */}
-      {LOWER_THIRDS.map((lt, i) => {
-        const duration = lt.endFrame - lt.startFrame;
-        return (
-          <Sequence
-            key={i}
-            from={lt.startFrame}
-            durationInFrames={duration}
-          >
-            <LowerThird
-              label={lt.label}
-              title={lt.title}
-              duration={duration}
-              accentColor={accentColor}
-            />
-          </Sequence>
-        );
-      })}
+      {/* ── SCENE 1 · Frames 0–180 ───────────────────────────────────────── */}
+      {/* Sleek lower-third: 📊 ROI-Driven Automation                        */}
+      <Sequence from={S1_START} durationInFrames={S1_END - S1_START}>
+        <SceneLowerThird
+          emoji="📊"
+          text="ROI-Driven Automation"
+          duration={S1_END - S1_START}
+          accentColor={accentColor}
+        />
+      </Sequence>
+
+      {/* ── SCENE 2 · Frames 180–780 ─────────────────────────────────────── */}
+      {/* Sequential idea cards building a chaotic stack                     */}
+      <Sequence from={S2_START} durationInFrames={S2_END - S2_START}>
+        <IdeaStack duration={S2_END - S2_START} accentColor={accentColor} />
+      </Sequence>
+
+      {/* Alert box at frame 660 — sits on top of idea stack */}
+      <Sequence from={ALERT_START} durationInFrames={ALERT_END - ALERT_START}>
+        <AlertBox duration={ALERT_END - ALERT_START} />
+      </Sequence>
+
+      {/* ── SCENE 3 · Frames 780–1680 ────────────────────────────────────── */}
+      {/* Three-step process: each step activates 300 frames apart           */}
+      <Sequence from={S3_START} durationInFrames={S3_END - S3_START}>
+        <ProcessLayout duration={S3_END - S3_START} />
+      </Sequence>
 
     </AbsoluteFill>
   );
