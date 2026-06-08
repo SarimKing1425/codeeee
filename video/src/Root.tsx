@@ -3,6 +3,7 @@ import { Composition, registerRoot } from "remotion";
 import { TechReel, TECH_REEL_DURATION_FRAMES } from "./compositions/TechReel";
 import { TextReveal } from "./compositions/TextReveal";
 import { CodeWindow } from "./compositions/CodeWindow";
+import { VideoReel, VIDEO_REEL_FRAMES } from "./compositions/VideoReel";
 
 const FPS = 60;
 
@@ -52,6 +53,19 @@ export const RemotionRoot = () => {
         defaultProps={{
           code: `const agent = new ClaudeAgent({\n  model: "claude-sonnet-4-6",\n  tools: [search, code, deploy],\n});\n\nawait agent.run("ship it");`,
           language: "typescript",
+          accentColor: "#6366f1",
+        }}
+      />
+
+      {/* ── YOUR VIDEO with lower thirds ── */}
+      <Composition
+        id="VideoReel"
+        component={VideoReel as AnyComp}
+        durationInFrames={VIDEO_REEL_FRAMES}
+        fps={FPS}
+        width={1080}
+        height={1920}
+        defaultProps={{
           accentColor: "#6366f1",
         }}
       />
