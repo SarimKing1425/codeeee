@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Asterisk-Style Carousel Template — ink & paper</title>
+
+<!--
+  ============================================================================
+  ASTERISK-STYLE EDITORIAL CAROUSEL — SELF-CONTAINED HTML TEMPLATE
+  ----------------------------------------------------------------------------
+  Read design-system/INSTAGRAM-DESIGN-SYSTEM.md first.
+
+  HOW TO USE (any Claude session, NO MCP, NO build step):
+    1. Each <section class="slide"> is exactly ONE Instagram post (1080x1350).
+    2. Duplicate a slide block, paste in the copy, keep <= 3 lines per statement.
+    3. Colors are ONLY ink + warm paper. Never add orange or any third color.
+    4. Alternate the diagonal lead (.lead-left / .lead-right), the center mark,
+       and the texture (.tex-grain / .tex-grid / .tex-dots) slide to slide.
+    5. Export: open in a browser and either screenshot each .slide, or click
+       "Download all as PNG" (uses the browser only, no extra tooling needed
+       once the html2canvas CDN is reachable — falls back to manual screenshot).
+  ============================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Archivo+Black&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  /* ---- COLOR (ink + paper only — NO orange, NO third hue) ---- */
+  --paper:#E9E7E1;        /* warm newsprint grey background           */
+  --paper-2:#EFEDE8;      /* slightly lighter paper, slide variety    */
+  --paper-pure:#FAFAF8;   /* "white" option (never #fff)              */
+  --ink:#0E0E0E;          /* near-black: all primary type & marks     */
+  --ink-soft:#2A2A2A;     /* secondary lines / captions               */
+  --ink-mute:#6B6862;     /* tiny meta text, footers, page dots       */
+  --hairline:rgba(14,14,14,.14);
+
+  /* ---- TYPE ---- */
+  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
+  --grotesque:"Archivo Black","Arial Black","Helvetica Neue",Arial,sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+
+  /* ---- CANVAS ---- */
+  --w:1080px; --h:1350px; --safe-x:88px; --safe-y:96px;
+
+  /* preview scale (does NOT affect export size). Set to 1 to view 1:1. */
+  --scale:.52;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#cfcdc7;color:var(--ink);
+  font-family:var(--body);-webkit-font-smoothing:antialiased}
+body{padding:48px 0 96px;display:flex;flex-direction:column;align-items:center;gap:44px}
+
+.toolbar{position:fixed;top:14px;right:16px;z-index:99;display:flex;gap:8px}
+.toolbar button{font:600 13px var(--body);background:var(--ink);color:var(--paper);
+  border:0;padding:9px 14px;border-radius:999px;cursor:pointer;letter-spacing:.02em}
+.toolbar button.alt{background:transparent;color:var(--ink);border:1px solid var(--hairline)}
+.hint{position:fixed;top:14px;left:16px;z-index:99;font:500 12px var(--body);
+  color:#555;max-width:260px;line-height:1.4}
+
+.stage{display:flex;flex-direction:column;align-items:center;gap:44px}
+
+/* ===========================  THE CANVAS  ============================== */
+.slide{
+  position:relative;
+  width:var(--w);height:var(--h);
+  background:var(--paper);
+  overflow:hidden;
+  /* preview scaling — keeps true 1080x1350 pixels for screenshots/export */
+  transform:scale(var(--scale));
+  transform-origin:top center;
+  margin-bottom:calc((var(--h) * (var(--scale) - 1)));
+}
+.slide.paper-2{background:var(--paper-2)}
+.slide.paper-pure{background:var(--paper-pure)}
+.slide.dark{background:var(--ink);color:var(--paper)}
+
+/* the padded safe area every element lives inside */
+.frame{position:absolute;inset:var(--safe-y) var(--safe-x);
+  display:flex;flex-direction:column;z-index:2}
+
+/* =============================  TEXTURES  ============================== */
+/* faint, full-bleed, sits UNDER type. Toggle one class per slide.        */
+.slide::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none}
+
+/* newsprint grain */
+.tex-grain::after{
+  opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* grid / graph paper */
+.tex-grid::after{
+  opacity:1;
+  background-image:
+    repeating-linear-gradient(0deg,  transparent 0 35px, var(--hairline) 35px 36px),
+    repeating-linear-gradient(90deg, transparent 0 35px, var(--hairline) 35px 36px);
+}
+.tex-grid.margin-rule::after{
+  background-image:
+    repeating-linear-gradient(0deg,  transparent 0 35px, var(--hairline) 35px 36px),
+    repeating-linear-gradient(90deg, transparent 0 35px, var(--hairline) 35px 36px),
+    linear-gradient(90deg, transparent 120px, rgba(14,14,14,.10) 120px 122px, transparent 122px);
+}
+/* hole-punch dot margin (left edge) */
+.tex-dots::after{
+  opacity:1;
+  background-image:
+    radial-gradient(circle at 60px 300px,  var(--ink) 0 13px, transparent 14px),
+    radial-gradient(circle at 60px 1050px, var(--ink) 0 13px, transparent 14px);
+}
+
+/* ====================  TYPE PRIMITIVES (the brand)  =================== */
+.serif{font-family:var(--serif);font-style:italic;font-weight:900;
+  letter-spacing:-.01em;line-height:.9;text-transform:lowercase;color:inherit}
+.statement{font-family:var(--grotesque);font-weight:900;text-transform:uppercase;
+  letter-spacing:-.02em;line-height:.92;color:inherit}
+
+/* the locked focal-word + statement unit */
+.block{display:flex;flex-direction:column;align-items:flex-start}
+.block.right{align-items:flex-end;text-align:right}
+.block .serif{font-size:162px;margin-bottom:-.05em;margin-left:-.03em}
+.block .statement{font-size:96px}
+.block.sub .statement{font-size:72px}     /* use when 3+ lines               */
+
+/* sizes that "fit" — drop these in when copy runs long */
+.fs-130{font-size:130px}.fs-116{font-size:116px}.fs-104{font-size:104px}
+.fs-92{font-size:92px}.fs-80{font-size:80px}.fs-72{font-size:72px}.fs-64{font-size:64px}
+.serif-190{font-size:190px}.serif-170{font-size:170px}.serif-150{font-size:150px}
+
+/* ====================  STOP / START WORKHORSE  ======================= */
+.workhorse .frame{justify-content:space-between}
+.zoneA{margin-top:8px}
+.zoneB{flex:1;display:flex;align-items:center;justify-content:center}
+.zoneC{margin-bottom:92px;display:flex}   /* clears the footer row */
+.lead-left  .zoneA{align-self:flex-start}
+.lead-left  .zoneC{justify-content:flex-end}   /* diagonal travel */
+.lead-right .zoneA{align-self:flex-start}
+.lead-right .zoneC{justify-content:flex-start}
+
+/* center mark */
+.mark{width:120px;height:120px;color:var(--ink)}
+.dark .mark{color:var(--paper)}
+.mark svg{width:100%;height:100%;display:block}
+
+/* ===========================  CTA SLIDE  ============================= */
+.cta .frame{align-items:center;text-align:center;justify-content:center;gap:38px}
+.cta .floatmark{width:64px;height:64px;color:var(--paper)}
+.cta .photo{width:300px;height:230px;object-fit:cover;
+  outline:1px solid rgba(255,255,255,.18)}
+.cta .photo-fallback{width:300px;height:230px;
+  background:linear-gradient(160deg,#3a4a63,#0f1620 70%);
+  outline:1px solid rgba(255,255,255,.18);display:flex;align-items:center;
+  justify-content:center;color:rgba(255,255,255,.35);font:500 14px var(--body)}
+.cta .pre{font-family:var(--serif);font-style:italic;font-weight:700;
+  font-size:54px;color:var(--paper)}
+.cta .key{font-family:var(--serif);font-style:italic;font-weight:900;
+  font-size:188px;line-height:.86;color:var(--paper)}
+.cta .key .q{font-weight:700}
+.cta .sub{max-width:640px;font:400 33px/1.4 var(--body);
+  color:rgba(233,231,225,.82)}
+.dots{display:flex;gap:12px;margin-top:8px}
+.dots i{width:9px;height:9px;border-radius:50%;background:rgba(233,231,225,.35)}
+.dots i.on{background:var(--paper)}
+
+/* =========================  TITLE / TESTIMONIAL  ===================== */
+.title .frame{justify-content:center}
+.title .statement{font-size:150px;line-height:.9}
+.title .kicker{font:600 26px var(--body);letter-spacing:.32em;
+  text-transform:uppercase;color:var(--ink-mute);margin-bottom:28px}
+.title .pin{position:absolute;top:var(--safe-y);right:var(--safe-x);
+  width:46px;height:46px;color:var(--ink);opacity:.85}
+
+/* ============================  FOOTER ROW  =========================== */
+.footer{position:absolute;left:var(--safe-x);right:var(--safe-x);
+  bottom:var(--safe-y);display:flex;align-items:center;justify-content:space-between;
+  z-index:3;color:var(--ink-mute)}
+.dark .footer{color:rgba(233,231,225,.7)}
+.footer .handle{font:500 24px var(--body)}
+.footer .save{font-family:var(--serif);font-style:italic;font-size:24px;
+  display:flex;align-items:center;gap:8px}
+.footer .arrow{font-size:30px;line-height:1}
+.footer.off{display:none}              /* drop the footer entirely        */
+
+/* optional swipe chevrons (off by default; add .nav to a slide) */
+.chev{position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:54px;height:54px;border-radius:50%;border:1px solid var(--hairline);
+  display:none;align-items:center;justify-content:center;color:var(--ink-mute);
+  font-size:26px;font-family:var(--body)}
+.slide.nav .chev{display:flex}
+.chev.l{left:18px}.chev.r{right:18px}
+
+.caption-label{font:600 12px var(--body);color:#555;letter-spacing:.06em;
+  text-transform:uppercase;margin-bottom:-30px}
+</style>
+</head>
+
+<body>
+
+<div class="hint">Each card = one 1080×1350 post. Screenshot a card, or use the
+buttons →. Edit copy directly in the HTML. Ink + paper only.</div>
+<div class="toolbar">
+  <button class="alt" onclick="setScale()">Toggle 1:1 / fit</button>
+  <button onclick="exportAll()">Download all as PNG</button>
+</div>
+
+<div class="stage" id="stage">
+
+  <!-- ===================================================================
+       SLIDE 1 — TITLE / COVER (image 5 reference: CLIENT TESTIMONIAL)
+       =================================================================== -->
+  <div class="caption-label">Slide 1 · Title / Cover</div>
+  <section class="slide title paper-2">
+    <div class="frame">
+      <div class="kicker">A field guide</div>
+      <div class="statement">STOP<br>GUESSING.<br>START<br>SYSTEMS.</div>
+    </div>
+    <!-- subtle "taped card" pin, monochrome -->
+    <svg class="pin" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2l1 1-4 5 4 4-1 1-5-2-3 8-1-1 3-8-2-5 1-1 4 4 5-4z"/></svg>
+    <div class="footer"><span class="handle">@yourhandle</span>
+      <span class="arrow">→</span></div>
+  </section>
+
+  <!-- ===================================================================
+       SLIDE 2 — STOP / START  (image 1: spiral, grain, lead-left)
+       =================================================================== -->
+  <div class="caption-label">Slide 2 · Stop / Start · spiral · grain</div>
+  <section class="slide workhorse lead-left tex-grain">
+    <div class="frame">
+      <div class="zoneA">
+        <div class="block">
+          <span class="serif">stop</span>
+          <span class="statement">REINVENTING<br>EVERY POST.</span>
+        </div>
+      </div>
+      <div class="zoneB">
+        <div class="mark"><!-- spiral -->
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor"
+               stroke-width="7.5" stroke-linecap="round">
+            <path d="M50 50 A4 4 0 0 1 50 58 A8 8 0 0 1 50 42 A12 12 0 0 1 50 66
+                     A16 16 0 0 1 50 34 A20 20 0 0 1 50 74"/>
+          </svg>
+        </div>
+      </div>
+      <div class="zoneC">
+        <div class="block right">
+          <span class="serif">start</span>
+          <span class="statement">USING PROVEN<br>FRAMEWORKS.</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span class="handle">@yourhandle</span>
+      <span class="save">▢ save for later</span><span class="arrow">→</span></div>
+  </section>
+
+  <!-- ===================================================================
+       SLIDE 3 — STOP / START  (image 2: 8-point star, grid, lead-right)
+       =================================================================== -->
+  <div class="caption-label">Slide 3 · Stop / Start · star · grid</div>
+  <section class="slide workhorse lead-right tex-grid margin-rule">
+    <div class="frame">
+      <div class="zoneA">
+        <div class="block">
+          <span class="serif">stop</span>
+          <span class="statement">POSTING WITHOUT<br>A HOOK.</span>
+        </div>
+      </div>
+      <div class="zoneB">
+        <div class="mark"><!-- 8-point star -->
+          <svg viewBox="0 0 100 100" fill="currentColor">
+            <path d="M50 2 58 34 84 16 66 42 98 50 66 58 84 84 58 66 50 98 42 66
+                     16 84 34 58 2 50 34 42 16 16 42 34z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="zoneC">
+        <div class="block">
+          <span class="serif">start</span>
+          <span class="statement sub" style="font-size:80px">LEADING WITH<br>PATTERN<br>INTERRUPTS.</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span class="handle">@yourhandle</span>
+      <span class="save">▢ save for later</span><span class="arrow">→</span></div>
+  </section>
+
+  <!-- ===================================================================
+       SLIDE 4 — STOP / START  (image 3: eye, hole-punch dots, lead-left)
+       =================================================================== -->
+  <div class="caption-label">Slide 4 · Stop / Start · eye · dot margin</div>
+  <section class="slide workhorse lead-left tex-dots paper-2">
+    <div class="frame">
+      <div class="zoneA">
+        <div class="block">
+          <span class="serif">stop</span>
+          <span class="statement">EDITING FOR<br>HOURS.</span>
+        </div>
+      </div>
+      <div class="zoneB">
+        <div class="mark"><!-- eye -->
+          <svg viewBox="0 0 100 60" fill="currentColor">
+            <path d="M50 2C24 2 4 30 4 30s20 28 46 28 46-28 46-28S76 2 50 2z" fill="none"
+                  stroke="currentColor" stroke-width="7"/>
+            <circle cx="50" cy="30" r="13"/>
+          </svg>
+        </div>
+      </div>
+      <div class="zoneC">
+        <div class="block right">
+          <span class="serif">start</span>
+          <span class="statement">BATCHING YOUR<br>CONTENT.</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span class="handle">@yourhandle</span>
+      <span class="save">▢ save for later</span><span class="arrow">→</span></div>
+  </section>
+
+  <!-- ===================================================================
+       SLIDE 5 — CTA  (image 4: dark, photo, giant serif keyword)
+       =================================================================== -->
+  <div class="caption-label">Slide 5 · CTA · dark</div>
+  <section class="slide cta dark">
+    <div class="frame">
+      <div class="floatmark"><!-- daisy flower -->
+        <svg viewBox="0 0 100 100" fill="currentColor">
+          <g>
+            <ellipse cx="50" cy="30" rx="11" ry="19"/>
+            <ellipse cx="50" cy="30" rx="11" ry="19" transform="rotate(72 50 50)"/>
+            <ellipse cx="50" cy="30" rx="11" ry="19" transform="rotate(144 50 50)"/>
+            <ellipse cx="50" cy="30" rx="11" ry="19" transform="rotate(216 50 50)"/>
+            <ellipse cx="50" cy="30" rx="11" ry="19" transform="rotate(288 50 50)"/>
+          </g>
+          <circle cx="50" cy="50" r="9" fill="#0E0E0E"/>
+        </svg>
+      </div>
+      <!-- replace src with a brand photo; falls back to a gradient if missing -->
+      <img class="photo" alt="" src=""
+           onerror="this.outerHTML='&lt;div class=&quot;photo-fallback&quot;&gt;brand photo&lt;/div&gt;'">
+      <div class="pre">Comment the word</div>
+      <div class="key"><span class="q">&ldquo;</span>clarity<span class="q">&rdquo;</span></div>
+      <div class="sub">to learn how we convert hundreds of clients through
+        organic content that sounds like you.</div>
+      <div class="dots"><i></i><i></i><i></i><i></i><i></i><i class="on"></i></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* ----- preview scale toggle ----- */
+let oneToOne=false;
+function setScale(){
+  oneToOne=!oneToOne;
+  document.documentElement.style.setProperty('--scale', oneToOne?'1':'.52');
+}
+
+/* ----- optional one-click PNG export (browser-only) -----
+   Loads html2canvas from CDN on demand. If the CDN is blocked, it tells you
+   to screenshot manually — no MCP, no native tooling required either way. */
+function loadH2C(){
+  return new Promise((res,rej)=>{
+    if(window.html2canvas) return res();
+    const s=document.createElement('script');
+    s.src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+    s.onload=res; s.onerror=rej; document.head.appendChild(s);
+  });
+}
+async function exportAll(){
+  try{ await loadH2C(); }
+  catch(e){ alert('PNG export needs html2canvas (CDN blocked here).\n'+
+    'Just screenshot each card instead — they are true 1080×1350.'); return; }
+  const prev=getComputedStyle(document.documentElement).getPropertyValue('--scale');
+  document.documentElement.style.setProperty('--scale','1');
+  const slides=[...document.querySelectorAll('.slide')];
+  for(let i=0;i<slides.length;i++){
+    const c=await html2canvas(slides[i],{width:1080,height:1350,scale:1,
+      backgroundColor:null,useCORS:true});
+    const a=document.createElement('a');
+    a.download='slide-'+String(i+1).padStart(2,'0')+'.png';
+    a.href=c.toDataURL('image/png'); a.click();
+    await new Promise(r=>setTimeout(r,250));
+  }
+  document.documentElement.style.setProperty('--scale',prev);
+}
+</script>
+</body>
+</html>
