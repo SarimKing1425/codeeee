@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LOXES AI — Retention Case Study (8-slide carousel)</title>
+
+<!--
+  ============================================================================
+  LOXES AI — RETENTION CASE STUDY · 8-slide carousel (dark + gold)
+  ----------------------------------------------------------------------------
+  Self-contained, NO MCP. Each <section class="slide"> = one 1080x1350 post.
+  Screenshot a card, or hit "Download all as PNG".
+  Components: cover · section headers (01..06) · bullet list · stat row ·
+  big before→after · spend-vs-return · CTA.  Accent gold #E2A23A on near-black.
+  ============================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --bg:#0c0c0e; --bg-2:#15151a;
+  --ink:#ffffff; --muted:#9a9aa0; --faint:#6a6a70; --gold:#E2A23A;
+  --card:rgba(255,255,255,.035); --card-bd:rgba(255,255,255,.09);
+  --hair:rgba(255,255,255,.12);
+  --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+  --mono:"Space Mono","SFMono-Regular",ui-monospace,Menlo,monospace;
+  --w:1080px; --h:1350px; --safe:84px; --scale:.5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#000;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+body{padding:48px 0 96px;display:flex;flex-direction:column;align-items:center;gap:40px}
+
+.toolbar{position:fixed;top:14px;right:16px;z-index:99;display:flex;gap:8px}
+.toolbar button{font:600 13px var(--sans);background:var(--gold);color:#1a1205;border:0;
+  padding:9px 14px;border-radius:999px;cursor:pointer}
+.toolbar button.alt{background:transparent;color:#fff;border:1px solid #333}
+.hint{position:fixed;top:14px;left:16px;z-index:99;font:500 12px var(--sans);color:#777;max-width:240px;line-height:1.4}
+.cap{font:600 12px var(--sans);color:#777;letter-spacing:.06em;text-transform:uppercase}
+
+/* ===========================  THE CANVAS  ============================== */
+.slide{position:relative;width:var(--w);height:var(--h);overflow:hidden;
+  background:radial-gradient(125% 80% at 50% -8%, var(--bg-2) 0%, var(--bg) 52%, #08080a 100%);
+  transform:scale(var(--scale));transform-origin:top center;
+  margin-bottom:calc((var(--h) * (var(--scale) - 1)))}
+.slide::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(115deg, rgba(255,255,255,.025) 0%, transparent 30%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-blend-mode:overlay;opacity:.06}
+.frame{position:absolute;inset:var(--safe);display:flex;flex-direction:column;z-index:2}
+
+/* ============================  PRIMITIVES  ============================= */
+.kicker{font:700 16px var(--mono);letter-spacing:.28em;text-transform:uppercase;
+  color:var(--ink);display:flex;align-items:center;gap:14px}
+.kicker .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 14px 1px rgba(226,162,58,.6)}
+.kicker .num{color:var(--gold)}
+
+.headline{font-family:var(--sans);font-weight:800;letter-spacing:-.022em;line-height:1.05;color:var(--ink)}
+.headline .g{color:var(--gold)}
+.rule{width:64px;height:4px;background:var(--gold);border-radius:2px}
+.sub{color:var(--muted);font-weight:400;line-height:1.55}
+.sub b{color:var(--ink);font-weight:700}
+.sub .g{color:var(--gold);font-weight:700}
+
+.footer{position:absolute;left:var(--safe);right:var(--safe);bottom:var(--safe);
+  display:flex;align-items:center;justify-content:space-between;z-index:3;
+  font:700 14px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.footer .swipe{color:var(--muted)}
+.dots{position:absolute;left:0;right:0;bottom:calc(var(--safe) + 44px);
+  display:flex;gap:9px;justify-content:center;z-index:3}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.22)}
+.dots i.on{background:var(--gold)}
+
+/* bullet list */
+.blist{display:flex;flex-direction:column;gap:20px;margin-top:8px}
+.blist .row{display:flex;gap:16px;font-size:27px;line-height:1.4;color:var(--ink);font-weight:500}
+.blist .row .a{color:var(--gold);font-weight:700;flex:none}
+.blist .row .g{color:var(--gold);font-weight:700}
+
+/* stat row */
+.stats{display:flex;border:1px solid var(--card-bd);border-radius:18px;overflow:hidden;background:var(--card)}
+.stats .cell{flex:1;padding:46px 24px;text-align:center;border-left:1px solid var(--card-bd)}
+.stats .cell:first-child{border-left:0}
+.stats .v{font-family:var(--sans);font-weight:800;font-size:78px;letter-spacing:-.02em;line-height:1}
+.stats .v.g{color:var(--gold)}
+.stats .k{font:700 14px var(--mono);letter-spacing:.10em;text-transform:uppercase;
+  color:var(--muted);margin-top:18px;line-height:1.3}
+
+/* big before -> after */
+.swap{display:flex;align-items:center;gap:34px;flex-wrap:wrap}
+.swap .from{font:800 104px var(--sans);letter-spacing:-.03em;color:var(--ink);opacity:.55}
+.swap .arr{font:700 76px var(--sans);color:var(--gold)}
+.swap .to{font:800 132px var(--sans);letter-spacing:-.03em;color:var(--gold)}
+
+/* spend vs return */
+.vs{display:flex;align-items:stretch;gap:20px}
+.vs .p{flex:1;border:1px solid var(--card-bd);border-radius:18px;background:var(--card);
+  padding:42px 34px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.vs .p .lbl{font:700 15px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.vs .p .val{font:800 56px var(--sans);letter-spacing:-.02em;line-height:1.05;color:var(--ink)}
+.vs .p.win{border-color:rgba(226,162,58,.45)}
+.vs .p.win .val{color:var(--gold)}
+.vs .mid{display:flex;align-items:center;font:700 22px var(--mono);text-transform:uppercase;color:var(--faint)}
+
+/* ============================  LAYOUTS  =============================== */
+.cover .frame{justify-content:center}
+.cover .kicker{position:absolute;top:0;left:0}
+.cover .headline{font-size:74px;max-width:780px}
+.cover .lead{margin-top:30px;font-size:34px;color:var(--ink);font-weight:600;max-width:680px;line-height:1.3}
+.cover .result{margin-top:40px;font-size:30px;line-height:1.4}
+.cover .result .g{color:var(--gold);font-weight:700}
+
+.sec .frame{justify-content:flex-start}
+.sec .headline{margin-top:40px;font-size:62px}
+.sec .body{margin-top:30px}
+.sec .sub{font-size:31px;max-width:780px}
+.sec .blist{margin-top:44px}
+.sec .stats{margin-top:60px}
+.sec .swap{margin-top:18px}
+.sec .vs{margin-top:8px}
+.sec .lbl{font:700 17px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.sec.center .frame{justify-content:center}
+
+.cta .frame{justify-content:center;align-items:flex-start}
+.cta .wordmark{font:800 30px var(--mono);letter-spacing:.22em;color:var(--gold);
+  text-transform:uppercase;display:flex;align-items:center;gap:14px;position:absolute;top:0;left:0}
+.cta .headline{font-size:84px;max-width:760px}
+.cta .sub{margin-top:32px;font-size:32px;max-width:720px}
+.cta .pill{margin-top:54px;display:inline-flex;align-items:center;gap:14px;
+  background:var(--gold);color:#1a1205;font:800 28px var(--sans);
+  padding:24px 38px;border-radius:999px;align-self:flex-start}
+</style>
+</head>
+<body>
+<div class="hint">LOXES AI · retention case study · 8 slides · each card 1080×1350</div>
+<div class="toolbar">
+  <button class="alt" onclick="setScale()">Toggle 1:1 / fit</button>
+  <button onclick="exportAll()">Download all as PNG</button>
+</div>
+
+<!-- ======================  1 · COVER  ============================= -->
+<p class="cap">Slide 1 · Cover</p>
+<section class="slide cover">
+  <div class="frame">
+    <div class="kicker"><span class="dot"></span>Loxes AI · Case Study</div>
+    <h1 class="headline">A 7-figure supplement brand was
+      <span class="g">leaking subscribers</span> through its phone line.</h1>
+    <p class="lead">So we put an AI receptionist on the front desk.</p>
+    <p class="result">30 days later: <span class="g">returning customers up&nbsp;~4×.</span>
+      Zero missed calls.</p>
+  </div>
+  <div class="footer"><span>Loxes AI — AI Voice Systems</span><span class="swipe">Swipe →</span></div>
+</section>
+
+<!-- ======================  2 · THE PROBLEM  ====================== -->
+<p class="cap">Slide 2 · The Problem</p>
+<section class="slide sec center">
+  <div class="frame">
+    <div class="kicker"><span class="num">01</span>The Problem</div>
+    <h1 class="headline">~1,000 support calls a month.<br>
+      <span class="g">Too many hit voicemail.</span></h1>
+    <div class="body">
+      <p class="sub">Every missed call was a confused or frustrated subscriber —
+        one step closer to hitting cancel. Their returning-customer rate sat at
+        just <span class="g">6.88%</span>.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Loxes AI — Case Study</span><span class="swipe">Swipe →</span></div>
+</section>
+
+<!-- ======================  3 · WHAT WE BUILT  ==================== -->
+<p class="cap">Slide 3 · What We Built</p>
+<section class="slide sec center">
+  <div class="frame">
+    <div class="kicker"><span class="num">02</span>What We Built</div>
+    <h1 class="headline">An AI receptionist that answers every call in
+      <span class="g">under one ring.</span></h1>
+    <div class="body">
+      <p class="sub">It handles order status, subscription swaps, pauses, and
+        cancellation saves — in a natural voice, 24/7 — and hands off to a human
+        the moment it needs to.</p>
+    </div>
+    <div class="blist">
+      <div class="row"><span class="a">›</span><span><span class="g">ElevenLabs voice agent</span> — sub-second pickup</span></div>
+      <div class="row"><span class="a">›</span><span>Live <span class="g">Shopify + Loop</span> subscription data</span></div>
+      <div class="row"><span class="a">›</span><span>Cancel-save flows · human escalation · full call logging</span></div>
+    </div>
+  </div>
+  <div class="footer"><span>Loxes AI — Case Study</span><span class="swipe">Swipe →</span></div>
+</section>
+
+<!-- ======================  4 · EVERY CALL ANSWERED  ============= -->
+<p class="cap">Slide 4 · Every Call Answered</p>
+<section class="slide sec center">
+  <div class="frame">
+    <div class="kicker"><span class="num">03</span>Every Call Answered</div>
+    <h1 class="headline" style="margin-top:34px">1,060 calls in 30 days.
+      <span class="g">None lost.</span></h1>
+    <div class="stats" style="margin-top:64px">
+      <div class="cell"><div class="v g">0</div><div class="k">Missed calls</div></div>
+      <div class="cell"><div class="v">4:04</div><div class="k">Avg handle time</div></div>
+      <div class="cell"><div class="v">$108</div><div class="k">30-day AI cost</div></div>
+    </div>
+  </div>
+  <div class="footer"><span>Loxes AI — Case Study</span><span class="swipe">Swipe →</span></div>
+</section>
+
+<!-- ======================  5 · RETENTION TOOK OFF  ============== -->
+<p class="cap">Slide 5 · Retention Took Off</p>
+<section class="slide sec center">
+  <div class="frame">
+    <div class="kicker"><span class="num">04</span>Retention Took Off</div>
+    <div style="margin-top:48px">
+      <div class="lbl">Returning-customer rate</div>
+      <div class="swap"><span class="from">6.88%</span><span class="arr">→</span><span class="to">28.87%</span></div>
+    </div>
+    <p class="sub" style="margin-top:48px;font-size:32px;max-width:760px">
+      A <b>~4× lift</b> — the support line stopped bleeding subscribers and started
+      keeping them, worth <span class="g">~$198K in extra revenue</span> every month.</p>
+  </div>
+  <div class="footer"><span>Loxes AI — Case Study</span><span class="swipe">Swipe →</span></div>
+</section>
+
+<!-- ======================  6 · THE BUSINESS IMPACT  ============= -->
+<p class="cap">Slide 6 · The Business Impact</p>
+<section class="slide sec center">
+  <div class="frame">
+    <div class="kicker"><span class="num">05</span>The Business Impact</div>
+    <h1 class="headline" style="margin-top:34px;font-size:58px">Retention compounding
+      <span class="g">into revenue.</span></h1>
+    <p class="sub" style="margin-top:26px;font-size:31px;max-width:760px">
+      <span class="g">~$198K/mo</span> of new revenue from the retention jump.</p>
+    <div class="stats" style="margin-top:58px">
+      <div class="cell"><div class="v">28.87%</div><div class="k">Returning rate</div></div>
+      <div class="cell"><div class="v">17,191</div><div class="k">Orders / 30d</div></div>
+      <div class="cell"><div class="v g">$923K</div><div class="k">Total sales / 30d</div></div>
+    </div>
+  </div>
+  <div class="footer"><span>Loxes AI — Case Study</span><span class="swipe">Swipe →</span></div>
+</section>
+
+<!-- ======================  7 · THE ROI  ========================= -->
+<p class="cap">Slide 7 · The ROI</p>
+<section class="slide sec center">
+  <div class="frame">
+    <div class="kicker"><span class="num">06</span>The ROI</div>
+    <h1 class="headline" style="margin-top:34px;font-size:56px">$108 of AI replaced a
+      missed-call problem <span class="g">worth far more.</span></h1>
+    <div class="vs" style="margin-top:54px">
+      <div class="p"><div class="lbl">Spend</div><div class="val">$108<span style="font-size:32px">/mo</span></div></div>
+      <div class="mid">vs</div>
+      <div class="p win"><div class="lbl">Return</div><div class="val">$198K<span style="font-size:30px"> extra rev / mo</span></div></div>
+    </div>
+    <p class="sub" style="margin-top:48px;font-size:27px;max-width:800px">
+      Returning customers went from <b>6.88%</b> to <b>28.87%</b> of orders. Across
+      17,195 orders/mo at a $52.51 AOV, that&rsquo;s <span class="g">~$198K extra
+      revenue every month</span> — about <span class="g">$2.4M a year</span>.</p>
+  </div>
+  <div class="footer"><span>Loxes AI — Case Study</span><span class="swipe">Swipe →</span></div>
+</section>
+
+<!-- ======================  8 · CTA  ============================= -->
+<p class="cap">Slide 8 · CTA</p>
+<section class="slide cta">
+  <div class="frame">
+    <div class="wordmark"><span class="dot" style="width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px 1px rgba(226,162,58,.6)"></span>Loxes AI</div>
+    <h1 class="headline">Never miss a call.<br><span class="g">Stop the churn.</span></h1>
+    <p class="sub">We build AI receptionists for ecom &amp; service brands — answering
+      every call, saving every subscriber, around the clock.</p>
+    <div class="pill">DM &ldquo;RECEPTION&rdquo; to get started →</div>
+  </div>
+  <div class="footer"><span>@Loxes.ai</span><span class="swipe">Book a call →</span></div>
+</section>
+
+<script>
+let one=false;
+function setScale(){one=!one;document.documentElement.style.setProperty('--scale',one?'1':'.5');}
+function loadH2C(){return new Promise((res,rej)=>{if(window.html2canvas)return res();
+  const s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+  s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+async function exportAll(){
+  try{await loadH2C();}catch(e){alert('CDN blocked — screenshot each card (true 1080×1350).');return;}
+  const prev=getComputedStyle(document.documentElement).getPropertyValue('--scale');
+  document.documentElement.style.setProperty('--scale','1');
+  const slides=[...document.querySelectorAll('.slide')];
+  for(let i=0;i<slides.length;i++){
+    const c=await html2canvas(slides[i],{width:1080,height:1350,scale:1,backgroundColor:null});
+    const a=document.createElement('a');a.download='loxes-retention-'+String(i+1).padStart(2,'0')+'.png';
+    a.href=c.toDataURL('image/png');a.click();await new Promise(r=>setTimeout(r,250));}
+  document.documentElement.style.setProperty('--scale',prev);
+}
+</script>
+</body>
+</html>
