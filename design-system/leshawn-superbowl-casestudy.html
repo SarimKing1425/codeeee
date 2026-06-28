@@ -127,8 +127,11 @@ body{padding:48px 0 96px;display:flex;flex-direction:column;align-items:center;g
 .sec .sub{margin-top:28px;font-size:31px;max-width:800px}
 .sec .blist{margin-top:40px}
 .sec .stats{margin-top:56px}
-.sec.proof .film{align-self:center;margin-top:50px}
+.sec.proof .film{align-self:center;margin-top:46px}
 .sec.proof .film .shot{width:440px;height:430px}
+/* 3-up Vapi contact strip */
+.film.contact{display:flex;gap:10px}
+.sec.proof .film.contact .shot{width:268px;height:392px}
 
 .cta .frame{justify-content:center;align-items:flex-start}
 .cta .wordmark{position:absolute;top:0;left:0;font:700 28px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:14px}
@@ -188,11 +191,12 @@ body{padding:48px 0 96px;display:flex;flex-direction:column;align-items:center;g
     <p class="sub">We deployed twelve Vapi voice assistants, one for every location, each
       tied to that venue's own phone line. They answer every call, handle the routine
       questions, and get people booked in.</p>
-    <div class="film"><div class="shot">
-      <img src="images/vapi-assistants.png" alt="" onerror="this.style.display='none'">
-      <span class="ph">VAPI ASSISTANTS LIST<br>save as images/vapi-assistants.png</span>
+    <div class="film contact">
+      <div class="shot"><img src="images/vapi-1.png" alt="" onerror="this.style.display='none'"><span class="ph">VAPI 1<br>vapi-1.png</span></div>
+      <div class="shot"><img src="images/vapi-2.png" alt="" onerror="this.style.display='none'"><span class="ph">VAPI 2<br>vapi-2.png</span></div>
+      <div class="shot"><img src="images/vapi-3.png" alt="" onerror="this.style.display='none'"><span class="ph">VAPI 3<br>vapi-3.png</span></div>
       <span class="label">Vapi · 12 assistants</span>
-    </div></div>
+    </div>
   </div>
   <div class="dots"><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div>
   <div class="footer"><span>Loxes AI · Case Study</span><span class="arrow">→</span></div>
