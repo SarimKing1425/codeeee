@@ -1,20 +1,23 @@
-# Drop case-study screenshots here
+# Client screenshots — one folder per client
 
-The HTML decks reference images from this folder. Save each screenshot with the
-exact filename below and the framed photo will appear in the deck automatically
-(until then, a labelled grey placeholder shows in its place).
+Source screenshots for the case-study decks live here, **one subfolder per client**:
 
-## LeShawn · Superbowl UK case study (`leshawn-superbowl-casestudy.html`)
+```
+images/
+  <client>/            e.g. leshawn/
+    superbowl-hero.png
+    vapi-1.png
+    vapi-2.png
+    vapi-3.png
+    website-chatbot.png
+```
 
-| Save as              | Which screenshot                                                    |
-|----------------------|---------------------------------------------------------------------|
-| `superbowl-hero.png` | Superbowl UK website hero (red logo + "ULTIMATE FAMILY ENTERTAINMENT CENTRE") |
-| `website-chatbot.png`| The "Superbowl UK Assistant" chat window (booking tenpin bowling, BOOK NOW) |
-| `vapi-1.png`         | First Vapi "Assistants" venue-list screenshot                       |
-| `vapi-2.png`         | Second Vapi "Assistants" venue-list screenshot                      |
-| `vapi-3.png`         | Third Vapi "Assistants" venue-list screenshot                       |
+Notes:
+- These are the **cropped, cleaned** versions (sidebars / account names / black redaction
+  bars removed). Keep originals out of the repo.
+- The finished decks **embed these as base64**, so the HTML does not depend on this folder
+  at delivery time. The folder is the editable source of truth if you need to re-frame.
+- When de-embedding a deck to edit it, its image paths are `images/<client>/<name>.png`.
+- New client? Make `images/<newclient>/` and drop their cleaned screenshots in.
 
-Slide 3 shows `vapi-1/2/3` together as a 3-frame film contact strip.
-Use `.png` (or change the extensions to `.jpg` in the HTML if that's what you saved).
-
-Photos keep their original colour. The grey film-strip / print border is added by CSS.
+Current: `leshawn/` — Superbowl UK case study.
