@@ -342,6 +342,11 @@ text.** Like a photo dropped onto the desk.
 
 ## 7. How a session should USE this (the workflow)
 
+> **Which format?** If it's a **client case study**, use **§7.9** and clone
+> `leshawn-superbowl-casestudy.html`. For a generic value carousel, use the stop/start
+> steps below. Either way the color, type, voice (§6.9), background-variety (§5) and
+> picture (§6.95) rules all apply.
+
 When a future session is asked to "make a carousel from this copy":
 
 1. **Read this file + open `carousel-template.html`.** Do not invent new colors/fonts.
@@ -373,6 +378,84 @@ SLIDE 3:  stop | EDITING FOR HOURS.       ||  start | BATCHING YOUR CONTENT.
 CTA:      Comment the word "clarity" — to learn how we convert hundreds of
           clients through organic content that sounds like you.
 ```
+
+---
+
+## 7.9 ⭐ THE CASE-STUDY CAROUSEL (the repeatable client format)
+
+This is the house format for client case studies. We will run it again and again, one
+deck per client. **Do not redesign it each time. Clone the proven file and swap the
+content.**
+
+### Canonical file to copy
+**`design-system/leshawn-superbowl-casestudy.html`** is the reference build. Start every
+new case study by copying it to `design-system/<client>-casestudy.html`, then replace the
+copy, numbers, and screenshots. Same CSS, same components, same ink + paper.
+
+### The slide map (5–8 slides, usually 6)
+```
+1  COVER        client + the one-line result. A "BUILT WITH" tool-logo lockup
+                (vapi / n8n / etc.) instead of a random client photo.
+2  01 SETUP     who they are + the problem, in plain words. (grid bg)
+3  02 WHAT WE   what we built, ONE line, + proof screenshot(s) in a film frame.
+   BUILT        (plain bg)  ← screenshots of the actual build go here.
+4  03 THE       the clever/technical bit, 2–3 bullets, + a small tilted snapshot
+   CLEVER PART  upper-right. (dot-margin bg)
+5  04 RESULTS   a 4-cell stat row of hard numbers + one plain sentence. (plain bg)
+6  CTA          "Want this for your business?" + ink pill + booking footer.
+                (faint center-mark bg)
+```
+Add or drop `0X` section slides as the story needs (ROI, retention, before→after).
+Keep the numbered-kicker rhythm (`01`, `02`, `03`…) so it reads as chapters.
+
+### Per-slide anatomy (all classes already in the canonical file)
+- **Kicker:** `01` gold-free ink number + label, OR a dot + "Client · Case Study".
+- **Headline:** heavy grotesque **UPPERCASE** + ONE italic-serif accent phrase
+  (`<span class="em">`). This serif accent is what replaces colour. One per headline.
+- **Body (`.sub`):** Archivo regular, sentence case, with `<b>` for the key word and
+  `<span class="em">` (serif italic) for the one phrase you want to sing.
+- **Stat row (`.stats`):** ink-bordered cells on `--paper-2`. Each cell = ONE token value
+  (`12`, `75%`, `£250`, `7`) + a tiny uppercase label. Never let a value wrap to 2 lines;
+  if it does, shorten the value and push the unit into the label (`7` / `DAYS TO LAUNCH`).
+- **Bullets (`.blist`):** grotesque `›` + sentence, `<b>`/`.em` for emphasis.
+- **Built-with lockup (`.builtwith`):** "BUILT WITH" label + monochrome tool marks
+  (vapi spark, n8n nodes) drawn as inline SVG in `--ink`. Use this on the cover instead
+  of an unknown client logo/hero. Swap in official logos only if the client gives files.
+- **Footer:** `Client · Case Study` left, `→` right. Use `·` not a dash. No "save for later".
+
+### Copy framing (read with §6.9 voice rules)
+- **Credit the client. We HELPED them build and deploy.** We did not do it all ourselves.
+  Say "we helped <client> build and deploy…", "we worked with their team to…". This is
+  non-negotiable and it's how the client wants to be represented.
+- The client's brand **name** can live in the body copy. Don't put an unknown client's
+  **hero image/logo** on the cover (it reads as random); use the tool lockup instead.
+- Use the client's **real numbers**. Keep soft-edged claims soft ("about £250 a month",
+  "five figures in bookings", "one of the biggest setups in the UK"). Don't invent precision.
+- Every line obeys §6.9: conversational, **no dashes**, **no "not X, but Y"**, no AI filler.
+
+### Screenshots → clean, framed, embedded (the image pipeline)
+1. The client hands over screenshots (Vapi assistant lists, dashboards, the website
+   chatbot, etc.). If they can't attach files here, they push them to a side repo and we
+   pull the zip (codeload works even when a direct clone is out of scope).
+2. **Crop them clean.** Cut sidebars, account names, and any black redaction bars so only
+   the meaningful panel shows. Match the crop's aspect ratio to the frame so `object-fit:
+   cover; object-position:top` doesn't lop off the important rows.
+3. **Frame per §6.95:** big proof → centered film strip (3 shots can sit side by side as a
+   real **film contact strip**, `.film.contact`); small shot → tilted upper-right snapshot.
+   Photos keep original colour; the grey frame is the only analog element.
+4. **Embed every image as a base64 data URI** so the single `.html` works on its own.
+   The user downloads ONE file and the pictures are already inside. (When editing later,
+   de-embed back to `images/…` paths first, make changes, then re-embed.) Never ship a
+   deck that depends on a separate `images/` folder being downloaded too.
+
+### Finish checklist for a case study
+- [ ] Cover credits the client and uses the tool lockup, not a stray photo.
+- [ ] Numbered section rhythm, 5–8 slides, backgrounds rotate (§5).
+- [ ] Stat values never wrap; one token per cell.
+- [ ] Screenshots cropped clean (no redaction bars), framed, **embedded** as base64.
+- [ ] Voice check (§6.9): no dashes, no "not X, but Y", reads human.
+- [ ] "We helped <client>…" framing throughout.
+- [ ] One self-contained `.html`, exports at 1080×1350.
 
 ---
 
