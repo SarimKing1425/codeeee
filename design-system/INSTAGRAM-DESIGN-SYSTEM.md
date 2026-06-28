@@ -33,6 +33,9 @@ Hierarchy is then carried by **typeface + size + italic**, never by hue.
 ```
 
 - **Never introduce a third color.** No orange, no blue, no gradient fills.
+- **One exception: real photographs keep their own color**, but only *inside a gray
+  film/print frame* (see §6.95). The type, marks, and layout around them stay strictly
+  ink + paper. A framed photo is the only place color is allowed on a slide.
 - The ONLY two ink weights that should ever read as "color" are `--ink` (everything)
   and, rarely, `--ink-mute` for legal-sized meta text.
 - Paper is *warm grey*, **not** pure white. Pure `#FFFFFF` looks digital and breaks
@@ -200,9 +203,24 @@ Recreate with CSS only (no asset files), keep it faint so type stays crisp:
   pitch, `--hairline` at low alpha, plus one slightly heavier "margin" rule.
 - **Hole-punch / dot-margin (img 3):** a vertical strip of 2–3 soft `--ink` dots near
   the left edge (radial-gradient circles), evoking a punched page.
-- Vary texture **per slide** so a carousel reads as a set of different paper stock.
-- Texture is **always optional** and **always faint** — if in doubt, less is more.
-  On the TITLE slide, texture can be near-zero.
+- **Plain paper:** just `--paper`/`--paper-2`, no lines at all. Clean and quiet.
+- **Center-mark backdrop:** plain paper with ONE oversized, very faint center mark
+  (spiral / asterisk / star) sitting behind the type as a watermark-ish motif.
+
+### ⚠ Background-variety rule (MANDATORY — do not default to grid)
+A carousel must NOT use the same background on every slide. Grid is one option, not
+the house style. **Rotate the backdrop slide to slide** so the set feels hand-made:
+- Lead with **plain paper** often — use it *generously*, it's the calmest and most
+  premium. Grid and dot-margin are **accents, used sparingly** (1–2 slides per deck).
+- A good 8-slide rhythm: `plain · grid · plain · dots · plain · grid · plain · mark`.
+  Never two identical backdrops back to back.
+- The big faint **center mark** is a backdrop flavor too (see above) — drop it in on a
+  slide or two for variety. (This is the "centroid" motif from the stop/start design,
+  reused quietly behind case-study type — text stays left-aligned, the mark just
+  floats behind/around it.)
+- Whatever the backdrop, it stays **faint**. Type legibility wins every time.
+- Picking is the session's job: read the copy, give each slide a *reason* to look a
+  little different from its neighbours. Uniqueness per slide is the goal, not a template.
 
 ```css
 /* grain — drop this as an ::after overlay, mix-blend-mode: multiply, opacity ~.06 */
@@ -228,6 +246,100 @@ background-image: url("data:image/svg+xml,...feTurbulence...");
 
 ---
 
+## 6.9 ⚠ VOICE & COPY RULES (NON-NEGOTIABLE)
+
+The design is dialed in. The thing that breaks these posts is **copy that sounds like
+AI wrote it.** Layout/placement stays exactly as is (left-aligned, generous, one idea
+per slide). What we rewrite is the *words*. Read this every time before writing copy.
+
+**Hard bans — never, in any post:**
+- **No em dashes or en dashes ( — , – ) as connectors.** This is the #1 AI tell.
+  Break the thought into two short sentences, or use a comma, a period, or "and".
+  Example: ~~"Zero missed calls — every subscriber kept."~~ → "Zero missed calls.
+  Every subscriber stayed."
+- **No "not X, but Y" / negation-flip patterns.** Banned in all forms:
+  - ~~"Not a receptionist. A complete support operation."~~
+  - ~~"This didn't happen. This happened."~~
+  - ~~"It's not just a phone line, it's a retention engine."~~
+  - ~~"They didn't lose customers. They kept them."~~
+  Just say the real thing plainly: "It answers every call and keeps subscribers from
+  cancelling." State what *is*, don't define it against what it isn't.
+- **No corporate/AI filler:** unlock, leverage, seamless, elevate, supercharge,
+  game-changer, robust, delve, "in today's fast-paced world", "that's the power of",
+  "imagine a world where", "the result?". Cut them.
+- **No hype-stacking adjectives** ("powerful, intelligent, fully-automated solution").
+- **No forced rule-of-three triads** ("answering, saving, scaling") unless it's just
+  true and plain.
+
+**Do this instead — conversational, like a person talking:**
+- Short, plain sentences. Say it the way you'd say it to a friend who runs a store.
+- Use contractions (we're, it's, didn't, they'd). They read human.
+- Lead with the real, specific fact or number. Concrete beats clever.
+- It's fine to start with "So", "And", or "Here's what we found." Light, not stiff.
+- One clear idea per slide. If a sentence needs a dash to survive, it's two sentences.
+- Read it out loud in your head. If it sounds like a brand deck, rewrite it.
+
+**Mini before/after:**
+> ❌ "We didn't just answer calls — we transformed their retention." (em dash + not-just)
+> ✅ "Their returning-customer rate went from 6.88% to 28.87% in 30 days."
+
+Every slot of headline + body copy passes these checks before the deck is done.
+
+---
+
+## 6.95 PICTURE RULES (screenshots, photos, proof)
+
+When the user drops in images (case-study screenshots, dashboards, receptionist UI,
+team/product photos), they get a **vintage camera treatment** so they feel like prints
+laid onto the page, not pasted PNGs. **Photos keep their original color**; the *frame*
+is what's gray/analog. Two frames, picked by image size/role:
+
+### A) Big / hero images → 35mm FILM-STRIP frame, CENTERED
+For the important shots (the Vapi/voice receptionist screen, a dashboard, the main
+proof). Place it **centered** in the slide's open space, one per slide, never over text.
+- Gray film border (`#C7C5BF`-ish) with **sprocket holes** running top and bottom.
+- A tiny frame label in the corner is a nice touch: `FRAME 04A · LESHAWN`, Archivo,
+  ~11px, `#3A3A3A`. (No mono font — stay in the system's families.)
+- Photo sits in **original color** inside the frame. Optional **very faint grain**
+  over it for the film feel; do not desaturate.
+- Sits flat (no tilt) when it's the centered hero.
+
+```css
+.film{display:inline-block;background:#C7C5BF;padding:30px 16px;position:relative}
+.film::before,.film::after{content:"";position:absolute;left:14px;right:14px;height:16px;
+  background:radial-gradient(circle, var(--paper) 42%, transparent 46%) 0 0/30px 16px repeat-x}
+.film::before{top:7px} .film::after{bottom:7px}
+.film img{display:block;max-width:100%}          /* keeps original color */
+.film .label{position:absolute;bottom:6px;right:16px;font:600 11px var(--body);
+  letter-spacing:.12em;color:#3A3A3A;text-transform:uppercase}
+```
+
+### B) Small images → tilted PRINT-BORDER snapshot, UPPER-RIGHT
+For smaller supporting shots (a logo, a single metric card, a phone screen). **Tilt it
+a few degrees and pin it to the upper-right half, in the empty space where there's no
+text.** Like a photo dropped onto the desk.
+- Off-white/gray paper border (`--paper-2`), generous bottom margin (Polaroid feel).
+- `transform: rotate(-3deg)` (alternate `+2deg / -3deg` so multiples don't look cloned).
+- A whisper of shadow is OK here (it's a physical print): `0 18px 40px rgba(14,14,14,.18)`.
+- Photo in original color inside.
+
+```css
+.snapshot{position:absolute;top:120px;right:84px;width:360px;background:var(--paper-2);
+  padding:16px 16px 44px;border:1px solid var(--hairline);transform:rotate(-3deg);
+  box-shadow:0 18px 40px rgba(14,14,14,.18)}
+.snapshot img{display:block;width:100%}
+```
+
+### Placement & hygiene
+- **Never cover the headline or body.** The image lives in negative space only.
+- **One image per slide** (a contact-sheet of several tiny frames is the only exception).
+- Big shot ⇒ centered film strip. Small shot ⇒ tilted upper-right print. That's the rule.
+- The frame is the only gray/analog element; everything else on the slide stays ink+paper.
+- The user supplies the image path; the session just wraps it in `.film` or `.snapshot`.
+- These two components ship in the templates so a session can drop images straight in.
+
+---
+
 ## 7. How a session should USE this (the workflow)
 
 When a future session is asked to "make a carousel from this copy":
@@ -245,9 +357,12 @@ When a future session is asked to "make a carousel from this copy":
    everything else inline). No MCP, no build step. The user screenshots each `.slide`
    (or uses the print/export button) at 1080×1350.
 6. **Sanity check before finishing:** only ink + paper (no orange), nothing clipped,
-   focal word overlaps its statement, exactly one center mark per workhorse slide,
-   period at the end of statements, footer/handle filled or removed (not left as
-   "@asterisk.create").
+   focal word overlaps its statement, period at the end of statements, footer/handle
+   filled (`loxes.ai`), no "save for later".
+7. **Background-variety check (§5):** backgrounds rotate, grid used sparingly, no two
+   neighbours identical, plain paper carries most of the deck.
+8. **Voice check (§6.9):** read every line. Zero em/en dashes. Zero "not X, but Y".
+   Zero AI filler. It reads like a person talking, not a brand deck.
 
 ### Copy template a user can hand over
 ```
