@@ -74,15 +74,19 @@ with strong thick/thin contrast and a calligraphic ductus.
 - This word is the hero. It is the **largest** element on its half of the slide and it
   **overlaps / kerns tight** against the grotesque line beneath it (see §4).
 
-### 2.2 Statement — heavy grotesque, UPPERCASE
-The blocky lines ("REINVENTING EVERY POST.") are a **black-weight grotesque**, set
-**UPPERCASE**, very tight leading, tight tracking.
+### 2.2 Statement / headline — heavy grotesque, UPPERCASE
+The blocky lines ("REINVENTING EVERY POST.", the case-study headlines) are a heavy
+grotesque, set **UPPERCASE**, tight leading, tight tracking.
 
-- **Use:** `"Archivo Black"` (Google Fonts, single weight 900) — closest free match.
-- Even heavier/condensed premium equivalents: *Druk Wide/Druk*, *Founders Grotesk Bold*,
-  *Helvetica Now Display Black*, *Neue Haas Grotesk Black*. If the brand has Druk, use it.
-- **UPPERCASE always.** `letter-spacing: -0.02em`, `line-height: 0.92`.
-- End the statement with a **period.** — it's part of the voice ("EVERY POST.").
+- **Default (case-study headlines): `"Archivo"` weight `800` (ExtraBold),
+  `letter-spacing: -0.035em`, `line-height: 0.94`.** This is the standard. Archivo Black
+  (900) got slightly hard to read on the longer multi-line case-study headlines, so we
+  stepped it down to 800. It still reads heavy and dense, just cleaner.
+- **Short poster statements** (the stop/start focal lines, one or two words) can use the
+  blacker **`"Archivo Black"`** for extra punch. Long headlines use 800.
+- Premium equivalents (if licensed): *Druk*, *Founders Grotesk Bold*, *Neue Haas Grotesk*.
+- **UPPERCASE always.** End a statement with a **period.** (part of the voice).
+- Load Archivo with the 800/900 weights: `family=Archivo:wght@400;500;600;700;800;900`.
 
 ### 2.3 Caption / body — clean grotesque, regular
 Small supporting copy (CTA sub-line, testimonial body).
@@ -97,9 +101,10 @@ watermarks* but keep the **style slot**: `Playfair Display` italic, ~22px, `--in
 ### Type scale (at 1080×1350)
 ```
 Focal serif (hero)     ~150–190px   Playfair Display 900 italic
-Statement grotesque    ~92–116px    Archivo Black,    line-height .92
-Sub-statement          ~64–80px     Archivo Black (when 3+ lines, shrink to fit)
+Case-study headline    ~56–70px     Archivo 800, lh .94, tracking -.035em  ← default
+Short poster statement ~92–116px    Archivo Black (stop/start focal lines only)
 Section label (title)  ~120–150px   Archivo Black (e.g. "CLIENT TESTIMONIAL")
+Stat number            ~54–74px     Archivo 800
 Caption / body         ~30–36px     Archivo / Helvetica, lh 1.35
 Footer meta            ~22–26px     Playfair italic, --ink-mute
 ```
@@ -469,9 +474,10 @@ Keep the numbered-kicker rhythm (`01`, `02`, `03`…) so it reads as chapters.
   --hairline:rgba(14,14,14,.14);
 
   /* type */
-  --serif:"Playfair Display", Georgia, serif;     /* focal word, 900 italic   */
-  --grotesque:"Archivo Black","Helvetica Neue",Arial,sans-serif; /* statement */
-  --body:"Archivo","Helvetica Neue",Arial,sans-serif;            /* captions  */
+  --serif:"Playfair Display", Georgia, serif;        /* focal word / accent, 900 italic */
+  --grotesque:"Archivo","Helvetica Neue",Arial,sans-serif; /* headlines: font-weight 800 */
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;      /* captions / labels          */
+  /* Archivo Black is the heavier alternate for very short stop/start poster statements */
 
   /* canvas */
   --w:1080px; --h:1350px; --safe-x:88px; --safe-y:96px;

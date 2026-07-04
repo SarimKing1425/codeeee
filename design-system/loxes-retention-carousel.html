@@ -18,7 +18,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
 <style>
 :root{
@@ -27,7 +27,7 @@
   --hairline:rgba(14,14,14,.13);
   --card-bd:rgba(14,14,14,.20);
   --serif:"Playfair Display",Georgia,serif;
-  --grotesque:"Archivo Black","Arial Black","Helvetica Neue",Arial,sans-serif;
+  --grotesque:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"Archivo","Helvetica Neue",Arial,sans-serif;
   --w:1080px; --h:1350px; --safe:88px; --scale:.5;
 }
@@ -63,8 +63,8 @@ body{padding:48px 0 96px;display:flex;flex-direction:column;align-items:center;g
 .kicker .num{font-weight:700}
 
 /* headline: heavy grotesque UPPERCASE, accent phrase = italic serif lowercase */
-.headline{font-family:var(--grotesque);font-weight:900;text-transform:uppercase;
-  letter-spacing:-.03em;line-height:.92;color:var(--ink)}
+.headline{font-family:var(--grotesque);font-weight:800;text-transform:uppercase;
+  letter-spacing:-.035em;line-height:.94;color:var(--ink)}
 .headline .em{font-family:var(--serif);font-style:italic;font-weight:900;text-transform:none;
   letter-spacing:-.01em}
 .rule{width:72px;height:5px;background:var(--ink);border-radius:2px}
@@ -92,7 +92,7 @@ body{padding:48px 0 96px;display:flex;flex-direction:column;align-items:center;g
 .stats{display:flex;border:2px solid var(--ink);background:var(--paper-2)}
 .stats .cell{flex:1;padding:46px 22px;text-align:center;border-left:2px solid var(--ink)}
 .stats .cell:first-child{border-left:0}
-.stats .v{font-family:var(--grotesque);font-weight:900;font-size:74px;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.stats .v{font-family:var(--grotesque);font-weight:800;font-size:74px;letter-spacing:-.03em;line-height:1;color:var(--ink)}
 .stats .k{font:700 14px var(--body);letter-spacing:.10em;text-transform:uppercase;color:var(--ink-mute);margin-top:18px;line-height:1.3}
 
 /* big before -> after */
