@@ -26,11 +26,18 @@ files** that export at **1080×1350**. No MCP, no build step, no external assets
 | File | What it is |
 |------|------------|
 | **`INSTAGRAM-DESIGN-SYSTEM.md`** | The full rulebook. Colour, type, layout, **voice rules (§6.9)**, **background variety (§5)**, **picture rules (§6.95)**, and **the case-study format (§7.9)**. Read it fully before building. |
-| **`leshawn-superbowl-casestudy.html`** | ⭐ The **canonical case-study deck**. Clone this for every new client case study. |
+| **`leshawn-superbowl-casestudy.html`** | ⭐ The **canonical case-study deck** (screenshot-heavy, with tool lockup + film-strip proof). Clone this when the client gives you screenshots. |
+| `xavier-socalunited-casestudy.html` | Example client case study (8 slides, multi-agent, framed screenshots). |
+| `lemeli-supplement-casestudy.html` | ⭐ **Story-driven / no-screenshot** case study (ecom retention). Clone this for a **human, non-technical** deck carried by copy + big numbers. |
+| `edric-ecom-casestudy.html` | Story-driven case study (9 slides) with the **question → outcome callout** variation. |
 | `carousel-template.html` | The generic "stop / start" value-carousel template (ink + paper). |
-| `loxes-retention-carousel.html` | Example 8-slide case study (ink + paper) built from copy only. |
+| `loxes-retention-carousel.html` | Early example case study (ink + paper). |
 | `loxes-case-study.html` | Early dark+gold experiment. **Off-brand, kept for reference only — do not copy its colours.** |
+| `references/` | Inspiration a friend/client sent (e.g. dark+gold ecom decks). Story/number reference ONLY, never copy the look. |
 | `images/<client>/` | That client's source screenshots (already cropped). One folder per client. |
+
+**Two flavours of case study, both on-brand — pick per client:** screenshot-heavy proof
+(clone `leshawn`/`xavier`) or story-driven typographic (clone `lemeli`/`edric`, more human).
 
 ---
 
