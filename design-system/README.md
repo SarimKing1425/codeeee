@@ -33,8 +33,7 @@ files** that export at **1080×1350**. No MCP, no build step, no external assets
 | `carousel-template.html` | The generic "stop / start" value-carousel template (ink + paper). |
 | `loxes-retention-carousel.html` | Early example case study (ink + paper). |
 | `loxes-case-study.html` | Early dark+gold experiment. **Off-brand, kept for reference only — do not copy its colours.** |
-| `references/` | Inspiration a friend/client sent (e.g. dark+gold ecom decks). Story/number reference ONLY, never copy the look. |
-| `images/<client>/` | That client's source screenshots (already cropped). One folder per client. |
+| `images/<client>/` | That client's cropped source screenshots. One folder per client. |
 
 **Two flavours of case study, both on-brand — pick per client:** screenshot-heavy proof
 (clone `leshawn`/`xavier`) or story-driven typographic (clone `lemeli`/`edric`, more human).
