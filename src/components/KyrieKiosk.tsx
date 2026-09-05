@@ -5,6 +5,7 @@ import { useVapi } from "@/hooks/useVapi";
 import IdleScreen from "./IdleScreen";
 import ActiveCall from "./ActiveCall";
 import EndScreen from "./EndScreen";
+import ContinueOnPhone from "./ContinueOnPhone";
 
 export default function KyrieKiosk() {
   const {
@@ -66,6 +67,10 @@ export default function KyrieKiosk() {
         )}
         {state === "ended" && <EndScreen onReset={resetToIdle} />}
       </div>
+
+      {/* Always reachable: the moment someone gives up on speaking is the moment
+          they need a way to type instead. */}
+      <ContinueOnPhone />
     </main>
   );
 }
