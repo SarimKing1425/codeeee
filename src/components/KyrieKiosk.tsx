@@ -5,6 +5,7 @@ import { useVapi } from "@/hooks/useVapi";
 import IdleScreen from "./IdleScreen";
 import ActiveCall from "./ActiveCall";
 import EndScreen from "./EndScreen";
+import TypeItInstead from "./TypeItInstead";
 
 export default function KyrieKiosk() {
   const {
@@ -51,7 +52,14 @@ export default function KyrieKiosk() {
           "radial-gradient(ellipse at 50% 0%, #FFFFFF 0%, #FFFFFF 55%, #F1F6FA 100%)",
       }}
     >
-      <div className="relative z-10 w-full h-full flex items-center justify-center px-6">
+      {/* Reserve a lane at the bottom while the "fill it in myself" button is
+          showing, so it never sits on top of Tap to Begin or End Conversation. */}
+      <div
+        className={[
+          "relative z-10 w-full h-full flex items-center justify-center px-6",
+          state !== "ended" ? "pb-28" : "",
+        ].join(" ")}
+      >
         {state === "idle" && (
           <IdleScreen onStart={startCall} errorMessage={errorMessage} />
         )}
@@ -66,6 +74,15 @@ export default function KyrieKiosk() {
         )}
         {state === "ended" && <EndScreen onReset={resetToIdle} />}
       </div>
+
+      {/* Offered before and during the conversation, which is when someone
+          decides they would rather type. Not on the "Thank you" screen: they
+          have already finished, and tapping it there would start a duplicate. */}
+      {state !== "ended" && (
+        <TypeItInstead
+          onBeforeLeave={state === "connecting" || state === "active" ? endCall : undefined}
+        />
+      )}
     </main>
   );
 }
